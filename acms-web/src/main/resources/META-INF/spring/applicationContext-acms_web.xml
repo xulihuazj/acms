@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/mvc
+	   http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+          http://www.springframework.org/schema/task 
+						   http://www.springframework.org/schema/task/spring-task-4.0.xsd">      
+	<mvc:annotation-driven />    
+
+	<!--<context:component-scan base-package="com.xdja.*.*.web.*.action,com.xdja.*.*.web.*.listener" />-->
+	<!--组件扫描器-->
+	<context:component-scan base-package="cn.edu.haut.cssp.acms.web.*" />
+
+    <!--<bean class="com.xdja.cssp.oms.web.propertyEditor.StringEscapeEditor"/>-->
+
+    <!-- 自动 -->
+    <task:annotation-driven/>
+      
+    <!-- 加载*.properties File -->
+	<bean id="dbConfPostProcessor"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:system.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+    <!-- 上传编译器 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 最大上传1024M -->
+		<property name="maxUploadSize" value="1073741824"/>
+		<property name="defaultEncoding" value="utf-8"></property>
+		<property name="resolveLazily" value="true"></property>
+	</bean>
+</beans>

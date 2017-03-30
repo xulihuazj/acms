@@ -1,0 +1,168 @@
+html,
+body {
+	height: 100%;
+}
+
+body
+{
+	background-color:#f3f3f3;
+	color: #3C3C3C;
+	font-family: Microsoft YaHei,Simsum,serif;
+}
+
+.wrap {
+	min-height:80%;
+	height: auto;
+	margin: 0 auto -60px;
+	padding: 0 0 60px;
+	background:#1a8fb4 url(image/bg_service.png) no-repeat center bottom;
+}
+
+.wrap > .container {
+    padding: 0px 15px;
+}
+
+.header {
+	margin-bottom: 20px;
+	background-color: #111;
+	padding: 5px 0;
+}
+
+.header img {
+	margin-left: 2%;
+}
+
+.header > .language
+{
+	display: block;
+	position: absolute;
+	margin-top: 12px;
+	top: 0;
+	right: 20px;
+}
+
+@media (min-width: 768px) {
+	.header > .language {
+		margin-top: 12px;
+		right: 120px;
+	}
+}
+
+.footer {
+	min-height: 15%;
+	height: auto;
+	padding-top: 8%;
+}
+
+.login {
+	background:#fff;
+	border-radius:0.5em;
+	box-shadow:0 0 0 1px #888;
+	margin:0 15px;
+	min-height: 40px;
+}
+
+.msgcon {
+	margin-left: 30px;
+}
+
+.text-p {
+	padding: 10px 20px;
+}
+
+.text-p-right {
+	margin-right: 70px;
+}
+
+@media (min-width: 768px) {
+	.wrap > .container {
+	    padding: 30px 15px 20px;
+	}
+	.header img {
+		padding-left: 7%;
+	}
+	.notice {
+		float: left;
+		min-width: 55%;
+	}
+
+	.login {
+		float: right;
+		min-width: 39%;
+		padding:1%;
+		background:#fff;
+		border-radius:0.5em;
+		box-shadow:0 0 0 1px #888;
+		margin:0;
+	}
+}
+@media (max-width: 767px) {
+	.notice {
+		margin-top:20px;
+	}
+}
+
+.error-summary {
+	margin: 0 60px;
+	padding: 5px 0;
+}
+
+.error-summary p {
+	margin-left: 10px;
+}
+
+.error-summary ul {
+	margin-left: 10px;
+}
+
+.list-item {
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+	margin-bottom: -1px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-left-width: 0;
+	border-right-width: 0;
+}
+
+/*---20150330---*/
+
+.wrap .row {
+	padding:3% 0 1%;
+	background:#fff;
+	border-radius:0.5em;
+	box-shadow:0 0 0 1px #888;
+	margin:0 auto;
+}
+
+.site-login .row {
+	padding:0;
+	background: none;
+	border-radius:0.5em;
+	box-shadow: none;
+	margin:0 auto;
+}
+
+.help-block-margin {
+	margin-top: 0;
+}
+
+.help-block-danger {
+  color: #DE0E0A;
+}
+
+.display-none {
+	display: none;
+}
+
+.font-red {
+	color: red;
+}
+
+.section {
+	font-size: 32px;
+	line-height: 100px;
+	color: #fff;
+	font: "Noto Sans","Microsoft Yahei",Arial,Helvetica,sans-serif;
+}
