@@ -1,6 +1,12 @@
 package cn.edu.haut.cssp.acms.web.action;
 
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -18,10 +24,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.octo.captcha.service.image.ImageCaptchaService;
 import com.xdja.platform.security.utils.OperatorUtil;
 
 import cn.edu.haut.cssp.acms.action.BaseAction;
-import cn.edu.haut.cssp.acms.bean.WebConstants;
 import cn.edu.haut.cssp.acms.core.entity.TUser;
 import cn.edu.haut.cssp.acms.system.service.IFunctionService;
 import cn.edu.haut.cssp.acms.system.service.IUserService;
@@ -38,11 +45,11 @@ public class LoginAction extends BaseAction{
 	private static final Logger logger = LoggerFactory.getLogger(LoginAction.class);
 	
 	// 注入service
-	@Autowired
+/*	@Autowired
 	private IUserService userService;
 	
 	@Autowired
-	private IFunctionService functionService;
+	private IFunctionService functionService;*/
 	
 	/**
 	 * 登录
@@ -50,20 +57,22 @@ public class LoginAction extends BaseAction{
 	 * @date: 2017年1月18日下午1:31:19
 	 * @return: String
 	 */
-	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
-	public String login(String userName,String password,String identifyCode ,ModelMap model,HttpServletRequest request
+	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
+	public String login(String loginUsername,String loginPassword,String loginVerifycode ,ModelMap model,HttpServletRequest request
 		,HttpServletResponse response){
-		if(StringUtils.isBlank(userName)){
+		if(StringUtils.isBlank(loginUsername)){
 			model.put("message", "用户名不能为空!");
-		}else if(StringUtils.isBlank(password)){
+		}else if(StringUtils.isBlank(loginPassword)){
 			model.put("message", "密码不能为空！");
-		}else if(StringUtils.isBlank(identifyCode)){
+		}else if(StringUtils.isBlank(loginVerifycode)){
 			model.put("message", "验证码不能为空！");
-		}else{
+		}/*else if(!imageCaptchaService.validateResponseForID(request.getSession().getId(), loginVerifycode)) {
+			model.put("message", "验证码不正确，请点击刷新后重试!");
+		}*/else{
 			boolean isLogined = true;
 			try{
 				// shiro 权限管理
-				UsernamePasswordToken token = new UsernamePasswordToken(userName,password);
+				UsernamePasswordToken token = new UsernamePasswordToken(loginUsername,loginPassword);
 				SecurityUtils.getSubject().login(token);
 			}catch (LockedAccountException e){
 				isLogined = false;
@@ -79,14 +88,15 @@ public class LoginAction extends BaseAction{
 				model.put("message", e.getMessage());
 			}
 			if(isLogined){
-				TUser user = userService.getUserByUserName(userName);
+				//TUser user = userService.getUserByUserName(userName);
+				TUser user = null;
 				//OperatorUtil.setOperator(new Operator(userName, functionService.queryAllFunctions(user)));
 				OperatorUtil.getOperator().setCurrUser(user);
 				logger.info("管理员{}登录成功",user.getUserName());
 				return "redirect:/index.do";
 			}
 		}
-		model.put("userName", userName);
+		model.put("userName", loginUsername);
 		model.put("error", true);
 		return "/login";
 	}
@@ -103,6 +113,42 @@ public class LoginAction extends BaseAction{
 		logger.info("管理员：{}退出成功", user.getUserName());
 		SecurityUtils.getSubject().logout();
 		return "redirect:/login.do";
+	}
+	
+	// 校验码service注入
+	@Autowired
+	private ImageCaptchaService imageCaptchaService;
+	
+	/**
+	 * 生成验证码
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月3日下午8:45:54
+	 * @param request
+	 * @param response
+	 */
+	@RequestMapping("/captcha.do")
+	public void handleRequest(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			ByteArrayOutputStream jpegOutputStream = new ByteArrayOutputStream();
+			String captchaId = request.getSession().getId();
+			BufferedImage challenge = imageCaptchaService.getImageChallengeForID(captchaId, request.getLocale());
+
+			response.setHeader("Cache-Control", "no-store");
+			response.setHeader("Pragma", "no-cache");
+			response.setDateHeader("Expires", 0L);
+			response.setContentType("image/jpeg");
+			
+			ImageIO.write(challenge, "jpeg", jpegOutputStream);
+			byte[] captchaChallengeAsJpeg = jpegOutputStream.toByteArray();
+
+			ServletOutputStream respOs = response.getOutputStream();
+			respOs.write(captchaChallengeAsJpeg);
+			respOs.flush();
+			respOs.close();
+		} catch (IOException e) {
+			logger.error("生成校验码失败: {}", e.getMessage());
+		}
 	}
 	
 }

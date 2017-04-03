@@ -29,7 +29,7 @@
 							<div class="form-group field-loginform-username required">
 								<label class="col-lg-2 control-label" for="loginform-username">账号</label>
 								<div class="col-lg-6 ">
-									<input type="text" id="loginform-username" class="form-control"
+									<input type="text" id="loginUsername" class="form-control"
 										name="LoginForm[username]" placeholder="请输入您的账号">
 								</div>
 								<div class="col-lg-4 ">
@@ -39,7 +39,7 @@
 							<div class="form-group field-loginform-password required">
 								<label class="col-lg-2 control-label" for="loginform-password">密码</label>
 								<div class="col-lg-6 ">
-									<input type="password" id="loginform-password"
+									<input type="password" id="loginPassword"
 										class="form-control" name="LoginForm[password]"
 										placeholder="请输入您的密码">
 								</div>
@@ -47,7 +47,7 @@
 									<div class="help-block"></div>
 								</div>
 							</div>
-							<div class="form-group field-loginform-password required">
+						<!-- 	<div class="form-group field-loginform-password required">
 								<label class="col-lg-2 control-label" for="loginform-password">确认密码</label>
 								<div class="col-lg-6 ">
 									<input type="password" id="loginform-verifyPassword"
@@ -57,14 +57,14 @@
 								<div class="col-lg-4 ">
 									<div class="help-block"></div>
 								</div>
-							</div>
+							</div> -->
 							<div class="form-group field-loginform-verifycode required">
 								<label class="col-lg-2 control-label" for="loginform-verifycode">验证码</label>
 								<div class="col-lg-10 ">
 									<div class="row">
 										<div class="col-lg-offset-1 col-lg-7"
 											style="margin-left: -3.667%; width: 64.33%;">
-											<input type="text" id="loginform-verifycode"
+											<input type="text" id="loginVerifycode"
 												class="form-control" name="LoginForm[verifyCode]"
 												placeholder="请输入正确验证码">
 										</div>
@@ -110,6 +110,7 @@
 <![endif]-->
 	<script type="text/javascript">
 $(document).ready(function() {
+	//验证码实现
     $('#loginform-verifycode-image').yiiCaptcha({
     	alert();
         "refreshUrl" : "\/site\/captcha?refresh=1",
@@ -117,10 +118,10 @@ $(document).ready(function() {
     });
     
     $('#login-form').yiiActiveForm([ {
-        "id" : "loginform-username",
+        "id" : "loginUsername",
         "name" : "username",
         "container" : ".field-loginform-username",
-        "input" : "#loginform-username",
+        "input" : "#loginUsername",
         "validate" : function(attribute, value, messages, deferred, $form) {
             yii.validation.required(value, messages, {
                 "message" : "账号不能为空。"
@@ -132,20 +133,20 @@ $(document).ready(function() {
             });
         }
     }, {
-        "id" : "loginform-password",
+        "id" : "loginPassword",
         "name" : "password",
         "container" : ".field-loginform-password",
-        "input" : "#loginform-password",
+        "input" : "#loginPassword",
         "validate" : function(attribute, value, messages, deferred, $form) {
             yii.validation.required(value, messages, {
                 "message" : "密码不能为空。"
             });
         }
     }, {
-        "id" : "loginform-verifycode",
+        "id" : "loginVerifycode",
         "name" : "verifyCode",
         "container" : ".field-loginform-verifycode",
-        "input" : "#loginform-verifycode",
+        "input" : "#loginVerifycode",
         "validate" : function(attribute, value, messages, deferred, $form) {
             yii.validation.required(value, messages, {
                 "message" : "验证码不能为空。"

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import cn.edu.haut.cssp.acms.core.bean.DataQueryExt;
 import cn.edu.haut.cssp.acms.core.entity.TUser;
@@ -13,6 +14,7 @@ import cn.edu.haut.cssp.acms.log.util.LitePaging;
 import cn.edu.haut.cssp.acms.system.exception.UserBusiException;
 import cn.edu.haut.cssp.acms.system.service.IUserService;
 
+@Service(value = "userService")
 public class UserServiceImpl extends BaseServiceImpl implements IUserService{
 
 	private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);

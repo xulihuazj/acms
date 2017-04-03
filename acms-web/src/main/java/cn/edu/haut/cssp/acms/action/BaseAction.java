@@ -23,11 +23,11 @@ public class BaseAction {
 		this.logger = LoggerFactory.getLogger(super.getClass());
 	}
 
-	@InitBinder
+	/*@InitBinder
 	public void initBinder(WebDataBinder binder, HttpServletRequest request) {
 		for (PropertyEditorSupport editor : SpringBeanUtil.getBeansOfType(PropertyEditorSupport.class))
 			binder.registerCustomEditor(String.class, editor);
-	}
+	}*/
 
 	public void renderText(HttpServletResponse response, String text) {
 		render(response, "text/plain;charset=UTF-8", text);

@@ -1,7 +1,5 @@
 package cn.edu.haut.cssp.acms.system.service;
 
-import org.springframework.stereotype.Service;
-
 import cn.edu.haut.cssp.acms.core.bean.DataQueryExt;
 import cn.edu.haut.cssp.acms.core.entity.TUser;
 import cn.edu.haut.cssp.acms.core.utils.DateQueryBean;
@@ -15,7 +13,6 @@ import cn.edu.haut.cssp.acms.system.exception.UserBusiException;
  * @author: xulihua
  * @date: 2017年1月18日下午2:43:53
  */
-@Service
 public interface IUserService {
 	
 	/**
