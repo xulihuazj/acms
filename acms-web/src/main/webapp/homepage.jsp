@@ -245,7 +245,7 @@
 								</div>
 							</li>
 							<li>
-								<a href="page-profile.html"> <i class="fa fa-user"></i> 个人中心
+								<a href="page-profile.jsp"> <i class="fa fa-user"></i> 个人中心
 								</a>
 							</li>
 							<li>
@@ -257,7 +257,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="${base}/"> <i class="fa fa-power-off"></i> 退出登录
+								<a href="${base}/logout.do"> <i class="fa fa-power-off"></i> 退出登录
 								</a>
 							</li>
 						</ul>
@@ -707,9 +707,9 @@
 			</div>
 			<!-- END 左侧导航栏 -->
 
-			<!-- Main Page -->
+			<!-- Main Page(主要内容) -->
 			<div class="main ">
-				<!-- START Page头 -->
+				<!-- START 面包屑-->
 				<div class="page-header">
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
@@ -723,53 +723,14 @@
 						<h2>管理中心</h2>
 					</div>
 				</div>
-				<!-- End Page头 -->
-
+				<!-- End 面包屑 -->
+					
+					主要内容
+				
 				<!-- End Main Page -->
 
 				<!-- START 底部(隐藏的内容栏目) -->
-				<div id="footer">
-					<ul>
-						<li>
-							<div class="title">Memory</div>
-							<div class="bar">
-								<div class="progress light progress-sm  progress-striped active">
-									<div class="progress-bar progress-squared progress-bar-success" role="progressbar" aria-valuenow="60"
-										aria-valuemin="0" aria-valuemax="100" style="width: 60%;">60%</div>
-								</div>
-							</div>
-							<div class="desc">4GB of 8GB</div>
-						</li>
-						<li>
-							<div class="title">HDD</div>
-							<div class="bar">
-								<div class="progress light progress-sm  progress-striped active">
-									<div class="progress-bar progress-squared progress-bar-primary" role="progressbar" aria-valuenow="40"
-										aria-valuemin="0" aria-valuemax="100" style="width: 40%;">40%</div>
-								</div>
-							</div>
-							<div class="desc">250GB of 1TB</div>
-						</li>
-						<li>
-							<div class="title">SSD</div>
-							<div class="bar">
-								<div class="progress light progress-sm  progress-striped active">
-									<div class="progress-bar progress-squared progress-bar-warning" role="progressbar" aria-valuenow="70"
-										aria-valuemin="0" aria-valuemax="100" style="width: 70%;">70%</div>
-								</div>
-							</div>
-							<div class="desc">700GB of 1TB</div>
-						</li>
-						<li>
-							<div class="copyright">
-								<p class="text-muted text-right">
-									Fire <i class="fa fa-coffee"></i> Collect from <a href="" title="" target="_blank"></a> - More Templates <a
-										href="" target="_blank" title=""></a>
-								</p>
-							</div>
-						</li>
-					</ul>
-				</div>
+				<div id="footer"></div>
 				<!-- End 底部(隐藏的内容栏目)-->
 			</div>
 		</div>
@@ -818,6 +779,7 @@
 		<!-- Pages JS -->
 		<script src="assets/js/pages/table-advanced.js"></script>
 		<script src="assets/js/pages/index.js"></script>
+		<script src="assets/js/pages/common.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$('#zlight-nav').zlightMenu();
