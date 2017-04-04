@@ -724,6 +724,7 @@
 					</div>
 				</div>
 				<!-- End 面包屑 -->
+				
 				<div class="clearfix">
 					<div class="panel panel-default bk-bg-white">
 						<div class="panel-heading bk-bg-white">
@@ -774,8 +775,86 @@
 							</form>
 						</div>
 					</div>
+					<!-- 表单数据 -->
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="panel panel-default bk-bg-white">
+							<div class="panel-heading bk-bg-white">
+								<h6>
+									<i class="fa fa-table red"></i><span class="break"></span>日志信息
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a> 
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<table class="table table-bordered table-striped" id="datatable-default">
+									<thead>
+										<tr>
+											<th style="width: 5%;min-width:50px;"><span>序号</span></th>
+											<th style="width: 7%;min-width:100px;"><span>日志类型</span></th>
+											<th style="width: 12%;min-width:180px;"><span>日志时间</span></th>
+											<th style="width: 7%;min-width:100px;"><span>操作者</span></th>
+											<th width=30%><span>日志内容</span></th>
+										</tr>
+									</thead>
+									<!-- 在此处加循环 -->
+									<tbody>
+										<tr class="gradeX">
+											<td>Trident</td>
+											<td>Internet Explorer 4.0</td>
+											<td>Win 95+</td>
+											<td class="center hidden-phone">4</td>
+											<td class="center hidden-phone">X</td>
+										</tr>
+										<tr class="gradeC">
+											<td>Trident</td>
+											<td>Internet Explorer 5.0</td>
+											<td>Win 95+</td>
+											<td class="center hidden-phone">5</td>
+											<td class="center hidden-phone">C</td>
+										</tr>
+										<tr class="gradeA">
+											<td>Trident</td>
+											<td>Internet Explorer 5.5</td>
+											<td>Win 95+</td>
+											<td class="center hidden-phone">5.5</td>
+											<td class="center hidden-phone">A</td>
+										</tr>
+										<tr class="gradeA">
+											<td>Trident</td>
+											<td>Internet Explorer 6</td>
+											<td>Win 98+</td>
+											<td class="center hidden-phone">6</td>
+											<td class="center hidden-phone">A</td>
+										</tr>
+										<tr class="gradeA">
+											<td>Trident</td>
+											<td>Internet Explorer 7</td>
+											<td>Win XP SP2+</td>
+											<td class="center hidden-phone">7</td>
+											<td class="center hidden-phone">A</td>
+										</tr>
+										<tr class="gradeA">
+											<td>Trident</td>
+											<td>AOL browser (AOL desktop)</td>
+											<td>Win XP</td>
+											<td class="center hidden-phone">6</td>
+											<td class="center hidden-phone">A</td>
+										</tr>
+										<tr class="gradeA">
+											<td>Gecko</td>
+											<td>Firefox 1.0</td>
+											<td>Win 98+ / OSX.2+</td>
+											<td class="center hidden-phone">1.7</td>
+											<td class="center hidden-phone">A</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
 				</div>
-
 				<!-- End Main Page -->
 
 				<!-- START 底部(隐藏的内容栏目) -->
