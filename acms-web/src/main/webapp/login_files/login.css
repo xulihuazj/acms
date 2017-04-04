@@ -1,25 +1,23 @@
-html,
-body {
+html, body {
 	height: 100%;
 }
 
-body
-{
-	background-color:#f3f3f3;
+body {
+	background-color: #f3f3f3;
 	color: #3C3C3C;
-	font-family: Microsoft YaHei,Simsum,serif;
+	font-family: Microsoft YaHei, Simsum, serif;
 }
 
 .wrap {
-	min-height:80%;
+	min-height: 80%;
 	height: auto;
 	margin: 0 auto -60px;
 	padding: 0 0 60px;
-	background:#1a8fb4 url(image/bg_service.png) no-repeat center bottom;
+	background: #1a8fb4 url(image/bg_service.png) no-repeat center bottom;
 }
 
-.wrap > .container {
-    padding: 0px 15px;
+.wrap>.container {
+	padding: 0px 15px;
 }
 
 .header {
@@ -32,8 +30,7 @@ body
 	margin-left: 2%;
 }
 
-.header > .language
-{
+.header>.language {
 	display: block;
 	position: absolute;
 	margin-top: 12px;
@@ -41,8 +38,8 @@ body
 	right: 20px;
 }
 
-@media (min-width: 768px) {
-	.header > .language {
+@media ( min-width : 768px) {
+	.header>.language {
 		margin-top: 12px;
 		right: 120px;
 	}
@@ -55,10 +52,10 @@ body
 }
 
 .login {
-	background:#fff;
-	border-radius:0.5em;
-	box-shadow:0 0 0 1px #888;
-	margin:0 15px;
+	background: #fff;
+	border-radius: 0.5em;
+	box-shadow: 0 0 0 1px #888;
+	margin: 0 15px;
 	min-height: 40px;
 }
 
@@ -74,9 +71,9 @@ body
 	margin-right: 70px;
 }
 
-@media (min-width: 768px) {
-	.wrap > .container {
-	    padding: 30px 15px 20px;
+@media ( min-width : 768px) {
+	.wrap>.container {
+		padding: 30px 15px 20px;
 	}
 	.header img {
 		padding-left: 7%;
@@ -85,20 +82,20 @@ body
 		float: left;
 		min-width: 55%;
 	}
-
 	.login {
 		float: right;
 		min-width: 39%;
-		padding:1%;
-		background:#fff;
-		border-radius:0.5em;
-		box-shadow:0 0 0 1px #888;
-		margin:0;
+		padding: 1%;
+		background: #fff;
+		border-radius: 0.5em;
+		box-shadow: 0 0 0 1px #888;
+		margin: 0;
 	}
 }
-@media (max-width: 767px) {
+
+@media ( max-width : 767px) {
 	.notice {
-		margin-top:20px;
+		margin-top: 20px;
 	}
 }
 
@@ -127,21 +124,20 @@ body
 }
 
 /*---20150330---*/
-
 .wrap .row {
-	padding:3% 0 1%;
-	background:#fff;
-	border-radius:0.5em;
-	box-shadow:0 0 0 1px #888;
-	margin:0 auto;
+	padding: 3% 0 1%;
+	background: #fff;
+	border-radius: 0.5em;
+	box-shadow: 0 0 0 1px #888;
+	margin: 0 auto;
 }
 
 .site-login .row {
-	padding:0;
+	padding: 0;
 	background: none;
-	border-radius:0.5em;
+	border-radius: 0.5em;
 	box-shadow: none;
-	margin:0 auto;
+	margin: 0 auto;
 }
 
 .help-block-margin {
@@ -149,7 +145,7 @@ body
 }
 
 .help-block-danger {
-  color: #DE0E0A;
+	color: #DE0E0A;
 }
 
 .display-none {
@@ -164,5 +160,5 @@ body
 	font-size: 32px;
 	line-height: 100px;
 	color: #fff;
-	font: "Noto Sans","Microsoft Yahei",Arial,Helvetica,sans-serif;
+	font: "Noto Sans", "Microsoft Yahei", Arial, Helvetica, sans-serif;
 }

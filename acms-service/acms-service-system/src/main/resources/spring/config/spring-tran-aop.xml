@@ -35,12 +35,10 @@
 		<property name="transactionManager" ref="transactionManager"></property>
 		<property name="transactionAttributes">
 			<props>
-				<!-- PROPAGATION_SUPPORTS: 如果已经存在事务,则加入事务;如果没有事务,则以非事务的方式执行; 
-				PROPAGATION_MANDATORY:使用当前事务, 如果没有, 则抛出异常; 
-				PROPAGATION_REQUIRED: 新建事务,如果当前有事务, 则挂起; 
-				PROPAGATION_NOT_SUPPORTED:以非事务的方式执行,	如果当前有事务, 则挂起; 
-				PROPAGATION_NEVER:以非事务的方式执行, 如果当前有事务,则抛出异常; 
-				+/-Exception:    + 表示异常出现时事物提交 - 表示异常出现时事务回滚 -->
+				<!-- PROPAGATION_SUPPORTS: 如果已经存在事务,则加入事务;如果没有事务,则以非事务的方式执行; PROPAGATION_MANDATORY:使用当前事务, 
+					如果没有, 则抛出异常; PROPAGATION_REQUIRED: 新建事务,如果当前有事务, 则挂起; PROPAGATION_NOT_SUPPORTED:以非事务的方式执行, 
+					如果当前有事务, 则挂起; PROPAGATION_NEVER:以非事务的方式执行, 如果当前有事务,则抛出异常; +/-Exception: + 
+					表示异常出现时事物提交 - 表示异常出现时事务回滚 -->
 				<prop key="get*">PROPAGATION_SUPPORTS,readOnly,-Exception</prop>
 				<prop key="query*">PROPAGATION_SUPPORTS,readOnly,-Exception</prop>
 				<prop key="select*">PROPAGATION_SUPPORTS,readOnly,-Exception</prop>
@@ -55,6 +53,6 @@
 	<!-- 由spring管理mybatis的事物 -->
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource"/>
+		<property name="dataSource" ref="dataSource" />
 	</bean>
 </beans>

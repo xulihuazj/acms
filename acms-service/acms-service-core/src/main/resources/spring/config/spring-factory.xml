@@ -12,26 +12,28 @@
 		</property>
 	</bean>
 
-	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">  
-		<property name="url" value="${jdbcUrl}" />  
-		<property name="username" value="${userame}" />  
-		<property name="password" value="${password}" />  
-		<property name="filters" value="stat" />  
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		init-method="init" destroy-method="close">
+		<property name="url" value="${jdbcUrl}" />
+		<property name="username" value="${userame}" />
+		<property name="password" value="${password}" />
+		<property name="filters" value="stat" />
 		<!-- 初始化连接数量 -->
 		<property name="initialSize" value="${initialSize}" />
 		<!-- 最大并发连接数 -->
 		<property name="maxActive" value="${maxActive}" />
 		<!-- 最小空闲连接数 -->
 		<property name="minIdle" value="${minIdle}" />
-		<property name="maxWait" value="60000" />  
-		<property name="timeBetweenEvictionRunsMillis" value="3000" />  
-		<property name="minEvictableIdleTimeMillis" value="300000" />  
-		<property name="validationQuery" value="SELECT 'x'" />  
-		<property name="testWhileIdle" value="true" />  
-		<property name="testOnBorrow" value="false" />  
-		<property name="testOnReturn" value="false" />  
-		<property name="poolPreparedStatements" value="true" />  
-		<property name="maxPoolPreparedStatementPerConnectionSize" value="20" />  
+		<property name="maxWait" value="60000" />
+		<property name="timeBetweenEvictionRunsMillis" value="3000" />
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+		<property name="validationQuery" value="SELECT 'x'" />
+		<property name="testWhileIdle" value="true" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxPoolPreparedStatementPerConnectionSize"
+			value="20" />
 	</bean>
 
 	<!-- SqlSession的工厂类 -->
@@ -39,7 +41,7 @@
 		<property name="configLocation" value="classpath:orm/Configuration.xml"></property>
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
-	
+
 	<!-- SqlSession类 -->
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sqlSessionFactory" />

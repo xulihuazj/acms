@@ -8,5 +8,5 @@
 	<import resource="spring-services.xml" />
 	<import resource="config/spring-tran-aop.xml" />
 	${spring-webservice}
-	
+
 </beans>

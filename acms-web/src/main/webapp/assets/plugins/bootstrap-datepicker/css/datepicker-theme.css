@@ -43,27 +43,28 @@
 }
 
 .datepicker table td.day {
-	-webkit-transition: background-color 0.1s ease-in 0.1s, color 0.1s ease-in 0.1s;
-	-moz-transition: background-color 0.1s ease-in 0.1s, color 0.1s ease-in 0.1s;
+	-webkit-transition: background-color 0.1s ease-in 0.1s, color 0.1s
+		ease-in 0.1s;
+	-moz-transition: background-color 0.1s ease-in 0.1s, color 0.1s ease-in
+		0.1s;
 	transition: background-color 0.1s ease-in 0.1s, color 0.1s ease-in 0.1s;
 	cursor: pointer;
 }
 
 /* Datepicker - Skin Default */
-.datepicker thead tr:first-child th:hover,
-.datepicker tfoot tr th:hover,
-.datepicker table tr td span:hover {
+.datepicker thead tr:first-child th:hover, .datepicker tfoot tr th:hover,
+	.datepicker table tr td span:hover {
 	background: #368ee0;
 	color: white;
 }
 
-.datepicker table tbody tr td span.old,
-.datepicker table tbody tr td span.new {
+.datepicker table tbody tr td span.old, .datepicker table tbody tr td span.new
+	{
 	color: #CCC;
 }
 
-.datepicker table tbody tr td span.old:hover,
-.datepicker table tbody tr td span.new:hover {
+.datepicker table tbody tr td span.old:hover, .datepicker table tbody tr td span.new:hover
+	{
 	color: white;
 }
 
@@ -98,13 +99,13 @@
 	color: #777777;
 }
 
-.datepicker.datepicker-dark table tbody tr td span.old,
-.datepicker.datepicker-dark table tbody tr td span.new {
+.datepicker.datepicker-dark table tbody tr td span.old, .datepicker.datepicker-dark table tbody tr td span.new
+	{
 	color: #444;
 }
 
 .datepicker.datepicker-dark table tbody tr td span.old:hover,
-.datepicker.datepicker-dark table tbody tr td span.new:hover {
+	.datepicker.datepicker-dark table tbody tr td span.new:hover {
 	color: white;
 }
 
@@ -149,11 +150,13 @@
 	background-color: #006699;
 }
 
-.datepicker.datepicker-primary table thead tr:first-child th:first-child {
+.datepicker.datepicker-primary table thead tr:first-child th:first-child
+	{
 	border-radius: 0;
 }
 
-.datepicker.datepicker-primary table thead tr:first-child th:last-child {
+.datepicker.datepicker-primary table thead tr:first-child th:last-child
+	{
 	border-radius: 0;
 }
 

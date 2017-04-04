@@ -18,7 +18,7 @@
 		<constructor-arg type="int" index="1" value="180" />
 		<constructor-arg type="int" index="2" value="100000" />
 		<constructor-arg type="int" index="3" value="20000" />
-		<!--第四个参数官网示例上没有给出，会报错，后来看了API才知道少了个参数-->
+		<!--第四个参数官网示例上没有给出，会报错，后来看了API才知道少了个参数 -->
 	</bean>
 
 	<bean id="imageEngine" class="com.octo.captcha.engine.GenericCaptchaEngine">
