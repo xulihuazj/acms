@@ -736,7 +736,8 @@
 							</div>
 						</div>
 						<div class="panel-body panel-body bk-bg-white bk-padding-top-30 bk-padding-bottom-20">
-							<form action="" method="post" class="form-inline form-horizontal form-bordered">
+							<!-- 请求查询 -->
+							<form action="${base}/log/queryLogList.do" method="post" class="form-inline form-horizontal form-bordered">
 								<div class="form-group">
 									 <!-- <label class="lable_info" for="keyWord" style="font-size: 15px;">关键字：</label> -->
 									 <span class="lable_info" for="keyWord" style="font-size: 15px;">关键字：</span>
@@ -747,16 +748,16 @@
 									<div class="col-md-9" style="padding-left: 0px;">
 										<div class="input-daterange input-group" data-plugin-datepicker >
 											<span class="input-group-addon"> <i class="fa fa-calendar"></i></span>
-										   	 	<input type="" class="form-control" name="start" style="width: 90px" /> 
+										   	 	<input type="" class="form-control"  style="width: 90px" name="startTime"/> 
 											<span class="input-group-addon">to</span> 
-												<input type="" class="form-control" style="width: 90px" name="end" />
+												<input type="" class="form-control" style="width: 90px" name="endTime" />
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
 										<label class="col-md-4 control-label" for="select"  style="padding-right: 0px;font-size: 15px;">类型：</label>
 										<div class="col-md-2" style="padding-left: 0px;font-size: 15px;">
-											<select id="select" name="select" style="height: 34px;"
+											<select id="select" name="logType" style="height: 34px;"
 												class="form-control " size="1"  data-width="164" data-height="28">
 												<option value="0">请选择日志类型</option>
 												<option value="1">登录退出</option>
@@ -766,7 +767,9 @@
 										</div>
 									</div>
 								<div class="form-group" style="padding-right: 10px;">
-								<div ><button class="btn btn-info"  type="submit" >查询</button></div>
+									<div >
+										<button class="btn btn-info"  type="submit" >查询</button>
+									</div>
 								</div>
 							</form>
 						</div>
@@ -782,9 +785,6 @@
 		</div>
 		<!--/container-->
 	</div>
-
-
-
 
 		<!-- start: JavaScript-->
 		
