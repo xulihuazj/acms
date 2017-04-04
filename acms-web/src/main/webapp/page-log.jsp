@@ -724,9 +724,55 @@
 					</div>
 				</div>
 				<!-- End 面包屑 -->
-					
-					主要内容
-				
+				<div class="clearfix">
+					<div class="panel panel-default bk-bg-white">
+						<div class="panel-heading bk-bg-white">
+							<h6>
+								<i class="fa fa-indent red"></i>查询条件
+							</h6>
+							<div class="panel-actions">
+								<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a> <a href="#" class="btn-close"><i
+									class="fa fa-times"></i></a>
+							</div>
+						</div>
+						<div class="panel-body panel-body bk-bg-white bk-padding-top-30 bk-padding-bottom-20">
+							<form action="" method="post" class="form-inline form-horizontal form-bordered">
+								<div class="form-group">
+									 <!-- <label class="lable_info" for="keyWord" style="font-size: 15px;">关键字：</label> -->
+									 <span class="lable_info" for="keyWord" style="font-size: 15px;">关键字：</span>
+									<input type="" id="keyWord" name="keyWord" class="form-control" placeholder="请输入关键字" style="width: 150px;" />
+								</div>
+								<div class="form-group" style="width: 350px;">
+									<label class="col-md-3 control-label" style="width: 80px;font-size: 15px;padding-right: 0px;">日期：</label>
+									<div class="col-md-9" style="padding-left: 0px;">
+										<div class="input-daterange input-group" data-plugin-datepicker >
+											<span class="input-group-addon"> <i class="fa fa-calendar"></i></span>
+										   	 	<input type="" class="form-control" name="start" style="width: 90px" /> 
+											<span class="input-group-addon">to</span> 
+												<input type="" class="form-control" style="width: 90px" name="end" />
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+										<label class="col-md-4 control-label" for="select"  style="padding-right: 0px;font-size: 15px;">类型：</label>
+										<div class="col-md-2" style="padding-left: 0px;font-size: 15px;">
+											<select id="select" name="select" style="height: 34px;"
+												class="form-control " size="1"  data-width="164" data-height="28">
+												<option value="0">请选择日志类型</option>
+												<option value="1">登录退出</option>
+												<option value="2">操作日志</option>
+												<option value="3">运行日志</option>
+											</select>
+										</div>
+									</div>
+								<div class="form-group" style="padding-right: 10px;">
+								<div ><button class="btn btn-info"  type="submit" >查询</button></div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
 				<!-- End Main Page -->
 
 				<!-- START 底部(隐藏的内容栏目) -->
@@ -735,11 +781,9 @@
 			</div>
 		</div>
 		<!--/container-->
+	</div>
 
 
-		<div class="clearfix">
-		
-		</div>
 
 
 		<!-- start: JavaScript-->
@@ -747,10 +791,10 @@
 		<!-- Vendor JS-->
 		<script src="assets/vendor/js/jquery.min.js"></script>
 		<script src="assets/vendor/js/jquery-2.1.1.min.js"></script>
-		<script src="assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
+		<script src="assets/vendor/js/jquery-migrate-1.2.1.min.js"></script><!-- jquery过渡插件 -->
 		<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 		<script src="assets/vendor/skycons/js/skycons.js"></script>
-		<script src="assets/vendor/js/pace.min.js"></script>
+		<script src="assets/vendor/js/pace.min.js"></script><!-- 进度条组件 -->
 
 		<!-- Plugins JS-->
 		<script src="assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>

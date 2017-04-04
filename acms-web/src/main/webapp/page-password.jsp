@@ -743,7 +743,7 @@
 								<div class="edit-warn">
 									修改当前已使用的登录密码
 								</div>
-								<form action="${base}/modifyPassword.do" style="width: 400px; margin: auto;">
+								<form action="${base}/user/system/modifyPsd.do" style="width: 400px; margin: auto;" method="post">
 									<div class="form_row mb15">
 										<span class="text-danger text-small"></span>
 										<input type="password" id="oldPwd" class="width100" placeholder="请输入原密码" maxlength="16">

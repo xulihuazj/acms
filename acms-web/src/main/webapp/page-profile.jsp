@@ -259,7 +259,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="${base}/modifyPassword.do"> <i class="fa fa-unlock-alt"></i> 修改密码
+								<a href="page-password.jsp"> <i class="fa fa-unlock-alt"></i> 修改密码
 								</a>
 							</li>
 							<li>

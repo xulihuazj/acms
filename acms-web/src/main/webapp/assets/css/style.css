@@ -2350,9 +2350,21 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 /* Forms
 =================================================================== */
 .form-horizontal .form-group {
-	margin-right: 0px;
-	margin-left: 0px;
+	 margin-right: 0px;
+	margin-left: 0px; 
 }
+
+.lable_info{
+	position: relative;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
 
 .form-control {
 	border: 1px solid #e3e6f3;
@@ -2364,7 +2376,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 	transition: border .25s linear, color .25s linear, background-color .25s
 		linear;
 	-webkit-appearance: none;
-	font-weight: 400;
+	font-weight: 300;
 	font-size: 13px;
 	-webkit-font-smoothing: antialiased;
 }
@@ -9835,6 +9847,11 @@ input[type="text"]:hover,input[type="password"]:hover{
     background: url("../images/gif/home_question.gif") no-repeat 1px center;
 }
 /*-----------------------------------------------------------------------------------------------------*/
+
+/*日志表单查询条件*/
+.crumbs {
+    margin-bottom: 20px;
+}
 
 @media ( max-width : 479px) {
 	.col-xxs-12 {
