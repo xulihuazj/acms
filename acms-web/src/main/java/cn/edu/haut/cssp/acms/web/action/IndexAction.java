@@ -26,6 +26,6 @@ public class IndexAction {
 	
 	@RequestMapping(value = "/404.do", method = RequestMethod.GET)
 	public String pagenotfound(Boolean sessionTimeoutFlag, ModelMap model) {
-		return "/404.html";
+		return "/page-404.html";
 	}
 }

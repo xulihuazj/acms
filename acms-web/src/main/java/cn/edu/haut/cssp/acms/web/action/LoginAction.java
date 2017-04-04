@@ -49,8 +49,8 @@ public class LoginAction extends BaseAction{
 	private static final Logger logger = LoggerFactory.getLogger(LoginAction.class);
 	
 	// 注入service
-	@Autowired
-	private IUserService userService;
+	/*@Autowired
+	private IUserService userService;*/
 	
 	/*	@Autowired
 	private IFunctionService functionService;*/
@@ -87,7 +87,8 @@ public class LoginAction extends BaseAction{
 				map.put("username", loginUsername);
 				map.put("password", PasswordUtils.encodePasswordSHA1(loginPassword));
 				// 根据用户名和密码查询用户信息
-				TUser currUser = userService.selectUserByNameAndPass(map);
+				//TUser currUser = userService.selectUserByNameAndPass(map);
+				TUser currUser = null;
 				if(null == currUser){
 					model.put("message", "当前账号不存在");
 					return "login.jsp";

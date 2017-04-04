@@ -1515,7 +1515,7 @@ blockquote.pull-right {
 }
 
 .sidebar ul.nav.nav-sidebar li .nav-children {
-	background: #2C8E86;
+	background: #1a8fb4;
 	box-shadow: none;
 	display: none;
 	padding: 10px 0;
@@ -1530,6 +1530,7 @@ blockquote.pull-right {
 	background: none;
 }
 
+/* 字体颜色 */
 .sidebar ul.nav.nav-sidebar li .nav-children li a {
 	color: #C1ECE8;
 }
@@ -1540,7 +1541,7 @@ blockquote.pull-right {
 
 .sidebar ul.nav.nav-sidebar li ul {
 	display: none;
-	background: #181d20;
+	background: #1a8fb4;
 	list-style: none;
 	padding: 5px 0;
 }
