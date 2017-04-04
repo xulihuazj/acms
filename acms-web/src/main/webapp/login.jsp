@@ -32,7 +32,7 @@
 								<label class="col-lg-2 control-label" for="loginform-username">账号</label>
 								<div class="col-lg-6 ">
 									<input type="text" id="loginUsername" class="form-control"
-										name="LoginForm[username]" placeholder="请输入您的账号">
+										name="loginUsername" placeholder="请输入您的账号">
 								</div>
 								<div class="col-lg-4 ">
 									<div class="help-block"><span id="loginUsernameErr" style="color: #ff3333 !important;font-size: 14px !important;"></span></div>
@@ -42,7 +42,7 @@
 								<label class="col-lg-2 control-label" for="loginform-password">密码</label>
 								<div class="col-lg-6 ">
 									<input type="password" id="loginPassword" class="form-control"
-										name="LoginForm[password]" placeholder="请输入您的密码">
+										name="loginPassword" placeholder="请输入您的密码">
 								</div>
 								<div class="col-lg-4 ">
 									<div class="help-block"><span id="loginPasswordErr" style="color: #ff3333 !important;font-size: 14px !important;"></div>
@@ -66,7 +66,7 @@
 										<div class="col-lg-offset-1 col-lg-7"
 											style="margin-left: -3.667%; width: 64.33%;">
 											<input type="text" id="loginVerifycode" class="form-control"
-												name="LoginForm[verifyCode]" placeholder="请输入正确验证码">
+												name="loginVerifycode" placeholder="请输入正确验证码">
 										</div>
 										<div class="col-lg-4 ">
 											<img id="loginform-verifycode-image"

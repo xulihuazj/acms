@@ -4,11 +4,14 @@ package cn.edu.haut.cssp.acms.web.action;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
@@ -32,6 +35,7 @@ import cn.edu.haut.cssp.acms.action.BaseAction;
 import cn.edu.haut.cssp.acms.core.entity.TUser;
 import cn.edu.haut.cssp.acms.system.service.IFunctionService;
 import cn.edu.haut.cssp.acms.system.service.IUserService;
+import cn.edu.haut.cssp.acms.util.PasswordUtils;
 
 /**
  * 登录退出管理Action
@@ -45,10 +49,10 @@ public class LoginAction extends BaseAction{
 	private static final Logger logger = LoggerFactory.getLogger(LoginAction.class);
 	
 	// 注入service
-/*	@Autowired
+	@Autowired
 	private IUserService userService;
 	
-	@Autowired
+	/*	@Autowired
 	private IFunctionService functionService;*/
 	
 	/**
@@ -59,7 +63,7 @@ public class LoginAction extends BaseAction{
 	 */
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public String login(String loginUsername,String loginPassword,String loginVerifycode ,ModelMap model,HttpServletRequest request
-		,HttpServletResponse response){
+		,HttpServletResponse response, HttpSession session){
 		if(StringUtils.isBlank(loginUsername)){
 			model.put("message", "用户名不能为空!");
 		}else if(StringUtils.isBlank(loginPassword)){
@@ -71,9 +75,26 @@ public class LoginAction extends BaseAction{
 		}*/else{
 			boolean isLogined = true;
 			try{
-				// shiro 权限管理
-				UsernamePasswordToken token = new UsernamePasswordToken(loginUsername,loginPassword);
-				SecurityUtils.getSubject().login(token);
+				/**
+				 * 
+				 * TODO
+				 * shiro 权限管理
+				 * 
+				 */
+				//UsernamePasswordToken token = new UsernamePasswordToken(loginUsername,loginPassword);
+				//SecurityUtils.getSubject().login(token);
+				Map<String, String> map = new HashMap<String,String>();
+				map.put("username", loginUsername);
+				map.put("password", PasswordUtils.encodePasswordSHA1(loginPassword));
+				// 根据用户名和密码查询用户信息
+				TUser currUser = userService.selectUserByNameAndPass(map);
+				if(null == currUser){
+					model.put("message", "当前账号不存在");
+					return "login.jsp";
+				}
+				// 存入session
+				session.setAttribute("currUser", currUser);
+				return "redirect:/homepage.jsp";
 			}catch (LockedAccountException e){
 				isLogined = false;
 				model.put("message", "用户已经被锁定");

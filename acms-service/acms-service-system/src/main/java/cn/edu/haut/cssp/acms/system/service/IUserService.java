@@ -1,5 +1,7 @@
 package cn.edu.haut.cssp.acms.system.service;
 
+import java.util.Map;
+
 import cn.edu.haut.cssp.acms.core.bean.DataQueryExt;
 import cn.edu.haut.cssp.acms.core.entity.TUser;
 import cn.edu.haut.cssp.acms.core.utils.DateQueryBean;
@@ -30,6 +32,16 @@ public interface IUserService {
 	 * @return: LitePaging<AcmsUser>
 	 */
 	public LitePaging<TUser> queryAllUsers(TUser condition,DataQueryExt queryExt, DateQueryBean queryBean)throws UserBusiException;
+	
+	/**
+	 * 根据用户名和密码查询用户信息
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月4日下午12:04:21
+	 * @param map
+	 * @return
+	 */
+	public TUser selectUserByNameAndPass(Map<String, String> map);
 	
 	/**
 	 * 保存用户信息

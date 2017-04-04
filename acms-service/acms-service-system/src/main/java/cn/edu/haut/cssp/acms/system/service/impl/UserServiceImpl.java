@@ -106,4 +106,11 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
 		return object.get("id")>0 ? true : false;
 	}
 
+	//查询用户信息
+	@Override
+	public TUser selectUserByNameAndPass(Map<String, String> map) {
+		TUser currUser = (TUser) super.getBaseDao().queryForObject("UserManageMapper.selectUserByNameAndPass", map);
+		return currUser;
+	}
+
 }
