@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="zh-CN">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,7 +25,7 @@
 					<div class="col-lg-5 login">
 						<h3 class="" style="padding-left: 105px;">登录管理平台</h3>
 						<form id="login-form" class="form-horizontal"
-							action="http://localhost:8090/acms/login.do" method="post">
+							action="${pageContext.request.contextPath }/login.do" method="post">
 							<input type="hidden" name="_csrf"
 								value="V3FJQVl4OTE9GHA0aD96YRkJDC0VPRRaFRo8IBIeU2kkKCF5KzUNUg==">
 							<div class="form-group field-loginform-username required">
@@ -33,7 +35,7 @@
 										name="LoginForm[username]" placeholder="请输入您的账号">
 								</div>
 								<div class="col-lg-4 ">
-									<div class="help-block"></div>
+									<div class="help-block"><span id="loginUsernameErr" style="color: #ff3333 !important;font-size: 14px !important;"></span></div>
 								</div>
 							</div>
 							<div class="form-group field-loginform-password required">
@@ -43,7 +45,7 @@
 										name="LoginForm[password]" placeholder="请输入您的密码">
 								</div>
 								<div class="col-lg-4 ">
-									<div class="help-block"></div>
+									<div class="help-block"><span id="loginPasswordErr" style="color: #ff3333 !important;font-size: 14px !important;"></div>
 								</div>
 							</div>
 							<!-- 	<div class="form-group field-loginform-password required">
@@ -73,12 +75,12 @@
 									</div>
 								</div>
 								<div class="col-lg-8 " style="height: 25px; text-align: center;">
-									<div class="help-block"></div>
+									<div class="help-block"><span id="loginVerifycodeErr" style="color: #ff3333 !important;font-size: 14px !important;"></div>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-lg-10 col-lg-offset-1">
-									<button type="submit" class="btn btn-lg btn-block btn-success"
+									<button type="submit" class="btn btn-lg btn-block btn-success" id="loginBtn" disabled
 										name="login-button">登
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
 								</div>
@@ -108,60 +110,60 @@
 <script src="/js/html5.js"></script>
 <![endif]-->
 	<script type="text/javascript">
-$(document).ready(function() {
-	//验证码实现
-    $('#loginform-verifycode-image').yiiCaptcha({
-    	alert();
-        "refreshUrl" : "\/site\/captcha?refresh=1",
-        "hashKey" : "yiiCaptcha\/site\/captcha"
-    });
-    
-    $('#login-form').yiiActiveForm([ {
-        "id" : "loginUsername",
-        "name" : "username",
-        "container" : ".field-loginform-username",
-        "input" : "#loginUsername",
-        "validate" : function(attribute, value, messages, deferred, $form) {
-            yii.validation.required(value, messages, {
-                "message" : "账号不能为空。"
-            });yii.validation.regularExpression(value, messages, {
-                "pattern" : /^[a-zA-Z0-9][a-zA-Z0-9@._-]{1,64}$/,
-                "not" : false,
-                "message" : "账号是无效的。",
-                "skipOnEmpty" : 1
-            });
-        }
-    }, {
-        "id" : "loginPassword",
-        "name" : "password",
-        "container" : ".field-loginform-password",
-        "input" : "#loginPassword",
-        "validate" : function(attribute, value, messages, deferred, $form) {
-            yii.validation.required(value, messages, {
-                "message" : "密码不能为空。"
-            });
-        }
-    }, {
-        "id" : "loginVerifycode",
-        "name" : "verifyCode",
-        "container" : ".field-loginform-verifycode",
-        "input" : "#loginVerifycode",
-        "validate" : function(attribute, value, messages, deferred, $form) {
-            yii.validation.required(value, messages, {
-                "message" : "验证码不能为空。"
-            });yii.validation.captcha(value, messages, {
-                "hash" : 426,
-                "hashKey" : "yiiCaptcha/site/captcha",
-                "caseSensitive" : false,
-                "message" : "验证码不正确。"
-            });
-        }
-    } ], []);
-    $('#w0').yiiGridView({
-        "filterUrl" : "\/index.php?r=login\/auto-login\u0026user_login_name=201318020401\u0026user_password==cc;@dd6%3Eic9",
-        "filterSelector" : "#w0-filters input, #w0-filters select"
-    });
+/**
+ * Created by 徐礼华  on 2017/2/14.
+ * 首页登陆输入验证
+ */
+ $(function(){
+		
+ });
+   //进入页面账号输入框自动聚焦
+$("#loginUsername").focus();
+//判断保存按钮是否可以点击
+function isBtnDisabled(){
+    if($("#loginUsername").val().length > 0 && $("#loginPassword").val().length > 0 && $("#loginVerifycode").val().length > 0){
+        $("#loginBtn").attr("disabled",false);
+    }else{
+        $("#loginBtn").attr("disabled",true);
+    }
+}
+//账号输入框keyup事件
+$("#loginUsername").keyup(function(){
+    isBtnDisabled();
 });
+//密码输入框keyup事件
+$("#loginPassword").keyup(function(){
+    isBtnDisabled();
+});
+//校验码输入框keyup事件
+$("#loginVerifycode").keyup(function(){
+    isBtnDisabled();
+});
+//账号输入框失去焦点事件
+$("#loginUsername").focusout(function(){
+    if($("#loginUsername").val().length <= 0){
+        $("#loginUsernameErr").html("账号不能为空");
+    }else{
+        $("#loginUsernameErr").html("");
+    }
+});
+//密码输入框失去焦点事件
+$("#loginPassword").focusout(function(){
+    if($("#loginPassword").val().length <= 0){
+        $("#loginPasswordErr").html("密码不能为空");
+    }else{
+        $("#loginPasswordErr").html("");
+    }
+});
+//校验码输入框keyup事件
+$("#loginVerifycode").focusout(function(){
+    if($("#loginVerifycode").val().length <= 0){
+        $("#loginVerifycodeErr").html("验证码不能为空");
+    }else{
+        $("#loginVerifycodeErr").html("");
+    }
+});
+$("#loginBtn").submit();
 </script>
 
 	<footer class="footer">

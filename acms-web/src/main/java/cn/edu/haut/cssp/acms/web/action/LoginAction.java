@@ -57,7 +57,7 @@ public class LoginAction extends BaseAction{
 	 * @date: 2017年1月18日下午1:31:19
 	 * @return: String
 	 */
-	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public String login(String loginUsername,String loginPassword,String loginVerifycode ,ModelMap model,HttpServletRequest request
 		,HttpServletResponse response){
 		if(StringUtils.isBlank(loginUsername)){
