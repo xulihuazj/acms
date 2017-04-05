@@ -491,7 +491,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="#"> <span class="text">统计分析</span>
+										<a href="page-statistics.jsp"> <span class="text">统计分析</span>
 										</a>
 									</li>
 								</ul>
