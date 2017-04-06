@@ -109,10 +109,10 @@ var uiUtilObj = {
 				+ '</ul>';
         $("#footer").append(footerHtml);
     },
-    /*未安装插件提示框*/
-    "noInstallActiveModal": function(){
+    /*添加管理员提示框*/
+    "addUserModal": function(){
         var innerHtml = ''
-            + '<div class="modal fade bs-example-modal-lg" id="noInstallActiveModal" tabindex="-1" role="dialog">'
+            + '<div class="modal fade bs-example-modal-lg" id="addUserModal" tabindex="-1" role="dialog">'
             + '<div class="modal-dialog modal-lg" role="document">'
             + '<div class="modal-content">'
             + '<div class="modal-body pl20 pr20">'
@@ -127,7 +127,7 @@ var uiUtilObj = {
             + '</div>'
             + '</div>'
             + '</div>';
-        $(".noInstallActiveModal").append(innerHtml);
+        $(".addUserModal").append(innerHtml);
     },
     /*未安装插件提示框*/
     "updateActiveModal": function(){

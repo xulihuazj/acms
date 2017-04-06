@@ -727,23 +727,24 @@
 				<!-- End 面包屑 -->
 				
 				<div class="row">
-					<div class="">
-		<form id="frm">
-			<div class="overflowh">
-				<div class="pull-left">
-					<div class="form-group">
-						<button type="button" class="btn btn-primary"  onclick="add()">添加</button>
-					</div>
-				</div>
-				<div class="form-group pull-right">
-					<input type="text" class="form-control inputw" name="searchKey" id="searchKey" reg="specialchar2"  placeholder="输入名称或创建者进行搜索" />
-					<button type="button" class="btn btn-primary" id = "btn-search-down"><div class="btn-search">搜索</div></button>
-				</div>
-			</div>
-		</form>
-	</div>
 					<div class="col-lg-12">
-					
+						<form id="#">
+							<div class="overflowh">
+								<div class="pull-left">
+									<div class="form-group">
+										<button type="button" class="btn btn-primary"  onclick="add()">添加</button>
+									</div>
+								</div>
+								<div class="form-group pull-right">
+									<input type="text" class="form-control inputw" name="searchKey" id="searchKey" reg="specialchar2"  placeholder="输入名称或创建者进行搜索" />
+									<button type="button" class="btn btn-primary" id = "btn-search-down">
+										<div class="btn-search">搜索</div>
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-lg-12">
 						<div class="panel panel-default bk-bg-white">
 							<div class="panel-heading bk-bg-white">
 								<h6>
@@ -759,7 +760,7 @@
 									<table class="table table-bordered">
 										<thead>
 											<tr>
-												<th>序号</th>
+												<th>序号.</th>
 												<th>角色名称</th>
 												<th>角色类型</th>
 												<th>备注</th>
@@ -773,9 +774,9 @@
 												<td>2563$</td>
 												<td>2563$</td>
 												<td>
-													<span class="label label-success">启用</span>
-													<span class="label label-danger">删除</span>
-													<span class="label label-warning">禁用</span>
+													<span class="label label-success" onclick="" id="startover">启用</span>
+													<span class="label label-danger" onclick="" id="deleteRole">删除</span>
+													<span class="label label-warning" onclick="" id="stopRole">禁用</span>
 													<span class="label label-default">啦啦</span>
 												</td>
 											</tr>

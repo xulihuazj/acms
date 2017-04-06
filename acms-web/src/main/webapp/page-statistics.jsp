@@ -46,8 +46,12 @@
 
 <!-- Head Libs -->
 <script src="assets/plugins/modernizr/js/modernizr.js"></script>
+		<script src="assets/vendor/js/jquery.min.js"></script>
 <script>
-	
+	$(function(){
+		alert(111);
+		$("#addUserModal").modal("show");
+	});
 </script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -752,8 +756,11 @@
 			</div>
 		</div>
 		<!--/container-->
+		
+		<!-- 添加管理员 -->
+	
 	</div>
-
+	<div id="addUserModal"></div>
 		<!-- start: JavaScript-->
 		
 		<!-- Vendor JS-->
@@ -792,10 +799,12 @@
 		<script src="assets/js/pages/table-advanced.js"></script>
 			<script src="assets/js/pages/charts-flot_statistics.js"></script>
 		<script src="assets/js/pages/index.js"></script>
-		<script src="assets/js/pages/common.js"></script>
+		<script src="assets/js/common.js"></script>
 		<script type="text/javascript">
-			$(document).ready(function() {
-				$('#zlight-nav').zlightMenu();
+			$(function(){
+					alert();
+					$("#addUserModal").modal("show");
+				
 			});
 			$("#item").hover(function() {
 				$(this).addClass("layer");
