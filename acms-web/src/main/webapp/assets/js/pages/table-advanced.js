@@ -4,18 +4,17 @@
 
 	'use strict';
 
-	// we overwrite initialize of all datatables here
-	// because we want to use select2, give search input a bootstrap look
-	// keep in mind if you overwrite this fnInitComplete somewhere,
-	// you should run the code inside this function to keep functionality.
-	//
+	/* 我们改写初始化这里所有的数据表，因为我们要用select2，
+	 * 给搜索输入如果你重写这fninitcomplete某处继续引导看在心里，
+	 * 你应该运行的代码在函数内保持功能。 
+	 */
 	// there's no better way to do this at this time :(
 	if ( $.isFunction( $.fn[ 'dataTable' ] ) ) {
 
 		$.extend(true, $.fn.dataTable.defaults, {
 			sDom: "<'row datatables-header form-inline'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>r><'table-responsive't><'row datatables-footer'<'col-sm-12 col-md-6'i><'col-sm-12 col-md-6'p>>",
 			oLanguage: {
-				sLengthMenu: '_MENU_ records per page',
+				sLengthMenu: '_MENU_每页记录条数',
 				sProcessing: '<i class="fa fa-spinner fa-spin"></i> Loading'
 			},
 			fnInitComplete: function( settings, json ) {

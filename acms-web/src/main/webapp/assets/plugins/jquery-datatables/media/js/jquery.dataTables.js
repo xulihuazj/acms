@@ -10896,7 +10896,7 @@
 			 * * `\_PAGES\_` - Total number of pages of data in the table
 			 *
 			 *  @type string
-			 *  @default Showing _START_ to _END_ of _TOTAL_ entries
+			 *  @default Showing _START_ to _END_ of _TOTAL_ 
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.info
@@ -10910,7 +10910,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "展示  _START_ 》  _END_ 总  _TOTAL_ 条",
 	
 	
 			/**
