@@ -322,17 +322,16 @@
 
 			return [
 				'<table class="table mb-none">',
-					'<tr class="b-top-none">',
+				/*	'<tr class="b-top-none">',
 						'<td><label class="mb-none">Rendering engine:</label></td>',
 						'<td>' + data[1]+ ' ' + data[4] + '</td>',
-					'</tr>',
+					'</tr>',*/
 					'<tr>',
-						'<td><label class="mb-none">Link to source:</label></td>',
-						'<td>Could provide a link here</td>',
-					'</tr>',
-					'<tr>',
-						'<td><label class="mb-none">Extra info:</label></td>',
-						'<td>And any further details here (images etc)</td>',
+						/*'<td><label class="mb-none">人员编辑</label></td>',*/
+						'<td>编辑人员</td>',
+						'<td>启用人员</td>',
+						'<td>禁用人员</td>',
+						'<td>删除人员</td>',
 					'</tr>',
 				'</div>'
 			].join('');
