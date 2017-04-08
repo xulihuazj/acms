@@ -6,7 +6,7 @@
 <!-- Basic -->
 <meta charset="UTF-8" />
 
-<title>Timeline | Fire - Admin Template</title>
+<title>xChart | Fire - Admin Template</title>
 
 <!-- Mobile Metas -->
 <meta name="viewport"
@@ -43,8 +43,11 @@
 
 <!-- Plugins CSS-->
 <link href="assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
-<link href="assets/plugins/magnific-popup/css/magnific-popup.css"
+<link href="assets/plugins/fullcalendar/css/fullcalendar.css"
 	rel="stylesheet" />
+<link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css"
+	rel="stylesheet" />
+<link href="assets/plugins/xcharts/css/xcharts.min.css" rel="stylesheet" />
 
 <!-- Theme CSS -->
 <link href="assets/css/jquery.mmenu.css" rel="stylesheet" />
@@ -282,8 +285,8 @@
 										class="pull-right label label-danger">235</span> <i
 										class="fa fa-envelope" aria-hidden="true"></i><span>Mail</span>
 								</a></li>
-								<li class="nav-parent nav-expanded active"><a> <i
-										class="fa fa-copy" aria-hidden="true"></i><span>Pages</span>
+								<li class="nav-parent"><a> <i class="fa fa-copy"
+										aria-hidden="true"></i><span>Pages</span>
 								</a>
 									<ul class="nav nav-children">
 										<li><a href="page-profile.html"><span class="text">
@@ -372,8 +375,9 @@
 										<li><a href="table-editable.html"><span class="text">
 													Editable</span></a></li>
 									</ul></li>
-								<li class="nav-parent"><a> <i class="fa fa-random"
-										aria-hidden="true"></i><span>Visual Chart</span>
+								<li class="nav-parent nav-expanded active"><a> <i
+										class="fa fa-random" aria-hidden="true"></i><span>Visual
+											Chart</span>
 								</a>
 									<ul class="nav nav-children">
 										<li><a href="chart-flot.html"><span class="text">
@@ -443,208 +447,108 @@
 			<!-- End Sidebar -->
 
 			<!-- Main Page -->
-			<div class="main">
+			<div class="main ">
 				<!-- Page Header -->
 				<div class="page-header">
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li><a href="index.html"><i class="icon fa fa-home"></i>Home</a></li>
-							<li><a href="#"><i class="fa fa-file-text"></i>Pages</a></li>
-							<li class="active"><i class="fa fa-sitemap"></i>Timeline</li>
+							<li><a href="#"><i class="icon fa fa-signal"></i>Visual
+									chart</a></li>
+							<li class="active"><i class="fa fa-retweet"></i>xChart</li>
 						</ol>
 					</div>
 					<div class="pull-right">
-						<h2>Timeline</h2>
+						<h2>xChart</h2>
 					</div>
 				</div>
 				<!-- End Page Header -->
 				<div class="row">
-					<div class="timeline">
-						<div class="tm-body">
-							<div class="tm-title">
-								<h3 class="h5 text-uppercase">March 2015</h3>
+					<div class="col-sm-12">
+						<div class="panel panel-default bk-bg-white">
+							<div class="panel-heading bk-bg-white">
+								<h6>
+									<i class="fa fa-retweet red"></i>xCharts
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
 							</div>
-							<ol class="tm-items">
-								<li>
-									<div class="tm-info">
-										<div class="tm-icon">
-											<i class="fa fa-star"></i>
-										</div>
-										<time class="tm-datetime" datetime="2015-03-27 09:34">
-											<div
-												class="tm-datetime-date bk-bg-white bk-radius text-center bk-padding-5">3
-												months ago.</div>
-											<div class="tm-datetime-time">09:34 PM</div>
-										</time>
-									</div>
-									<div class="tm-box">
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-											do eiusmod tempor incididunt ut labore et dolore magna
-											aliqua. <span class="text-primary">#Responsive Admin</span>
-										</p>
-										<div class="tm-meta">
-											<span> <i class="fa fa-user"></i> By <a href="#">John
-													Smith Doe</a>
-											</span> <span> <i class="fa fa-tag"></i> <a href="#">Awesome
-													Design</a>
-											</span> <span> <i class="fa fa-comments"></i> <a href="#">1452
-													Comments</a>
-											</span> <span> <i class="fa fa-thumbs-up"></i> <a href="#">2345
-													Peoples</a>
-											</span>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="tm-info">
-										<div class="tm-icon">
-											<i class="fa fa-thumbs-up"></i>
-										</div>
-										<time class="tm-datetime" datetime="2015-03-15 08:19">
-											<div
-												class="tm-datetime-date bk-bg-white bk-radius text-center bk-padding-5">3
-												months ago.</div>
-											<div class="tm-datetime-time">08:19 PM</div>
-										</time>
-									</div>
-									<div class="tm-box">
-										<p>Contrary to popular belief, Lorem Ipsum is not simply
-											random text.</p>
-										<div class="tm-meta">
-											<span> <i class="fa fa-user"></i> By <a href="#">John
-													Smith Doe</a>
-											</span> <span> <i class="fa fa-tag"></i> <a href="#">Awesome
-													Design</a>
-											</span> <span> <i class="fa fa-comments"></i> <a href="#">1452
-													Comments</a>
-											</span> <span> <i class="fa fa-thumbs-up"></i> <a href="#">2345
-													Peoples</a>
-											</span>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="tm-info">
-										<div class="tm-icon">
-											<i class="fa fa-map-marker"></i>
-										</div>
-										<time class="tm-datetime" datetime="2015-02-02 08:27">
-											<div
-												class="tm-datetime-date bk-bg-white bk-radius text-center bk-padding-5">4
-												months ago.</div>
-											<div class="tm-datetime-time">08:27 PM</div>
-										</time>
-									</div>
-									<div class="tm-box">
-										<p>Contrary to popular belief, Lorem Ipsum is not simply
-											random text.</p>
-										<blockquote class="primary">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit, sed do eiusmod tempor incididunt ut labore et dolore
-												magna aliqua.</p>
-											<small><a href="index.html">Fire Admin</a> </small>
-										</blockquote>
-										<div id="gmap-checkin-example" class="mb-sm"
-											style="height: 250px; width: 100%;"></div>
-										<div class="tm-meta">
-											<span> <i class="fa fa-user"></i> By <a href="#">John
-													Smith Doe</a>
-											</span> <span> <i class="fa fa-tag"></i> <a href="#">Awesome
-													Design</a>
-											</span> <span> <i class="fa fa-comments"></i> <a href="#">1452
-													Comments</a>
-											</span> <span> <i class="fa fa-thumbs-up"></i> <a href="#">2345
-													Peoples</a>
-											</span>
-										</div>
-									</div>
-								</li>
-							</ol>
-							<div class="tm-title">
-								<h3 class="h5 text-uppercase">Dec 2014</h3>
+							<div class="panel-body">
+								<figure class="demo" id="xchart" style="height: 300px"></figure>
 							</div>
-							<ol class="tm-items">
-								<li>
-									<div class="tm-info">
-										<div class="tm-icon">
-											<i class="fa fa-picture-o"></i>
-										</div>
-										<time class="tm-datetime" datetime="2014-12-25 07:45">
-											<div
-												class="tm-datetime-date bk-bg-white bk-radius text-center bk-padding-5">5
-												months ago.</div>
-											<div class="tm-datetime-time">07:45 PM</div>
-										</time>
-									</div>
-									<div class="tm-box">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-											elit</p>
-										<div class="thumbnail-gallery">
-											<a class="img-thumbnail" href="assets/img/gallery/photo9.jpg">
-												<img width="215" src="assets/img/gallery/photo9.jpg">
-												<span class="zoom"> <i class="fa fa-search"></i>
-											</span>
-											</a> <a class="img-thumbnail"
-												href="assets/img/gallery/photo10.jpg"> <img width="215"
-												src="assets/img/gallery/photo10.jpg"> <span
-												class="zoom"> <i class="fa fa-search"></i>
-											</span>
-											</a> <a class="img-thumbnail"
-												href="assets/img/gallery/photo11.jpg"> <img width="215"
-												src="assets/img/gallery/photo11.jpg"> <span
-												class="zoom"> <i class="fa fa-search"></i>
-											</span>
-											</a>
-										</div>
-										<div class="tm-meta">
-											<span> <i class="fa fa-user"></i> By <a href="#">John
-													Smith Doe</a>
-											</span> <span> <i class="fa fa-tag"></i> <a href="#">Awesome
-													Design</a>
-											</span> <span> <i class="fa fa-comments"></i> <a href="#">1452
-													Comments</a>
-											</span> <span> <i class="fa fa-thumbs-up"></i> <a href="#">2345
-													Peoples</a>
-											</span>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="tm-info">
-										<div class="tm-icon">
-											<i class="fa fa-video-camera"></i>
-										</div>
-										<time class="tm-datetime" datetime="2014-12-15 14:25">
-											<div
-												class="tm-datetime-date bk-bg-white bk-radius text-center bk-padding-5">5
-												months ago.</div>
-											<div class="tm-datetime-time">14:25 AM</div>
-										</time>
-									</div>
-									<div class="tm-box">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-											elit</p>
-										<div class="video-container">
-											<iframe width="850" height="400"
-												src="http://www.youtube.com/embed/S05TvApB3vc"
-												frameborder="0" webkitallowfullscreen mozallowfullscreen
-												allowfullscreen></iframe>
-										</div>
-										<div class="tm-meta">
-											<span> <i class="fa fa-user"></i> By <a href="#">John
-													Smith Doe</a>
-											</span> <span> <i class="fa fa-tag"></i> <a href="#">Awesome
-													Design</a>
-											</span> <span> <i class="fa fa-comments"></i> <a href="#">1452
-													Comments</a>
-											</span> <span> <i class="fa fa-thumbs-up"></i> <a href="#">2345
-													Peoples</a>
-											</span>
-										</div>
-									</div>
-								</li>
-							</ol>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="panel panel-default bk-bg-white">
+							<div class="panel-heading bk-bg-white">
+								<h6>
+									<i class="fa fa-retweet red"></i>Your Basic Bar Chart
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<figure class="demo" id="xchart-bars" style="height: 300px"></figure>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="panel panel-default bk-bg-white">
+							<div class="panel-heading bk-bg-white">
+								<h6>
+									<i class="fa fa-retweet red"></i>Time-Series Line
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<figure class="demo" id="xchart-line" style="height: 300px"></figure>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="panel panel-default bk-bg-white">
+							<div class="panel-heading bk-bg-white">
+								<h6>
+									<i class="fa fa-retweet red"></i>Interacting With Points
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<figure class="demo" id="xchart-points" style="height: 300px"></figure>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="panel panel-default bk-bg-white">
+							<div class="panel-heading bk-bg-white">
+								<h6>
+									<i class="fa fa-retweet red"></i>Example Custom Vis Type: Error
+									Bars
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<figure class="demo" id="xchart-errorBars" style="height: 300px"></figure>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -720,18 +624,19 @@
 	<script src="assets/vendor/js/pace.min.js"></script>
 
 	<!-- Plugins JS-->
-	<script src="assets/plugins/bootkit/js/bootkit.js"></script>
-	<script src="assets/plugins/magnific-popup/js/magnific-popup.js"></script>
+	<script src="assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
+	<script src="assets/plugins/moment/js/moment.min.js"></script>
+	<script src="assets/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+	<script src="assets/plugins/d3/js/d3.min.js"></script>
+	<script src="assets/plugins/xcharts/js/xcharts.min.js"></script>
 	<script src="assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
-	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-	<script src="assets/plugins/gmaps/gmaps.js"></script>
 
 	<!-- Theme JS -->
 	<script src="assets/js/jquery.mmenu.min.js"></script>
 	<script src="assets/js/core.min.js"></script>
 
 	<!-- Pages JS -->
-	<script src="assets/js/pages/page-timeline.js"></script>
+	<script src="assets/js/pages/charts-xcharts.js"></script>
 
 	<!-- end: JavaScript-->
 

@@ -763,6 +763,7 @@
 												<th>序号.</th>
 												<th>角色名称</th>
 												<th>角色类型</th>
+												<th>角色状态</th>
 												<th>备注</th>
 												<th>操作</th>
 											</tr>
@@ -770,50 +771,54 @@
 										<tbody>
 											<tr>
 												<td>1</td>
-												<td>Developer</td>
-												<td>2563$</td>
-												<td>2563$</td>
+												<td>张三555</td>
+												<td>超级管理员</td>
+												<td>启用</td>
+												<td>fdsafdsaefdae</td>
 												<td>
 													<span class="label label-success" onclick="" id="startover">启用</span>
 													<span class="label label-danger" onclick="" id="deleteRole">删除</span>
 													<span class="label label-warning" onclick="" id="stopRole">禁用</span>
-													<span class="label label-default">啦啦</span>
+													<span class="label label-default">编辑</span>
 												</td>
 											</tr>
 											<tr>
 												<td>2</td>
-												<td>SEO</td>
-												<td>5000$</td>
-												<td>5000$</td>
+												<td>xuliha</td>
+												<td>普通管理员</td>
+												<td>启用</td>
+												<td>fdsafefdsafe$</td>
 												<td>
 														<span class="label label-success">启用</span>
 													<span class="label label-danger">删除</span>
 													<span class="label label-warning">禁用</span>
-													<span class="label label-default">啦啦</span>
+													<span class="label label-default">编辑</span>
 												</td>
 											</tr>
 											<tr>
 												<td>3</td>
-												<td>Photographer</td>
-												<td>Photographer</td>
-												<td>1269$</td>
+												<td>赵yibo</td>
+												<td>普通管理员</td>
+												<td>禁用</td>
+												<td>fdasflkjlkgfgrdg$</td>
 												<td>
 														<span class="label label-success">启用</span>
 													<span class="label label-danger">删除</span>
 													<span class="label label-warning">禁用</span>
-													<span class="label label-default">啦啦</span>
+													<span class="label label-default">编辑</span>
 												</td>
 											</tr>
 											<tr>
 												<td>4</td>
-												<td>Project manger</td>
-												<td>6253$</td>
-												<td>6253$</td>
+												<td>zhangjun33</td>
+												<td>普通管理员</td>
+												<td>启用</td>
+												<td>gdj;lgsdf;jioj</td>
 												<td>
 														<span class="label label-success">启用</span>
 													<span class="label label-danger">删除</span>
 													<span class="label label-warning">禁用</span>
-													<span class="label label-default">啦啦</span>
+													<span class="label label-default">编辑</span>
 												</td>
 											</tr>
 										</tbody>

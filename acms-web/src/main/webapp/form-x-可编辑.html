@@ -6,15 +6,12 @@
 <!-- Basic -->
 <meta charset="UTF-8" />
 
-<title>Compose | Fire - Admin Template</title>
+<title>X-Editable | Fire - Admin Template</title>
 
 <!-- Mobile Metas -->
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<!-- Import google fonts -->
-<link href='http://fonts.useso.com/css?family=Titillium+Web'
-	rel='stylesheet' type='text/css'>
 
 <!-- Favicon and touch icons -->
 <link rel="shortcut icon" href="assets/ico/favicon.ico"
@@ -47,9 +44,9 @@
 
 <!-- Plugins CSS-->
 <link href="assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
-<link href="assets/plugins/fullcalendar/css/fullcalendar.css"
+<link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css"
 	rel="stylesheet" />
-<link href="assets/plugins/summernote/css/summernote.css"
+<link href="assets/plugins/editable/css/bootstrap-editable.css"
 	rel="stylesheet" />
 
 <!-- Theme CSS -->
@@ -284,7 +281,7 @@
 								<li><a href="index.html"> <i class="fa fa-laptop"
 										aria-hidden="true"></i><span>Dashboard</span>
 								</a></li>
-								<li class="active"><a href="mailbox-inbox.html"> <span
+								<li><a href="mailbox-inbox.html"> <span
 										class="pull-right label label-danger">235</span> <i
 										class="fa fa-envelope" aria-hidden="true"></i><span>Mail</span>
 								</a></li>
@@ -348,8 +345,8 @@
 										<li><a href="ui-animation.html"><span class="text">
 													Animation</span></a></li>
 									</ul></li>
-								<li class="nav-parent"><a> <i class="fa fa-list-alt"
-										aria-hidden="true"></i><span>Forms</span>
+								<li class="nav-parent nav-expanded active"><a> <i
+										class="fa fa-list-alt" aria-hidden="true"></i><span>Forms</span>
 								</a>
 									<ul class="nav nav-children">
 										<li><a href="form-elements.html"><span class="text">
@@ -449,118 +446,139 @@
 			<!-- End Sidebar -->
 
 			<!-- Main Page -->
-			<div class="main">
+			<div class="main ">
 				<!-- Page Header -->
 				<div class="page-header">
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li><a href="index.html"><i class="icon fa fa-home"></i>Home</a></li>
-							<li><a href="#"><i class="fa fa-envelope"></i>Mail</a></li>
-							<li class="active"><i class="fa fa-pencil-square-o"></i>Compose</li>
+							<li><a href="#"><i class="fa fa-list-alt"></i>Forms</a></li>
+							<li class="active"><i class="fa fa-pencil"></i>X-editable</li>
 						</ol>
 					</div>
 					<div class="pull-right">
-						<h2>Compose</h2>
+						<h2>X-editable</h2>
 					</div>
 				</div>
 				<!-- End Page Header -->
-				<div class="row mailbox">
-					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-						<div class="panel">
-							<div class="panel-body bk-bg-very-light-gray mailbox-menu">
-								<a href="mailbox-compose.html" class="btn btn-primary btn-block">Compose</a>
-								<ul>
-									<li><a href="mailbox-inbox.html">Inbox<span
-											class="label label-primary">165</span></a></li>
-									<li><a href="#">Stared</a></li>
-									<li><a href="#">Sent Mail</a></li>
-									<li><a href="#">Important<span
-											class="label label-info">7</span></a></li>
-									<li><a href="#">Draft<span class="label label-warning">3</span></a>
-									</li>
-									<li><a href="#"></i>Trash</a></li>
-									<hr />
-									<h5 class="bk-fg-primary">Labels</h5>
-									<li><a href="#">Work <span class="ball pink"></span></span></a></li>
-									<li><a href="#">Private <span class="ball green"></span></a>
-									</li>
-									<li><a href="#">Clients <span class="ball blue"></span></a>
-									</li>
-									<li><a href="#">Travel <span class="ball orange"></span></a>
-									</li>
-								</ul>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default bk-bg-white">
+							<div class="panel-heading bk-bg-white">
+								<h6>
+									<i class="fa fa-pencil red"></i>X-editable
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
 							</div>
-						</div>
-						<div class="panel">
-							<div class="panel-body bk-bg-very-light-gray mailbox-chat">
-								<h5 class="bk-fg-primary">Live Chat</h5>
-								<ul>
-									<li><span class="ball green"></span> Sarah Hiltser</li>
-									<li><span class="ball green"></span> Stephano Odo</li>
-									<li><span class="ball green"></span> Malras</li>
-									<li><span class="ball dark"></span> Derbi Mondro</li>
-									<li><span class="ball green"></span> Jessy Doe</li>
-									<li><span class="ball orange"></span> Gerry</li>
-									<li><span class="ball green"></span> Kevin</li>
-									<li><span class="ball yellow"></span> Carlina Minfa</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
-						<div class="panel bk-bg-white">
 							<div class="panel-body">
-								<form class="form-horizontal bk-margin-top-10" role="form">
-									<div class="form-group">
-										<label for="to" class="col-sm-1 control-label">To:</label>
-										<div class="col-sm-11">
-											<input type="email" class="form-control bk-border-off"
-												id="to" />
-										</div>
+								<div style="float: right; margin-bottom: 10px">
+									<div class="checkbox-custom checkbox-default">
+										<input type="checkbox" id="autoopen"
+											style="vertical-align: baseline" /> <label
+											style="display: inline-block; margin-right: 50px">
+											&nbsp;Auto-open next field</label>
+										<button id="enable" class="btn btn-primary">Enable /
+											Disable</button>
 									</div>
-									<hr />
-									<div class="form-group">
-										<label for="cc" class="col-sm-1 control-label">CC:</label>
-										<div class="col-sm-11">
-											<input type="email" class="form-control bk-border-off"
-												id="cc" />
-										</div>
-									</div>
-									<hr />
-									<div class="form-group">
-										<label for="bcc" class="col-sm-1 control-label">BCC:</label>
-										<div class="col-sm-11">
-											<input type="email" class="form-control bk-border-off"
-												id="bcc" />
-										</div>
-									</div>
-									<hr />
-									<div class="mailbox-compose" data-mailbox
-										data-mailbox-view="compose">
-										<form class="form-horizontal form-bordered form-bordered">
-											<div class="form-group">
-												<div class="compose">
-													<div id="compose-field" class="compose-control"></div>
-												</div>
-											</div>
-										</form>
-									</div>
-									<div
-										class="mailbox-compose bk-padding-bottom-20 bk-margin-left-5">
-										<button type="button" class="btn btn-primary bk-margin-top-5">
-											<i class="fa fa-send-o"></i> Send
-										</button>
-										<button type="button" class="btn btn-default bk-margin-top-5">
-											<i class="fa fa-times"></i> Discard
-										</button>
-										<button type="button" class="btn btn-default bk-margin-top-5">
-											<i class="fa fa-file-text-o"></i> Draft
-										</button>
-										<button type="button" class="btn btn-default bk-margin-top-5">
-											<i class="fa fa-paperclip"></i> Attach
-										</button>
-									</div>
-								</form>
+								</div>
+								<p>Click to edit</p>
+								<table id="user" class="table table-bordered table-striped"
+									style="clear: both">
+									<tbody>
+										<tr>
+											<td width="35%">Simple text field</td>
+											<td width="65%"><a href="form-x-editable.html#"
+												id="username" data-type="text" data-pk="1"
+												data-original-title="Enter username">User</a></td>
+										</tr>
+										<tr>
+											<td>Empty text field, required</td>
+											<td><a href="form-x-editable.html#" id="firstname"
+												data-type="text" data-pk="1" data-placement="right"
+												data-placeholder="Required"
+												data-original-title="Enter your firstname"></a></td>
+										</tr>
+										<tr>
+											<td>Select, local array, custom display</td>
+											<td><a href="form-x-editable.html#" id="sex"
+												data-type="select" data-pk="1" data-value=""
+												data-original-title="Select sex"></a></td>
+										</tr>
+										<tr>
+											<td>Select, remote array, no buttons</td>
+											<td><a href="form-x-editable.html#" id="group"
+												data-type="select" data-pk="1" data-value="5"
+												data-source="/groups" data-original-title="Select group">Administrator</a></td>
+										</tr>
+										<tr>
+											<td>Select, error while loading</td>
+											<td><a href="form-x-editable.html#" id="status"
+												data-type="select" data-pk="1" data-value="0"
+												data-source="/status" data-original-title="Select status">Active</a></td>
+										</tr>
+										<tr>
+											<td>Datepicker</td>
+											<td><span class="notready">not ready for IE10 yet</span>
+											</td>
+										</tr>
+										<tr>
+											<td>Combodate (date)</td>
+											<td><a href="form-x-editable.html#" id="dob"
+												data-type="combodate" data-value="2014-05-10"
+												data-format="YYYY-MM-DD" data-viewformat="DD/MM/YYYY"
+												data-template="D / MMM / YYYY" data-pk="1"
+												data-original-title="Select Date of birth"></a></td>
+										</tr>
+										<tr>
+											<td>Combodate (datetime)</td>
+											<td><a href="form-x-editable.html#" id="event"
+												data-type="combodate" data-template="D MMM YYYY  HH:mm"
+												data-format="YYYY-MM-DD HH:mm"
+												data-viewformat="MMM D, YYYY, HH:mm" data-pk="1"
+												data-original-title="Setup event date and time"></a></td>
+										</tr>
+										<tr>
+											<td>Textarea, buttons below. Submit by <i>ctrl+enter</i></td>
+											<td><a href="form-x-editable.html#" id="comments"
+												data-type="textarea" data-pk="1"
+												data-placeholder="Your comments here..."
+												data-original-title="Enter comments">Icon touch user!</a></td>
+										</tr>
+										<tr>
+											<td>Twitter typeahead.js</td>
+											<td><a href="form-x-editable.html#" id="state2"
+												data-type="typeaheadjs" data-pk="1" data-placement="right"
+												data-original-title="Start typing State.."></a></td>
+										</tr>
+										<tr>
+											<td>Checklist</td>
+											<td><a href="form-x-editable.html#" id="fruits"
+												data-type="checklist" data-value="1,5"
+												data-original-title="Select fruits"></a></td>
+										</tr>
+										<tr>
+											<td>Select2 (tags mode)</td>
+											<td><a href="form-x-editable.html#" id="tags"
+												data-type="select2" data-pk="1"
+												data-original-title="Enter tags">html5, jQuery, css3</a></td>
+										</tr>
+										<tr>
+											<td>Select2 (dropdown mode)</td>
+											<td><a href="form-x-editable.html#" id="country"
+												data-type="select2" data-pk="1" data-value="CR"
+												data-original-title="Select country"></a></td>
+										</tr>
+										<tr>
+											<td>Custom input, several fields</td>
+											<td><a href="form-x-editable.html#" id="address"
+												data-type="address" data-pk="1"
+												data-original-title="Please, fill address"></a></td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>
@@ -637,9 +655,14 @@
 	<script src="assets/vendor/js/pace.min.js"></script>
 
 	<!-- Plugins JS-->
+	<script src="assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
+	<script src="assets/plugins/mockjax/js/jquery.mockjax.min.js"></script>
+	<script src="assets/plugins/editable/js/bootstrap-editable.min.js"></script>
 	<script src="assets/plugins/moment/js/moment.min.js"></script>
-	<script src="assets/plugins/fullcalendar/js/fullcalendar.min.js"></script>
-	<script src="assets/plugins/summernote/js/summernote.js"></script>
+	<script
+		src="assets/plugins/editable/inputs-ext/typeaheadjs/typeaheadjs.min.js"></script>
+	<script src="assets/plugins/editable/inputs-ext/address/address.min.js"></script>
+	<script src="assets/plugins/select2/js/select2.min.js"></script>
 	<script src="assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
 
 	<!-- Theme JS -->
@@ -647,7 +670,8 @@
 	<script src="assets/js/core.min.js"></script>
 
 	<!-- Pages JS -->
-	<script src="assets/js/pages/mailbox.js"></script>
+	<script src="assets/js/pages/form-x-editable-demo.js"></script>
+	<script src="assets/js/pages/form-x-editable.js"></script>
 
 	<!-- end: JavaScript-->
 

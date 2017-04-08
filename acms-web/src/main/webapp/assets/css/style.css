@@ -9661,7 +9661,7 @@ input[type="text"]:hover,input[type="password"]:hover{
     display: inline-block;
     width: 152px;
     height: 72px;
-    background: url("/images/edit_pwd.png") no-repeat center;
+    background: url("../images/edit_pwd.png") no-repeat center;
 }
 /*密钥备份恢复*/
 .back-recovery .back-recovery-img{

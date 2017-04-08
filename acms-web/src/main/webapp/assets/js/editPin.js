@@ -41,7 +41,7 @@ $("#newPwd").focusout(function(){
 //确认密码输入框keyup事件
 $("#comfirePwd").focusout(function(){
     if($("#comfirePwd").val().length <= 0){
-        $("#comfirePwd").parent().children(".text-danger").html("密码不能为空");
+        $("#comfirePwd").parent().children(".text-danger").html("确认密码不能为空");
     }else if($("#newPwd").val() != $("#comfirePwd").val()){
         $("#comfirePwd").parent().children(".text-danger").html("两次输入不一致，请重新输入");
         $("#comfirePwd").val("");
@@ -58,7 +58,7 @@ $("#saveBtn").click(function(){
         $("#newPwd").parent().children(".text-danger").html("新密码不能为空");
         $("#newPwd").focus();
     }else if($("#comfirePwd").val().length <= 0){
-        $("#comfirePwd").parent().children(".text-danger").html("密码不能为空");
+        $("#comfirePwd").parent().children(".text-danger").html("确认密码不能为空");
         $("#comfirePwd").focus();
     }else if($("#newPwd").val() != $("#comfirePwd").val()){
         $("#comfirePwd").parent().children(".text-danger").html("两次输入不一致，请重新输入");

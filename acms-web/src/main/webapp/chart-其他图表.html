@@ -6,15 +6,12 @@
 <!-- Basic -->
 <meta charset="UTF-8" />
 
-<title>UI Notifications | Fire - Admin Template</title>
+<title>Chart Other | Fire - Admin Template</title>
 
 <!-- Mobile Metas -->
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<!-- Import google fonts -->
-<link href='http://fonts.useso.com/css?family=Titillium+Web'
-	rel='stylesheet' type='text/css'>
 
 <!-- Favicon and touch icons -->
 <link rel="shortcut icon" href="assets/ico/favicon.ico"
@@ -47,7 +44,9 @@
 
 <!-- Plugins CSS-->
 <link href="assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
-<link href="assets/plugins/pnotify/css/pnotify.custom.css"
+<link href="assets/plugins/fullcalendar/css/fullcalendar.css"
+	rel="stylesheet" />
+<link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css"
 	rel="stylesheet" />
 
 <!-- Theme CSS -->
@@ -315,9 +314,8 @@
 										<li><a href="page-500.html"><span class="text">
 													Page 500</span></a></li>
 									</ul></li>
-								<li class="nav-parent nav-expanded active"><a> <i
-										class="fa fa-tasks" aria-hidden="true"></i><span>UI
-											Elements</span>
+								<li class="nav-parent"><a> <i class="fa fa-tasks"
+										aria-hidden="true"></i><span>UI Elements</span>
 								</a>
 									<ul class="nav nav-children">
 										<li><a href="ui-basic-elements.html"><span
@@ -377,8 +375,9 @@
 										<li><a href="table-editable.html"><span class="text">
 													Editable</span></a></li>
 									</ul></li>
-								<li class="nav-parent"><a> <i class="fa fa-random"
-										aria-hidden="true"></i><span>Visual Chart</span>
+								<li class="nav-parent nav-expanded active"><a> <i
+										class="fa fa-random" aria-hidden="true"></i><span>Visual
+											Chart</span>
 								</a>
 									<ul class="nav nav-children">
 										<li><a href="chart-flot.html"><span class="text">
@@ -454,22 +453,22 @@
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li><a href="index.html"><i class="icon fa fa-home"></i>Home</a></li>
-							<li><a href="#"><i class="fa fa-briefcase"></i>UI
-									Features</a></li>
-							<li class="active"><i class="fa fa-bell-o"></i>Notifications</li>
+							<li><a href="#"><i class="icon fa fa-signal"></i>Visual
+									chart</a></li>
+							<li class="active"><i class="fa fa-bar-chart-o"></i>Other</li>
 						</ol>
 					</div>
 					<div class="pull-right">
-						<h2>Notifications</h2>
+						<h2>Other</h2>
 					</div>
 				</div>
 				<!-- End Page Header -->
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-						<div class="panel panel-default">
-							<div class="panel-heading">
+						<div class="panel panel-default bk-bg-white">
+							<div class="panel-heading bk-bg-white">
 								<h6>
-									<i class="fa fa-bell"></i>Default Notifications
+									<i class="fa fa-bar-chart-o red"></i>Radar
 								</h6>
 								<div class="panel-actions">
 									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
@@ -477,266 +476,15 @@
 								</div>
 							</div>
 							<div class="panel-body text-center">
-								<button id="default-primary"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-primary bk-round">Primary</button>
-								<button id="default-notice"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-warning bk-round">Warning</button>
-								<button id="default-success"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-success bk-round">Success</button>
-								<button id="default-info"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-info bk-round">Info</button>
-								<button id="default-error"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-danger bk-round">Error</button>
-								<button id="default-dark"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-dark bk-round">Dark</button>
-							</div>
-						</div>
-
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-bell"></i>Notifications with Shadow
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div class="panel-body text-center">
-								<button id="shadow-primary"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-primary bk-round">Primary</button>
-								<button id="shadow-notice"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-warning bk-round">Warning</button>
-								<button id="shadow-success"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-success bk-round">Success</button>
-								<button id="shadow-info"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-info bk-round">Info</button>
-								<button id="shadow-error"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-danger bk-round">Error</button>
-								<button id="shadow-dark"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-dark bk-round">Dark</button>
-							</div>
-						</div>
-
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-bell"></i>Notifications without icons
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div class="panel-body text-center">
-								<button id="no-icon-primary"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-primary bk-round">Primary</button>
-								<button id="no-icon-notice"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-warning bk-round">Warning</button>
-								<button id="no-icon-success"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-success bk-round">Success</button>
-								<button id="no-icon-info"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-info bk-round">Info</button>
-								<button id="no-icon-error"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-danger bk-round">Error</button>
-								<button id="no-icon-dark"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-dark bk-round">Dark</button>
-							</div>
-						</div>
-
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-bell"></i>Notifications without border radius
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div class="panel-body text-center">
-								<button id="no-radious-primary"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-primary bk-round">Primary</button>
-								<button id="no-radious-notice"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-warning bk-round">Warning</button>
-								<button id="no-radious-success"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-success bk-round">Success</button>
-								<button id="no-radious-info"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-info bk-round">Info</button>
-								<button id="no-radious-error"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-danger bk-round">Error</button>
-								<button id="no-radious-dark"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-dark bk-round">Dark</button>
-							</div>
-						</div>
-
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-bell"></i>Notifications with custom icons
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div class="panel-body text-center">
-								<button id="custom-icon-primary"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-primary bk-round">Primary</button>
-								<button id="custom-icon-notice"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-warning bk-round">Warning</button>
-								<button id="custom-icon-success"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-success bk-round">Success</button>
-								<button id="custom-icon-info"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-info bk-round">Info</button>
-								<button id="custom-icon-error"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-danger bk-round">Error</button>
-								<button id="custom-icon-dark"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-dark bk-round">Dark</button>
-							</div>
-						</div>
-
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-bell"></i>Notifications icon without border
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div class="panel-body text-center">
-								<button id="icon-without-border-primary"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-primary bk-round">Primary</button>
-								<button id="icon-without-border-notice"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-warning bk-round">Warning</button>
-								<button id="icon-without-border-success"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-success bk-round">Success</button>
-								<button id="icon-without-border-info"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-info bk-round">Info</button>
-								<button id="icon-without-border-error"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-danger bk-round">Error</button>
-								<button id="icon-without-border-dark"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-dark bk-round">Dark</button>
-							</div>
-						</div>
-
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-bell"></i>Notifications Non-Blocking
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div class="panel-body text-center">
-								<button id="non-blocking-primary"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-primary bk-round">Primary</button>
-								<button id="non-blocking-notice"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-warning bk-round">Warning</button>
-								<button id="non-blocking-success"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-success bk-round">Success</button>
-								<button id="non-blocking-info"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-info bk-round">Info</button>
-								<button id="non-blocking-error"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-danger bk-round">Error</button>
-								<button id="non-blocking-dark"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-dark bk-round">Dark</button>
-							</div>
-						</div>
-
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-bell"></i>Notifications Sticky
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div class="panel-body text-center">
-								<button id="sticky-primary"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-primary bk-round">Primary</button>
-								<button id="sticky-notice"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-warning bk-round">Warning</button>
-								<button id="sticky-success"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-success bk-round">Success</button>
-								<button id="sticky-info"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-info bk-round">Info</button>
-								<button id="sticky-error"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-danger bk-round">Error</button>
-								<button id="sticky-dark"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-dark bk-round">Dark</button>
-							</div>
-						</div>
-
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-bell"></i>Notifications Click to close
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div class="panel-body text-center">
-								<button id="click-to-close-primary"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-primary bk-round">Primary</button>
-								<button id="click-to-close-notice"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-warning bk-round">Warning</button>
-								<button id="click-to-close-success"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-success bk-round">Success</button>
-								<button id="click-to-close-info"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-info bk-round">Info</button>
-								<button id="click-to-close-error"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-danger bk-round">Error</button>
-								<button id="click-to-close-dark"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-dark bk-round">Dark</button>
-							</div>
-						</div>
-
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-bell"></i>Desktop Notifications
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div class="panel-body text-center">
-								<button id="desktop-notice"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-default bk-round">Desktop
-									Notice</button>
-								<button id="desktop-info"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-info bk-round">Desktop
-									Info</button>
-								<button id="desktop-success"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-success bk-round">Desktop
-									Success</button>
-								<button id="desktop-error"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-danger bk-round">Desktop
-									Error</button>
-								<button id="desktop-sticky"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-default bk-round">Desktop
-									Sticky</button>
-								<button id="desktop-custom"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-default bk-round">Desktop
-									Custom</button>
+								<canvas id="radar" height="250" width="250"></canvas>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-						<div class="panel panel-default">
-							<div class="panel-heading">
+						<div class="panel panel-default bk-bg-white">
+							<div class="panel-heading bk-bg-white">
 								<h6>
-									<i class="fa fa-bell"></i>Positions
+									<i class="fa fa-bar-chart-o red"></i>Polar Area
 								</h6>
 								<div class="panel-actions">
 									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
@@ -744,125 +492,255 @@
 								</div>
 							</div>
 							<div class="panel-body text-center">
-								<button id="position-1-primary"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-primary">Top
-									Left. Moves down, then right. Pushes to stack top.</button>
-								<button id="position-1-notice"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-warning">Top
-									Left. Moves down, then right. Pushes to stack top.</button>
-								<button id="position-1-success"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-success">Top
-									Left. Moves down, then right. Pushes to stack top.</button>
-								<button id="position-1-info"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-info">Top
-									Left. Moves down, then right. Pushes to stack top.</button>
-								<button id="position-1-error"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-danger">Top
-									Left. Moves down, then right. Pushes to stack top.</button>
+								<canvas id="polarArea" height="250" width="250"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
 
-								<br />
-								<br />
-								<br />
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="panel panel-default bk-bg-white">
+							<div class="panel-heading bk-bg-white">
+								<h6>
+									<i class="fa fa-bar-chart-o red"></i>Browsers
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div class="browserStat big">
+									<img src="assets/img/browser-chrome-big.png" alt="Chrome" /> <span>34%</span>
+								</div>
+								<div class="browserStat big">
+									<img src="assets/img/browser-firefox-big.png" alt="Firefox" />
+									<span>34%</span>
+								</div>
+								<div class="browserStat">
+									<img src="assets/img/browser-ie.png" alt="Internet Explorer" />
+									<span>34%</span>
+								</div>
+								<div class="browserStat">
+									<img src="assets/img/browser-safari.png" alt="Safari" /> <span>34%</span>
+								</div>
+								<div class="browserStat">
+									<img src="assets/img/browser-opera.png" alt="Opera" /> <span>34%</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="panel panel-default bk-bg-white">
+							<div class="panel-heading bk-bg-white">
+								<h6>
+									<i class="fa fa-bar-chart-o red"></i>Weekly Stat
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div class="sparkLineStats">
+									<ul class="unstyled">
+										<li><div class="sparkLineStats3"></div> Pageviews: <span
+											class="number">781</span></li>
+										<li><div class="sparkLineStats4"></div> Pages / Visit: <span
+											class="number">2,19</span></li>
+										<li><div class="sparkLineStats5"></div> Avg. Visit
+											Duration: <span class="number">00:02:58</span></li>
+										<li><div class="sparkLineStats6"></div> Bounce Rate: <span
+											class="number">59,83%</span></li>
+										<li><div class="sparkLineStats7"></div> % New Visits: <span
+											class="number">70,79%</span></li>
+										<li><div class="sparkLineStats8"></div> % Returning
+											Visitor: <span class="number">29,21%</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-								<button id="position-2-primary"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-primary">Bottom
-									Left. Moves right, then up. Pushes to stack top.</button>
-								<button id="position-2-notice"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-warning">Bottom
-									Left. Moves right, then up. Pushes to stack top.</button>
-								<button id="position-2-success"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-success">Bottom
-									Left. Moves right, then up. Pushes to stack top.</button>
-								<button id="position-2-info"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-info">Bottom
-									Left. Moves right, then up. Pushes to stack top.</button>
-								<button id="position-2-error"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-danger">Bottom
-									Left. Moves right, then up. Pushes to stack top.</button>
-								<button id="position-2-dark"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-dark">Bottom
-									Left. Moves right, then up. Pushes to stack top.</button>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="panel panel-default">
+							<div class="panel-heading bk-bg-white">
+								<h6>
+									<i class="fa fa-bar-chart-o"></i>Just Gage
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-sm-6">
+										<div id="g1" class="sz1"></div>
+									</div>
+									<div class="col-sm-6">
+										<div id="g1a" class="sz1"></div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<div id="g2" class="sz0"></div>
+									</div>
+									<div class="col-sm-4">
+										<div id="g2a" class="sz0"></div>
+									</div>
+									<div class="col-sm-4">
+										<div id="g2b" class="sz0"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-heading bk-bg-white">
+								<h6>
+									<i class="fa fa-bar-chart-o"></i>Easy Pie Charts
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body bk-padding-top-20">
+								<div class="row clearfix">
+									<div class="chart col-sm-3 text-center">
+										<div class="percentage" data-percent="55"
+											data-bar-color="#2980b9"></div>
+									</div>
+									<div class="chart col-sm-3 text-center">
+										<div class="percentage" data-percent="46"
+											data-bar-color="#2980b9"></div>
+									</div>
+									<div class="chart col-sm-3 text-center">
+										<div class="percentage" data-percent="92"
+											data-bar-color="#2980b9"></div>
+									</div>
+									<div class="chart col-sm-3 text-center">
+										<div class="percentage" data-percent="84"
+											data-bar-color="#2980b9"></div>
+									</div>
+								</div>
+								<div class="clearfix"></div>
 								<br />
+								<div class="row">
+									<div class="chart col-sm-3 text-center">
+										<div class="percentage-light" data-percent="55"></div>
+									</div>
+									<div class="chart col-sm-3 text-center">
+										<div class="percentage-light" data-percent="46"></div>
+									</div>
+									<div class="chart col-sm-3 text-center">
+										<div class="percentage-light" data-percent="92"></div>
+									</div>
+									<div class="chart col-sm-3 text-center">
+										<div class="percentage-light" data-percent="84"></div>
+									</div>
+								</div>
+								<div class="clearfix"></div>
 								<br />
-								<br />
+								<p style="text-align: center">
+									<a href="charts-others.html#"
+										class="btn btn-warning button updateEasyPieChart">Update
+										pie charts</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 
-								<button id="position-3-primary"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-primary">Bottom
-									Right. Moves up, then left. Pushes to stack bottom.</button>
-								<button id="position-3-notice"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-warning">Bottom
-									Right. Moves up, then left. Pushes to stack bottom.</button>
-								<button id="position-3-success"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-success">Bottom
-									Right. Moves up, then left. Pushes to stack bottom.</button>
-								<button id="position-3-info"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-info">Bottom
-									Right. Moves up, then left. Pushes to stack bottom.</button>
-								<button id="position-3-error"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-danger">Bottom
-									Right. Moves up, then left. Pushes to stack bottom.</button>
-								<button id="position-3-dark"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-dark">Bottom
-									Right. Moves up, then left. Pushes to stack bottom.</button>
-
-								<br />
-								<br />
-								<br />
-
-								<button id="position-4-primary"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-primary">Top
-									bar style. (Like Old Microsoft Notification Bars.) Moves down,
-									then right. Pushes to stack top.</button>
-								<button id="position-4-notice"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-warning">Top
-									bar style. (Like Old Microsoft Notification Bars.) Moves down,
-									then right. Pushes to stack top.</button>
-								<button id="position-4-success"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-success">Top
-									bar style. (Like Old Microsoft Notification Bars.) Moves down,
-									then right. Pushes to stack top.</button>
-								<button id="position-4-info"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-info">Top
-									bar style. (Like Old Microsoft Notification Bars.) Moves down,
-									then right. Pushes to stack top.</button>
-								<button id="position-4-error"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-danger">Top
-									bar style. (Like Old Microsoft Notification Bars.) Moves down,
-									then right. Pushes to stack top.</button>
-								<button id="position-4-dark"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-dark">Top
-									bar style. (Like Old Microsoft Notification Bars.) Moves down,
-									then right. Pushes to stack top.</button>
-
-								<br />
-								<br />
-								<br />
-
-								<button id="position-5-primary"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-primary">Bottom
-									bar style. (Like New Microsoft Notification Bars.) Moves up,
-									then right. Pushes to stack bottom.</button>
-								<button id="position-5-notice"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-warning">Bottom
-									bar style. (Like New Microsoft Notification Bars.) Moves up,
-									then right. Pushes to stack bottom.</button>
-								<button id="position-5-success"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-success">Bottom
-									bar style. (Like New Microsoft Notification Bars.) Moves up,
-									then right. Pushes to stack bottom.</button>
-								<button id="position-5-info"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-info">Bottom
-									bar style. (Like New Microsoft Notification Bars.) Moves up,
-									then right. Pushes to stack bottom.</button>
-								<button id="position-5-error"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-danger">Bottom
-									bar style. (Like New Microsoft Notification Bars.) Moves up,
-									then right. Pushes to stack bottom.</button>
-								<button id="position-5-dark"
-									class="bk-margin-top-10 bk-margin-bottom-10 btn btn-dark">Bottom
-									bar style. (Like New Microsoft Notification Bars.) Moves up,
-									then right. Pushes to stack bottom.</button>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-heading bk-bg-white">
+								<h6>
+									<i class="fa fa-bar-chart-o red"></i>Sparkline
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-xs-6 col-lg-4">
+										<div class="small-chart-wrapper">
+											<div class="small-chart" id="sparklineLine"></div>
+											<div class="small-chart-info">
+												<label>Average</label> <strong>1567.89</strong>
+											</div>
+											<script type="text/javascript">
+													var sparklineLineData = [15, 16, 17, 19, 10, 15, 13, 12, 12, 14, 16, 17];
+												</script>
+										</div>
+									</div>
+									<div class="col-xs-6 col-lg-4">
+										<div class="small-chart-wrapper">
+											<div class="small-chart" id="sparklineBar"></div>
+											<div class="small-chart-info">
+												<label>Average</label> <strong>5000</strong>
+											</div>
+											<script type="text/javascript">
+													var sparklineBarData = [5, 6, 7, 2, 0, 4 , 2, 4, 2, 0, 4 , 2, 4, 2, 0, 4];
+												</script>
+										</div>
+									</div>
+									<div class="col-xs-6 col-lg-4">
+										<div class="small-chart-wrapper">
+											<div class="small-chart" id="sparklineTristate"></div>
+											<div class="small-chart-info">
+												<label>Average</label> <strong>1567.89</strong>
+											</div>
+											<script type="text/javascript">
+													var sparklineTristateData = [1, 1, 0, 1, -1, -1, 1, -1, 0, 0, 1, 1];
+												</script>
+										</div>
+									</div>
+									<div class="col-xs-6 col-lg-4">
+										<div class="small-chart-wrapper">
+											<div class="small-chart" id="sparklineDiscrete"></div>
+											<div class="small-chart-info">
+												<label>Average</label> <strong>1567.89</strong>
+											</div>
+											<script type="text/javascript">
+													var sparklineDiscreteData = [5, 6, 7, 9, 10, 5, 3, 2, 2, 4, 6, 7];
+												</script>
+										</div>
+									</div>
+									<div class="col-xs-6 col-lg-4">
+										<div class="small-chart-wrapper">
+											<div class="small-chart" id="sparklineBullet"></div>
+											<div class="small-chart-info">
+												<label>Average</label> <strong>1567.89</strong>
+											</div>
+											<script type="text/javascript">
+													var sparklineBulletData = [10, 12, 12, 9, 7];
+												</script>
+										</div>
+									</div>
+									<div class="col-xs-6 col-lg-4">
+										<div class="small-chart-wrapper">
+											<div class="small-chart text-center" id="sparklinePie"></div>
+											<div class="small-chart-info">
+												<label>Average</label> <strong>1567.89</strong>
+											</div>
+											<script type="text/javascript">
+													var sparklinePieData = [1, 1, 2];
+												</script>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -939,7 +817,12 @@
 	<script src="assets/vendor/js/pace.min.js"></script>
 
 	<!-- Plugins JS-->
-	<script src="assets/plugins/pnotify/js/pnotify.custom.js"></script>
+	<script src="assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
+	<script src="assets/plugins/moment/js/moment.min.js"></script>
+	<script src="assets/plugins/easypiechart/js/jquery.easypiechart.min.js"></script>
+	<script src="assets/plugins/raphael/js/raphael.min.js"></script>
+	<script src="assets/plugins/justgage/js/justgage.1.0.1.min.js"></script>
+	<script src="assets/plugins/chart-master/js/Chart.js"></script>
 	<script src="assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
 
 	<!-- Theme JS -->
@@ -947,7 +830,7 @@
 	<script src="assets/js/core.min.js"></script>
 
 	<!-- Pages JS -->
-	<script src="assets/js/pages/ui-notifications.js"></script>
+	<script src="assets/js/pages/charts-other.js"></script>
 
 	<!-- end: JavaScript-->
 

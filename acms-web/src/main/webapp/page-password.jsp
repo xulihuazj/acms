@@ -741,7 +741,7 @@
 						<div class="container">
 							<div style="width: 700px; margin: auto auto;">
 								<div class="edit-warn">
-									修改当前已使用的登录密码
+									<span></span>修改当前已使用的登录密码
 								</div>
 								<form action="${base}/user/system/modifyPsd.do" style="width: 400px; margin: auto;" method="post">
 									<div class="form_row mb15">

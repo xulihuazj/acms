@@ -6,16 +6,12 @@
 <!-- Basic -->
 <meta charset="UTF-8" />
 
-<title>Pricing Tables | Fire - Admin Template</title>
+<title>Validation | Fire - Admin Template</title>
 
 <!-- Mobile Metas -->
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<!-- Import google fonts -->
-<!-- <link href='http://fonts.useso.com/css?family=Titillium+Web'
-	rel='stylesheet' type='text/css'>
- -->
 <!-- Favicon and touch icons -->
 <link rel="shortcut icon" href="assets/ico/favicon.ico"
 	type="image/x-icon" />
@@ -47,8 +43,6 @@
 
 <!-- Plugins CSS-->
 <link href="assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
-<link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css"
-	rel="stylesheet" />
 
 <!-- Theme CSS -->
 <link href="assets/css/jquery.mmenu.css" rel="stylesheet" />
@@ -286,8 +280,8 @@
 										class="pull-right label label-danger">235</span> <i
 										class="fa fa-envelope" aria-hidden="true"></i><span>Mail</span>
 								</a></li>
-								<li class="nav-parent nav-expanded active"><a> <i
-										class="fa fa-copy" aria-hidden="true"></i><span>Pages</span>
+								<li class="nav-parent"><a> <i class="fa fa-copy"
+										aria-hidden="true"></i><span>Pages</span>
 								</a>
 									<ul class="nav nav-children">
 										<li><a href="page-profile.html"><span class="text">
@@ -346,8 +340,8 @@
 										<li><a href="ui-animation.html"><span class="text">
 													Animation</span></a></li>
 									</ul></li>
-								<li class="nav-parent"><a> <i class="fa fa-list-alt"
-										aria-hidden="true"></i><span>Forms</span>
+								<li class="nav-parent nav-expanded active"><a> <i
+										class="fa fa-list-alt" aria-hidden="true"></i><span>Forms</span>
 								</a>
 									<ul class="nav nav-children">
 										<li><a href="form-elements.html"><span class="text">
@@ -453,180 +447,249 @@
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li><a href="index.html"><i class="icon fa fa-home"></i>Home</a></li>
-							<li><a href="#"><i class="fa fa-file-text"></i>Pages</a></li>
-							<li class="active"><i class="fa fa-columns"></i>Pricing
-								Tables</li>
+							<li><a href="#"><i class="fa fa-list-alt"></i>Forms</a></li>
+							<li class="active"><i class="fa  fa-check-circle-o"></i>Validation</li>
 						</ol>
 					</div>
 					<div class="pull-right">
-						<h2>Pricing Tables</h2>
+						<h2>Validation</h2>
 					</div>
 				</div>
 				<!-- End Page Header -->
 				<div class="row">
-					<div class="col-lg-12">
-						<div class="panel panel-default">
-							<div class="panel-heading bk-bg-white">
-								<h6>
-									<i class="fa fa-indent red"></i>Simple Pricing Table
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						<form id="form" action="form-validation.html"
+							class="form-horizontal">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h6>
+										<i class="fa  fa-check-circle-o bk-fg-warning"></i>Basic Form
+										Validation
+									</h6>
+									<div class="panel-actions">
+										<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+										<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									</div>
 								</div>
-							</div>
-							<div
-								class="panel-body bk-bg-very-light-gray bk-padding-top-30 bk-padding-bottom-40">
-								<div class="price-table">
-									<div
-										class="col-lg-3 col-md-6 col-sm-6 col-xs-12 bk-margin-bottom-20">
-										<ul>
-											<li class="header bk-fg-primary">BASIC</li>
-											<li class="price">$125.23</li>
-											<li>PREMIUM PROFILE</li>
-											<li>UNLIMITED FILE ACCESS</li>
-											<li>FREE APPOINTMENTS</li>
-											<li>UNLIMITED DISK SPACE</li>
-											<li>UNLIMITED SUBDOMAIN</li>
-											<li>5 BONUS EVERY MONTH</li>
-											<li class="select"><a class="btn btn-sm btn-default"
-												href="page-pricing-tables.html#">BUY NOW</a></li>
-										</ul>
+								<div class="panel-body">
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Full Name <span
+											class="required">*</span></label>
+										<div class="col-sm-9">
+											<input type="text" name="fullname" class="form-control"
+												placeholder="eg.: John Smith Doe" required />
+										</div>
 									</div>
-									<div
-										class="col-lg-3 col-md-6 col-sm-6 col-xs-12 bk-margin-bottom-20">
-										<ul class="discount">
-											<div class="label label-warning">DISCOUNT 70%</div>
-											<li class="header bk-fg-primary">STANDART</li>
-											<li class="price">$250.86</li>
-											<li>PREMIUM PROFILE</li>
-											<li>UNLIMITED FILE ACCESS</li>
-											<li>FREE APPOINTMENTS</li>
-											<li>UNLIMITED DISK SPACE</li>
-											<li>UNLIMITED SUBDOMAIN</li>
-											<li>5 BONUS EVERY MONTH</li>
-											<li class="select"><a class="btn btn-sm btn-default"
-												href="page-pricing-tables.html#">BUY NOW</a></li>
-										</ul>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Email <span
+											class="required">*</span></label>
+										<div class="col-sm-9">
+											<input type="email" name="email" class="form-control"
+												placeholder="eg.: johnsmithdoe@email.com" required />
+										</div>
 									</div>
-									<div
-										class="col-lg-3 col-md-6 col-sm-6 col-xs-12 bk-margin-bottom-20">
-										<ul>
-											<li class="header bk-fg-primary">PREMIUM</li>
-											<li class="price">$326.99</li>
-											<li>PREMIUM PROFILE</li>
-											<li>UNLIMITED FILE ACCESS</li>
-											<li>FREE APPOINTMENTS</li>
-											<li>UNLIMITED DISK SPACE</li>
-											<li>UNLIMITED SUBDOMAIN</li>
-											<li>5 BONUS EVERY MONTH</li>
-											<li class="select"><a class="btn btn-sm btn-default"
-												href="page-pricing-tables.html#">BUY NOW</a></li>
-										</ul>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Twitter</label>
+										<div class="col-sm-9">
+											<input type="url" name="twitter" class="form-control"
+												placeholder="eg.: https://twitter.com/johnsmithdoe" />
+										</div>
 									</div>
-									<div
-										class="col-lg-3 col-md-6 col-sm-6 col-xs-12 bk-margin-bottom-20">
-										<ul>
-											<li class="header bk-fg-primary">PROFESSIONAL</li>
-											<li class="price">$500.89</li>
-											<li>PREMIUM PROFILE</li>
-											<li>UNLIMITED FILE ACCESS</li>
-											<li>FREE APPOINTMENTS</li>
-											<li>UNLIMITED DISK SPACE</li>
-											<li>UNLIMITED SUBDOMAIN</li>
-											<li>5 BONUS EVERY MONTH</li>
-											<li class="select"><a class="btn btn-sm btn-default"
-												href="page-pricing-tables.html#">BUY NOW</a></li>
-										</ul>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Skills <span
+											class="required">*</span></label>
+										<div class="col-sm-9">
+											<textarea name="skills" rows="5" class="form-control"
+												placeholder="Describe your skills" required></textarea>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-9 col-sm-offset-3">
+											<button class="bk-margin-5 btn btn-info">Submit</button>
+											<button type="reset" class="bk-margin-5 btn btn-default">Reset</button>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
+						</form>
 
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="panel panel-default">
-							<div class="panel-heading bk-bg-white">
-								<h6>
-									<i class="fa fa-indent red"></i>Advance Pricing Table
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+						<form id="summary-form" action="form-validation.html"
+							class="form-horizontal">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h6>
+										<i class="fa  fa-check-circle-o bk-fg-warning"></i>Validation
+										Summary
+									</h6>
+									<div class="panel-actions">
+										<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+										<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									</div>
 								</div>
-							</div>
-							<div
-								class="panel-body bk-bg-very-light-gray bk-padding-top-60 bk-padding-bottom-40">
-								<div class="pricing-table">
-									<div class="pricing-wrap">
-										<div class="plan bk-padding-left-10">
-											<div class="bk-padding-left-40">
-												<h2>$150</h2>
-											</div>
-											<div class="list-style bk-margin-top-20 bk-margin-bottom-20">
-												<ul class="text-left">
-													<li>PREMIUM PROFILE</li>
-													<li>UNLIMITED ACCESS</li>
-													<li>FREE APPOINTMENTS</li>
-													<li>UNLIMITED DISK SPACE</li>
-													<li>UNLIMITED SUBDOMAIN</li>
-												</ul>
-											</div>
-											<div class="bk-padding-left-40">
-												<a class="btn btn-sm btn-warning"
-													href="page-pricing-tables.html#">PURCHASE</a>
-											</div>
+								<div class="panel-body">
+									<div class="validation-message">
+										<ul></ul>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Full Name <span
+											class="required">*</span></label>
+										<div class="col-sm-9">
+											<input type="text" name="fullname" class="form-control"
+												title="Plase enter a name."
+												placeholder="eg.: John Smith Doe" required />
 										</div>
 									</div>
-									<div class="pricing-wrap most-popular">
-										<div class="plan bk-padding-left-50">
-											<div class="bk-padding-left-20">
-												<h2>$450</h2>
-											</div>
-											<div class="list-style bk-margin-top-30 bk-margin-bottom-20">
-												<ul class="text-left">
-													<li>PREMIUM PROFILE</li>
-													<li>UNLIMITED ACCESS</li>
-													<li>FREE APPOINTMENTS</li>
-													<li>UNLIMITED DISK SPACE</li>
-													<li>UNLIMITED SUBDOMAIN</li>
-													<li>5 BONUS EVERY MONTH</li>
-												</ul>
-											</div>
-											<div class="bk-padding-left-20">
-												<a class="btn btn-sm btn-warning"
-													href="page-pricing-tables.html#">PURCHASE</a>
-											</div>
-										</div>
-										<div class="featured-ribbon-wrapper">
-											<div class="featured-ribbon">FEATURED</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Email <span
+											class="required">*</span></label>
+										<div class="col-sm-9">
+											<input type="email" name="email" class="form-control"
+												title="Please enter an email address."
+												placeholder="eg.: johnsmithdoe@email.com" required />
 										</div>
 									</div>
-									<div class="pricing-wrap">
-										<div class="plan bk-padding-left-10">
-											<div class="bk-padding-left-40">
-												<h2>$250</h2>
-											</div>
-											<div class="list-style bk-margin-top-20 bk-margin-bottom-20">
-												<ul class="text-left">
-													<li>PREMIUM PROFILE</li>
-													<li>UNLIMITED ACCESS</li>
-													<li>FREE APPOINTMENTS</li>
-													<li>UNLIMITED DISK SPACE</li>
-													<li>UNLIMITED SUBDOMAIN</li>
-												</ul>
-											</div>
-											<div class="bk-padding-left-40">
-												<a class="btn btn-sm btn-warning"
-													href="page-pricing-tables.html#">PURCHASE</a>
-											</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Twitter</label>
+										<div class="col-sm-9">
+											<input type="url" name="url"
+												title="Please enter a valid url." class="form-control"
+												placeholder="eg.: https://twitter.com/johnsmithdoe" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Resume <span
+											class="required">*</span></label>
+										<div class="col-sm-9">
+											<textarea name="resume" rows="5"
+												title="Your resume is too short." class="form-control"
+												placeholder="Enter your resume" required></textarea>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-9 col-sm-offset-3">
+											<button class="bk-margin-5 btn btn-primary">Submit</button>
+											<button type="reset" class="bk-margin-5 btn btn-default">Reset</button>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						</form>
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						<form id="chk-radios-form" action="form-validation.html">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h6>
+										<i class="fa  fa-check-circle-o bk-fg-warning"></i>Validating
+										Checkbox and Radios
+									</h6>
+									<div class="panel-actions">
+										<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+										<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									</div>
+								</div>
+								<div class="panel-body">
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Fire Admin is <span
+											class="required">*</span></label>
+										<div class="col-sm-9">
+											<div class="radio-custom radio-primary">
+												<input id="awesome" name="Fire_is" type="radio"
+													value="awesome" required /> <label for="awesome">Awesome</label>
+											</div>
+											<div class="radio-custom radio-primary">
+												<input id="very-awesome" name="Fire_is" type="radio"
+													value="very-awesome" /> <label for="very-awesome">Very
+													Awesome</label>
+											</div>
+											<div class="radio-custom radio-primary">
+												<input id="ultra-awesome" name="Fire_is" type="radio"
+													value="ultra-awesome" /> <label for="ultra-awesome">Ultra
+													Awesome</label>
+											</div>
+											<label class="error" for="Fire_is"></label>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">I will use it
+											for <span class="required">*</span>
+										</label>
+										<div class="col-sm-9">
+											<div class="checkbox-custom chekbox-primary">
+												<input id="for-project" value="project" type="checkbox"
+													name="for[]" required /> <label for="for-project">My
+													Project</label>
+											</div>
+											<div class="checkbox-custom chekbox-primary">
+												<input id="for-website" value="website" type="checkbox"
+													name="for[]" /> <label for="for-website">My
+													Website</label>
+											</div>
+											<div class="checkbox-custom chekbox-primary">
+												<input id="for-all" value="all" type="checkbox" name="for[]" />
+												<label for="for-all">All things I do</label>
+											</div>
+											<label class="error" for="for[]"></label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-9 col-sm-offset-3">
+											<button class="bk-margin-5 btn btn-primary">Submit</button>
+											<button type="reset" class="bk-margin-5 btn btn-default">Reset</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+
+						<form id="selects-form" action="form-validation.html">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h6>
+										<i class="fa  fa-check-circle-o bk-fg-warning"></i>Validation
+										Selects
+									</h6>
+									<div class="panel-actions">
+										<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+										<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									</div>
+								</div>
+								<div class="panel-body">
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Company</label>
+										<div class="col-sm-9">
+											<select id="company" class="form-control" required>
+												<option value="">Choose a Company</option>
+												<option value="apple">Apple</option>
+												<option value="google">Google</option>
+												<option value="microsoft">Microsoft</option>
+												<option value="yahoo">Yahoo</option>
+											</select> <label class="error" for="company"></label>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Browsers</label>
+										<div class="col-sm-9">
+											<select id="browsers" name="browsers"
+												title="Please select at least one browser"
+												class="form-control" size="5" multiple="multiple" required>
+												<option value="chrome">Chrome / Safari</option>
+												<option value="ff">Firefox</option>
+												<option value="ie">Internet Explorer</option>
+												<option value="opera">Opera</option>
+											</select> <label class="error" for="browsers"></label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-9 col-sm-offset-3">
+											<button class="bk-margin-5 btn btn-primary">Submit</button>
+											<button type="reset" class="bk-margin-5 btn btn-default">Reset</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -701,8 +764,8 @@
 	<script src="assets/vendor/js/pace.min.js"></script>
 
 	<!-- Plugins JS-->
-	<script src="assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
-	<script src="assets/plugins/moment/js/moment.min.js"></script>
+	<script src="assets/plugins/autosize/jquery.autosize.min.js"></script>
+	<script src="assets/plugins/jquery-validation/js/jquery.validate.js"></script>
 	<script src="assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
 
 	<!-- Theme JS -->
@@ -710,7 +773,7 @@
 	<script src="assets/js/core.min.js"></script>
 
 	<!-- Pages JS -->
-	<script src="assets/js/pages/pricing-tables.js"></script>
+	<script src="assets/js/pages/form-validation.js"></script>
 
 	<!-- end: JavaScript-->
 

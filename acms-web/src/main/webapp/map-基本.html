@@ -6,15 +6,13 @@
 <!-- Basic -->
 <meta charset="UTF-8" />
 
-<title>Map Vector | Fire - Admin Template</title>
+<title>Map Basic | Fire - Admin Template</title>
 
 <!-- Mobile Metas -->
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 <!-- Import google fonts -->
-<link href='http://fonts.useso.com/css?family=Titillium+Web'
-	rel='stylesheet' type='text/css'>
 
 <!-- Favicon and touch icons -->
 <link rel="shortcut icon" href="assets/ico/favicon.ico"
@@ -453,20 +451,92 @@
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li><a href="index.html"><i class="icon fa fa-home"></i>Home</a></li>
 							<li><a href="#"><i class="icon fa fa-adjust"></i>Maps</a></li>
-							<li class="active"><i class="fa fa-crosshairs"></i>Vector</li>
+							<li class="active"><i class="fa fa-map-marker"></i>Basic</li>
 						</ol>
 					</div>
 					<div class="pull-right">
-						<h2>Vector Maps</h2>
+						<h2>Basic Maps</h2>
 					</div>
 				</div>
 				<!-- End Page Header -->
+				<div class="row">
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h6>
+									<i class="fa fa-crosshairs"></i>Basic
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div id="gmap-basic" style="height: 500px; width: 100%;"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h6>
+									<i class="fa fa-crosshairs"></i>Basic with Markers
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div id="gmap-basic-marker" style="height: 500px; width: 100%;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h6>
+									<i class="fa fa-crosshairs"></i>Static
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div id="gmap-static" style="height: 500px; width: 100%;"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h6>
+									<i class="fa fa-crosshairs"></i>With Context Menu
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div id="gmap-context-menu" style="height: 500px; width: 100%;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h6>
-									<i class="fa fa-crosshairs"></i>World
+									<i class="fa fa-crosshairs"></i>Street View
 								</h6>
 								<div class="panel-actions">
 									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
@@ -474,125 +544,7 @@
 								</div>
 							</div>
 							<div class="panel-body">
-								<div id="vector-map-world" style="height: 500px; width: 100%;"
-									data-vector-map data-plugin-options='{ "map": "world_en" }'></div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-6">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-crosshairs"></i>North America
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div class="panel-body">
-								<div id="vector-map-north-america"
-									style="height: 500px; width: 100%;" data-vector-map
-									data-plugin-options='{ "map": "north-america_en" }'></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-crosshairs"></i>Europe
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div class="panel-body">
-								<div id="vector-map-europe" style="height: 500px; width: 100%;"
-									data-vector-map data-plugin-options='{ "map": "europe_en" }'></div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-6">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-crosshairs"></i>Asia
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div class="panel-body">
-								<div id="vector-map-asia" style="height: 500px; width: 100%;"
-									data-vector-map data-plugin-options='{ "map": "asia_en" }'></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-crosshairs"></i>South America
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div class="panel-body">
-								<div id="vector-map-south-america"
-									style="height: 500px; width: 100%;" data-vector-map
-									data-plugin-options='{ "map": "south-america_en" }'></div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-6">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-crosshairs"></i>Africa
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div class="panel-body">
-								<div id="vector-map-asia" style="height: 500px; width: 100%;"
-									data-vector-map data-plugin-options='{ "map": "africa_en" }'></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-crosshairs"></i>Oceania
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div class="panel-body">
-								<div id="vector-map-australia"
-									style="height: 500px; width: 100%;" data-vector-map
-									data-plugin-options='{ "map": "australia_en" }'></div>
+								<div id="gmap-street-view" style="height: 500px; width: 100%;"></div>
 							</div>
 						</div>
 					</div>
@@ -669,20 +621,8 @@
 	<script src="assets/vendor/js/pace.min.js"></script>
 
 	<!-- Plugins JS-->
-	<script src="assets/plugins/jqvmap/jquery.vmap.js"></script>
-	<script src="assets/plugins/jqvmap/data/jquery.vmap.sampledata.js"></script>
-	<script src="assets/plugins/jqvmap/maps/jquery.vmap.world.js"></script>
-	<script
-		src="assets/plugins/jqvmap/maps/continents/jquery.vmap.africa.js"></script>
-	<script src="assets/plugins/jqvmap/maps/continents/jquery.vmap.asia.js"></script>
-	<script
-		src="assets/plugins/jqvmap/maps/continents/jquery.vmap.australia.js"></script>
-	<script
-		src="assets/plugins/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
-	<script
-		src="assets/plugins/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
-	<script
-		src="assets/plugins/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script src="assets/plugins/gmaps/gmaps.js"></script>
 	<script src="assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
 
 	<!-- Theme JS -->
@@ -690,7 +630,7 @@
 	<script src="assets/js/core.min.js"></script>
 
 	<!-- Pages JS -->
-	<script src="assets/js/pages/map-vector.js"></script>
+	<script src="assets/js/pages/map-basic.js"></script>
 
 	<!-- end: JavaScript-->
 

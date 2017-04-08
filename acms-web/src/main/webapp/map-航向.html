@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,15 +6,13 @@
 <!-- Basic -->
 <meta charset="UTF-8" />
 
-<title>UI Nestable | Fire - Admin Template</title>
+<title>Map Vector | Fire - Admin Template</title>
 
 <!-- Mobile Metas -->
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 <!-- Import google fonts -->
-<link href='http://fonts.useso.com/css?family=Titillium+Web'
-	rel='stylesheet' type='text/css'>
 
 <!-- Favicon and touch icons -->
 <link rel="shortcut icon" href="assets/ico/favicon.ico"
@@ -47,8 +45,7 @@
 
 <!-- Plugins CSS-->
 <link href="assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
-<link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css"
-	rel="stylesheet" />
+<link href="assets/plugins/jqvmap/jqvmap.css" rel="stylesheet" />
 
 <!-- Theme CSS -->
 <link href="assets/css/jquery.mmenu.css" rel="stylesheet" />
@@ -315,9 +312,8 @@
 										<li><a href="page-500.html"><span class="text">
 													Page 500</span></a></li>
 									</ul></li>
-								<li class="nav-parent nav-expanded active"><a> <i
-										class="fa fa-tasks" aria-hidden="true"></i><span>UI
-											Elements</span>
+								<li class="nav-parent"><a> <i class="fa fa-tasks"
+										aria-hidden="true"></i><span>UI Elements</span>
 								</a>
 									<ul class="nav nav-children">
 										<li><a href="ui-basic-elements.html"><span
@@ -397,8 +393,8 @@
 								<li><a href="calendar.html"> <i class="fa fa-calendar"
 										aria-hidden="true"></i><span>Calendar</span>
 								</a></li>
-								<li class="nav-parent"><a> <i class="fa fa-map-marker"
-										aria-hidden="true"></i><span>Maps</span>
+								<li class="nav-parent nav-expanded active"><a> <i
+										class="fa fa-map-marker" aria-hidden="true"></i><span>Maps</span>
 								</a>
 									<ul class="nav nav-children">
 										<li><a href="map-basic.html"><span class="text">
@@ -454,276 +450,208 @@
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li><a href="index.html"><i class="icon fa fa-home"></i>Home</a></li>
-							<li><a href="#"><i class="fa fa-briefcase"></i>UI
-									Features</a></li>
-							<li class="active"><i class="fa fa-outdent"></i>Nestable</li>
+							<li><a href="#"><i class="icon fa fa-adjust"></i>Maps</a></li>
+							<li class="active"><i class="fa fa-crosshairs"></i>Vector</li>
 						</ol>
 					</div>
 					<div class="pull-right">
-						<h2>Nestable</h2>
+						<h2>Vector Maps</h2>
 					</div>
 				</div>
 				<!-- End Page Header -->
 				<div class="row">
-					<div class="col-sm-6">
-						<div class="panel panel-default bk-bg-white">
-							<div class="panel-heading bk-bg-white">
+					<div class="col-xs-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">
 								<h6>
-									<i class="fa fa-outdent red"></i>Nestable List
+									<i class="fa fa-crosshairs"></i>World
 								</h6>
 								<div class="panel-actions">
 									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
 									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
 								</div>
 							</div>
-							<div class="panel-body clearfix">
-								<div class="dd" id="nestable">
-									<ol class="dd-list">
-										<li class="dd-item" data-id="1">
-											<div class="dd-handle">
-												Item 1<a href="ui-nestable-list.html#"
-													class="icon icon-trash"></a>
-											</div>
-										</li>
-										<li class="dd-item" data-id="2">
-											<div class="dd-handle">
-												Item 2<a href="ui-nestable-list.html#"
-													class="icon icon-trash"></a><a
-													href="ui-nestable-list.html#" class="icon icon-pencil"></a>
-											</div>
-											<ol class="dd-list">
-												<li class="dd-item" data-id="3"><div class="dd-handle">Item
-														3</div></li>
-												<li class="dd-item" data-id="4"><div class="dd-handle">Item
-														4</div></li>
-												<li class="dd-item" data-id="5">
-													<div class="dd-handle">Item 5</div>
-													<ol class="dd-list">
-														<li class="dd-item" data-id="6"><div
-																class="dd-handle">Item 6</div></li>
-														<li class="dd-item" data-id="7"><div
-																class="dd-handle">Item 7</div></li>
-														<li class="dd-item" data-id="8"><div
-																class="dd-handle">Item 8</div></li>
-													</ol>
-												</li>
-												<li class="dd-item" data-id="9"><div class="dd-handle">Item
-														9</div></li>
-												<li class="dd-item" data-id="10"><div class="dd-handle">Item
-														10</div></li>
-											</ol>
-										</li>
-										<li class="dd-item" data-id="11">
-											<div class="dd-handle">Item 11</div>
-										</li>
-										<li class="dd-item" data-id="12">
-											<div class="dd-handle">Item 12</div>
-										</li>
-									</ol>
-								</div>
-								<div class="dd" id="nestable2">
-									<ol class="dd-list">
-										<li class="dd-item" data-id="13">
-											<div class="dd-handle">Item 13</div>
-										</li>
-										<li class="dd-item" data-id="14">
-											<div class="dd-handle">Item 14</div>
-										</li>
-										<li class="dd-item" data-id="15">
-											<div class="dd-handle">Item 15</div>
-											<ol class="dd-list">
-												<li class="dd-item" data-id="16"><div class="dd-handle">Item
-														16</div></li>
-												<li class="dd-item" data-id="17"><div class="dd-handle">Item
-														17</div></li>
-												<li class="dd-item" data-id="18"><div class="dd-handle">Item
-														18</div></li>
-											</ol>
-										</li>
-									</ol>
-								</div>
+							<div class="panel-body">
+								<div id="vector-map-world" style="height: 500px; width: 100%;"
+									data-vector-map data-plugin-options='{ "map": "world_en" }'></div>
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-6">
-						<div class="panel panel-default bk-bg-white">
-							<div class="panel-heading bk-bg-white">
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
 								<h6>
-									<i class="fa fa-outdent red"></i>Nestable List With Icon
+									<i class="fa fa-crosshairs"></i>North America
 								</h6>
 								<div class="panel-actions">
 									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
 									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
 								</div>
 							</div>
-							<div class="panel-body clearfix">
-								<div class="dd" id="nestable3">
-									<ol class="dd-list">
-										<li class="dd-item dd3-item" data-id="13">
-											<div class="dd-handle dd3-handle">
-												<i class="fa fa-bars"></i>
-											</div>
-											<div class="dd3-content">Item 13</div>
-										</li>
-										<li class="dd-item dd3-item" data-id="14">
-											<div class="dd-handle dd3-handle">
-												<i class="fa fa-bars"></i>
-											</div>
-											<div class="dd3-content">Item 14</div>
-										</li>
-										<li class="dd-item dd3-item" data-id="15">
-											<div class="dd-handle dd3-handle">
-												<i class="fa fa-bars"></i>
-											</div>
-											<div class="dd3-content">Item 15</div>
-											<ol class="dd-list">
-												<li class="dd-item dd3-item" data-id="16">
-													<div class="dd-handle dd3-handle">
-														<i class="fa fa-bars"></i>
-													</div>
-													<div class="dd3-content">Item 16</div>
-												</li>
-												<li class="dd-item dd3-item" data-id="17">
-													<div class="dd-handle dd3-handle">
-														<i class="fa fa-bars"></i>
-													</div>
-													<div class="dd3-content">Item 17</div>
-												</li>
-												<li class="dd-item dd3-item" data-id="18">
-													<div class="dd-handle dd3-handle">
-														<i class="fa fa-bars"></i>
-													</div>
-													<div class="dd3-content">Item 18</div>
-												</li>
-											</ol>
-										</li>
-									</ol>
+							<div class="panel-body">
+								<div id="vector-map-north-america"
+									style="height: 500px; width: 100%;" data-vector-map
+									data-plugin-options='{ "map": "north-america_en" }'></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h6>
+									<i class="fa fa-crosshairs"></i>Europe
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
 								</div>
-								<div class="dd" id="nestable4">
-									<ol class="dd-list">
-										<li class="dd-item dd3-item" data-id="19">
-											<div class="dd-handle dd3-handle">
-												<i class="fa fa-bookmark-o"></i>
-											</div>
-											<div class="dd3-content">Item 19</div>
-										</li>
-										<li class="dd-item dd3-item" data-id="20">
-											<div class="dd-handle dd3-handle">
-												<i class="fa fa-bullseye"></i>
-											</div>
-											<div class="dd3-content">Item 14</div>
-										</li>
-										<li class="dd-item dd3-item" data-id="21">
-											<div class="dd-handle dd3-handle">
-												<i class="fa fa-reply-all"></i>
-											</div>
-											<div class="dd3-content">Item 20</div>
-											<ol class="dd-list">
-												<li class="dd-item dd3-item" data-id="22">
-													<div class="dd-handle dd3-handle">
-														<i class="fa fa-star-o"></i>
-													</div>
-													<div class="dd3-content">Item 21</div>
-												</li>
-												<li class="dd-item dd3-item" data-id="23">
-													<div class="dd-handle dd3-handle">
-														<i class="fa fa-tint"></i>
-													</div>
-													<div class="dd3-content">Item 22</div>
-												</li>
-												<li class="dd-item dd3-item" data-id="24">
-													<div class="dd-handle dd3-handle">
-														<i class="fa fa-cut"></i>
-													</div>
-													<div class="dd3-content">Item 23</div>
-												</li>
-											</ol>
-										</li>
-									</ol>
+							</div>
+							<div class="panel-body">
+								<div id="vector-map-europe" style="height: 500px; width: 100%;"
+									data-vector-map data-plugin-options='{ "map": "europe_en" }'></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h6>
+									<i class="fa fa-crosshairs"></i>Asia
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
 								</div>
+							</div>
+							<div class="panel-body">
+								<div id="vector-map-asia" style="height: 500px; width: 100%;"
+									data-vector-map data-plugin-options='{ "map": "asia_en" }'></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h6>
+									<i class="fa fa-crosshairs"></i>South America
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div id="vector-map-south-america"
+									style="height: 500px; width: 100%;" data-vector-map
+									data-plugin-options='{ "map": "south-america_en" }'></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h6>
+									<i class="fa fa-crosshairs"></i>Africa
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div id="vector-map-asia" style="height: 500px; width: 100%;"
+									data-vector-map data-plugin-options='{ "map": "africa_en" }'></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h6>
+									<i class="fa fa-crosshairs"></i>Oceania
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div id="vector-map-australia"
+									style="height: 500px; width: 100%;" data-vector-map
+									data-plugin-options='{ "map": "australia_en" }'></div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- End Main Page -->
+			<!-- End Main Page -->
 
-		<!-- Footer -->
-		<div id="footer">
-			<ul>
-				<li>
-					<div class="title">Memory</div>
-					<div class="bar">
-						<div class="progress light progress-sm  progress-striped active">
-							<div class="progress-bar progress-squared progress-bar-success"
-								role="progressbar" aria-valuenow="60" aria-valuemin="0"
-								aria-valuemax="100" style="width: 60%;">60%</div>
+			<!-- Footer -->
+			<div id="footer">
+				<ul>
+					<li>
+						<div class="title">Memory</div>
+						<div class="bar">
+							<div class="progress light progress-sm  progress-striped active">
+								<div class="progress-bar progress-squared progress-bar-success"
+									role="progressbar" aria-valuenow="60" aria-valuemin="0"
+									aria-valuemax="100" style="width: 60%;">60%</div>
+							</div>
 						</div>
-					</div>
-					<div class="desc">4GB of 8GB</div>
-				</li>
-				<li>
-					<div class="title">HDD</div>
-					<div class="bar">
-						<div class="progress light progress-sm  progress-striped active">
-							<div class="progress-bar progress-squared progress-bar-primary"
-								role="progressbar" aria-valuenow="40" aria-valuemin="0"
-								aria-valuemax="100" style="width: 40%;">40%</div>
+						<div class="desc">4GB of 8GB</div>
+					</li>
+					<li>
+						<div class="title">HDD</div>
+						<div class="bar">
+							<div class="progress light progress-sm  progress-striped active">
+								<div class="progress-bar progress-squared progress-bar-primary"
+									role="progressbar" aria-valuenow="40" aria-valuemin="0"
+									aria-valuemax="100" style="width: 40%;">40%</div>
+							</div>
 						</div>
-					</div>
-					<div class="desc">250GB of 1TB</div>
-				</li>
-				<li>
-					<div class="title">SSD</div>
-					<div class="bar">
-						<div class="progress light progress-sm  progress-striped active">
-							<div class="progress-bar progress-squared progress-bar-warning"
-								role="progressbar" aria-valuenow="70" aria-valuemin="0"
-								aria-valuemax="100" style="width: 70%;">70%</div>
+						<div class="desc">250GB of 1TB</div>
+					</li>
+					<li>
+						<div class="title">SSD</div>
+						<div class="bar">
+							<div class="progress light progress-sm  progress-striped active">
+								<div class="progress-bar progress-squared progress-bar-warning"
+									role="progressbar" aria-valuenow="70" aria-valuemin="0"
+									aria-valuemax="100" style="width: 70%;">70%</div>
+							</div>
 						</div>
-					</div>
-					<div class="desc">700GB of 1TB</div>
-				</li>
-				<li>
-					<div class="copyright">
-						<p class="text-muted text-right">
-							Fire <i class="fa fa-coffee"></i> Collect from <a
-								href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
-							- More Templates <a href="http://www.cssmoban.com/"
-								target="_blank" title="模板之家">模板之家</a>
-						</p>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<!-- End Footer -->
+						<div class="desc">700GB of 1TB</div>
+					</li>
+					<li>
+						<div class="copyright">
+							<p class="text-muted text-right">
+								Fire <i class="fa fa-coffee"></i> Collect from <a
+									href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+								- More Templates <a href="http://www.cssmoban.com/"
+									target="_blank" title="模板之家">模板之家</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- End Footer -->
 
-	</div>
+		</div>
 	</div>
 	<!--/container-->
 
-
-	<!-- Modal Dialog -->
-	<div class="modal fade" id="myModal">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
-					<h4 class="modal-title bk-fg-primary">Modal title</h4>
-				</div>
-				<div class="modal-body">
-					<p class="bk-fg-danger">Here settings can be configured...</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Modal Dialog -->
 
 	<div class="clearfix"></div>
 
@@ -739,7 +667,20 @@
 	<script src="assets/vendor/js/pace.min.js"></script>
 
 	<!-- Plugins JS-->
-	<script src="assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
+	<script src="assets/plugins/jqvmap/jquery.vmap.js"></script>
+	<script src="assets/plugins/jqvmap/data/jquery.vmap.sampledata.js"></script>
+	<script src="assets/plugins/jqvmap/maps/jquery.vmap.world.js"></script>
+	<script
+		src="assets/plugins/jqvmap/maps/continents/jquery.vmap.africa.js"></script>
+	<script src="assets/plugins/jqvmap/maps/continents/jquery.vmap.asia.js"></script>
+	<script
+		src="assets/plugins/jqvmap/maps/continents/jquery.vmap.australia.js"></script>
+	<script
+		src="assets/plugins/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
+	<script
+		src="assets/plugins/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
+	<script
+		src="assets/plugins/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
 	<script src="assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
 
 	<!-- Theme JS -->
@@ -747,7 +688,7 @@
 	<script src="assets/js/core.min.js"></script>
 
 	<!-- Pages JS -->
-	<script src="assets/js/pages/nestable.js"></script>
+	<script src="assets/js/pages/map-vector.js"></script>
 
 	<!-- end: JavaScript-->
 
