@@ -241,7 +241,7 @@
 	<script src="assets/js/core.min.js"></script>
 
 	<!-- Pages JS -->
-	<script src="assets/js/pages/table-advanced.js"></script>
+	<script src="assets/js/common/page-role.js"></script>
 
 	<!-- end: JavaScript-->
 

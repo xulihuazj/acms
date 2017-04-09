@@ -5419,6 +5419,7 @@ body .ui-pnotify.icon-nb .notification .ui-pnotify-icon>span {
 	font-size: 10px;
 	padding: 4px 6px;
 	border: none;
+	text-align: center;
 	text-shadow: none;
 	border-radius: 3px;
 	font-weight: 200;
@@ -5435,31 +5436,37 @@ body .ui-pnotify.icon-nb .notification .ui-pnotify-icon>span {
 
 .label-primary {
 	background: #2693FF;
+	text-align: center;
 	color: white;
 }
 
 .label-success {
 	background: #47a447;
+	text-align: center;
 	color: white;
 }
 
 .label-warning {
 	background: #ed9c28;
+	text-align: center;
 	color: white;
 }
 
 .label-danger {
 	background: #d2322d;
+	text-align: center;
 	color: white;
 }
 
 .label-info {
 	background: #5bc0de;
+	text-align: center;
 	color: white;
 }
 
 .label-dark {
 	background: #171717;
+	text-align: center;
 	color: white;
 }
 /* Modals
