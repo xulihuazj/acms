@@ -11,5 +11,5 @@
 
 	<context:annotation-config />
 	<context:component-scan
-		base-package="cn.edu.haut.cssp.acms.system.service,cn.edu.haut.cssp.acms.system.service.impl"></context:component-scan>
+		base-package="cn.edu.haut.cssp.acms.system.service.impl,cn.edu.haut.cssp.acms.system.service.impl"></context:component-scan>
 </beans>

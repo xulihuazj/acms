@@ -3,6 +3,7 @@ package cn.edu.haut.cssp.acms.system.service.impl;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import cn.edu.haut.cssp.acms.core.bean.DataQueryExt;
@@ -19,7 +20,8 @@ import cn.edu.haut.cssp.acms.system.service.IRoleService;
  * @date: 2017年3月30日上午12:01:08
  * @note:
  */
-@Service
+
+@Component
 public class RoleServiceImpl implements IRoleService{
 
 	@Override

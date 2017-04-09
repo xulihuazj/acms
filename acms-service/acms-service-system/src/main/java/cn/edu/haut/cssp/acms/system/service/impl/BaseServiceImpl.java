@@ -4,6 +4,7 @@ import java.util.Date;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import cn.edu.haut.cssp.acms.core.dao.impl.BaseDaoImpl;
@@ -19,7 +20,7 @@ import cn.edu.haut.cssp.acms.core.utils.UUIDUtils;
  * @date: 2017年3月26日下午12:54:26
  * @note:
  */
-@Service
+@Component
 public class BaseServiceImpl {
 
 	private Logger logger = LoggerFactory.getLogger(BaseServiceImpl.class);

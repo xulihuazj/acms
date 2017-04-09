@@ -10931,7 +10931,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "查询到0条记录",
 	
 	
 			/**
@@ -10953,7 +10953,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			"sInfoFiltered": "(总 _MAX_ 条)",
 	
 	
 			/**
@@ -11209,7 +11209,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No matching records found"
+			"sZeroRecords": "未查询到相应记录"
 		},
 	
 	

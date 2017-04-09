@@ -26,7 +26,9 @@ the specific language governing permissions and limitations under the Apache Lic
             * use it carefully, as it overrides jQuery context of element on each iteration
             */
             each2 : function (c) {
-                var j = $([0]), i = -1, l = this.length;
+                var j = $([0]),
+                	i = -1,
+                	l = this.length;
                 while (
                     ++i < l
                     && (j.context = j[0] = this[i])
@@ -40,7 +42,7 @@ the specific language governing permissions and limitations under the Apache Lic
 
 (function ($, undefined) {
     "use strict";
-    /*global document, window, jQuery, console */
+    /*全局文档，窗口，jQuery，控制台  */
 
     if (window.Select2 !== undefined) {
         return;
