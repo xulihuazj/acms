@@ -213,10 +213,8 @@
 		</div>
 	</div>
 	<!--/container-->
-
 	
-	<div class="clearfix"></div>
-					<!-- 编辑人员弹出框 -->
+	<!-- 编辑人员弹出框 -->
 	<div class="panel panel-default" style="display: block;" id="editPersonModal">
 		<div class="panel-heading">
 			<h6>
@@ -238,14 +236,14 @@
 					</div>
 					<div class="panel-body bk-noradius">
 						<form id="demo-form" class="form-horizontal mb-lg" novalidate="novalidate">
-							<div class="form-group ">
+							<div class="form-group">
 								<label class="col-sm-3 control-label">人员姓名：</label>
 								<div class="col-sm-9">
-									<input type="text" name="perName" class="form-control" placeholder="请输入姓名..." required />
+									<input type="email" name="email" class="form-control" placeholder="请输入人员姓名..." required />
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-sm-3 control-label">卡号：</label>
+								<label class="col-sm-3 control-label">所持卡号：</label>
 								<div class="col-sm-9">
 									<input type="email" name="email" class="form-control" placeholder="请输入人员所持卡号..." required />
 								</div>
@@ -263,13 +261,13 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-sm-3 control-label">性别：</label>
+								<label class="col-sm-3 control-label">人员性别：</label>
 								<div class="col-sm-9">
 									<input type="url" name="url" class="form-control" placeholder="请选择人员性别..." />
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-sm-3 control-label">年龄：</label>
+								<label class="col-sm-3 control-label">人员年龄：</label>
 								<div class="col-sm-9">
 									<input type="url" name="url" class="form-control" placeholder="请输入年龄..." />
 								</div>
@@ -281,19 +279,19 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-sm-3 control-label">学院：</label>
+								<label class="col-sm-3 control-label">所属学院：</label>
 								<div class="col-sm-9">
 									<input type="url" name="url" class="form-control" placeholder="请输入人员所属学院..." />
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-sm-3 control-label">专业：</label>
+								<label class="col-sm-3 control-label">所属专业：</label>
 								<div class="col-sm-9">
 									<input type="url" name="url" class="form-control" placeholder="请输入人员所属专业..." />
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-sm-3 control-label">班级：</label>
+								<label class="col-sm-3 control-label">所属班级：</label>
 								<div class="col-sm-9">
 									<input type="url" name="url" class="form-control" placeholder="请输入人员所属班级..." />
 								</div>
