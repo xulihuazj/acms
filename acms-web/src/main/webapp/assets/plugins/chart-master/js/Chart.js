@@ -1,5 +1,4 @@
 /*!
- * Chart.js
  * http://chartjs.org/
  *
  * Copyright 2013 Nick Downie

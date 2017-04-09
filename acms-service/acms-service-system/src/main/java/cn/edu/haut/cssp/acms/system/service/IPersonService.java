@@ -70,5 +70,4 @@ public interface IPersonService {
 	 */
 	public void deletePerson(Integer personId);
 	
-	
 }
