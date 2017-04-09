@@ -32,7 +32,7 @@
 
 				$search
 					.attr({
-						placeholder: typeof options.searchPlaceholder !== 'undefined' ? options.searchPlaceholder : 'Search'
+						placeholder: typeof options.searchPlaceholder !== 'undefined' ? options.searchPlaceholder : '请输入关键字搜索...'
 					})
 					.addClass('form-control');
 
@@ -324,7 +324,7 @@
 				'<table class="table mb-none">',
 				'<div>',
 					'<tr>',
-						'<td class=" label-info" id="eidtPerson">编辑人员</td>',
+						'<td class=" label-info" id="eidtPerson" href="#modalForm">编辑人员</td>',
 						'<td class=" label-success" id="startPerson">启用人员</td>',
 						'<td class=" label-warning" id="stopPerson">禁用人员</td>',
 						'<td class=" label-danger" id="deletePerson">删除人员</td>',
@@ -383,6 +383,32 @@
 }).apply( this, [ jQuery ]);
 
 
+/**
+ * @author 徐礼华
+ * @param $
+ */
+// 编辑人员点击
+$("#editPerson").click(function(){
+	$("#editPersonModal").modal("show");
+	
+})
+;
+//启用人员点击
+$("#editPerson").click(function(){
+	
+	
+});
+// 禁用人员点击
+$("#editPerson").click(function(){
+	
+	
+});
+
+//删除人员点击
+$("#editPerson").click(function(){
+	
+	
+});
 /*Datatable - tabletools*/
 
 (function( $ ) {

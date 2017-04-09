@@ -20,7 +20,7 @@
 				<!-- Search Form -->
 				<form class="search navbar-form">
 					<div class="input-group input-search">
-						<input type="text" class="form-control bk-radius" name="q" id="q" placeholder="搜索...">
+						<input type="text" class="form-control bk-radius" name="q" id="q" placeholder="请输入关键字搜索...">
 						<span class="input-group-btn">
 							<button class="btn btn-default" type="submit">
 								<i class="fa fa-search"></i>

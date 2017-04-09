@@ -214,9 +214,104 @@
 	</div>
 	<!--/container-->
 
-
+	
 	<div class="clearfix"></div>
-
+					<!-- 编辑人员弹出框 -->
+	<div class="panel panel-default" style="display: block;" id="editPersonModal">
+		<div class="panel-heading">
+			<h6>
+				<i class="fa fa-check-square-o"></i>Form
+			</h6>
+			<div class="panel-actions">
+				<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a> <a href="#" class="btn-close"><i
+					class="fa fa-times"></i></a>
+			</div>
+			<p>Modal with a form and buttons.</p>
+		</div>
+		<div class="panel-body">
+			<a class="bk-margin-top-10 bk-margin-bottom-10 modal-with-form btn btn-default" href="#modalForm">Open Form</a>
+			<!-- Modal Form -->
+			<div id="modalForm" class="modal-block modal-block-primary mfp-hide">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h2 class="panel-title">编辑人员</h2>
+					</div>
+					<div class="panel-body bk-noradius">
+						<form id="demo-form" class="form-horizontal mb-lg" novalidate="novalidate">
+							<div class="form-group ">
+								<label class="col-sm-3 control-label">人员姓名：</label>
+								<div class="col-sm-9">
+									<input type="text" name="perName" class="form-control" placeholder="请输入姓名..." required />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">卡号：</label>
+								<div class="col-sm-9">
+									<input type="email" name="email" class="form-control" placeholder="请输入人员所持卡号..." required />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">身份证号：</label>
+								<div class="col-sm-9">
+									<input type="url" name="url" class="form-control" placeholder="请输入身份证号..." />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">人员类型：</label>
+								<div class="col-sm-9">
+									<input type="url" name="url" class="form-control" placeholder="请选择人员类型..." />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">性别：</label>
+								<div class="col-sm-9">
+									<input type="url" name="url" class="form-control" placeholder="请选择人员性别..." />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">年龄：</label>
+								<div class="col-sm-9">
+									<input type="url" name="url" class="form-control" placeholder="请输入年龄..." />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">联系电话：</label>
+								<div class="col-sm-9">
+									<input type="url" name="url" class="form-control" placeholder="请输入联系电话..." />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">学院：</label>
+								<div class="col-sm-9">
+									<input type="url" name="url" class="form-control" placeholder="请输入人员所属学院..." />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">专业：</label>
+								<div class="col-sm-9">
+									<input type="url" name="url" class="form-control" placeholder="请输入人员所属专业..." />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">班级：</label>
+								<div class="col-sm-9">
+									<input type="url" name="url" class="form-control" placeholder="请输入人员所属班级..." />
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="panel-footer">
+						<div class="row">
+							<div class="col-md-12 text-right">
+								<button class="btn btn-primary modal-confirm">确认</button>
+								<button class="btn btn-default modal-dismiss">取消</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- start: JavaScript-->
 
