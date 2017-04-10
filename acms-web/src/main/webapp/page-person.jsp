@@ -74,7 +74,7 @@
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li>
-								<a href="index.html"><i class="icon fa fa-home"></i> 我的管理中心</a>
+								<a href="homepage.jsp"><i class="icon fa fa-home"></i> 我的管理中心</a>
 							</li>
 							<li>
 								<a href="#"><i class="fa fa-table"></i>人员管理</a>
@@ -301,7 +301,7 @@
 					<div class="panel-footer">
 						<div class="row">
 							<div class="col-md-12 text-right">
-								<button class="btn btn-primary modal-confirm" id="confirmSave">确认</button>
+								<button class="btn btn-primary modal-confirm" id="confirmSave">确定</button>
 								<button class="btn btn-default modal-dismiss" id="cancelSave">取消</button>
 							</div>
 						</div>
@@ -310,96 +310,90 @@
 			</div>
 		</div>
 	</div>
-		<!-- 确认弹出框 -->
-	<div class="col-md-12">
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<div id="decideStart" class="modal-block modal-header-color modal-block-primary mfp-hide">
-					<div class="panel">
-						<div class="panel-heading">
-							<h2 class="panel-title">消息！</h2>
+		<!-- 确定弹出框 -->
+	<div class="panel-body">
+		<div id="decideStart" class="modal-block modal-header-color modal-block-primary mfp-hide">
+			<div class="panel">
+				<div class="panel-heading">
+					<h2 class="panel-title">消息！</h2>
+				</div>
+				<div class="panel-body bk-noradius">
+					<div class="modal-wrapper">
+						<div class="modal-icon">
+							<i class="fa fa-question-circle"></i>
 						</div>
-						<div class="panel-body bk-noradius">
-							<div class="modal-wrapper">
-								<div class="modal-icon">
-									<i class="fa fa-question-circle"></i>
-								</div>
-								<div class="modal-text" style="font-size: 20px;">
-									<p>确定启用该人员?</p>
-								</div>
-							</div>
+						<div class="modal-text" style="font-size: 20px;">
+							<p>确定启用该人员?</p>
 						</div>
-						<div class="panel-footer">
-							<div class="row">
-								<div class="col-md-12 text-right">
-									<button class="btn btn-primary modal-confirm">确定</button>
-									<button class="btn btn-default modal-dismiss">取消</button>
-								</div>
-							</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-primary modal-confirm">确定</button>
+							<button class="btn btn-default modal-dismiss">取消</button>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
 
-			<div class="panel-body">
-				<div id="decideStop" class="modal-block modal-header-color modal-block-warning mfp-hide">
-					<div class="panel">
-						<div class="panel-heading">
-							<h2 class="panel-title">消息！</h2>
+	<div class="panel-body">
+		<div id="decideStop" class="modal-block modal-header-color modal-block-warning mfp-hide">
+			<div class="panel">
+				<div class="panel-heading">
+					<h2 class="panel-title">消息！</h2>
+				</div>
+				<div class="panel-body bk-noradius">
+					<div class="modal-wrapper">
+						<div class="modal-icon">
+							<i class="fa fa-warning"></i>
 						</div>
-						<div class="panel-body bk-noradius">
-							<div class="modal-wrapper">
-								<div class="modal-icon">
-									<i class="fa fa-warning"></i>
-								</div>
-								<div class="modal-text" style="font-size: 20px;">
-									<h4>警告：</h4>
-									<p>确认禁用该人员？</p>
-								</div>
-							</div>
+						<div class="modal-text" style="font-size: 20px;">
+							<h4>警告：</h4>
+							<p>确定禁用该人员？</p>
 						</div>
-						<div class="panel-footer">
-							<div class="row">
-								<div class="col-md-12 text-right">
-									<button class="btn btn-primary modal-confirm">确定</button>
-									<button class="btn btn-default modal-dismiss">取消</button>
-								</div>
-							</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-primary modal-confirm">确定</button>
+							<button class="btn btn-default modal-dismiss">取消</button>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
 
-			<div class="panel-body">
-				<div id="decideDelete" class="modal-block modal-header-color modal-block-danger mfp-hide">
-					<div class="panel">
-						<div class="panel-heading">
-							<h2 class="panel-title">消息!</h2>
+	<div class="panel-body">
+		<div id="decideDelete" class="modal-block modal-header-color modal-block-danger mfp-hide">
+			<div class="panel">
+				<div class="panel-heading">
+					<h2 class="panel-title">消息!</h2>
+				</div>
+				<div class="panel-body bk-noradius">
+					<div class="modal-wrapper">
+						<div class="modal-icon">
+							<i class="fa fa-times-circle"></i>
 						</div>
-						<div class="panel-body bk-noradius">
-							<div class="modal-wrapper">
-								<div class="modal-icon">
-									<i class="fa fa-times-circle"></i>
-								</div>
-								<div class="modal-text" style="font-size: 20px;">
-									<h4>危险：</h4>
-									<p>确认删除该人员？</p>
-								</div>
-							</div>
+						<div class="modal-text" style="font-size: 20px;">
+							<h4>危险：</h4>
+							<p>确定删除该人员？</p>
 						</div>
-						<div class="panel-footer">
-							<div class="row">
-								<div class="col-md-12 text-right">
-									<button class="btn btn-primary modal-confirm">确定</button>
-									<button class="btn btn-default modal-dismiss">取消</button>
-								</div>
-							</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-primary modal-confirm">确定</button>
+							<button class="btn btn-default modal-dismiss">取消</button>
 						</div>
 					</div>
 				</div>
 			</div>
-
-
 		</div>
 	</div>
 
@@ -440,7 +434,7 @@
 			$("#editPersonModal").modal("hide");
 			alert();
 		});
-		/*点击确认提交人员信息*/
+		/*点击确定提交人员信息*/
 		$("#confirmSave").click(function(){
 			$("")
 		});
