@@ -345,11 +345,7 @@
 							</a>
 							<ul class="nav nav-children">
 								<li>
-									<a href=""> <span class="text">系统参数设置</span>
-									</a>
-								</li>
-								<li>
-									<a href=""> <span class="text">管理员管理</span>
+									<a href="#"> <span class="text">系统参数设置</span>
 									</a>
 								</li>
 								<li>

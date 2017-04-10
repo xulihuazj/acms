@@ -1,5 +1,6 @@
 <!-- 角色管理 --><!-- 数据统计 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="view/taglibs.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -59,7 +60,7 @@
 
 <body>
 	<!-- Start: Header -->
-	<%@ include file="/page-role.jsp" %>
+	<%@ include file="/page-header.jsp" %>
 	<!-- End: Header -->
 	
 	<!-- Start: Content -->
@@ -79,6 +80,12 @@
 							<li>
 								<a href="homepage.jsp"> <i class="icon fa fa-home"></i> 我的管理中心
 								</a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-table"></i>系统用户管理</a>
+							</li>
+							<li class="active">
+								<i class="fa fa-thumbs-o-up"></i>管理员管理
 							</li>
 						</ol>
 					</div>
@@ -138,10 +145,10 @@
 												<td>启用</td>
 												<td>fdsafdsaefdae</td>
 												<td>
-													<span class="label label-success" onclick="" id="startover">启用</span>
-													<span class="label label-danger" onclick="" id="deleteRole">删除</span>
-													<span class="label label-warning" onclick="" id="stopRole">禁用</span>
-													<span class="label label-default">编辑</span>
+													<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span>
+													<span class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span>
+													<span class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span>
+													<span class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
 												</td>
 											</tr>
 											<tr>
@@ -221,7 +228,6 @@
 
 		<!-- Pages JS -->
 		<script src="assets/js/pages/table-advanced.js"></script>
-		<script src="assets/js/pages/index.js"></script>
 		<script src="assets/js/pages/common.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {

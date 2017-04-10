@@ -21,7 +21,7 @@ body {
 }
 
 a {
-	color: #cccccc;
+	color: #ffffff;
 }
 
 a:hover, a:focus {
@@ -9274,9 +9274,6 @@ input,button {  outline: 0;  box-shadow: none;  border: none 0  }
  * 自定义bootstrap模板 end
  */
 /*公用样式*/
-a {
-    color: #0094e4;
-}
 input[type="text"],input[type="password"]{
     height: 44px;
     line-height: 44px;
