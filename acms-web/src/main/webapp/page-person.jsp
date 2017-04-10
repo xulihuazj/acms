@@ -427,7 +427,7 @@
 	<script src="assets/js/core.min.js"></script>
 
 	<!-- Pages JS -->
-	<script src="assets/js/common/page-role.js"></script>
+	<script src="assets/js/common/page-person.js"></script>
 	<script src="assets/js/pages/ui-modals.js"></script>
 	<!-- end: JavaScript-->
 	<script type="text/javascript">
