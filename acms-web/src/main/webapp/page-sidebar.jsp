@@ -176,7 +176,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="deviceattach.htmlfs"> <span class="text">设备连接设置</span>
+									<a href="page-deviceattach.jsp"> <span class="text">设备连接设置</span>
 									</a>
 								</li>
 							</ul>

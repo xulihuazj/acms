@@ -25,7 +25,7 @@
 					<div class="col-lg-5 login">
 						<h3 class="" style="padding-left: 105px;">登录管理平台</h3>
 						<form id="login-form" class="form-horizontal"
-							action="${pageContext.request.contextPath }/login.do" method="post">
+							action="${path}/login.do" method="post">
 							<input type="hidden" name="_csrf"
 								value="V3FJQVl4OTE9GHA0aD96YRkJDC0VPRRaFRo8IBIeU2kkKCF5KzUNUg==">
 							<div class="form-group field-loginform-username required">
@@ -84,7 +84,6 @@
 										name="login-button">登
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
 								</div>
-								<div class="row"></div>
 							</div>
 						</form>
 					</div>

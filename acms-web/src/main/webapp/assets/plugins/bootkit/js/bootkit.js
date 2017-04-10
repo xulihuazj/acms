@@ -48,7 +48,7 @@
 
         // skycons
         //http://stackoverflow.com/questions/24572100/skycons-cant-display-the-same-icon-twice
-        var skycons = new Skycons({"color": "#27ae60"}),
+/*        var skycons = new Skycons({"color": "#27ae60"}),
             list  = [
                 "clear-day", "clear-night", "partly-cloudy-day",
                 "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
@@ -64,7 +64,7 @@
             }
         }
 
-        skycons.play();
+        skycons.play();*/
 
 
         // animations
