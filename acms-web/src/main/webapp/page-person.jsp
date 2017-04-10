@@ -134,9 +134,9 @@
 									<tbody>
 										<tr class="gradeX">
 											<td>1</td>
-											<td>张忆博</td>
-											<td>201323030418</td>
-											<td>330821199401244915</td>
+											<td>赵一博</td>
+											<td>201323030417</td>
+											<td>707084230804233333</td>
 											<td >学生</td>
 											<td >男</td>
 											<td>23</td>
@@ -147,7 +147,7 @@
 										</tr>
 										<tr class="gradeC">
 											<td>2</td>
-											<td>张忆博</td>
+											<td>徐礼华</td>
 											<td>201323030418</td>
 											<td>330821199401244915</td>
 											<td >工作人员</td>
@@ -160,16 +160,16 @@
 										</tr>
 										<tr class="gradeA">
 											<td>3</td>
-											<td>张忆博</td>
-											<td>201323030418</td>
-											<td>330821199401244915</td>
+											<td>张三33</td>
+											<td>201323030510</td>
+											<td>324534676567890547</td>
 											<td >教师</td>
 											<td >女</td>
-											<td>23</td>
-											<td>13721431668</td>
+											<td>33</td>
+											<td>13512434328</td>
 											<td>信息科学与工程学院</td>
-											<td>测控技术与仪器</td>
-											<td>1304</td>
+											<td>通信工程</td>
+											<td>1501</td>
 										</tr>
 										<tr class="gradeA">
 											<td>4</td>
@@ -235,59 +235,59 @@
 						<h2 class="panel-title">编辑人员</h2>
 					</div>
 					<div class="panel-body bk-noradius">
-						<form id="demo-form" class="form-horizontal mb-lg" novalidate="novalidate">
+						<form id="savePerson_form" class="form-horizontal mb-lg" novalidate="novalidate">
 							<div class="form-group">
 								<label class="col-sm-3 control-label">人员姓名：</label>
 								<div class="col-sm-9">
-									<input type="email" name="email" class="form-control" placeholder="请输入人员姓名..." required />
+									<input type="email" name="perName" class="form-control" placeholder="请输入人员姓名..." required />
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">所持卡号：</label>
 								<div class="col-sm-9">
-									<input type="email" name="email" class="form-control" placeholder="请输入人员所持卡号..." required />
+									<input type="email" name="cardId" class="form-control" placeholder="请输入人员所持卡号..." required />
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">身份证号：</label>
 								<div class="col-sm-9">
-									<input type="url" name="url" class="form-control" placeholder="请输入身份证号..." />
+									<input type="url" name="perIdentificate" class="form-control" placeholder="请输入身份证号..." />
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">人员类型：</label>
 								<div class="col-sm-9">
-									<input type="url" name="url" class="form-control" placeholder="请选择人员类型..." />
+									<input type="url" name="perType" class="form-control" placeholder="请选择人员类型..." />
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">人员性别：</label>
 								<div class="col-sm-9">
-									<input type="url" name="url" class="form-control" placeholder="请选择人员性别..." />
+									<input type="url" name="perSex" class="form-control" placeholder="请选择人员性别..." />
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">人员年龄：</label>
 								<div class="col-sm-9">
-									<input type="url" name="url" class="form-control" placeholder="请输入年龄..." />
+									<input type="url" name="perAge" class="form-control" placeholder="请输入年龄..." />
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">联系电话：</label>
 								<div class="col-sm-9">
-									<input type="url" name="url" class="form-control" placeholder="请输入联系电话..." />
+									<input type="url" name="perMobile" class="form-control" placeholder="请输入联系电话..." />
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">所属学院：</label>
 								<div class="col-sm-9">
-									<input type="url" name="url" class="form-control" placeholder="请输入人员所属学院..." />
+									<input type="url" name="perDepart" class="form-control" placeholder="请输入人员所属学院..." />
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">所属专业：</label>
 								<div class="col-sm-9">
-									<input type="url" name="url" class="form-control" placeholder="请输入人员所属专业..." />
+									<input type="url" name="perMajor" class="form-control" placeholder="请输入人员所属专业..." />
 								</div>
 							</div>
 							<div class="form-group">
@@ -301,8 +301,8 @@
 					<div class="panel-footer">
 						<div class="row">
 							<div class="col-md-12 text-right">
-								<button class="btn btn-primary modal-confirm">确认</button>
-								<button class="btn btn-default modal-dismiss">取消</button>
+								<button class="btn btn-primary modal-confirm" id="confirmSave">确认</button>
+								<button class="btn btn-default modal-dismiss" id="cancelSave">取消</button>
 							</div>
 						</div>
 					</div>
@@ -310,6 +310,100 @@
 			</div>
 		</div>
 	</div>
+		<!-- 确认弹出框 -->
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div id="decideStart" class="modal-block modal-header-color modal-block-primary mfp-hide">
+					<div class="panel">
+						<div class="panel-heading">
+							<h2 class="panel-title">消息！</h2>
+						</div>
+						<div class="panel-body bk-noradius">
+							<div class="modal-wrapper">
+								<div class="modal-icon">
+									<i class="fa fa-question-circle"></i>
+								</div>
+								<div class="modal-text" style="font-size: 20px;">
+									<p>确定启用该人员?</p>
+								</div>
+							</div>
+						</div>
+						<div class="panel-footer">
+							<div class="row">
+								<div class="col-md-12 text-right">
+									<button class="btn btn-primary modal-confirm">确定</button>
+									<button class="btn btn-default modal-dismiss">取消</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<div id="decideStop" class="modal-block modal-header-color modal-block-warning mfp-hide">
+					<div class="panel">
+						<div class="panel-heading">
+							<h2 class="panel-title">消息！</h2>
+						</div>
+						<div class="panel-body bk-noradius">
+							<div class="modal-wrapper">
+								<div class="modal-icon">
+									<i class="fa fa-warning"></i>
+								</div>
+								<div class="modal-text" style="font-size: 20px;">
+									<h4>警告：</h4>
+									<p>确认禁用该人员？</p>
+								</div>
+							</div>
+						</div>
+						<div class="panel-footer">
+							<div class="row">
+								<div class="col-md-12 text-right">
+									<button class="btn btn-primary modal-confirm">确定</button>
+									<button class="btn btn-default modal-dismiss">取消</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<div id="decideDelete" class="modal-block modal-header-color modal-block-danger mfp-hide">
+					<div class="panel">
+						<div class="panel-heading">
+							<h2 class="panel-title">消息!</h2>
+						</div>
+						<div class="panel-body bk-noradius">
+							<div class="modal-wrapper">
+								<div class="modal-icon">
+									<i class="fa fa-times-circle"></i>
+								</div>
+								<div class="modal-text" style="font-size: 20px;">
+									<h4>危险：</h4>
+									<p>确认删除该人员？</p>
+								</div>
+							</div>
+						</div>
+						<div class="panel-footer">
+							<div class="row">
+								<div class="col-md-12 text-right">
+									<button class="btn btn-primary modal-confirm">确定</button>
+									<button class="btn btn-default modal-dismiss">取消</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+
 
 	<!-- start: JavaScript-->
 
@@ -318,7 +412,6 @@
 	<script src="assets/vendor/js/jquery-2.1.1.min.js"></script>
 	<script src="assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/vendor/skycons/js/skycons.js"></script>
 	<script src="assets/vendor/js/pace.min.js"></script>
 
 	<!-- Plugins JS-->
@@ -335,9 +428,23 @@
 
 	<!-- Pages JS -->
 	<script src="assets/js/common/page-role.js"></script>
-
+	<script src="assets/js/pages/ui-modals.js"></script>
 	<!-- end: JavaScript-->
-
+	<script type="text/javascript">
+		$(function(){
+			
+		});
+		
+		/*点击取消清空输入框，并退出弹出框*/
+		$("#cancelSave").click(function(){
+			$("#editPersonModal").modal("hide");
+			alert();
+		});
+		/*点击确认提交人员信息*/
+		$("#confirmSave").click(function(){
+			$("")
+		});
+	</script>
 </body>
 
 </html>

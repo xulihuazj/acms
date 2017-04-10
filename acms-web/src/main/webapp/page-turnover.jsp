@@ -2,9 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-<!-- Basic -->
 <meta charset="UTF-8" />
-<title>门禁出入日志|学生门禁管理系统</title>
+<title>门禁出入日志 | 学生门禁管理系统</title>
 <!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <!-- Import google fonts -->

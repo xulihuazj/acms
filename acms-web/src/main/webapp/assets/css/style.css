@@ -9297,7 +9297,7 @@ input[type="text"]:hover,input[type="password"]:hover{
     background: #0094e4;
     min-width: 120px;
     font-size: 16px;
-    border-radius: 0;
+    border-radius: 4;
     border-color: transparent;
 }
 .btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open>.dropdown-toggle.btn-primary{

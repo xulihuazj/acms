@@ -187,23 +187,11 @@
 							</a>
 							<ul class="nav nav-children">
 								<li>
-									<a href="#"> <span class="text">设置</span>
+									<a href="#"> <span class="text">设备权限</span>
 									</a>
 								</li>
 								<li>
-									<a href="#"> <span class="text">设置</span>
-									</a>
-								</li>
-								<li>
-									<a href="#"> <span class="text">设置</span>
-									</a>
-								</li>
-								<li>
-									<a href="#"> <span class="text">设置</span>
-									</a>
-								</li>
-								<li>
-									<a href="#"> <span class="text">设置</span>
+									<a href="#"> <span class="text">人员权限</span>
 									</a>
 								</li>
 							</ul>
@@ -357,23 +345,23 @@
 							</a>
 							<ul class="nav nav-children">
 								<li>
-									<a href="#"> <span class="text">系统参数设置</span>
+									<a href=""> <span class="text">系统参数设置</span>
 									</a>
 								</li>
 								<li>
-									<a href="#"> <span class="text">管理员管理</span>
+									<a href=""> <span class="text">管理员管理</span>
 									</a>
 								</li>
 								<li>
-									<a href="#"> <span class="text">角色管理</span>
+									<a href="page-role.jsp"> <span class="text">角色管理</span>
 									</a>
 								</li>
 								<li>
-									<a href="#"> <span class="text">系统日志</span>
+									<a href="page-log.jsp"> <span class="text">系统日志</span>
 									</a>
 								</li>
 								<li>
-									<a href="${base}/acms/modifyPassword.do"> <span class="text">修改密码</span>
+									<a href="page-password.jsp"> <span class="text">修改密码</span>
 									</a>
 								</li>
 							</ul>
@@ -410,8 +398,8 @@
 			<div class="small-chart-visits">
 				<div class="small-chart" id="sparklineLineVisits"></div>
 				<div class="small-chart-info">
-					<label>New Visits</label>
-					<strong>70,79%</strong>
+					<label>总访问数</label>
+					<strong>100</strong>
 				</div>
 				<script type="text/javascript">
 							var sparklineLineVisitsData = [ 15, 16, 17, 19, 15,
