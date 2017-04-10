@@ -139,8 +139,8 @@
 							<ul class="nav nav-children">
 								<li>
 									<a href="#"> <span class="text">基本设置</span>
-									</a>
-									<!-- 				 <li class="zlight-dropdown"> <a href="#">Dropdown <i></i></a>
+										<!-- 		</a>
+													 <li class="zlight-dropdown"> <a href="#">Dropdown <i></i></a>
 								                <ul class="zlight-submenu">	
 								                  <li><a href="#" class="text">Link 1</a></li>
 								                  <li><a href="#" class="text">Link 2</a></li>
@@ -209,7 +209,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="#"> <span class="text">统计分析</span>
+									<a href="page-statistics.jsp"> <span class="text">统计分析</span>
 									</a>
 								</li>
 							</ul>
@@ -371,19 +371,19 @@
 							</a>
 							<ul class="nav nav-children">
 								<li>
-									<a href="#"> <span class="text">登录相关问题</span>
+									<a href="page-guide-login.jsp"> <span class="text">登录相关问题</span>
 									</a>
 								</li>
 								<li>
-									<a href="#"> <span class="text">应用相关管理</span>
+									<a href="page-guide-handle.jsp"> <span class="text">应用相关管理</span>
 									</a>
 								</li>
 								<li>
-									<a href="#"> <span class="text">人员管理相关问题</span>
+									<a href="page-guide-person.jsp"> <span class="text">人员管理相关问题</span>
 									</a>
 								</li>
 								<li>
-									<a href="#"> <span class="text">设备管理相关问题</span>
+									<a href="page-guide-device.jsp"> <span class="text">设备管理相关问题</span>
 									</a>
 								</li>
 							</ul>

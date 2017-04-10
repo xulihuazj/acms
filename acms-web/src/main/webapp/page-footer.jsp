@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-	<div id="footer">
+	<div id="footer" style="background: #1a8fb4; height: 45px;">
 		<ul>
 			<li>
 				<div class="title">Memory</div>

@@ -9,7 +9,7 @@ html {
 
 body {
 	font-family: 'Titillium Web', sans-serif;
-	font-size: 13px;
+	font-size: 12px;
 	margin: 0;
 	padding: 0;
 	min-height: 100%;
@@ -5318,7 +5318,7 @@ body .ui-pnotify.icon-nb .notification .ui-pnotify-icon>span {
 	background: #ffffff;
 	border-left: 3px solid #00aced;
 	border-radius: 4px;
-	color: #cccccc;
+	color: #555555;
 	display: block;
 	font-size: 1.1em;
 	min-height: 20px;
@@ -5939,18 +5939,21 @@ body .ui-pnotify.icon-nb .notification .ui-pnotify-icon>span {
 	width: 35%;
 	float: left;
 	padding: 0 3px;
+		color: #ffffff;
 }
 
 #footer ul li .title {
 	font-weight: 700;
 	text-align: left;
 	width: 23%;
+		color: #ffffff;
 }
 
 #footer ul li .text {
 	width: 100%;
 	padding: 0 15px;
 	float: left;
+		color: #ffffff;
 }
 
 #footer ul li .text b {
