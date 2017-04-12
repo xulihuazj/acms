@@ -15,7 +15,7 @@
 					<ul class="nav nav-sidebar">
 						<div class="panel-body text-center">
 							<div class="flag">
-								<img src="#" class="img-flags" alt="学生门禁管理系统" />
+								<img src="basic/imgfile/header_home.png" class="img-flags" alt="学生门禁管理系统" style="margin-left: -12px;" />
 							</div>
 						</div>
 						<li class="active">
@@ -28,9 +28,9 @@
 							</a>
 							<ul class="nav nav-children">
 								<li>
-									<a href="#"> <span class="text">全部学院</span>
+									<a href="page-college.jsp"> <span class="text">全部学院</span>
 									</a>
-									<ul class="">
+							<!-- 		<ul class="">
 										<li>
 											<a href="#"> <span class="text">电气工程学院</span>
 											</a>
@@ -80,10 +80,6 @@
 											</a>
 										</li>
 										<li>
-											<a href="#"> <span class="text">艺术教育中心</span>
-											</a>
-										</li>
-										<li>
 											<a href="#"> <span class="text">机电工程学院</span>
 											</a>
 										</li>
@@ -115,20 +111,10 @@
 											<a href="#"> <span class="text">马克思主义学院</span>
 											</a>
 										</li>
-									</ul>
+									</ul> -->
 								</li>
 								<li>
-									<a href="#"> <span class="text">全部专业</span>
-									</a>
-									<ul>
-										<li>
-											<a href="#"> <span class="text"> </span>
-											</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="#"> <span class="text">全部学生</span>
+									<a href="page-person.jsp"> <span class="text">全部学生</span>
 									</a>
 								</li>
 							</ul>
@@ -155,7 +141,7 @@
 							</ul>
 						</li>
 
-						<li class="nav-parent">
+				<!-- 		<li class="nav-parent">
 							<a> <i class="fa  fa-shield" aria-hidden="true"></i> <span>门禁权限管理</span>
 							</a>
 							<ul class="nav nav-children">
@@ -168,7 +154,7 @@
 									</a>
 								</li>
 							</ul>
-						</li>
+						</li> -->
 						<li class="nav-parent">
 							<a> <i class="fa fa-retweet" aria-hidden="true"></i> <span>数据分析管理</span>
 							</a>
@@ -377,16 +363,10 @@
 			</div>
 			<ul class="sidebar-terms bk-margin-top-10">
 				<li>
-					<a href="#">Terms</a>
+					<a href="#">帮助中心</a>
 				</li>
 				<li>
-					<a href="#">Privacy</a>
-				</li>
-				<li>
-					<a href="#">Help</a>
-				</li>
-				<li>
-					<a href="#">About</a>
+					<a href="#">关于我们</a>
 				</li>
 			</ul>
 		</div>

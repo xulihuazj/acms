@@ -6,7 +6,7 @@
 	<div class="navbar" role="navigation">
 		<div class="container-fluid container-nav">
 			<!-- Navbar Action -->
-			<ul class="nav navbar-nav navbar-actions navbar-left" style="padding-top: 25px;">
+			<ul class="nav navbar-nav navbar-actions navbar-left" style="padding-top: 0px auto;">
 				<li class="visible-md visible-lg">
 					<a href="#" id="main-menu-toggle"><i class="fa fa-th-large"></i></a>
 				</li>
@@ -17,7 +17,7 @@
 			<!-- Navbar Left -->
 			<div class="navbar-left">
 				<!-- Search Form -->
-				<form class="search navbar-form" style="padding-top: 20px;">
+				<form class="search navbar-form" style="padding-top: 0px auto;">
 					<div class="input-group input-search">
 						<input type="text" class="form-control bk-radius" style="padding-bottom: 10px;" name="q" id="q" placeholder="请输入关键字搜索...">
 						<span class="input-group-btn">
