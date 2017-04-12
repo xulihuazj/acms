@@ -1,4 +1,4 @@
-<%@ page language="java" errorPage="/404.jsp" pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" %>
+<%@ page language="java" errorPage="/404.jsp" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ include file="/view/taglibs.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
@@ -59,8 +59,8 @@
 
 <body>
 	<!-- Start: Header -->
-	
-	<%@ include file="/page-header.jsp" %>
+
+	<%@ include file="/page-header.jsp"%>
 	<!-- End: Header -->
 
 	<!-- Start: Content -->
@@ -68,7 +68,7 @@
 		<div class="row">
 
 			<!-- START 左侧导航栏 -->
-			<%@ include file="/page-sidebar.jsp" %>
+			<%@ include file="/page-sidebar.jsp"%>
 			<!-- END 左侧导航栏 -->
 
 			<!-- Main Page(主要内容) -->
@@ -88,32 +88,28 @@
 					</div>
 				</div>
 				<!-- End 面包屑 -->
-					
-					主要内容
-				
+				<img src="basic/imgfile/login_ban_3.png" class="img-responsive">
 				<!-- End Main Page -->
 
 				<!-- START 底部(隐藏的内容栏目) -->
-				<%@ include file="/page-footer.jsp" %>
+				<%@ include file="/page-footer.jsp"%>
+
 				<!-- End 底部(隐藏的内容栏目)-->
 			</div>
 		</div>
 		<!--/container-->
 
 
-		<div class="clearfix">
-		
-		</div>
+		<div class="clearfix"></div>
 
 
 		<!-- start: JavaScript-->
-		
+
 		<!-- Vendor JS-->
 		<script src="assets/vendor/js/jquery.min.js"></script>
 		<script src="assets/vendor/js/jquery-2.1.1.min.js"></script>
 		<script src="assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
 		<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script src="assets/vendor/skycons/js/skycons.js"></script>
 		<script src="assets/vendor/js/pace.min.js"></script>
 
 		<!-- Plugins JS-->
@@ -123,16 +119,7 @@
 		<script src="assets/plugins/magnific-popup/js/magnific-popup.js"></script>
 		<script src="assets/plugins/moment/js/moment.min.js"></script>
 		<script src="assets/plugins/fullcalendar/js/fullcalendar.js"></script>
-		<script src="assets/plugins/flot/js/jquery.flot.min.js"></script>
-		<script src="assets/plugins/flot/js/jquery.flot.pie.min.js"></script>
-		<script src="assets/plugins/flot/js/jquery.flot.resize.min.js"></script>
-		<script src="assets/plugins/flot/js/jquery.flot.stack.min.js"></script>
-		<script src="assets/plugins/flot/js/jquery.flot.time.min.js"></script>
-		<script src="assets/plugins/flot-tooltip/js/jquery.flot.tooltip.js"></script>
 		<script src="assets/plugins/chart-master/js/Chart.js"></script>
-		<script src="assets/plugins/jqvmap/jquery.vmap.js"></script>
-		<script src="assets/plugins/jqvmap/data/jquery.vmap.sampledata.js"></script>
-		<script src="assets/plugins/jqvmap/maps/jquery.vmap.world.js"></script>
 		<script src="assets/plugins/jquery/js/jquery.zlight.menu.1.0.min.js"></script>
 		<script src="assets/plugins/jquery/js/respond.min.js"></script>
 
@@ -141,7 +128,6 @@
 		<script src="assets/js/core.min.js"></script>
 
 		<!-- Pages JS -->
-		<script src="assets/js/pages/table-advanced.js"></script>
 		<script src="assets/js/pages/index.js"></script>
 		<script src="assets/js/pages/common.js"></script>
 		<script type="text/javascript">

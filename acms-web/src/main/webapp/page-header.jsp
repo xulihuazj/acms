@@ -1,4 +1,4 @@
-<%@ page language="java" errorPage="/404.jsp" pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" %>
+<%@ page language="java" errorPage="/404.jsp" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <%@ include file="view/taglibs.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +6,7 @@
 	<div class="navbar" role="navigation">
 		<div class="container-fluid container-nav">
 			<!-- Navbar Action -->
-			<ul class="nav navbar-nav navbar-actions navbar-left">
+			<ul class="nav navbar-nav navbar-actions navbar-left" style="padding-top: 25px;">
 				<li class="visible-md visible-lg">
 					<a href="#" id="main-menu-toggle"><i class="fa fa-th-large"></i></a>
 				</li>
@@ -17,9 +17,9 @@
 			<!-- Navbar Left -->
 			<div class="navbar-left">
 				<!-- Search Form -->
-				<form class="search navbar-form">
+				<form class="search navbar-form" style="padding-top: 20px;">
 					<div class="input-group input-search">
-						<input type="text" class="form-control bk-radius" name="q" id="q" placeholder="请输入关键字搜索...">
+						<input type="text" class="form-control bk-radius" style="padding-bottom: 10px;" name="q" id="q" placeholder="请输入关键字搜索...">
 						<span class="input-group-btn">
 							<button class="btn btn-default" type="submit">
 								<i class="fa fa-search"></i>
@@ -38,16 +38,10 @@
 						</a>
 						<ul class="dropdown-menu update-menu" role="menu">
 							<li>
-								<a href="#"><i class="fa fa-database bk-fg-primary"></i> Database </a>
+								<a href="#"><i class="fa fa-database bk-fg-primary"></i> 数据 </a>
 							</li>
 							<li>
-								<a href="#"><i class="fa fa-bar-chart-o bk-fg-primary"></i> Connection </a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-bell bk-fg-primary"></i> Notification </a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-envelope bk-fg-primary"></i> Message </a>
+								<a href="#"><i class="fa fa-bar-chart-o bk-fg-primary"></i> 连接 </a>
 							</li>
 						</ul>
 					</li>
@@ -68,7 +62,7 @@
 									<div>
 										<div class="point point-primary point-lg"></div>
 										新消息
-									</div> <span><small>1 minute ago</small></span>
+									</div> <span><small>1分钟前</small></span>
 								</a>
 							</li>
 							<li class="avatar">
@@ -76,7 +70,7 @@
 									<div>
 										<div class="point point-primary point-lg"></div>
 										新消息
-									</div> <span><small>3 minute ago</small></span>
+									</div> <span><small>3分钟前</small></span>
 								</a>
 							</li>
 							<li class="avatar">
@@ -84,7 +78,7 @@
 									<div>
 										<div class="point point-primary point-lg"></div>
 										新消息
-									</div> <span><small>4 minute ago</small></span>
+									</div> <span><small>4分钟前</small></span>
 								</a>
 							</li>
 							<li class="dropdown-menu-footer text-center">
@@ -144,10 +138,6 @@
 							</li>
 							<li>
 								<a href="page-password.jsp"> <i class="fa fa-unlock-alt"></i> 修改密码
-								</a>
-							</li>
-							<li>
-								<a href=""> <i class="fa fa-wrench"></i> 系统设置
 								</a>
 							</li>
 							<li>

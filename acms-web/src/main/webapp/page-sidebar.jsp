@@ -138,34 +138,7 @@
 							</a>
 							<ul class="nav nav-children">
 								<li>
-									<a href="#"> <span class="text">基本设置</span>
-										<!-- 		</a>
-													 <li class="zlight-dropdown"> <a href="#">Dropdown <i></i></a>
-								                <ul class="zlight-submenu">	
-								                  <li><a href="#" class="text">Link 1</a></li>
-								                  <li><a href="#" class="text">Link 2</a></li>
-								                  <li><a href="#" class="text">Link 3</a></li>
-								                  <li class="zlight-dropdown"> <a href="#">Dropdown <i class="icon-angle-right"></i></a>
-							                    	<ul class="zlight-submenu">
-								                      <li><a href="#" class="text">Link 1</a></li>
-								                      <li><a href="#" class="text">Link 2</a></li>
-								                      <li><a href="#" class="text">Link 3</a></li>
-								                      <li><a href="#" class="text">Link 4</a></li>
-							                   		 </ul>
-								                  </li>
-								                </ul>
-								             </li> -->
-									<ul class="" style="position: absolute; top: 0px; left: 140px; z-index: 9999;">
-										<li>
-											<a href="#" class="text">Link 1</a>
-										</li>
-										<li>
-											<a href="#" class="text">Link 2</a>
-										</li>
-										<li>
-											<a href="#" class="text">Link 3</a>
-										</li>
-									</ul>
+									<a href="#"> <span class="text">基本设置</span></a>
 								</li>
 								<li>
 									<a href="#"> <span class="text">设备操作</span>
