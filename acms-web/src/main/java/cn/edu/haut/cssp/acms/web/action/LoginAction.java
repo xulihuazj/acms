@@ -48,9 +48,7 @@ public class LoginAction extends BaseAction {
 	private static final Logger logger = LoggerFactory.getLogger(LoginAction.class);
 
 	// 注入service
-	/*
-	 * @Autowired private IUserService userService;
-	 */
+	  @Autowired private IUserService userService;
 
 	/*
 	 * @Autowired private IFunctionService functionService;

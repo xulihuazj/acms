@@ -26,7 +26,7 @@
 	</dependencies>
 	<build>
 		<plugins>
-			<plugin>
+<!-- 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.4</version>
@@ -40,7 +40,23 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
+			
+				<plugin>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.4</version>
+					<configuration>
+						<warName>acms-service-system</warName>
+						<archive>
+							<index>true</index>
+							<manifest>
+								<!-- 多模块打包 -->
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+								<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
 		</plugins>
 	</build>
 </project>
