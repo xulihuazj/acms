@@ -48,15 +48,14 @@ public class LoginAction extends BaseAction {
 	private static final Logger logger = LoggerFactory.getLogger(LoginAction.class);
 
 	// 注入service
-	  @Autowired private IUserService userService;
+	  @Autowired 
+	  private IUserService userService;
 
-	/*
-	 * @Autowired private IFunctionService functionService;
-	 */
+/*	  @Autowired 
+	  private IFunctionService functionService;*/
 
 	/**
 	 * 登录
-	 * 
 	 * @author: xulihua
 	 * @date: 2017年1月18日下午1:31:19
 	 * @return: String
@@ -71,11 +70,11 @@ public class LoginAction extends BaseAction {
 		} else if (StringUtils.isBlank(loginVerifycode)) {
 			model.put("message", "验证码不能为空！");
 		} /*
-			 * else
-			 * if(!imageCaptchaService.validateResponseForID(request.getSession(
+			 * else if(!imageCaptchaService.validateResponseForID(request.getSession(
 			 * ).getId(), loginVerifycode)) { model.put("message",
 			 * "验证码不正确，请点击刷新后重试!"); }
-			 */else {
+			 */
+		else {
 			boolean isLogined = true;
 			try {
 				/* TODO shiro 权限管理 */
@@ -86,8 +85,7 @@ public class LoginAction extends BaseAction {
 				map.put("username", loginUsername);
 				map.put("password", PasswordUtils.encodePasswordSHA1(loginPassword));
 				// 根据用户名和密码查询用户信息
-				// TUser currUser = userService.selectUserByNameAndPass(map);
-				TUser currUser = null;
+				 TUser currUser = userService.selectUserByNameAndPass(map);
 				currUser.setUserName("xulihua");
 				currUser.setPassword("111111");
 				if (null == currUser) {

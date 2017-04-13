@@ -110,7 +110,14 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
 	//查询用户信息
 	@Override
 	public TUser selectUserByNameAndPass(Map<String, String> map) {
-		TUser currUser = (TUser) super.getBaseDao().queryForObject("UserManageMapper.selectUserByNameAndPass", map);
+		 TUser currUser = null;
+		try{
+			
+			Object object = super.getBaseDao().queryForObject("UserManageMapper.selectUserByNameAndPass", map);
+			currUser = (TUser)object;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		return currUser;
 	}
 
