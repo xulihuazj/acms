@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @date: 2017年1月5日上午11:56:43
  */
 @Controller
-@RequestMapping("/acms")
 public class HelpAction extends BaseAction{
 	
 	@RequestMapping(value = "/404",method = RequestMethod.GET)

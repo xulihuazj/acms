@@ -152,5 +152,12 @@
 		FROM t_sys_user
 		WHERE t_sys_user.n_id= #{id}
 	</select>
+	
+	<select id="getUserById" parameterType="Long"
+		resultType="String">
+		SELECT c_user_name
+		FROM t_sys_user
+		WHERE t_sys_user.n_id= #{id}
+	</select>
 
 </mapper>

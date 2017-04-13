@@ -86,9 +86,9 @@ public class LoginAction extends BaseAction {
 				map.put("password", PasswordUtils.encodePasswordSHA1(loginPassword));
 				// 根据用户名和密码查询用户信息
 				 TUser currUser = userService.selectUserByNameAndPass(map);
-				currUser.setUserName("xulihua");
+/*				currUser.setUserName("xulihua");
 				currUser.setPassword("111111");
-				if (null == currUser) {
+*/				if (null == currUser) {
 					model.put("message", "当前账号不存在");
 					return "homepage.jsp";
 				}

@@ -58,7 +58,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
 
 	@Override
 	public TUser findUserById(Long userId) throws UserBusiException{
-		TUser user = (TUser) super.getBaseDao().queryForObject("UserManageMapper.queryWthdrwAcctById", userId);
+		TUser user = (TUser) super.getBaseDao().queryForObject("UserManagementMapper.findUserById", userId);
 		return user;
 	}
 
@@ -103,8 +103,16 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
 	public boolean isNameExist(String userName) throws UserBusiException{
 		Map<String, String> map = new HashMap<>();
 		map.put("uesrName", userName);
-		Map<String, Long> object = (Map<String, Long>) super.getBaseDao().queryForObject("UserManageMapper.checkNameIsExist", map);
-		return object.get("id")>0 ? true : false;
+		try{
+			Object object2 = super.getBaseDao().queryForObject("UserManagementMapper.getUserById", 2);
+			System.out.println(object2);
+			Map<String, Long> object = (Map<String, Long>) super.getBaseDao().queryForObject("UserManagementMapper.checkNameIsExist", map);
+			return object.get("id")>0 ? true : false;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		
 	}
 
 	//查询用户信息

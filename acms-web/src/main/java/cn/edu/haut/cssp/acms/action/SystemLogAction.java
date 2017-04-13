@@ -15,7 +15,6 @@ import cn.edu.haut.cssp.acms.log.entity.SystemLog;
  * @date: 2017年1月5日下午1:41:10
  */
 @Controller
-@RequestMapping("/acms")
 public class SystemLogAction extends BaseAction{
 
 	/**
