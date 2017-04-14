@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <!--mapper（命名空间）一般为接口名称 -->
-<mapper namespace="PersonMapper">
+<mapper namespace="TPersonMapper">
 
 	<!-- 定义resultMap,列名和属性名称映射配置 -->
 	<!-- <resultMap id="PersonResultMap" type="cn.edu.haut.cssp.acms.system.pojo.TPerson"> 
@@ -31,7 +31,14 @@
 		resultType="cn.edu.haut.cssp.acms.core.entity.TPerson">
 		select
 		<include refid="Base_Column_List" />
-		from t_person_info info where info.n_id = #{perId}
+		from t_person_info info where info.n_id = 2
+	</select>
+	
+	<select id="queryPersonll" parameterType="java.util.Map"
+		resultType="java.util.Map">
+		select
+		info.n_card_sn cardSN 
+		from t_person_info info where info.c_per_name = #{perName}
 	</select>
 	
 	<!-- 删除人员信息 -->

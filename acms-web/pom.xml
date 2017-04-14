@@ -207,6 +207,7 @@
 		</pluginManagement>
 
 		<plugins>
+		
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>maven-jetty-plugin</artifactId>

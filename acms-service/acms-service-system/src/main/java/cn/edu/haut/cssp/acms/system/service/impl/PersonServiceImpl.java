@@ -4,11 +4,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import cn.edu.haut.cssp.acms.core.dao.impl.BaseDaoImpl;
 import cn.edu.haut.cssp.acms.core.entity.TPerson;
 import cn.edu.haut.cssp.acms.system.service.IPersonService;
 
@@ -36,8 +38,17 @@ public class PersonServiceImpl extends BaseServiceImpl implements IPersonService
 
 	@Override
 	public TPerson queryPersonDetail(Integer perId) {
+		System.out.println(1111);
 		try {
-			TPerson person = super.getBaseDao().getSqlSession().selectOne("PersonMapp.queryPersonDetail", perId);
+			BaseDaoImpl daoImpl = super.getBaseDao();
+			SqlSession sqlSession = daoImpl.getSqlSession();
+			Map<String, Object> map = new HashMap<>();
+			map.put("perId", 2);
+			TPerson person = sqlSession.selectOne("TPersonMapper.queryPersonDetail", 2);
+			
+			sqlSession.commit(true);
+			//System.out.println(person);
+			//TPerson person = super.getBaseDao().getSqlSession().selectOne("PersonMapp.queryPersonDetail", perId);
 			return person;
 		} catch (Exception e) {
 			e.printStackTrace();

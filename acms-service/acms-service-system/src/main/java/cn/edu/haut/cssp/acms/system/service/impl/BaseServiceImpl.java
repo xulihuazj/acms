@@ -4,6 +4,7 @@ import java.util.Date;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,7 @@ public class BaseServiceImpl {
 	private Logger logger = LoggerFactory.getLogger(BaseServiceImpl.class);
 	
 	// 用户中心操作的dao
+	@Autowired
 	private BaseDaoImpl baseDao;
 	
 	

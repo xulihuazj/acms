@@ -34,8 +34,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 	<!--加载mapper映射,如果将和spring整合后，可以使用整合包中提供的mapper扫描器，此处的mappers不用配置了。 -->
 	<mappers>
-		<mapper resource="orm/UserManageMapper.xml" />
+		<mapper resource="orm/Entity.xml"/>
 		<mapper resource="orm/RoleMapper.xml" />
-		<mapper resource="orm/TPersonInfoMapper.xml" />
+		<mapper resource="orm/TPersonMapper.xml" />
+		<mapper resource="orm/UserManageMapper.xml" />
 	</mappers>
 </configuration>		
