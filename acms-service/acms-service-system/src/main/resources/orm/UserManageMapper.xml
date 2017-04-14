@@ -6,8 +6,8 @@
 	<!-- 在mapper.xml文件中配置很多的sql语句，执行每个sql语句时，封装为MappedStatement对象 mapper.xml以statement为单位管理sql语句 -->
 
 	<!-- 定义resultMap,列名和属性名称映射配置 -->
-	<resultMap id="UserResultMap" type="java.util.Map">
-		<id column="n_id" property="id" jdbcType="BIGINT" /><!-- 主键 -->
+<!-- 	<resultMap id="UserResultMap" type="java.util.Map">
+		<id column="n_id" property="id" jdbcType="BIGINT" />主键
 		<result column="c_user_name" property="userName" jdbcType="VARCHAR" />
 		<result column="c_password" property="password" jdbcType="TIMESTAMP" />
 		<result column="n_type" property="type" jdbcType="TINYINT" />
@@ -17,7 +17,7 @@
 		<result column="c_note" property="note" jdbcType="VARCHAR" />
 		<result column="c_ec_code" property="ecCode" jdbcType="BIGINT" />
 		<result column="c_delete_flag" property="deleteFlag" jdbcType="TINYINT" />
-	</resultMap>
+	</resultMap> -->
 
 
 	<!-- sql通用片段抽取 -->
@@ -43,14 +43,16 @@
 
 
 	<!-- 根据用户名称查询用户详情 -->
-	<select id="getUserByUserName" parameterType="java.util.Map"
-		resultType="java.util.Map">
+	<select id="getUserByUserName" parameterType="int"
+		resultType="cn.edu.haut.cssp.acms.core.entity.User">
 		SELECT
-		<include refid="Base_Column_List" />
+		<!-- <include refid="Base_Column_List" /> -->
+		*
 		FROM t_sys_user where
-		<if test="userName != null">
+	<!-- 	<if test="userName != null">
 			c_user_name = #{userName}
-		</if>
+		</if> -->
+		n_id = #{id}
 	</select>
 
 	<!-- 自定义查询条件查询用户的信息 -->

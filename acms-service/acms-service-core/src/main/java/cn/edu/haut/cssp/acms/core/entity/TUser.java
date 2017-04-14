@@ -40,15 +40,133 @@ public class TUser implements Serializable {
 	private String password;
 
 	/**
-	 * 关联t_emm_ec_info中的c_code
-	 */
-	private String ecCode;
-
-	/**
 	 * 1-超级管理员；2-普通管理员
 	 */
 	private Integer type;
 	
+
+	/**
+	 * 手机号
+	 */
+	private String mobile;
+	
+	/**
+	 * 1-正常；2-停用 ；-1 - 删除； 默认 ：1
+	 */
+	private Integer status;
+	/**
+	 * 操作时间
+	 */
+	private Long time;
+	
+	/**
+	 * 备注
+	 */
+	private String note;
+	
+	/**
+	 * 关联t_emm_ec_info中的c_code
+	 */
+	private String ecCode;
+	
+	/**
+	 * 删除的标志 1-正常  2-已删除
+	 */
+	private Integer deleteFlag;
+	
+	/**
+	 * 创建时间
+	 */
+	private Long createTime;
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Integer getType() {
+		return type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public Long getTime() {
+		return time;
+	}
+
+	public void setTime(Long time) {
+		this.time = time;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public String getEcCode() {
+		return ecCode;
+	}
+
+	public void setEcCode(String ecCode) {
+		this.ecCode = ecCode;
+	}
+
+	public Integer getDeleteFlag() {
+		return deleteFlag;
+	}
+
+	public void setDeleteFlag(Integer deleteFlag) {
+		this.deleteFlag = deleteFlag;
+	}
+
+	public Long getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Long createTime) {
+		this.createTime = createTime;
+	}
+
 	/**
 	 * 角色id
 	 */
@@ -69,49 +187,13 @@ public class TUser implements Serializable {
 	 */
 	private String roleName;
 	
-	/**
-	 * 1-正常；2-停用 ；-1 - 删除； 默认 ：1
-	 */
-	private Integer status;
 	
-	/**
-	 * 创建时间
-	 */
-	private Long createTime;
-
 	
-	/**
-	 * 删除的标志 1-正常  2-已删除
-	 */
-	private Integer deleteFlag;
-	
-	/**
-	 * @return the deleteFlag
-	 */
-	public Integer getDeleteFlag() {
-		return deleteFlag;
-	}
-
-	/**
-	 * @param deleteFlag the deleteFlag to set
-	 */
-	public void setDeleteFlag(Integer deleteFlag) {
-		this.deleteFlag = deleteFlag;
-	}
 
 	/** 指定角色名称做查询 */
 	private Integer[] roleArray;
 	
 	private String[] cardInfoLists;
-	
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	@Transient
 	public Long getRoleId() {
@@ -126,61 +208,6 @@ public class TUser implements Serializable {
 	public String getRoleName() {
 		return roleName;
 	}
-
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-	}
-	
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getEcCode() {
-		return ecCode;
-	}
-
-	public void setEcCode(String ecCode) {
-		this.ecCode = ecCode;
-	}
-
-	public Integer getType() {
-		return type;
-	}
-
-	public void setType(Integer type) {
-		this.type = type;
-	}
-
-
-	public Integer getStatus() {
-		return status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
-	public Long getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(Long time) {
-		this.createTime = time;
-	}
-
-	
 
 	@Transient
 	public String getFunctionIds() {
@@ -318,13 +345,5 @@ public class TUser implements Serializable {
 		}
 	}
 
-	@Override
-	public String toString() {
-		return "TUser [id=" + id + ", userName=" + userName + ", password=" + password + ", ecCode=" + ecCode
-				+ ", type=" + type + ", roleId=" + roleId + ", functionIds=" + functionIds
-				+ ", roleIds=" + roleIds + ", roleName=" + roleName + ", status=" + status + ", createTime="
-				+ createTime + ", deleteFlag=" + deleteFlag + ", roleArray=" + Arrays.toString(roleArray)
-				+ ", cardInfoLists=" + Arrays.toString(cardInfoLists) + "]";
-	}
 
 }

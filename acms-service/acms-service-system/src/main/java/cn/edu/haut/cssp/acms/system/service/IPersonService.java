@@ -62,7 +62,7 @@ public interface IPersonService {
 	public void stopPerson(Integer personId);
 	
 	/**
-	 * 根据ID删除人员(软删除)
+	 * 根据ID删除人员
 	 * @Description:
 	 * @author: 徐礼华
 	 * @date: 2017年4月9日下午6:24:20

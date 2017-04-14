@@ -33,7 +33,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</environments>
 
 
-
 	<!--加载mapper映射,如果将和spring整合后，可以使用整合包中提供的mapper扫描器，此处的mappers不用配置了。 -->
 	<mappers>
 		<!--第1种: 通过resource引用mapper的映射文件 -->
@@ -43,7 +42,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			中 -->
 		<!-- <mapper class="cn.itcast.mybatis.mapper.UserMapper"/> -->
 
-
 		<!--第3种: 批量mapper配置 通过package进行自动扫描包下边的mapper接口， 要求：需要mapper.xml和mapper.java同名并且在一个目录 
 			中 -->
 		<!--<package name="cn.edu.haut.cssp.acms.system.service"/> -->
@@ -52,7 +50,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="orm/UserManageMapper.xml" />
 		<!-- 权限mapper -->
 		<mapper resource="orm/RoleMapper.xml" />
-		<!-- -->
+		<mapper resource="orm/TPersonInfoMapper.xml" />
+		
+		
 
 	</mappers>
 </configuration>		

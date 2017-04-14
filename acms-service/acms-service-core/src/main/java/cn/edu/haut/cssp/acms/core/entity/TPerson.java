@@ -22,7 +22,12 @@ public class TPerson implements Serializable{
 	/**
 	 * 人员所持卡号
 	 */
-	private String cardId;
+	private String cardSN;
+	
+	/**
+	 * 卡类型
+	 */
+	private Integer cardType;
 	/**
 	 * 人员学号id
 	 */
@@ -39,10 +44,6 @@ public class TPerson implements Serializable{
 	 * 联系电话
 	 */
 	private String perMobile;
-	/**
-	 * 人员卡号
-	 */
-	private String perNcap;
 	
 	/**
 	 * 人员所属学院
@@ -74,12 +75,41 @@ public class TPerson implements Serializable{
 	 */
 	private String perIdentificate;
 
+	/**
+	 * 人员状态
+	 */
+	private Integer perStatus;
+
+	public Integer getPerStatus() {
+		return perStatus;
+	}
+
+	public void setPerStatus(Integer perStatus) {
+		this.perStatus = perStatus;
+	}
+
 	public Long getId() {
 		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getCardSN() {
+		return cardSN;
+	}
+
+	public void setCardSN(String cardSN) {
+		this.cardSN = cardSN;
+	}
+
+	public Integer getCardType() {
+		return cardType;
+	}
+
+	public void setCardType(Integer cardType) {
+		this.cardType = cardType;
 	}
 
 	public Long getPerId() {
@@ -112,14 +142,6 @@ public class TPerson implements Serializable{
 
 	public void setPerMobile(String perMobile) {
 		this.perMobile = perMobile;
-	}
-
-	public String getPerNcap() {
-		return perNcap;
-	}
-
-	public void setPerNcap(String perNcap) {
-		this.perNcap = perNcap;
 	}
 
 	public String getPerDepart() {
@@ -161,21 +183,13 @@ public class TPerson implements Serializable{
 	public void setPerGrade(String perGrade) {
 		this.perGrade = perGrade;
 	}
-	
+
 	public String getPerIdentificate() {
 		return perIdentificate;
 	}
 
 	public void setPerIdentificate(String perIdentificate) {
 		this.perIdentificate = perIdentificate;
-	}
-
-	public String getCardId() {
-		return cardId;
-	}
-
-	public void setCardId(String cardId) {
-		this.cardId = cardId;
 	}
 
 	/**
@@ -213,7 +227,7 @@ public class TPerson implements Serializable{
 	 * @date: 2017年3月24日上午12:22:44
 	 * @note
 	 */
-	public enum enum_person_sex {
+	public enum ENUM_PERSON_SEX {
 		
 		/**
 		 * 男
@@ -227,8 +241,34 @@ public class TPerson implements Serializable{
 		
 		public Integer value;
 		
-		private enum_person_sex(Integer vlaue) {
+		private ENUM_PERSON_SEX(Integer vlaue) {
 			this.value = vlaue;
+		}
+	}
+	
+	/**
+	 * 人员状态，1-正常。2-禁用
+	 * Description:
+	 * @project:acms-service-core
+	 * @author: 徐礼华
+	 * @date: 2017年4月14日上午9:12:47
+	 * @note:
+	 */
+	public enum ENUM_PERSON_STATUS {
+		/**
+		 * 正常
+		 */
+		per_normal(1),
+		
+		/**
+		 * 禁用
+		 */
+		per_stop(2);
+		
+		public Integer value;
+		
+		private ENUM_PERSON_STATUS(Integer value) {
+			this.value = value;
 		}
 	}
 }
