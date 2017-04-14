@@ -1,9 +1,6 @@
 package cn.edu.haut.cssp.acms.action;
 
-
 import java.util.List;
-
-
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,11 +8,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.xdja.platform.log.LoggerExtData;
 import com.xdja.platform.security.utils.OperatorUtil;
 import com.xdja.platform.security.utils.PasswordUtils;
-
 import cn.edu.haut.cssp.acms.core.bean.DataQueryExt;
 import cn.edu.haut.cssp.acms.core.entity.TRole;
 import cn.edu.haut.cssp.acms.core.entity.TSystemLog;
@@ -23,10 +18,10 @@ import cn.edu.haut.cssp.acms.core.entity.TUser;
 import cn.edu.haut.cssp.acms.core.utils.DateQueryBean;
 import cn.edu.haut.cssp.acms.json.DataTablesParameters;
 import cn.edu.haut.cssp.acms.log.util.LitePaging;
+import cn.edu.haut.cssp.acms.system.service.IPersonService;
 import cn.edu.haut.cssp.acms.system.service.IRoleService;
 import cn.edu.haut.cssp.acms.system.service.IUserService;
 import cn.edu.haut.cssp.acms.util.EncoderUtil;
-
 
 /**
  * 用户管理员ACTION

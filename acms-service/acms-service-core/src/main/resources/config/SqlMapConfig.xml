@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 自定义别名 -->
+	<typeAliases>
+		<typeAlias type="cn.edu.haut.cssp.acms.core.entity.TUser" alias="TUser"/>
+	</typeAliases>
+	
+	<!-- 配置映射文件 -->
+	<mappers>
+		<mapper resource="orm/UserManageMapper.xml" />
+	</mappers>
+</configuration>		

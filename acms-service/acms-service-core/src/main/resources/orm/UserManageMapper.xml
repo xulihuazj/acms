@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 用户管理mapper（命名空间）一般为接口名称 -->
+<!-- <mapper namespace="cn.edu.haut.cssp.acms.system.service.IUserService"> -->
+<mapper namespace="UserManagementMapper">
+	<!-- 在mapper.xml文件中配置很多的sql语句，执行每个sql语句时，封装为MappedStatement对象 mapper.xml以statement为单位管理sql语句 -->
+
+	<!-- sql通用片段抽取 -->
+	<!-- 注意：不要将where标签放在sql片段中 -->
+	<sql id="Base_Column_List">
+		n_id, c_user_name, c_password, n_type, c_mobile, n_status,
+		n_time, c_note, c_ec_code, c_delete_flag
+	</sql>
+	<sql id="query_user_where">
+		<if test="userExtend != null">
+			<if test="userExtend.userName != null and userExtend.userName != ''">
+				AND userName like '%${userExtend.userName}%'
+			</if>
+
+			<!-- 根据id集合查询用户信息 -->
+			<!-- collection集合的属性 open开始拼接的串； close结束循环拼接的串 item:每次循环取到的对象 separator:没两次循环中间拼接的串 -->
+			<foreach collection="ids" open="AND id IN (" close=")" item="abc"
+				separator=",">
+				#{abc}
+			</foreach>
+		</if>
+	</sql>
+
+
+	<!-- 根据用户名称查询用户详情 -->
+	<select id="getUserByUserName" parameterType="int"
+		resultType="cn.edu.haut.cssp.acms.core.entity.User">
+		SELECT
+		<!-- <include refid="Base_Column_List" /> -->
+		*
+		FROM t_sys_user where
+	<!-- 	<if test="userName != null">
+			c_user_name = #{userName}
+		</if> -->
+		n_id = #{id}
+	</select>
+
+	<!-- 自定义查询条件查询用户的信息 -->
+	<select id="findUserListById" parameterType="java.util.Map"
+		resultType="TUser">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM t_sys_user
+		<where>
+			<if test="id != null and id != '' and id != 'null'">
+				n_id = #{id}
+			</if>
+		</where>
+	</select>
+
+	<!-- 保存用户信息 -->
+	<insert id="saveUser" parameterType="cn.edu.haut.cssp.acms.core.entity.TUser">
+		INSERT INTO t_sys_user (
+		<include refid="Base_Column_List" />
+		) VALUES
+		(#{uesrName},#{password},#{type},#{mobile},#{status},#{createTime},#{note},#{ecCode},#{deleteFlag})
+	</insert>
+
+	<!-- 根据id更新用户信息 -->
+<!-- 	<update id="updateUserById" parameterType="TUserCondition">
+		update t_sys_user
+		<set>
+			<if test="userName != null"> c_user_name = #{userName}, </if>
+			<if test="password != null"> c_password = #{password}, </if>
+			<if test="type != null"> n_type = #{type}, </if>
+			<if test="mobile != null"> c_mobile = #{mobile}, </if>
+			<if test="status != null"> n_status = #{status}, </if>
+			<if test="createTimetime != null"> n_time = #{createTime}, </if>
+			<if test="note != null"> c_note = #{note}, </if>
+			<if test="ecCode != null"> c_ec_code = #{ecCode}, </if>
+			<if test="deleteFlag != null"> c_delete_flag = #{deleteFlag}, </if>
+		</set>
+		where n_id = #{id}
+	</update>
+ -->
+	<!-- 根据用户id删除用户 --><!-- 真删除 -->
+	<delete id="deleteUserById" parameterType="Long">
+		DELETE FROM t_sys_user
+		WHERE n_id = #{id}
+	</delete>
+
+	<!-- 删除用户（软删除） -->
+	<update id="deleteUserStatusById" parameterType="java.util.Map">
+		UPDATE t_sys_user
+		<set>
+			<if test="status != null ">
+				n_status = #{status}
+			</if>
+		</set>
+		WHERE n_id = #{id}
+	</update>
+
+	<!-- 通过userId重置密码 -->
+	<update id="resetPassword" parameterType="java.util.Map">
+		UPDATE t_sys_user
+		<set>
+			<if test="password != null">
+				c_password = #{password}
+			</if>
+		</set>
+		WHERE n_id = #{id}
+	</update>
+
+	<!-- （暂停后）开启用户 -->
+	<update id="startUser" parameterType="Long">
+		UPDATE t_sys_user SET
+		n_status = 1 WHERE n_id = #{id}
+	</update>
+
+	<!--查询用户名是否已经注册 -->
+	<select id="checkNameIsExist" parameterType="java.util.Map"
+		resultType="java.util.Map">
+		SELECT n_id FROM t_sys_user
+		WHERE 1=1
+		<if test="userName!=null and userName!=''">
+			AND c_user_name = #{userName}
+		</if>
+	</select>
+
+	<!-- 停用用户 -->
+	<update id="stopUserById" parameterType="java.util.Map">
+		UPDATE t_sys_user user
+		<set>
+			<if test="status != null"> n_status = #{status} </if>
+		</set>
+		WHERE n_id = #{id}
+	</update>
+
+	<!-- 根据用户id查询用户详情 -->
+	<select id="findUserById" parameterType="Long"
+		resultType="cn.edu.haut.cssp.acms.core.entity.TUser">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM t_sys_user
+		WHERE t_sys_user.n_id= #{id}
+	</select>
+	
+	<select id="getUserById" parameterType="Long"
+		resultType="String">
+		SELECT c_user_name
+		FROM t_sys_user
+		WHERE t_sys_user.n_id= #{id}
+	</select>
+
+</mapper>

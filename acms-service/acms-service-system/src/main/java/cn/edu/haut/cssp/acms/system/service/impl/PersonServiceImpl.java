@@ -6,6 +6,8 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import cn.edu.haut.cssp.acms.core.entity.TPerson;
 import cn.edu.haut.cssp.acms.system.service.IPersonService;
@@ -18,6 +20,7 @@ import cn.edu.haut.cssp.acms.system.service.IPersonService;
  * @date: 2017年4月14日上午11:41:18
  * @note:
  */
+@Service("personService")
 public class PersonServiceImpl extends BaseServiceImpl implements IPersonService {
 
 	private Logger logger = LoggerFactory.getLogger(PersonServiceImpl.class);

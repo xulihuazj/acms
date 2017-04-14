@@ -8,10 +8,8 @@
 	   http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
        http://www.springframework.org/schema/context 
        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
-	<mvc:annotation-driven/>
-	<context:annotation-config />
-	<context:component-scan
-		base-package="cn.edu.haut.cssp.acms.core.dao.impl"></context:component-scan>
+<!-- 	<context:annotation-config />
+	<context:component-scan base-package="cn.edu.haut.cssp.acms.core.dao.impl"></context:component-scan> -->
 
 	<!-- 加载配置文件 -->
 	<context:property-placeholder location="classpath:db.properties" />
@@ -25,11 +23,15 @@
 		<property name="maxActive" value="10" />
 		<property name="maxIdle" value="5" />
 	</bean>
+	
+	<bean id="baseDao" class="cn.edu.haut.cssp.acms.core.dao.impl.BaseDaoImpl">
+		<property name="sqlSession" ref="sqlSession" />
+	</bean>
 
 	<!-- SqlSession的工厂类 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="configLocation" value="classpath:orm/Configuration.xml"></property>
-		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="classpath:config/SqlMapConfig.xml"/>
+		<property name="dataSource" ref="dataSource"/>
 	</bean>
 
 	<!-- SqlSession类 -->

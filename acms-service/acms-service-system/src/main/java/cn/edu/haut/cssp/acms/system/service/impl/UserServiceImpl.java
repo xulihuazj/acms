@@ -15,7 +15,7 @@ import cn.edu.haut.cssp.acms.log.util.LitePaging;
 import cn.edu.haut.cssp.acms.system.exception.UserBusiException;
 import cn.edu.haut.cssp.acms.system.service.IUserService;
 
-@Component
+@Service("userService")
 public class UserServiceImpl extends BaseServiceImpl implements IUserService{
 
 	private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
