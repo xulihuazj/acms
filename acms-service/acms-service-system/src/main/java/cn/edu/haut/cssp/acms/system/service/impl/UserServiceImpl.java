@@ -3,8 +3,10 @@ package cn.edu.haut.cssp.acms.system.service.impl;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +21,7 @@ import cn.edu.haut.cssp.acms.system.service.IUserService;
 public class UserServiceImpl extends BaseServiceImpl implements IUserService{
 
 	private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
-
+	private SqlSession sqlSession;
 	@Override
 	public TUser getUserByUserName(String userName) throws UserBusiException{
 		Map<String, String> map = new HashMap<>();
@@ -57,9 +59,16 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
 	}
 
 	@Override
-	public TUser findUserById(Long userId) throws UserBusiException{
-		TUser user = (TUser) super.getBaseDao().queryForObject("UserManagementMapper.findUserById", userId);
-		return user;
+	public TUser findUserById(Long userId){
+		System.out.println(userId);
+		System.out.println(3333);
+		try{
+			System.out.println(sqlSession.selectOne("UserManagementMapper.findUserById", userId));
+		}catch(Exception e){
+			System.out.println("执行sql出错");
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	@Override

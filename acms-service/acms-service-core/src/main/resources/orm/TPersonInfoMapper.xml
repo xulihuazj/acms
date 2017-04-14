@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--mapper（命名空间）一般为接口名称 -->
+<mapper namespace="PersonMapper">
+
+	<!-- 定义resultMap,列名和属性名称映射配置 -->
+	<!-- <resultMap id="PersonResultMap" type="cn.edu.haut.cssp.acms.system.pojo.TPerson"> 
+		<id column="n_id" property="id" jdbcType="BIGINT" /> <result column="n_card_sn" 
+		property="cardSN" jdbcType="VARCHAR" /> <result column="c_card_type" property="cardType" 
+		jdbcType="INTEGER" /> <result column="c_per_id" property="perId" jdbcType="BIGINT" 
+		/> <result column="c_per_type" property="perType" jdbcType="INTEGER" /> <result 
+		column="c_per_name" property="perName" jdbcType="VARCHAR" /> <result column="c_per_mobile" 
+		property="perMobile" jdbcType="VARCHAR" /> <result column="c_per_depart" 
+		property="perDepart" jdbcType="VARCHAR" /> <result column="c_per_major" property="perMajor" 
+		jdbcType="VARCHAR" /> <result column="c_per_age" property="perAge" jdbcType="BIGINT" 
+		/> <result column="c_per_sex" property="perSex" jdbcType="INTEGER" /> <result 
+		column="c_per_grade" property="perGrade" jdbcType="VARCHAR" /> <result column="c_per_identificate" 
+		property="perIdentificate" jdbcType="VARCHAR" /> </resultMap> -->
+	
+	<!-- 通用SQL片段 -->
+	<sql id="Base_Column_List">
+		n_id id,n_card_sn cardSN,c_card_type cardType,c_per_id perId,c_per_type
+		perType,c_per_name perName,
+		c_per_mobile perMobile,c_per_depart perDepart,c_per_major perMajor,c_per_age
+		perAge,c_per_sex perSex,
+		c_per_grade perGrade,c_per_identificate perIdentificate,n_per_status perStatus
+	</sql>
+
+	<!-- 查询人员详情 -->
+	<select id="queryPersonDetail" parameterType="int"
+		resultType="cn.edu.haut.cssp.acms.core.entity.TPerson">
+		select
+		<include refid="Base_Column_List" />
+		from t_person_info info where info.n_id = #{perId}
+	</select>
+	
+	<!-- 删除人员信息 -->
+	<delete id="deletePerson" parameterType="int">
+		delete from t_person_info info where info.n_id =  #{perId} 
+	</delete>
+	
+	<!-- 更新人员状态 -->
+	<update id="updatePersonStatus" parameterType="java.util.Map">
+		update t_person_info info set info.n_per_status = #{perStatus} where info.n_id = #{perId}
+	</update>
+	
+	<!-- 保存人员信息 -->
+	<insert id="savePerson" parameterType="java.util.Map">
+		insert into t_person_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="null != cardSN">n_card_sn,</if>
+			<if test="null != cardType">n_card_type,</if>
+			<if test="perId > 0">c_per_id,</if>
+			<if test="perType > 0">c_per_type,</if>
+			<if test="null != perName">c_per_name,</if>
+			<if test="perMobile > 0">c_per_mobile,</if>
+			<if test="perDepart != null">c_per_depart,</if>
+			<if test="null != perMajor">c_per_major,</if>
+			<if test="perAge > 0">c_per_age,</if>
+			<if test="perSex > 0">c_per_sex,</if>
+			<if test="perGrade > 0">c_per_grade,</if>
+			<if test="perIdentificate != null">c_per_identificate,</if>
+		</trim>
+		<trim prefix="values(" suffix=")" suffixOverrides=",">
+			<if test="null != cardSN">#{cardSN},</if>
+			<if test="null != cardType">#{cardType},</if>
+			<if test="perId > 0">#{perId},</if>
+			<if test="perType > 0">#{perType},</if>
+			<if test="null != perName">#{perName},</if>
+			<if test="perMobile > 0">#{perMobile},</if>
+			<if test="perDepart != null">#{perDepart},</if>
+			<if test="null != perMajor">#{perMajor},</if>
+			<if test="perAge > 0">#{perAge},</if>
+			<if test="perSex > 0">#{perSex},</if>
+			<if test="perGrade > 0">#{perGrade},</if>
+			<if test="perIdentificate != null">#{perIdentificate},</if>
+		</trim>
+	</insert>
+	
+	<!-- 编辑人员信息 -->
+	<update id="updatePerson" parameterType="java.util.Map">
+		update t_person_info info
+		<trim prefix="set" suffixOverrides=",">
+			<if test="null != cardSN">
+				n_card_sn = #{cardSN},
+			</if>
+			<if test="perId > 0">
+				c_per_id = #{perId},
+			</if>
+			<if test="null != cardType">
+				c_card_type = #{cardType},
+			</if>
+			<if test="perType > 0 ">
+				c_per_type= #{perType},
+			</if>
+			<if test="null != perName">
+				c_per_name = #{perName},
+			</if>
+			<if test="perMobile > 0">
+				c_per_mobile= #{perMobile},
+			</if>
+			<if test="null != perDepart">
+				c_per_depart= #{perDepart},
+			</if>
+			<if test="null != perMajor">
+				c_per_major= #{perMajor},
+			</if>
+			<if test="perAge > 0">
+				c_per_age = #{perAge},
+			</if>
+			<if test="perSex > 0">
+				c_per_sex = #{perSex},
+			</if>
+			<if test="perGrade > 0">
+				c_per_grade = #{perGrade},
+			</if>
+			<if test="perIdentificate > 0">
+				c_per_identificate= #{perIdentificate},
+			</if>
+			<if test="perStatus > 0">
+				n_per_status= #{perStatus},
+			</if>
+		</trim>
+		where info.n_id = #{id}
+	</update>
+  
+  <select id="getUserList" parameterType="java.util.Map" resultType="cn.edu.haut.cssp.acms.core.entity.TPerson">
+ 	 select 
+ 	 <include refid="Base_Column_List" />
+ 	 from t_person_info
+ </select>
+  
+</mapper>

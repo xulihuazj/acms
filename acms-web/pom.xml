@@ -47,11 +47,11 @@
 			<artifactId>acms-service-log</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>cn.edu.haut.cssp</groupId>
 			<artifactId>acms-service-system</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>javax.servlet</groupId>

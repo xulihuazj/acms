@@ -274,5 +274,17 @@ public class UserManagerAction extends BaseAction{
 		return "system/user/edit";
 	}
 	
+	@RequestMapping(value = "/getUserByUserName.do", method = RequestMethod.GET)
+	public String getUserByUserName(String userName) {
+		try{
+			Long long1 = new Long(2);
+			 System.out.println(userService.findUserById(long1));
+		TUser user = userService.getUserByUserName(userName);
+		}catch(Exception e){
+			e.printStackTrace();
+			System.out.println(1111111);
+		}
+		return "success";
+	}
 	
 }
