@@ -32,11 +32,11 @@ public class PersonManagerAction extends BaseAction{
 	 * @return
 	 */
 	@RequestMapping(value = "/startPerson.do", method = RequestMethod.GET)
-	public Object startPerson(Integer perId) {
+	public Object startPerson(Integer id) {
 		String message = SUCCESS; 
 		try {
-			if(null != perId && perId > 0){
-				personService.startPerson(perId);
+			if(null != id && id > 0){
+				personService.startPerson(id);
 			}
 		} catch(IllegalArgumentException e) {
 			message = e.getMessage();
@@ -58,10 +58,10 @@ public class PersonManagerAction extends BaseAction{
 	 * @param
 	 */
 	@RequestMapping(value = "/deletePerson.do", method = RequestMethod.GET)
-	public String deleteUser(Integer perId) {
+	public String deleteUser(Integer id) {
 		String message = SUCCESS;
 		try {
-			personService.deletePerson(perId);
+			personService.deletePerson(id);
 		} catch(IllegalArgumentException e) {
 			message = e.getMessage();
 			logger.error("删除人员参数异常", e);
@@ -95,6 +95,5 @@ public class PersonManagerAction extends BaseAction{
 		}
 		return message;
 	}
-	
 	
 }

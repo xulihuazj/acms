@@ -66,10 +66,15 @@ public class UserServiceImplTest {
 			
 			//person = sqlSession.selectOne("PersonMapper.getUserList",map);
 			map.put("perName", "gggg");
-			map.put("id", 2);
+			map.put("id", 3);
 			map.put("cardSN", "dfghjkl");
+			map.put("perId", "201323030419");
+			map.put("perType", 1);
+			map.put("perSex", 1);
+			map.put("perIdentificate", "4567890098456789");
 			//sqlSession.selectList("PersonMapper.updatePerson",map);
-			int i = sqlSession.update("PersonMapper.updatePerson", map);
+			//int i = sqlSession.update("PersonMapper.updatePerson", map);
+			int i = sqlSession.insert("PersonMapper.savePerson", map);
 			sqlSession.commit(true);
 			System.out.println(i);
 		}catch(Exception e) {

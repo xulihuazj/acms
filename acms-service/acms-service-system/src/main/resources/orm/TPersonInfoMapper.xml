@@ -45,10 +45,35 @@
 	</update>
 	
 	<!-- 保存人员信息 -->
-	<insert id="savePerson" parameterType="cn.edu.haut.cssp.acms.core.entity.TPerson">
+	<insert id="savePerson" parameterType="java.util.Map">
 		insert into t_person_info
 		<trim prefix="(" suffix=")" suffixOverrides=",">
-			<if test="null != "></if>
+			<if test="null != cardSN">n_card_sn,</if>
+			<if test="null != cardType">n_card_type,</if>
+			<if test="perId > 0">c_per_id,</if>
+			<if test="perType > 0">c_per_type,</if>
+			<if test="null != perName">c_per_name,</if>
+			<if test="perMobile > 0">c_per_mobile,</if>
+			<if test="perDepart != null">c_per_depart,</if>
+			<if test="null != perMajor">c_per_major,</if>
+			<if test="perAge > 0">c_per_age,</if>
+			<if test="perSex > 0">c_per_sex,</if>
+			<if test="perGrade > 0">c_per_grade,</if>
+			<if test="perIdentificate != null">c_per_identificate,</if>
+		</trim>
+		<trim prefix="values(" suffix=")" suffixOverrides=",">
+			<if test="null != cardSN">#{cardSN},</if>
+			<if test="null != cardType">#{cardType},</if>
+			<if test="perId > 0">#{perId},</if>
+			<if test="perType > 0">#{perType},</if>
+			<if test="null != perName">#{perName},</if>
+			<if test="perMobile > 0">#{perMobile},</if>
+			<if test="perDepart != null">#{perDepart},</if>
+			<if test="null != perMajor">#{perMajor},</if>
+			<if test="perAge > 0">#{perAge},</if>
+			<if test="perSex > 0">#{perSex},</if>
+			<if test="perGrade > 0">#{perGrade},</if>
+			<if test="perIdentificate != null">#{perIdentificate},</if>
 		</trim>
 	</insert>
 	
