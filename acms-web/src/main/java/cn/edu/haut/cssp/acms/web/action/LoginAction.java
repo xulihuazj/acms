@@ -1,5 +1,7 @@
 package cn.edu.haut.cssp.acms.web.action;
 
+import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
+
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -28,6 +30,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.octo.captcha.service.image.ImageCaptchaService;
+import com.xdja.platform.security.bean.Operator;
 import com.xdja.platform.security.utils.OperatorUtil;
 
 import cn.edu.haut.cssp.acms.action.BaseAction;
@@ -51,9 +54,6 @@ public class LoginAction extends BaseAction {
 	  @Autowired 
 	  private IUserService userService;
 
-/*	  @Autowired 
-	  private IFunctionService functionService;*/
-
 	/**
 	 * 登录
 	 * @author: xulihua
@@ -76,40 +76,47 @@ public class LoginAction extends BaseAction {
 			 */
 		else {
 			boolean isLogined = true;
+			 TUser currUser = null;
 			try {
 				/* TODO shiro 权限管理 */
 				// UsernamePasswordToken token = new
 				// UsernamePasswordToken(loginUsername,loginPassword);
 				// SecurityUtils.getSubject().login(token);
-				Map<String, String> map = new HashMap<String, String>();
-				map.put("username", loginUsername);
-				map.put("password", PasswordUtils.encodePasswordSHA1(loginPassword));
+				//Map<String, String> map = new HashMap<String, String>();
+				//map.put("username", loginUsername);
+				//map.put("password", PasswordUtils.encodePasswordSHA1(loginPassword));
 				// 根据用户名和密码查询用户信息
-				 TUser currUser = userService.selectUserByNameAndPass(map);
-/*				currUser.setUserName("xulihua");
-				currUser.setPassword("111111");
-*/				if (null == currUser) {
-					model.put("message", "当前账号不存在");
-					return "homepage.jsp";
-				}
-				// 存入session
-				session.setAttribute("currUser", currUser);
-				return "redirect:/homepage.jsp";
-			/*} catch (LockedAccountException e) {
-				isLogined = false;
-				model.put("message", "用户已经被锁定");
-			} catch (UnknownAccountException e) {
-				isLogined = false;
-				model.put("message", "用户名或密码错误");
-			} catch (IncorrectCredentialsException e) {
-				isLogined = false;
-				model.put("message", "用户名或密码错误");
-			} catch (AuthenticationException e) {
-				isLogined = false;
-				model.put("message", e.getMessage());
-			}*/
+				 //TUser currUser = userService.selectUserByNameAndPass(map);
+				currUser = userService.getUserByUserName(loginUsername);
+				 if(null == currUser){
+					 model.put("message", "当前账号不存在");
+					 return "page-login";
+				 }else{
+					 if(StringUtils.equals(PasswordUtils.encodePasswordSHA1(loginPassword), currUser.getPassword())){
+						 // 存入session
+						 session.setAttribute("currUser", currUser);
+						 model.put("userName", loginUsername);
+						 return "redirect:/homepage.jsp";
+					 }else {
+						 model.put("message", "登录密码错误");
+						 return "page-login";
+					}
+				 }
+				/*} catch (LockedAccountException e) {
+					isLogined = false;
+					model.put("message", "用户已经被锁定");
+				} catch (UnknownAccountException e) {
+					isLogined = false;
+					model.put("message", "用户名或密码错误");
+				} catch (IncorrectCredentialsException e) {
+					isLogined = false;
+					model.put("message", "用户名或密码错误");
+				} catch (AuthenticationException e) {
+					isLogined = false;
+					model.put("message", e.getMessage());
+				}*/
 			}catch(Exception e){
-				model.put("message", "用户名或密码错误");
+				model.put("message", "请求登录异常，请重试");
 			}
 			/*if (isLogined) {
 				 TUser user = userService.getUserByUserName(userName);
@@ -134,11 +141,12 @@ public class LoginAction extends BaseAction {
 	 * @return: String
 	 */
 	@RequestMapping("/logout.do")
-	public String logout(HttpServletResponse response) {
-		TUser user = OperatorUtil.getOperator().getCurrUser();
-		logger.info("管理员：{}退出成功", user.getUserName());
-		SecurityUtils.getSubject().logout();
-		return "redirect:/login.do";
+	public String logout(HttpServletResponse response, HttpSession session) {
+		TUser currUser = (TUser) session.getAttribute("currUser");
+		logger.info("管理员：{}退出成功", currUser.getUserName());
+		session.removeAttribute("currUser");
+		//SecurityUtils.getSubject().logout();
+		return "redirect:/index.do";
 	}
 
 	// 校验码service注入

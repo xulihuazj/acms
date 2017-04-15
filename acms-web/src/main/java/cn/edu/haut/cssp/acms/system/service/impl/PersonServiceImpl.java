@@ -32,7 +32,7 @@ public class PersonServiceImpl extends BaseServiceImpl implements IPersonService
 	@Override
 	public void savePerson(TPerson person) {
 		try {
-			int i = super.getBaseDao().getSqlSession().insert("PersonMapper.savePerson", person);
+			int i = super.getBaseDao().getSqlSession().insert("TPersonMapper.savePerson", person);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -40,15 +40,12 @@ public class PersonServiceImpl extends BaseServiceImpl implements IPersonService
 
 	@Override
 	public TPerson queryPersonDetail(Integer perId) {
-		System.out.println(1111);
 		try {
 			BaseDaoImpl daoImpl = super.getBaseDao();
 			SqlSession sqlSession = daoImpl.getSqlSession();
 			Map<String, Object> map = new HashMap<>();
-			map.put("perId", 2);
-			TPerson person = sqlSession.selectOne("TPersonMapper.queryPersonDetail", 2);
-			
-			sqlSession.commit(true);
+			map.put("perId", perId);
+			TPerson person = sqlSession.selectOne("TPersonMapper.queryPersonDetail", perId);
 			//System.out.println(person);
 			//TPerson person = super.getBaseDao().getSqlSession().selectOne("PersonMapp.queryPersonDetail", perId);
 			return person;
@@ -60,20 +57,37 @@ public class PersonServiceImpl extends BaseServiceImpl implements IPersonService
 
 	@Override
 	public List<TPerson> ajaxPersonList() {
+		try{
+		List<TPerson> personList = super.getBaseDao().getSqlSession().selectList("TPersonMapper.getUserList",1);
+		for(TPerson person:personList){
+		}
+		System.out.println(personList.get(0).getCardSN());
+		return personList;
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		return null;
 	}
 
 	@Override
 	public void startPerson(Integer personId) {
-
+		Map<String, Object> paramMap = new HashMap<>();
+		paramMap.put("perId", personId);
+		paramMap.put("perStatus", TPerson.ENUM_PERSON_STATUS.per_normal.value);
+		try{
+			super.getBaseDao().getSqlSession().update("TPersonMapper.updatePersonStatus", paramMap);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public void stopPerson(Integer personId) {
 		Map<String, Object> paramMap = new HashMap<>();
 		paramMap.put("perId", personId);
+		paramMap.put("perStatus", TPerson.ENUM_PERSON_STATUS.per_stop.value);
 		try{
-			super.getBaseDao().getSqlSession().update("PersonMapper.updatePersonStatus", paramMap);
+			super.getBaseDao().getSqlSession().update("TPersonMapper.updatePersonStatus", paramMap);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -83,8 +97,9 @@ public class PersonServiceImpl extends BaseServiceImpl implements IPersonService
 	public void deletePerson(Integer personId) {
 		Map<String, Object> paramMap = new HashMap<>();
 		paramMap.put("perId", personId);
+		paramMap.put("perStatus", TPerson.ENUM_PERSON_STATUS.per_stop.value);
 		try{
-			super.getBaseDao().getSqlSession().update("PersonMapper.updatePersonStatus", paramMap);
+			super.getBaseDao().getSqlSession().update("TTPersonMapper.updatePersonStatus", paramMap);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

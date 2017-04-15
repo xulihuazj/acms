@@ -88,6 +88,7 @@
 					</div>
 				</div>
 				<!-- End 面包屑 -->
+					<div>${message}</div>
 				<img src="basic/imgfile/login_ban_3.png" class="img-responsive">
 				<!-- End Main Page -->
 

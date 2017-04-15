@@ -120,8 +120,8 @@
 							<img src="assets/img/avatar.jpg" class="img-circle" alt="" />
 						</figure>
 						<div class="profile-info">
-							<span class="name">xulihua</span> <span class="role"><i class="fa fa-circle bk-fg-success"></i>
-								Admin</span>
+							<span class="name">${userName}</span> <span class="role"><i class="fa fa-circle bk-fg-success"></i>
+								</span>
 						</div> <i class="fa custom-caret"></i>
 					</a>
 					<div class="dropdown-menu">

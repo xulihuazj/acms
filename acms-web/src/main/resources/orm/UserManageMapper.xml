@@ -1,18 +1,120 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="UserManagementMapper">
+<mapper namespace="UserManageMapper">
 	
+	<!-- 通用SQL -->
 	<sql id="Basic_Column">
 		n_id id,c_user_name userName ,c_password password,n_type type ,c_mobile mobile ,
 		n_status status ,n_time time,c_note note,
 		c_ec_code ecCode ,c_delete_flag deleteFlag ,n_create_time createTime
 	</sql> 
-	<select id="getUserByUserName" parameterType="java.util.Map" resultType="java.util.Map">
+	
+	<select id="getUserByUserName" parameterType="java.util.Map" resultType="cn.edu.haut.cssp.acms.core.entity.TUser">
+		select 
+			<include refid="Basic_Column" />
+		 from t_sys_user user where user.c_user_name = #{userName}
+	</select>
+	
+	<select id="getUserByUserName2" parameterType="java.util.Map" resultType="java.util.Map">
 		select 
 		<include refid="Basic_Column" />
 		 from t_sys_user user where user.c_user_name = #{userName}
 	</select>
-	<select id="findUserById" parameterType="int" resultType="java.util.Map">
-		select user.c_user_name userName from t_sys_user user where user.n_id = #{userId}
+	
+	<select id="findUserById" parameterType="int" resultType="cn.edu.haut.cssp.acms.core.entity.TUser">
+		select  
+		<include refid="Basic_Column" />
+		from t_sys_user user where user.n_id = #{userId}
 	</select>
+	
+		<!-- 通过userId重置密码 -->
+	<update id="resetPassword" parameterType="java.util.Map">
+		UPDATE t_sys_user
+		<set>
+			<if test="password != null">
+				c_password = #{password}
+			</if>
+		</set>
+		WHERE n_id = #{id}
+	</update>
+	
+	<!-- 根据用户id删除用户真删除 -->
+	<delete id="deleteUserById" parameterType="int">
+		DELETE FROM t_sys_user
+		WHERE n_id = #{id}
+	</delete>
+	
+	<!-- 更新用户状态（删除、禁用、启用） -->
+	<update id="updateStatus" parameterType="java.util.Map">
+		UPDATE t_sys_user
+		<set>
+			<if test="status != null ">
+				n_status = #{status}
+			</if>
+		</set>
+		WHERE n_id = #{id}
+	</update>
+	
+		<!-- 保存用户信息 -->
+	<insert id="saveUser" parameterType="cn.edu.haut.cssp.acms.core.entity.TUser">
+		INSERT INTO t_sys_user 
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="null != userName">c_user_name,</if>
+			<if test="null != password">c_password,</if>
+			<if test="type > 0">n_type,</if>
+			<if test="null != mobile">c_mobile,</if>
+			<if test="status > 0">n_status,</if>
+			<if test="time > 0">n_time,</if>
+			<if test="null != note">c_note,</if>
+			<if test="null != ecCode">c_ec_code,</if>
+			<if test="deleteFlag > 0">c_delete_flag,</if>
+			<if test="createTime > 0">n_create_time,</if>
+		</trim>
+		<trim prefix="values(" suffix=")" suffixOverrides=",">
+			<if test="null != userName">#{userName},</if>
+			<if test="null != password">#{password},</if>
+			<if test="type > 0">#{type},</if>
+			<if test="null != mobile">#{mobile},</if>
+			<if test="status > 0">#{status},</if>
+			<if test="time > 0">#{time},</if>
+			<if test="null != note">#{note},</if>
+			<if test="null != ecCode">#{ecCode},</if>
+			<if test="deleteFlag > 0">#{deleteFlag},</if>
+			<if test="createTime > 0">#{createTime},</if>
+		</trim>
+	</insert>
+ 	
+ 	<update id="updateUser" parameterType="cn.edu.haut.cssp.acms.core.entity.TUser">
+		UPDATE t_sys_user
+		<set>
+			<if test="null != userName">c_user_name = #{userName},</if>
+			<if test="null != password">c_password = #{password},</if>
+			<if test="type > 0">n_type = #{type},</if>
+			<if test="null != mobile">c_mobile = #{mobile},</if>
+			<if test="status > 0">n_status = #{status},</if>
+			<if test="time > 0">n_time = #{time},</if>
+			<if test="null != note">c_note = #{note},</if>
+			<if test="null != ecCode">c_ec_code = #{ecCode},</if>
+			<if test="deleteFlag > 0">c_delete_flag = #{deleteFlag},</if>
+			<if test="createTime > 0">n_create_time = #{createTime},</if>
+		</set>
+		WHERE n_id = #{id}
+	</update>
+ 	
+	<!-- 自定义查询条件查询用户的信息 -->
+	<!-- <select id="findUserListById" parameterType="java.util.Map"
+		resultType="cn.edu.haut.cssp.acms.core.entity.TUser">
+		SELECT
+		<include refid="Base_Column" />
+		FROM t_sys_user
+		<where>
+			<if test="id != null and id != '' and id != 'null'">
+				n_id = #{id}
+			</if>
+		</where>
+	</select>-->
+	
+	
+	
+
 </mapper>

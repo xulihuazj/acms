@@ -3,37 +3,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Basic -->
 <meta charset="UTF-8" />
 <title>人员管理 | 门禁管理系统</title>
-<!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<!-- Favicon and touch icons -->
 <link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon" />
-<link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="57x57" href="assets/ico/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76" href="assets/ico/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="assets/ico/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="assets/ico/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="assets/ico/apple-touch-icon-152x152.png" />
-
 <!-- start: CSS file-->
-
 <!-- Vendor CSS-->
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css"
-	rel="stylesheet" />
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
-<link href="assets/vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" />
+<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="assets/vendor/css/pace.preloader.css" rel="stylesheet" />
 
 <!-- Plugins CSS-->
 <link href="assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
 <link href="assets/plugins/select2/select2.css" rel="stylesheet" />
-<link href="assets/plugins/jquery-datatables-bs3/css/datatables.css"
-	rel="stylesheet" />
+<link href="assets/plugins/jquery-datatables-bs3/css/datatables.css" rel="stylesheet" />
 
 <!-- Theme CSS -->
 <link href="assets/css/jquery.mmenu.css" rel="stylesheet" />
@@ -56,7 +40,7 @@
 </head>
 <body>
 	<!-- Start: Header -->
-	<%@ include file="/page-header.jsp" %>
+	<%@ include file="/page-header.jsp"%>
 	<!-- End: Header -->
 
 	<!-- Start: 内容 -->
@@ -64,32 +48,33 @@
 		<div class="row">
 
 			<!-- Sidebar -->
-			<%@ include file="/page-sidebar.jsp" %>
+			<%@ include file="/page-sidebar.jsp"%>
 			<!-- End Sidebar -->
 
 			<!-- Main Page -->
 			<div class="main sidebar-minified">
 				<!-- Page Header -->
-						<div class="page-header">
+				<div class="page-header">
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li>
 								<a href="homepage.jsp"><i class="icon fa fa-home"></i> 我的管理中心</a>
 							</li>
 							<li>
-								<a href="#"><i class="fa fa-table"></i>人员管理</a>
+								<a><i class="fa fa-table"></i>人员管理</a>
 							</li>
 							<li class="active">
 								<i class="fa fa-thumbs-o-up"></i>全部学院
 							</li>
 						</ol>
 					</div>
-					<div class="pull-right"><h2>人员管理</h2></div>
+					<div class="pull-right">
+						<h2>人员管理</h2>
+					</div>
 				</div>
 				<!-- End Page Header -->
 
 				<div class="row">
-
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="panel panel-default bk-bg-white">
 							<div class="panel-heading bk-bg-white">
@@ -97,16 +82,15 @@
 									<i class="fa fa-table red"></i><span class="break"></span>人员信息管理
 								</h6>
 								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a> <a href="#" class="btn-close"><i
+										class="fa fa-times"></i></a>
 								</div>
 							</div>
 							<div class="panel-body">
-								<table class="table table-bordered table-striped mb-none"
-									id="datatable-details">
+								<table class="table table-bordered table-striped mb-none" id="datatable-details">
 									<thead>
 										<tr>
-									<!-- 			<th style="width: 6%;">序号.</th>
+											<!-- 			<th style="width: 6%;">序号.</th>
 											<th style="width: 9%;">姓名</th>
 											<th style="width: 10%;">卡号</th>
 											<th style="width: 10%;">身份证号</th>
@@ -117,28 +101,42 @@
 											<th style="width: 18%;">学院</th>
 											<th style="width: 18%;">专业</th>
 											<th style="width: 5%;">班级</th> -->
-											
-											<th >序号.</th>
-											<th >姓名</th>
-											<th >卡号</th>
-											<th >身份证号</th>
-											<th >人员类型</th>
-											<th >性别</th>
-											<th >年龄</th>
-											<th >联系电话</th>
-											<th >学院</th>
-											<th >专业</th>
-											<th >班级</th>
-											</tr>
+
+											<th>序号.</th>
+											<th>姓名</th>
+											<th>卡号</th>
+											<th>身份证号</th>
+											<th>人员类型</th>
+											<th>性别</th>
+											<th>年龄</th>
+											<th>联系电话</th>
+											<th>学院</th>
+											<th>专业</th>
+											<th>班级</th>
+										</tr>
 									</thead>
 									<tbody>
-										<tr class="gradeX">
+												<c:forEach items="${personList}" var="person">
+													<tr>
+														<td>${person.id}</td>
+														<td>${person.perName}</td>
+														<td>${person.perId}</td>
+														<td>${person.perIdentificate}</td>
+														<td>${person.perType}</td>
+														<td>${person.perSex}</td>
+														<td>${person.perAge}</td>
+														<td>${person.perMobile}</td>
+														<td>${person.perDepart}</td>
+														<td>${person.perMajor}</td>
+													</tr>
+													</c:forEach>
+										<!-- <tr class="gradeX">
 											<td>1</td>
 											<td>赵一博</td>
 											<td>201323030417</td>
 											<td>707084230804233333</td>
-											<td >学生</td>
-											<td >男</td>
+											<td>学生</td>
+											<td>男</td>
 											<td>23</td>
 											<td>13721431668</td>
 											<td>电气工程学院</td>
@@ -150,8 +148,8 @@
 											<td>徐礼华</td>
 											<td>201323030418</td>
 											<td>330821199401244915</td>
-											<td >工作人员</td>
-											<td >男</td>
+											<td>工作人员</td>
+											<td>男</td>
 											<td>23</td>
 											<td>13721431668</td>
 											<td>电气工程学院</td>
@@ -163,8 +161,8 @@
 											<td>张三33</td>
 											<td>201323030510</td>
 											<td>324534676567890547</td>
-											<td >教师</td>
-											<td >女</td>
+											<td>教师</td>
+											<td>女</td>
 											<td>33</td>
 											<td>13512434328</td>
 											<td>信息科学与工程学院</td>
@@ -176,8 +174,8 @@
 											<td>张忆博</td>
 											<td>201323030418</td>
 											<td>330821199401244915</td>
-											<td >学生</td>
-											<td >男</td>
+											<td>学生</td>
+											<td>男</td>
 											<td>23</td>
 											<td>13721431668</td>
 											<td>电气工程学院</td>
@@ -189,14 +187,14 @@
 											<td>张忆博</td>
 											<td>201323030418</td>
 											<td>330821199401244915</td>
-											<td >工作人员</td>
-											<td >女</td>
+											<td>工作人员</td>
+											<td>女</td>
 											<td>23</td>
 											<td>13721431668</td>
 											<td>电气工程学院</td>
 											<td>测控技术与仪器</td>
 											<td>1304</td>
-										</tr>
+										</tr> -->
 									</tbody>
 								</table>
 							</div>
@@ -207,13 +205,13 @@
 			<!-- End Main Page -->
 
 			<!-- Footer -->
-			<%@ include file="/page-footer.jsp" %>
+			<%@ include file="/page-footer.jsp"%>
 			<!-- End Footer -->
 
 		</div>
 	</div>
 	<!--/container-->
-	
+
 	<!-- 编辑人员弹出框 -->
 	<div class="panel panel-default" style="display: block;" id="editPersonModal">
 		<div class="panel-heading">
@@ -310,7 +308,7 @@
 			</div>
 		</div>
 	</div>
-		<!-- 确定弹出框 -->
+	<!-- 确定弹出框 -->
 	<div class="panel-body">
 		<div id="decideStart" class="modal-block modal-header-color modal-block-primary mfp-hide">
 			<div class="panel">

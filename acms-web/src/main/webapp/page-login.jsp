@@ -35,17 +35,17 @@
 										name="loginUsername" placeholder="请输入您的账号">
 								</div>
 								<div class="col-lg-4 ">
-									<div class="help-block"><span id="loginUsernameErr" style="color: #ff3333 !important;font-size: 14px !important;"></span></div>
+									<div class="help-block"><span value="${message}" id="loginUsernameErr" style="color: #ff3333 !important;font-size: 14px !important;"></span></div>
 								</div>
 							</div>
 							<div class="form-group field-loginform-password required">
 								<label class="col-lg-2 control-label" for="loginform-password">密码</label>
 								<div class="col-lg-6 ">
-									<input type="password" id="loginPassword" class="form-control"
+									<input type="password" id="loginPassword" class="form-control" 
 										name="loginPassword" placeholder="请输入您的密码">
 								</div>
 								<div class="col-lg-4 ">
-									<div class="help-block"><span id="loginPasswordErr" style="color: #ff3333 !important;font-size: 14px !important;"></div>
+									<div class="help-block"><span value="${message}" id="loginPasswordErr" style="color: #ff3333 !important;font-size: 14px !important;"></div>
 								</div>
 							</div>
 							<!-- 	<div class="form-group field-loginform-password required">
@@ -70,12 +70,12 @@
 										</div>
 										<div class="col-lg-4 ">
 											<img id="loginform-verifycode-image"
-												src="./login_files/captcha" alt="">
+												src="./login_files/captcha" alt="" >
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-8 " style="height: 25px; text-align: center;">
-									<div class="help-block"><span id="loginVerifycodeErr" style="color: #ff3333 !important;font-size: 14px !important;"></div>
+									<div class="help-block"><span  value="${message}" id="loginVerifycodeErr" style="color: #ff3333 !important;font-size: 14px !important;"></div>
 								</div>
 							</div>
 							<div class="form-group">

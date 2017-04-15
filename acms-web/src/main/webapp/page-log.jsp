@@ -60,11 +60,6 @@
 	<!-- Start: Header -->
 	<%@ include file="/page-header.jsp" %>
 	<!-- End: Header -->
-	
-	<!-- <div class="copyrights">
-		Collect from <a href="http://www.cssmoban.com/">免费网站模板</a>
-	</div> -->
-
 	<!-- Start: Content -->
 	<div class="container-fluid content">
 		<div class="row">
@@ -167,51 +162,51 @@
 									<!-- 在此处加循环 -->
 									<tbody>
 										<tr class="gradeX">
-											<td>Trident</td>
-											<td>Internet Explorer 4.0</td>
-											<td>Win 95+</td>
+											<td>1</td>
+											<td>登录退出</td>
+											<td>2017-04-15</td>
 											<td class="center hidden-phone">4</td>
 											<td class="center hidden-phone">X</td>
 										</tr>
 										<tr class="gradeC">
-											<td>Trident</td>
-											<td>Internet Explorer 5.0</td>
-											<td>Win 95+</td>
+											<td>2</td>
+											<td>登录退出</td>
+											<td>2017-04-15</td>
 											<td class="center hidden-phone">5</td>
 											<td class="center hidden-phone">C</td>
 										</tr>
 										<tr class="gradeA">
-											<td>Trident</td>
-											<td>Internet Explorer 5.5</td>
-											<td>Win 95+</td>
+											<td>3</td>
+											<td>登录退出</td>
+											<td>2017-04-15</td>
 											<td class="center hidden-phone">5.5</td>
 											<td class="center hidden-phone">A</td>
 										</tr>
 										<tr class="gradeA">
-											<td>Trident</td>
-											<td>Internet Explorer 6</td>
-											<td>Win 98+</td>
+											<td>4</td>
+											<td>登录退出</td>
+											<td>2017-04-15</td>
 											<td class="center hidden-phone">6</td>
 											<td class="center hidden-phone">A</td>
 										</tr>
 										<tr class="gradeA">
-											<td>Trident</td>
-											<td>Internet Explorer 7</td>
-											<td>Win XP SP2+</td>
+											<td>5</td>
+											<td>操作日志</td>
+											<td>2017-04-15</td>
 											<td class="center hidden-phone">7</td>
 											<td class="center hidden-phone">A</td>
 										</tr>
 										<tr class="gradeA">
-											<td>Trident</td>
-											<td>AOL browser (AOL desktop)</td>
-											<td>Win XP</td>
+											<td>6</td>
+											<td>登录退出</td>
+											<td>2017-04-15</td>
 											<td class="center hidden-phone">6</td>
 											<td class="center hidden-phone">A</td>
 										</tr>
 										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Firefox 1.0</td>
-											<td>Win 98+ / OSX.2+</td>
+											<td>7</td>
+											<td>运行日志</td>
+											<td>2017-04-15</td>
 											<td class="center hidden-phone">1.7</td>
 											<td class="center hidden-phone">A</td>
 										</tr>

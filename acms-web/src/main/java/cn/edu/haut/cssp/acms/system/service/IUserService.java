@@ -82,7 +82,7 @@ public interface IUserService {
 	 * @date: 2017年1月18日下午3:05:12
 	 * @return: void
 	 */
-	public Integer resetPassword(Long userId)throws UserBusiException;
+	public Integer resetPassword(Long userId, String newPwd)throws UserBusiException;
 	
 	/**
 	 * 根据userId开启用户

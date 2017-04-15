@@ -1,6 +1,11 @@
 package cn.edu.haut.cssp.acms.action;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -63,7 +68,7 @@ public class UserManagerAction extends BaseAction{
 	 */
 	@RequestMapping("/system/toModifyPsd.do")
 	public String toModifyPsd(){
-		return "system/modifyPsd";
+		return "page-login.jsp";
 	}
 	
 	/**
@@ -74,26 +79,37 @@ public class UserManagerAction extends BaseAction{
 	 * @return: Object
 	 * @param:
 	 */
-	@RequestMapping(value = "/system/modifyPsd.do", method = RequestMethod.GET, produces = "applicaiton/json;charset=utf-8")
+	@RequestMapping( "/system/modifyPsd.do")
 	@ResponseBody
-	public Object modifyPsd(String oldPwd, String newPwd, String comfirePwd) {
+	public Object modifyPsd(String oldPwd, String newPwd, String comfirePwd, HttpSession session,ModelMap modelMap) {
+		Map<String, Object> message = new HashMap<>();
 		// 从session中获取当前用户
-		TUser currUser = OperatorUtil.getOperator().getCurrUser();
+		TUser currUser = (TUser) session.getAttribute("currUser");
 		//旧、新、确认密码不为空
 		if(StringUtils.isNotBlank(oldPwd) && StringUtils.isNotBlank(newPwd)
 				&& StringUtils.isNotBlank(comfirePwd)){
 			// 旧密码是否相等、新密码与确认密码是否相等
 			if(!PasswordUtils.encodePasswordSHA1(oldPwd).equals(currUser.getPassword())){
-				return "旧密码不正确!";
-			} else if(StringUtils.equals(newPwd, comfirePwd)) {
-				return "新密码与确认密码不相等";
+				message.put("message", "旧密码不正确");
+				return message;
+			} else if(!StringUtils.equals(newPwd, comfirePwd)) {
+				message.put("message", "新密码与确认密码不相等");
+				return message;
 			} else {
+				try{
 				// 新密码加密
-				currUser.setPassword(PasswordUtils.encodePasswordSHA1(newPwd));
-				userService.updateUser(currUser);
+					userService.resetPassword(currUser.getId(), PasswordUtils.encodePasswordSHA1(newPwd));
+					return SUCCESS;
+				}catch(Exception e){
+					e.printStackTrace();
+					logger.error("修改密码失败异常", e);
+				}
 			}
+		}else{
+			message.put("message", "密码不能为空");
 		}
-		return SUCCESS;
+		return message;
+		
 	}
 	
 	/**
@@ -230,13 +246,16 @@ public class UserManagerAction extends BaseAction{
 	 * @return: void
 	 * @param:
 	 */
-	@RequestMapping("/system/saveUser.do")
+	@RequestMapping(value = "/system/saveUser.do", method = RequestMethod.GET)
 	@ResponseBody
 	public Object saveUser(TUser user, Long[] roleId) {
 		String message = SUCCESS;
-		TUser currUser = OperatorUtil.getOperator().getCurrUser();
-		try {
-			userService.saveUser(user, roleId);
+		//TUser currUser = OperatorUtil.getOperator().getCurrUser();
+		
+			Integer integer = userService.saveUser(user, roleId);
+			userService.updateUser(user);
+			return integer;
+		/*	try {
 			if(null != user.getId()) {
 				logger.info(TSystemLog.ENUM_SYSLOG_TYPE.operateLog.value, LoggerExtData.create("modelType",
 						TSystemLog.ENUM_LOG_MODEL_TYPE.systemManagerLog.value), "管理员{}修改{}用户成功", currUser.getUserName(),
@@ -253,7 +272,7 @@ public class UserManagerAction extends BaseAction{
 			message = "保存用户失败";
 			logger.error("保存用户失败，异常信息为", e);
 		}
-		return message;
+		return message;*/
 	}
 	
 	/**
@@ -282,9 +301,15 @@ public class UserManagerAction extends BaseAction{
 		TUser user = userService.getUserByUserName(userName);
 		}catch(Exception e){
 			e.printStackTrace();
-			System.out.println(1111111);
 		}
 		return "success";
+	} 
+	
+	@RequestMapping("/system/deleteUserById.do")
+	@ResponseBody
+	public Object deleteUserById(Long id) {
+		Integer result = userService.suspendUser(id);
+		return result;
 	}
 	
 }

@@ -1,9 +1,13 @@
 package cn.edu.haut.cssp.acms.action;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.edu.haut.cssp.acms.core.entity.TPerson;
 import cn.edu.haut.cssp.acms.system.service.IPersonService;
@@ -17,11 +21,17 @@ import cn.edu.haut.cssp.acms.system.service.IPersonService;
  * @note:
  */
 @Controller
-@RequestMapping("/person")
 public class PersonManagerAction extends BaseAction{
 
 	@Autowired
 	private IPersonService personService;
+	
+	@RequestMapping("/person/ajaxPersonList.do")
+	public Object ajaxPersonList(ModelMap modelMap){
+		List<TPerson> personList = personService.ajaxPersonList();
+		modelMap.put("personList", personList);
+		return "/page-person.jsp";
+	}
 	
 	/**
 	 * 启用人员
@@ -31,7 +41,7 @@ public class PersonManagerAction extends BaseAction{
 	 * @param perId
 	 * @return
 	 */
-	@RequestMapping(value = "/startPerson.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/person/startPerson.do", method = RequestMethod.GET)
 	public Object startPerson(Integer id) {
 		String message = SUCCESS; 
 		try {
@@ -40,10 +50,10 @@ public class PersonManagerAction extends BaseAction{
 			}
 		} catch(IllegalArgumentException e) {
 			message = e.getMessage();
-			logger.error("删除人员参数异常", e);
+			logger.error("启用人员参数异常", e);
 		} catch (Exception e) {
-			message = "删除人员失败";
-			logger.error("删除人员失败，异常信息为", e);
+			message = "启用人员失败";
+			logger.error("启用人员失败，异常信息为", e);
 		}
 		return message;
 	}
@@ -57,7 +67,7 @@ public class PersonManagerAction extends BaseAction{
 	 * @return: String
 	 * @param
 	 */
-	@RequestMapping(value = "/deletePerson.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/person/deletePerson.do", method = RequestMethod.GET)
 	public String deleteUser(Integer id) {
 		String message = SUCCESS;
 		try {
@@ -80,7 +90,7 @@ public class PersonManagerAction extends BaseAction{
 	 * @param person
 	 * @return
 	 */
-	@RequestMapping(value = "/editPerson.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/person/editPerson.do", method = RequestMethod.GET)
 	public String editPerson(TPerson person) {
 		String message = SUCCESS;
 		if(null != person){
@@ -103,7 +113,7 @@ public class PersonManagerAction extends BaseAction{
 	 * @date: 2017年4月14日下午12:28:46
 	 * @param personId
 	 */
-	@RequestMapping(value = "/updatePersonStatus.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/person/updatePersonStatus.do", method = RequestMethod.GET)
 	public void updatePersonStatus(Integer personId){
 		String message = SUCCESS;
 		try {
@@ -125,7 +135,8 @@ public class PersonManagerAction extends BaseAction{
 	 * @param personId
 	 * @return
 	 */
-	@RequestMapping(value = "/queryPersonDetail.do",method = RequestMethod.GET)
+	@RequestMapping(value = "/person/queryPersonDetail.do",method = RequestMethod.GET)
+	@ResponseBody
 	public Object queryPersonDetail(Integer personId) {
 		try {
 			TPerson tPerson = personService.queryPersonDetail(personId);

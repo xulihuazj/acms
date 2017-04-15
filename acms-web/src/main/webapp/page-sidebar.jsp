@@ -114,7 +114,7 @@
 									</ul> -->
 								</li>
 								<li>
-									<a href="page-person.jsp"> <span class="text">全部学生</span>
+									<a href="${path}/person/ajaxPersonList.do"> <span class="text">全部学生</span>
 									</a>
 								</li>
 							</ul>

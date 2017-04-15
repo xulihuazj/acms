@@ -18,6 +18,8 @@ import cn.edu.haut.cssp.acms.common.SpringBeanUtil;
 public class BaseAction {
 	protected final transient Logger logger;
 	public static final String SUCCESS = "success";
+	
+	public static final String FAILURE = "failure";
 
 	public BaseAction() {
 		this.logger = LoggerFactory.getLogger(super.getClass());
