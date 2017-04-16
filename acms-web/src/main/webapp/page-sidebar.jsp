@@ -7,7 +7,7 @@
 		<div class="sidebar-collapse">
 			<!-- Sidebar Header Logo-->
 			<div class="sidebar-header">
-				<img src="assets/img/xhxm.jpg" class="img-responsive" alt="河南工业大学" />
+				<img src="${path}/assets/img/xhxm.jpg" class="img-responsive" alt="河南工业大学" />
 			</div>
 			<!-- Sidebar Menu-->
 			<div class="sidebar-menu">
@@ -15,7 +15,7 @@
 					<ul class="nav nav-sidebar">
 						<div class="panel-body text-center">
 							<div class="flag">
-								<img src="basic/imgfile/header_home.png" class="img-flags" alt="学生门禁管理系统" style="margin-left: -12px;" />
+								<img src="${path}/basic/imgfile/header_home.png" class="img-flags" alt="学生门禁管理系统" style="margin-left: -12px;" />
 							</div>
 						</div>
 						<li class="active">

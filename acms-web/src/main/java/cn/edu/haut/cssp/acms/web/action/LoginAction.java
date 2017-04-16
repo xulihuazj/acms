@@ -41,7 +41,6 @@ import cn.edu.haut.cssp.acms.util.PasswordUtils;
 
 /**
  * 登录退出管理Action Description:
- * 
  * @author: xulihua
  * @date: 2017年1月5日上午11:08:34
  */

@@ -331,7 +331,6 @@ var Script = function () {
             color: "#FFBFBF"
         }
     ];
-    new Chart(document.getElementById("polarArea").getContext("2d")).PolarArea(polarChartData);
 	
 }();
 
@@ -361,49 +360,8 @@ var Script = function () {
         ]
 
     };
-    new Chart(document.getElementById("radar").getContext("2d")).Radar(radarChartData);
 	
 }();
-
-
-
-
-/*
-SparklineWeeklyStats
-*/
-	$("#sparklineBarweeklystats").sparkline(sparklineBarweeklystatsData, {
-		type: 'bar',
-		width: '120',
-		height: '80',
-		barColor: '#0088cc',
-		negBarColor: '#B20000'
-	});
-	
-
-/*
- SparklineMyStats
-*/
-
-	$("#sparklineLineProfileVisits").sparkline(sparklineLineProfileVisitsData, {
-		type: 'bar',
-		width: '80',
-		height: '38',
-		lineColor: '#0088cc'
-	});
-	$("#sparklineLineProjects").sparkline(sparklineLineProjectsData, {
-		type: 'pie',
-		width: '80',
-		height: '38',
-		lineColor: '#0088cc'
-	});
-	$("#sparklineLineTasks").sparkline(sparklineLineTasksData, {
-		type: 'line',
-		width: '80',
-		height: '38',
-		lineColor: '#0088cc'
-	});
-
-
 
 
 /*

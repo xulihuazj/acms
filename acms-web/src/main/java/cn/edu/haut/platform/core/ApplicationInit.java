@@ -8,7 +8,6 @@ import cn.edu.haut.cssp.acms.util.WebConstants;
 
 /**
  * cmoms初始化
- * 
  * Project Name：cmoms-web
  * ClassName：ApplicationInit
  * Description：

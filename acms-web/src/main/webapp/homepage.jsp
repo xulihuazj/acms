@@ -122,7 +122,6 @@
 		<script src="assets/plugins/fullcalendar/js/fullcalendar.js"></script>
 		<script src="assets/plugins/chart-master/js/Chart.js"></script>
 		<script src="assets/plugins/jquery/js/jquery.zlight.menu.1.0.min.js"></script>
-		<script src="assets/plugins/jquery/js/respond.min.js"></script>
 
 		<!-- Theme JS -->
 		<script src="assets/js/jquery.mmenu.min.js"></script>
@@ -130,7 +129,6 @@
 
 		<!-- Pages JS -->
 		<script src="assets/js/pages/index.js"></script>
-		<script src="assets/js/pages/common.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$('#zlight-nav').zlightMenu();

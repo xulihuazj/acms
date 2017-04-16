@@ -58,7 +58,7 @@
 								</div>
 							</li>
 							<li class="avatar">
-								<a href="page-inbox.html"> <img class="avatar" src="assets/img/avatar1.jpg" alt="" />
+								<a href="page-inbox.html"> <img class="avatar" src="${path}/assets/img/avatar1.jpg" alt="" />
 									<div>
 										<div class="point point-primary point-lg"></div>
 										新消息
@@ -66,7 +66,7 @@
 								</a>
 							</li>
 							<li class="avatar">
-								<a href="page-inbox.html"> <img class="avatar" src="assets/img/avatar2.jpg" alt="" />
+								<a href="page-inbox.html"> <img class="avatar" src="${path}/assets/img/avatar2.jpg" alt="" />
 									<div>
 										<div class="point point-primary point-lg"></div>
 										新消息
@@ -74,7 +74,7 @@
 								</a>
 							</li>
 							<li class="avatar">
-								<a href="page-inbox.html"> <img class="avatar" src="assets/img/avatar3.jpg" alt="" />
+								<a href="page-inbox.html"> <img class="avatar" src="${path}/assets/img/avatar3.jpg" alt="" />
 									<div>
 										<div class="point point-primary point-lg"></div>
 										新消息
@@ -117,7 +117,7 @@
 				<div class="userbox">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 						<figure class="profile-picture hidden-xs">
-							<img src="assets/img/avatar.jpg" class="img-circle" alt="" />
+							<img src="${path}/assets/img/avatar.jpg" class="img-circle" alt="" />
 						</figure>
 						<div class="profile-info">
 							<span class="name">${userName}</span> <span class="role"><i class="fa fa-circle bk-fg-success"></i>

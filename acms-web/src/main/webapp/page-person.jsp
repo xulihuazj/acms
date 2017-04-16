@@ -9,26 +9,26 @@
 <link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon" />
 <!-- start: CSS file-->
 <!-- Vendor CSS-->
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-<link href="assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
-<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-<link href="assets/vendor/css/pace.preloader.css" rel="stylesheet" />
+<link href="${path}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="${path}/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
+<link href="${path}/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="${path}/assets/vendor/css/pace.preloader.css" rel="stylesheet" />
 
 <!-- Plugins CSS-->
-<link href="assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
-<link href="assets/plugins/select2/select2.css" rel="stylesheet" />
-<link href="assets/plugins/jquery-datatables-bs3/css/datatables.css" rel="stylesheet" />
+<link href="${path}/assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
+<link href="${path}/assets/plugins/select2/select2.css" rel="stylesheet" />
+<link href="${path}/assets/plugins/jquery-datatables-bs3/css/datatables.css" rel="stylesheet" />
 
 <!-- Theme CSS -->
-<link href="assets/css/jquery.mmenu.css" rel="stylesheet" />
+<link href="${path}/assets/css/jquery.mmenu.css" rel="stylesheet" />
 
 <!-- Page CSS -->
-<link href="assets/css/style.css" rel="stylesheet" />
-<link href="assets/css/add-ons.min.css" rel="stylesheet" />
+<link href="${path}/assets/css/style.css" rel="stylesheet" />
+<link href="${path}/assets/css/add-ons.min.css" rel="stylesheet" />
 <!-- end: CSS file-->
 
 <!-- Head Libs -->
-<script src="assets/plugins/modernizr/js/modernizr.js"></script>
+<script src="${path}/assets/plugins/modernizr/js/modernizr.js"></script>
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -400,27 +400,27 @@
 	<!-- start: JavaScript-->
 
 	<!-- Vendor JS-->
-	<script src="assets/vendor/js/jquery.min.js"></script>
-	<script src="assets/vendor/js/jquery-2.1.1.min.js"></script>
-	<script src="assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
-	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/vendor/js/pace.min.js"></script>
+	<script src="${path}/assets/vendor/js/jquery.min.js"></script>
+	<script src="${path}/assets/vendor/js/jquery-2.1.1.min.js"></script>
+	<script src="${path}/assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="${path}/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="${path}/assets/vendor/js/pace.min.js"></script>
 
 	<!-- Plugins JS-->
-	<script src="assets/plugins/moment/js/moment.min.js"></script>
-	<script src="assets/plugins/select2/select2.js"></script>
-	<script src="assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
-	<script src="assets/plugins/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
-	<script src="assets/plugins/jquery-datatables-bs3/js/datatables.js"></script>
-	<script src="assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
+	<script src="${path}/assets/plugins/moment/js/moment.min.js"></script>
+	<script src="${path}/assets/plugins/select2/select2.js"></script>
+	<script src="${path}/assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
+	<script src="${path}/assets/plugins/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
+	<script src="${path}/assets/plugins/jquery-datatables-bs3/js/datatables.js"></script>
+	<script src="${path}/assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
 
 	<!-- Theme JS -->
-	<script src="assets/js/jquery.mmenu.min.js"></script>
-	<script src="assets/js/core.min.js"></script>
+	<script src="${path}/assets/js/jquery.mmenu.min.js"></script>
+	<script src="${path}/assets/js/core.min.js"></script>
 
 	<!-- Pages JS -->
-	<script src="assets/js/common/page-person.js"></script>
-	<script src="assets/js/pages/ui-modals.js"></script>
+	<script src="${path}/assets/js/common/page-person.js"></script>
+	<script src="${path}/assets/js/pages/ui-modals.js"></script>
 	<!-- end: JavaScript-->
 	<script type="text/javascript">
 		$(function(){
