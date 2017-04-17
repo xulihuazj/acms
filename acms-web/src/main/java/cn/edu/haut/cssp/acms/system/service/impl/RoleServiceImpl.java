@@ -22,7 +22,7 @@ import cn.edu.haut.cssp.acms.system.service.IRoleService;
  */
 
 @Component
-public class RoleServiceImpl implements IRoleService{
+public class RoleServiceImpl extends BaseServiceImpl implements IRoleService{
 
 	@Override
 	public void saveRole(TRole role, Long funcIds) {
@@ -70,6 +70,11 @@ public class RoleServiceImpl implements IRoleService{
 	public Boolean isRoleNameExist(Long roleId, String roleName) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<TRole> ajaxRoleList() {
+		return super.getBaseDao().getSqlSession().selectList("RoleMapper", 1);
 	}
 
 }

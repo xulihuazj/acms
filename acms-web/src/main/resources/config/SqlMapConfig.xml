@@ -38,5 +38,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="orm/TPersonMapper.xml" />
 		<mapper resource="orm/UserManageMapper.xml" />
 		<mapper resource="orm/TDeviceInfoMapper.xml" />
+		<mapper resource="orm/TRoleMapper.xml"/>
 	</mappers>
 </configuration>		

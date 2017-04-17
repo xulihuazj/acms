@@ -16,6 +16,9 @@ import cn.edu.haut.cssp.acms.log.util.LitePaging;
  * @note
  */
 public interface IRoleService {
+	
+	
+	public List<TRole> ajaxRoleList();
 
 	/**
 	 * 保存、修改角色信息
