@@ -318,19 +318,19 @@
 							</a>
 							<ul class="nav nav-children">
 								<li>
-									<a href="page-guide-login.jsp"> <span class="text">登录相关问题</span>
+									<a href="${path }/help/loginRelate.do"> <span class="text">登录相关问题</span>
 									</a>
 								</li>
 								<li>
-									<a href="page-guide-handle.jsp"> <span class="text">应用相关管理</span>
+									<a href="${path }/help/applicationRelate.do"> <span class="text">应用相关管理</span>
 									</a>
 								</li>
 								<li>
-									<a href="page-guide-person.jsp"> <span class="text">人员管理相关问题</span>
+									<a href="${path }/help/personManageRelate.do"> <span class="text">人员管理相关问题</span>
 									</a>
 								</li>
 								<li>
-									<a href="page-guide-device.jsp"> <span class="text">设备管理相关问题</span>
+									<a href="${path }/help/deviceManageRelate.do"> <span class="text">设备管理相关问题</span>
 									</a>
 								</li>
 							</ul>
