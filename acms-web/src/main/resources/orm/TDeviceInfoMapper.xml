@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="DeviceInfoMapper">
+
+	<!-- 通用SQL片段 -->
+	<sql id="Base_Column_List">
+		n_id id,c_model deviceModel,c_brand deviceBrand,n_status status,n_activate_time activateTime,c_sn SN 
+	</sql>
+
+  <select id="getUserList" parameterType="int" resultType="cn.edu.haut.cssp.acms.core.entity.TDeviceInfo">
+ 	 select 
+ 	 <include refid="Base_Column_List" />
+ 	  from t_deivce_info 
+ </select>
+</mapper>
