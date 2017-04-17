@@ -35,7 +35,6 @@ import cn.edu.haut.cssp.acms.util.EncoderUtil;
  * @date: 2017年1月5日下午12:04:01
  */
 @Controller
-@RequestMapping("/user")
 public class UserManagerAction extends BaseAction{
 	
 	@Autowired
@@ -50,7 +49,7 @@ public class UserManagerAction extends BaseAction{
 	 * @date: 2017年3月25日上午10:42:26
 	 * @return: Object 返回json格式数据
 	 */
-	@RequestMapping(value = "/system/ajaxList.do", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
+	@RequestMapping(value = "/user/system/ajaxList.do", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
 	@ResponseBody
 	public Object ajaList(TUser condition, DataQueryExt queryExt, DateQueryBean queryBean) {
 		DataTablesParameters tables = DataTablesParameters.newInstance();
@@ -66,9 +65,9 @@ public class UserManagerAction extends BaseAction{
 	 * @return: String
 	 * @param:
 	 */
-	@RequestMapping("/system/toModifyPsd.do")
+	@RequestMapping("/user/system/toModifyPsd.do")
 	public String toModifyPsd(){
-		return "page-login.jsp";
+		return "/page-password.jsp";
 	}
 	
 	/**
@@ -79,7 +78,7 @@ public class UserManagerAction extends BaseAction{
 	 * @return: Object
 	 * @param:
 	 */
-	@RequestMapping( "/system/modifyPsd.do")
+	@RequestMapping( "/user/system/modifyPsd.do")
 	@ResponseBody
 	public Object modifyPsd(String oldPwd, String newPwd, String comfirePwd, HttpSession session,ModelMap modelMap) {
 		Map<String, Object> message = new HashMap<>();
@@ -120,7 +119,7 @@ public class UserManagerAction extends BaseAction{
 	 * @return: String
 	 * @param
 	 */
-	@RequestMapping(value = "/system/deleteUser.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/system/deleteUser.do", method = RequestMethod.GET)
 	public String deleteUser(Long userId) {
 		String message = SUCCESS;
 		// 从sessoino中获取
@@ -151,7 +150,7 @@ public class UserManagerAction extends BaseAction{
 	 * @return: String
 	 * @param
 	 */
-	@RequestMapping("/system/stopUser.do")
+	@RequestMapping("/user/system/stopUser.do")
 	public String stopUser(Long userId) {
 		String message = SUCCESS;
 		// 从session中获取当前操作者
@@ -182,7 +181,7 @@ public class UserManagerAction extends BaseAction{
 	 * @return: void
 	 * @param:
 	 */
-	@RequestMapping("/system/startUser.do")
+	@RequestMapping("/user/system/startUser.do")
 	@ResponseBody
 	public Object startUser(Long userId) {
 		String message = SUCCESS;
@@ -215,7 +214,7 @@ public class UserManagerAction extends BaseAction{
 	 * @return: Object
 	 * @param:
 	 */
-	@RequestMapping(value = "/system/checkUserName.do", method=RequestMethod.GET )
+	@RequestMapping(value = "/user/system/checkUserName.do", method=RequestMethod.GET )
 	@ResponseBody
 	public Object checkUserName(String userName) {
 		return userService.isNameExist(userName) ? EncoderUtil.encode("用户名重复") : SUCCESS;
@@ -230,7 +229,7 @@ public class UserManagerAction extends BaseAction{
 	 * @return: String
 	 * @param:
 	 */
-	@RequestMapping("/system/addUser.do")
+	@RequestMapping("/user/system/addUser.do")
 	public String addUser(ModelMap modelMap) {
 		
 		List<TRole> roles = roleServcie.queryListRoles();
@@ -246,7 +245,7 @@ public class UserManagerAction extends BaseAction{
 	 * @return: void
 	 * @param:
 	 */
-	@RequestMapping(value = "/system/saveUser.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/system/saveUser.do", method = RequestMethod.GET)
 	@ResponseBody
 	public Object saveUser(TUser user, Long[] roleId) {
 		String message = SUCCESS;
@@ -283,7 +282,7 @@ public class UserManagerAction extends BaseAction{
 	 * @return: String
 	 * @param:
 	 */
-	@RequestMapping("/system/editUser.do")
+	@RequestMapping("/user/system/editUser.do")
 	@ResponseBody
 	public String editUser(Long userId, ModelMap modelMap) {
 		TUser user = userService.findUserById(userId);
@@ -293,7 +292,7 @@ public class UserManagerAction extends BaseAction{
 		return "system/user/edit";
 	}
 	
-	@RequestMapping(value = "/getUserByUserName.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/getUserByUserName.do", method = RequestMethod.GET)
 	public String getUserByUserName(String userName) {
 		try{
 			Long long1 = new Long(2);
@@ -305,7 +304,7 @@ public class UserManagerAction extends BaseAction{
 		return "success";
 	} 
 	
-	@RequestMapping("/system/deleteUserById.do")
+	@RequestMapping("/user/system/deleteUserById.do")
 	@ResponseBody
 	public Object deleteUserById(Long id) {
 		Integer result = userService.suspendUser(id);

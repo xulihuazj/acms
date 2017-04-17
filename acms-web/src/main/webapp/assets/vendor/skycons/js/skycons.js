@@ -1,4 +1,4 @@
-(function(global) {
+${path }/(function(global) {
   "use strict";
 
   /* Set up a RequestAnimationFrame shim so we can animate efficiently FOR

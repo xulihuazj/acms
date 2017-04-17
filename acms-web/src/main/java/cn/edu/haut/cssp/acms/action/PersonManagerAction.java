@@ -26,11 +26,31 @@ public class PersonManagerAction extends BaseAction{
 	@Autowired
 	private IPersonService personService;
 	
+	/**
+	 * 获取人员信息列表
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月17日下午3:02:36
+	 * @param modelMap
+	 * @return
+	 */
 	@RequestMapping("/person/ajaxPersonList.do")
 	public Object ajaxPersonList(ModelMap modelMap){
 		List<TPerson> personList = personService.ajaxPersonList();
 		modelMap.put("personList", personList);
 		return "/page-person.jsp";
+	}
+	
+	/**
+	 * 跳转到学院信息
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月17日下午3:02:11
+	 * @return
+	 */
+	@RequestMapping("/person/ajaxCollegeList.do")
+	public String ajaxCollegeList(){
+		return "/page-college.jsp";
 	}
 	
 	/**

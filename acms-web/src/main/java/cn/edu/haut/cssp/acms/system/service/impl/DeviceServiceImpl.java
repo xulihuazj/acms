@@ -2,11 +2,13 @@ package cn.edu.haut.cssp.acms.system.service.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import cn.edu.haut.cssp.acms.core.entity.TDeviceInfo;
 import cn.edu.haut.cssp.acms.device.entity.DeviceInfoBean;
 import cn.edu.haut.cssp.acms.device.entity.DeviceQueryBean;
 import cn.edu.haut.cssp.acms.system.service.IDeviceService;
-
+@Service
 public class DeviceServiceImpl extends BaseServiceImpl implements IDeviceService{
 
 	@Override

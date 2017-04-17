@@ -2,7 +2,9 @@ package cn.edu.haut.cssp.acms.action;
 
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -18,16 +20,39 @@ import cn.edu.haut.cssp.acms.system.service.IDeviceService;
  * @date: 2017年4月17日上午11:08:01
  * @note:
  */
+@Controller
 public class DeviceManageAction {
 
 	@Autowired
 	private IDeviceService deviceService;
 	
-	@RequestMapping("/person/ajaxDeviceList.do")
+	/**
+	 * 获取设备信息列表
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月17日下午2:24:54
+	 * @param modelMap
+	 * @return
+	 */
+	@RequestMapping("/device/ajaxDeviceList.do")
 	public Object ajaxPersonList(ModelMap modelMap){
 		List<TDeviceInfo> deviceList = deviceService.ajaxDeviceList();
 		modelMap.put("deviceList", deviceList);
-		return "/page-deivce.jsp";
+		return "/page-device.jsp";
+	}
+	
+	/**
+	 * 时间组设置
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月17日下午2:25:25
+	 * @return
+	 */
+	@RequestMapping("/device/timeGroup.do")
+	public Object timeGroup(ModelMap modelMap){
+		List<TDeviceInfo> deviceList = deviceService.ajaxDeviceList();
+		modelMap.put("deviceList", deviceList);
+		return "/page-device-time.jsp";
 	}
 	
 }

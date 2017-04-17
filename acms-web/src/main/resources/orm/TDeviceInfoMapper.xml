@@ -10,6 +10,6 @@
   <select id="getUserList" parameterType="int" resultType="cn.edu.haut.cssp.acms.core.entity.TDeviceInfo">
  	 select 
  	 <include refid="Base_Column_List" />
- 	  from t_deivce_info 
+ 	  from t_device_info 
  </select>
 </mapper>
