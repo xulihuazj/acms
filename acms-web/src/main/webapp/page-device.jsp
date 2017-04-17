@@ -5,47 +5,32 @@
 <head>
 <!-- Basic -->
 <meta charset="UTF-8" />
-<title>人员管理 | 门禁管理系统</title>
+<title>设备管理 | 门禁管理系统</title>
 <!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<!-- Favicon and touch icons -->
-<link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon" />
-<link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="57x57" href="assets/ico/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76" href="assets/ico/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="assets/ico/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="assets/ico/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="assets/ico/apple-touch-icon-152x152.png" />
-
-<!-- start: CSS file-->
-
 <!-- Vendor CSS-->
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css"
+<link href="${path}/assets/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet" />
-<link href="assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
-<link href="assets/vendor/font-awesome/css/font-awesome.min.css"
+<link href="${path}/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
+<link href="${path}/assets/vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" />
-<link href="assets/vendor/css/pace.preloader.css" rel="stylesheet" />
+<link href="${path}/assets/vendor/css/pace.preloader.css" rel="stylesheet" />
 
 <!-- Plugins CSS-->
-<link href="assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
-<link href="assets/plugins/select2/select2.css" rel="stylesheet" />
-<link href="assets/plugins/jquery-datatables-bs3/css/datatables.css"
+<link href="${path}/assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
+<link href="${path}/assets/plugins/select2/select2.css" rel="stylesheet" />
+<link href="${path}/assets/plugins/jquery-datatables-bs3/css/datatables.css"
 	rel="stylesheet" />
 
 <!-- Theme CSS -->
-<link href="assets/css/jquery.mmenu.css" rel="stylesheet" />
+<link href="${path}/assets/css/jquery.mmenu.css" rel="stylesheet" />
 
 <!-- Page CSS -->
-<link href="assets/css/style.css" rel="stylesheet" />
-<link href="assets/css/add-ons.min.css" rel="stylesheet" />
+<link href="${path}/assets/css/style.css" rel="stylesheet" />
+<link href="${path}/assets/css/add-ons.min.css" rel="stylesheet" />
 <!-- end: CSS file-->
-
 <!-- Head Libs -->
-<script src="assets/plugins/modernizr/js/modernizr.js"></script>
-
+<script src="${path}/assets/plugins/modernizr/js/modernizr.js"></script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -56,7 +41,7 @@
 </head>
 <body>
 	<!-- Start: Header -->
-	<%@ include file="/page-header.jsp" %>
+	<%@ include file="${path}/page-header.jsp" %>
 	<!-- End: Header -->
 
 	<!-- Start: 内容 -->
@@ -64,7 +49,7 @@
 		<div class="row">
 
 			<!-- Sidebar -->
-			<%@ include file="/page-sidebar.jsp" %>
+			<%@ include file="${path}/page-sidebar.jsp" %>
 			<!-- End Sidebar -->
 
 			<!-- Main Page -->
@@ -106,97 +91,23 @@
 									id="datatable-details">
 									<thead>
 										<tr>
-									<!-- 			<th style="width: 6%;">序号.</th>
-											<th style="width: 9%;">姓名</th>
-											<th style="width: 10%;">卡号</th>
-											<th style="width: 10%;">身份证号</th>
-											<th style="width: 9%;">人员类型</th>
-											<th style="width: 5%;">性别</th>
-											<th style="width: 5%;">年龄</th>
-											<th style="width: 5%;">联系电话</th>
-											<th style="width: 18%;">学院</th>
-											<th style="width: 18%;">专业</th>
-											<th style="width: 5%;">班级</th> -->
-											
 											<th >序号.</th>
-											<th >姓名</th>
-											<th >卡号</th>
-											<th >身份证号</th>
-											<th >人员类型</th>
-											<th >性别</th>
-											<th >年龄</th>
-											<th >联系电话</th>
-											<th >学院</th>
-											<th >专业</th>
-											<th >班级</th>
+											<th >设备SN</th>
+											<th >设备状态</th>
+											<th >设备品牌</th>
+											<th >设备型号</th>
 											</tr>
 									</thead>
 									<tbody>
-										<tr class="gradeX">
-											<td>1</td>
-											<td>赵一博</td>
-											<td>201323030417</td>
-											<td>707084230804233333</td>
-											<td >学生</td>
-											<td >男</td>
-											<td>23</td>
-											<td>13721431668</td>
-											<td>电气工程学院</td>
-											<td>测控技术与仪器</td>
-											<td>1304</td>
-										</tr>
-										<tr class="gradeC">
-											<td>2</td>
-											<td>徐礼华</td>
-											<td>201323030418</td>
-											<td>330821199401244915</td>
-											<td >工作人员</td>
-											<td >男</td>
-											<td>23</td>
-											<td>13721431668</td>
-											<td>电气工程学院</td>
-											<td>测控技术与仪器</td>
-											<td>1304</td>
-										</tr>
-										<tr class="gradeA">
-											<td>3</td>
-											<td>张三33</td>
-											<td>201323030510</td>
-											<td>324534676567890547</td>
-											<td >教师</td>
-											<td >女</td>
-											<td>33</td>
-											<td>13512434328</td>
-											<td>信息科学与工程学院</td>
-											<td>通信工程</td>
-											<td>1501</td>
-										</tr>
-										<tr class="gradeA">
-											<td>4</td>
-											<td>张忆博</td>
-											<td>201323030418</td>
-											<td>330821199401244915</td>
-											<td >学生</td>
-											<td >男</td>
-											<td>23</td>
-											<td>13721431668</td>
-											<td>电气工程学院</td>
-											<td>测控技术与仪器</td>
-											<td>1304</td>
-										</tr>
-										<tr class="gradeA">
-											<td>5</td>
-											<td>张忆博</td>
-											<td>201323030418</td>
-											<td>330821199401244915</td>
-											<td >工作人员</td>
-											<td >女</td>
-											<td>23</td>
-											<td>13721431668</td>
-											<td>电气工程学院</td>
-											<td>测控技术与仪器</td>
-											<td>1304</td>
-										</tr>
+										<c:forEach items="${deviceList}" var="deviceInfo">
+											<tr>
+												<td>${deviceInfo.id}</td>
+												<td>${deviceInfo.SN}</td>
+												<td>${deviceInfo.status}</td>
+												<td>${deviceInfo.deviceBrand}</td>
+												<td>${deviceInfo.deviceModel}</td>
+											</tr>
+										</c:forEach>
 									</tbody>
 								</table>
 							</div>
@@ -207,7 +118,7 @@
 			<!-- End Main Page -->
 
 			<!-- Footer -->
-			<%@ include file="/page-footer.jsp" %>
+			<%@ include file="${path}/page-footer.jsp" %>
 			<!-- End Footer -->
 
 		</div>
@@ -402,27 +313,27 @@
 	<!-- start: JavaScript-->
 
 	<!-- Vendor JS-->
-	<script src="assets/vendor/js/jquery.min.js"></script>
-	<script src="assets/vendor/js/jquery-2.1.1.min.js"></script>
-	<script src="assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
-	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/vendor/js/pace.min.js"></script>
+	<script src="${path}/assets/vendor/js/jquery.min.js"></script>
+	<script src="${path}/assets/vendor/js/jquery-2.1.1.min.js"></script>
+	<script src="${path}/assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="${path}/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="${path}/assets/vendor/js/pace.min.js"></script>
 
 	<!-- Plugins JS-->
-	<script src="assets/plugins/moment/js/moment.min.js"></script>
-	<script src="assets/plugins/select2/select2.js"></script>
-	<script src="assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
-	<script src="assets/plugins/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
-	<script src="assets/plugins/jquery-datatables-bs3/js/datatables.js"></script>
-	<script src="assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
+	<script src="${path}/assets/plugins/moment/js/moment.min.js"></script>
+	<script src="${path}/assets/plugins/select2/select2.js"></script>
+	<script src="${path}/assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
+	<script src="${path}/assets/plugins/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
+	<script src="${path}/assets/plugins/jquery-datatables-bs3/js/datatables.js"></script>
+	<script src="${path}/assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
 
 	<!-- Theme JS -->
-	<script src="assets/js/jquery.mmenu.min.js"></script>
-	<script src="assets/js/core.min.js"></script>
+	<script src="${path}/assets/js/jquery.mmenu.min.js"></script>
+	<script src="${path}/assets/js/core.min.js"></script>
 
 	<!-- Pages JS -->
-	<script src="assets/js/pages/ui-modals.js"></script>
-	<script src="assets/js/common/page-person.js"></script>
+	<script src="${path}/assets/js/pages/ui-modals.js"></script>
+	<script src="${path}/assets/js/common/page-person.js"></script>
 	<!-- end: JavaScript-->
 </body>
 

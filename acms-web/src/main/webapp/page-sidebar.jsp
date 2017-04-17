@@ -124,7 +124,7 @@
 							</a>
 							<ul class="nav nav-children">
 								<li>
-									<a href="#"> <span class="text">基本设置</span></a>
+									<a href="${path}/device/list.do"> <span class="text">基本设置</span></a>
 								</li>
 								<li>
 									<a href="#"> <span class="text">设备操作</span>
