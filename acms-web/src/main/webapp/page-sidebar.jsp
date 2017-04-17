@@ -174,7 +174,7 @@
 									</a>
 									<ul class="">
 										<li>
-											<a href="#"> <span class="text">电气工程学院</span>
+											<a href="${path }/turnover/ajaxTurnoverList.do"> <span class="text">电气工程学院</span>
 											</a>
 										</li>
 										<li>
@@ -214,15 +214,7 @@
 											</a>
 										</li>
 										<li>
-											<a href="#"> <span class="text">中英国际学院</span>
-											</a>
-										</li>
-										<li>
 											<a href="#"> <span class="text">体育学院</span>
-											</a>
-										</li>
-										<li>
-											<a href="#"> <span class="text">艺术教育中心</span>
 											</a>
 										</li>
 										<li>
@@ -245,26 +237,14 @@
 											<a href="#"> <span class="text">新闻与传播学院</span>
 											</a>
 										</li>
-										<li>
-											<a href="#"> <span class="text">国际教育学院</span>
-											</a>
-										</li>
-										<li>
-											<a href="#"> <span class="text">继续教育学院</span>
-											</a>
-										</li>
-										<li>
-											<a href="#"> <span class="text">马克思主义学院</span>
-											</a>
-										</li>
 									</ul>
 								</li>
 								<li>
-									<a href="#"> <span class="text" id="item">全部宿舍</span>
+									<a > <span class="text" id="item">全部宿舍</span>
 									</a>
 									<ul class="nav" style="display: none;">
 										<li>
-											<a href="#"> <span class="text">学生公寓A区</span>
+											<a href="${path }/turnover/queryDormAList.do"> <span class="text">学生公寓A区</span>
 											</a>
 										</li>
 										<li>

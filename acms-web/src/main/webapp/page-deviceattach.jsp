@@ -5,50 +5,21 @@
 <head>
 <!-- Basic -->
 <meta charset="UTF-8" />
-
 <title>学生门禁管理系统</title>
 <!-- Mobile Metas -->
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-<!-- Favicon and touch icons -->
-<link rel="shortcut icon" href="assets/ico/favicon.ico"
-	type="image/x-icon" />
-<link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="57x57"
-	href="assets/ico/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="72x72"
-	href="assets/ico/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76"
-	href="assets/ico/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114"
-	href="assets/ico/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120"
-	href="assets/ico/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144"
-	href="assets/ico/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152"
-	href="assets/ico/apple-touch-icon-152x152.png" />
-<!-- start: CSS file-->
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <!-- Vendor CSS-->
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css"
-	rel="stylesheet" />
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
-<link href="assets/vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" />
+<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="assets/vendor/css/pace.preloader.css" rel="stylesheet" />
 
 <!-- Plugins CSS-->
-<link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css"
-	rel="stylesheet" />
-<link href="assets/plugins/scrollbar/css/mCustomScrollbar.css"
-	rel="stylesheet" />
+<link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
+<link href="assets/plugins/scrollbar/css/mCustomScrollbar.css" rel="stylesheet" />
 <link href="assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
-<link href="assets/plugins/magnific-popup/css/magnific-popup.css"
-	rel="stylesheet" />
-<link href="assets/plugins/fullcalendar/css/fullcalendar.css"
-	rel="stylesheet" />
+<link href="assets/plugins/magnific-popup/css/magnific-popup.css" rel="stylesheet" />
+<link href="assets/plugins/fullcalendar/css/fullcalendar.css" rel="stylesheet" />
 <link href="assets/plugins/jqvmap/jqvmap.css" rel="stylesheet" />
 <!-- Theme CSS -->
 <link href="assets/css/jquery.mmenu.css" rel="stylesheet" />
@@ -70,7 +41,7 @@
 
 <body>
 	<!-- Start: Header -->
-	<%@include file="/page-header.jsp" %>
+	<%@include file="/page-header.jsp"%>
 	<!-- End: Header -->
 
 	<!-- Start: Content -->
@@ -78,7 +49,7 @@
 		<div class="row">
 
 			<!-- Sidebar -->
-			<%@include file="/page-sidebar.jsp" %>
+			<%@include file="/page-sidebar.jsp"%>
 			<!-- End Sidebar -->
 
 			<div class="main sidebar-minified">
@@ -86,9 +57,15 @@
 				<div class="page-header">
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
-							<li><a href="index.html"><i class="icon fa fa-home"></i>管理中心</a></li>
-							<li><a href="#"><i class="fa fa-list"></i>设备管理设置</a></li>
-							<li class="active"><i class="fa fa-thumbs-o-up"></i>设备连接设置</li>
+							<li>
+								<a href="index.html"><i class="icon fa fa-home"></i>管理中心</a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-list"></i>设备管理设置</a>
+							</li>
+							<li class="active">
+								<i class="fa fa-thumbs-o-up"></i>设备连接设置
+							</li>
 						</ol>
 					</div>
 					<div class="pull-right">
@@ -105,13 +82,12 @@
 									<i class="fa fa-table red"></i><span class="break"></span>Basic
 								</h6>
 								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a> <a href="#" class="btn-close"><i
+										class="fa fa-times"></i></a>
 								</div>
 							</div>
 							<div class="panel-body">
-								<table class="table table-bordered table-striped"
-									id="datatable-default">
+								<table class="table table-bordered table-striped" id="datatable-default">
 									<thead>
 										<tr>
 											<th>设备编号</th>
@@ -420,7 +396,9 @@
 											<td>Nintendo DS browser</td>
 											<td>Nintendo DS</td>
 											<td class="center hidden-phone">8.5</td>
-											<td class="center hidden-phone">C/A<sup>1</sup></td>
+											<td class="center hidden-phone">
+												C/A<sup>1</sup>
+											</td>
 										</tr>
 										<tr class="gradeC">
 											<td>KHTML</td>
@@ -530,7 +508,7 @@
 			<!-- End Main Page -->
 
 			<!-- 底部 -->
-			<%@ include file="/page-footer.jsp" %>
+			<%@ include file="/page-footer.jsp"%>
 			<!-- End Footer -->
 		</div>
 	</div>
@@ -551,8 +529,7 @@
 
 	<!-- Plugins JS-->
 	<script src="assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
-	<script
-		src="assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script src="assets/plugins/bootkit/js/bootkit.js"></script>
 	<script src="assets/plugins/magnific-popup/js/magnific-popup.js"></script>
 	<script src="assets/plugins/moment/js/moment.min.js"></script>

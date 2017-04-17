@@ -7,7 +7,7 @@
 <title>门禁出入日志 | 学生门禁管理系统</title>
 <!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<link rel="shortcut icon" href="${path }/assets/ico/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon" />
 <!-- Vendor CSS-->
 <link href="${path }/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
@@ -70,7 +70,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="${path }/turnover/ajaxTurnoverList.do"> <i class="icon fa fa-home"></i> 电气工程学院
+								<a href="${path }/turnover/queryDormAList.do"> <i class="icon fa fa-home"></i> 学生公寓A区
 								</a>
 							</li>
 						</ol>
@@ -88,10 +88,6 @@
 								<h6>
 									<i class="fa fa-table red"></i><span class="break"></span>门禁出入日志
 								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
 							</div>
 							<div class="panel-body">
 								<table class="table table-bordered table-striped"
@@ -109,67 +105,67 @@
 									<tbody>
 										<tr class="gradeX">
 											<td>1</td>
-											<td>电气工程学院</td>
+											<td>学生公寓A区</td>
 											<td>[朱岸峰]离开学院</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">X</td>
+											<td class="center hidden-phone">1234567890</td>
+											<td class="center hidden-phone">TODO</td>
 										</tr>
 										<tr class="gradeC">
 											<td>2</td>
-											<td>电气工程学院</td>
+											<td>学生公寓A区</td>
 											<td>[朱岸峰]进入学院</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">C</td>
+											<td class="center hidden-phone">1234567890</td>
+											<td class="center hidden-phone">TODO</td>
 										</tr>
 										<tr class="gradeA">
 										<td>3</td>
-											<td>电气工程学院</td>
+											<td>学生公寓A区</td>
 											<td>[张军]进入学院</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">A</td>
+											<td class="center hidden-phone">1234567890</td>
+											<td class="center hidden-phone">TODO</td>
 										</tr>
 										<tr class="gradeA">
 										<td>4</td>
-											<td>电气工程学院</td>
+											<td>学生公寓A区</td>
 											<td>[张军]进入学院</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">A</td>
+											<td class="center hidden-phone">1234567890</td>
+											<td class="center hidden-phone">TODO</td>
 										</tr>
 										<tr class="gradeA">
 										<td>5</td>
-											<td>电气工程学院</td>
+											<td>学生公寓A区</td>
 											<td>[赵一博]离开学院</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">A</td>
+											<td class="center hidden-phone">1234567890</td>
+											<td class="center hidden-phone">TODO</td>
 										</tr>
 										<tr class="gradeA">
 										<td>6</td>
-											<td>电气工程学院</td>
+											<td>学生公寓A区</td>
 											<td>[赵一博]进入学院</td>
 											<td>Win 2k+ / OSX.3+</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">A</td>
-										</tr>
-										<tr class="gradeA">
-										<td>1</td>
-											<td>电气工程学院</td>
-											<td>[张军]离开学院</td>
-											<td>2017-04-14</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">A</td>
+											<td class="center hidden-phone">1234567890</td>
+											<td class="center hidden-phone">TODO</td>
 										</tr>
 										<tr class="gradeA">
 										<td>7</td>
-											<td>电气工程学院</td>
+											<td>学生公寓A区</td>
+											<td>[张军]离开学院</td>
+											<td>2017-04-14</td>
+											<td class="center hidden-phone">1234567890</td>
+											<td class="center hidden-phone">TODO</td>
+										</tr>
+										<tr class="gradeA">
+										<td>8</td>
+											<td>学生公寓A区</td>
 											<td>[张军]进入学院</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">A</td>
+											<td class="center hidden-phone">1234567890</td>
+											<td class="center hidden-phone">TODO</td>
 										</tr>
 									</tbody>
 								</table>
