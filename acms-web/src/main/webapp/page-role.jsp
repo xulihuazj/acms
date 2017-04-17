@@ -71,7 +71,7 @@
 								<a><i class="fa fa-table"></i>系统用户管理</a>
 							</li>
 							<li class="active">
-								<a href="${path }/system/role/index.do"><i class="fa fa-thumbs-o-up"></i>角色管理</a>
+								<a href="${path }/user/system/ajaxUserList.do"><i class="fa fa-thumbs-o-up"></i>角色管理</a>
 							</li>
 						</ol>
 					</div>
@@ -90,20 +90,6 @@
 								<h6>
 									<i class="fa fa-table red"></i><span class="break"></span>角色管理
 								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a> <a href="#" class="btn-close"><i
-										class="fa fa-times"></i></a>
-								</div>
-							</div>
-							<div >
-								<form id="#">
-										<div class="form-group pull-right" style="width:100%;">
-											<button type="button" class="btn btn-primary" onclick="addRole();">添加</button>
-											<input type="text" style="width: 300px;" class="form-control inputw" name="searchKey" id="searchKey" reg="specialchar2"
-												placeholder="输入名称或创建者进行搜索" />
-											<button type="button" class="btn btn-primary" id="btn-search-down">搜索</button>
-										</div>
-								</form>
 							</div>
 
 							<div class="panel-body">
@@ -115,57 +101,28 @@
 												<th>角色名称</th>
 												<th>角色类型</th>
 												<th>角色状态</th>
+												<th>手机号</th>
 												<th>备注</th>
 												<th>操作</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>1</td>
-												<td>张三555</td>
-												<td>超级管理员</td>
-												<td>启用</td>
-												<td>fdsafdsaefdae</td>
-												<td>
-													<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-														class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-														class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-														class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
-												</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td>xuliha</td>
-												<td>普通管理员</td>
-												<td>启用</td>
-												<td>fdsafefdsafe$</td>
-												<td>
-													<span class="label label-success">启用</span> <span class="label label-danger">删除</span> <span
-														class="label label-warning">禁用</span> <span class="label label-default">编辑</span>
-												</td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td>赵yibo</td>
-												<td>普通管理员</td>
-												<td>禁用</td>
-												<td>fdasflkjlkgfgrdg$</td>
-												<td>
-													<span class="label label-success">启用</span> <span class="label label-danger">删除</span> <span
-														class="label label-warning">禁用</span> <span class="label label-default">编辑</span>
-												</td>
-											</tr>
-											<tr>
-												<td>4</td>
-												<td>zhangjun33</td>
-												<td>普通管理员</td>
-												<td>启用</td>
-												<td>gdj;lgsdf;jioj</td>
-												<td>
-													<span class="label label-success">启用</span> <span class="label label-danger">删除</span> <span
-														class="label label-warning">禁用</span> <span class="label label-default">编辑</span>
-												</td>
-											</tr>
+												<c:forEach items="${userList}" var="user">
+													<tr>
+														<td>${user.id}</td>
+														<td>${user.userName}</td>
+														<td>${user.type}</td>
+														<td>${user.status}</td>
+														<td>${user.mobile}</td>
+														<td>${user.note}</td>
+														<td>
+															<span class="label label-success"><a onclick="" id="startRole" sytle="color: white">启用</a></span> <span
+															class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
+															class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
+															class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+														</td>
+													</tr>
+									</c:forEach>
 										</tbody>
 									</table>
 								</div>
@@ -214,26 +171,10 @@
 			});
 		</script>
 	<style type="text/css">
-.subitem {
-	width: 300px;
-	background: #fff;
-	border: solid 1px #3299fd;
-	border-left: none;
-	font-family: "微软雅黑";
-	position: absolute;
-	left: 150px;
-	_left: 228px;
-	top: -100px;
-	z-index: 99999;
-	min-height: 60px;
-	height: auto !important;
-	height: 50px;
-	padding: 5px 10px 15px 10px;
-	position: absolute;
-	display: block;
-}
 </style>
-	<!-- end: JavaScript-->
 </body>
+<script type="text/javascript">
+	
+</script>
 
 </html>

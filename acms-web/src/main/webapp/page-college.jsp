@@ -60,13 +60,13 @@
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li>
-								<a href="homepage.jsp"><i class="icon fa fa-home"></i> 我的管理中心</a>
+								<a href="${path }/index.do"><i class="icon fa fa-home"></i> 我的管理中心</a>
 							</li>
 							<li>
-								<a href="#"><i class="fa fa-table"></i>人员管理</a>
+								<a><i class="fa fa-table"></i>人员管理</a>
 							</li>
 							<li class="active">
-								<i class="fa fa-thumbs-o-up"></i>全部学院
+								<a href="${path }/person/ajaxCollegeList.do"><i class="fa fa-thumbs-o-up"></i>全部学院</a>
 							</li>
 						</ol>
 					</div>

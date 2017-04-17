@@ -1,6 +1,7 @@
 package cn.edu.haut.cssp.acms.system.service.impl;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -31,6 +32,11 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
 			logger.error("查询管理员信息失败", e);
 		}
 		return null;
+	}
+	
+	@Override
+	public List<TUser> ajaxUserList() {
+		return super.getBaseDao().getSqlSession().selectList("UserManageMapper.ajaxUserList", 1);
 	}
 
 	//ok

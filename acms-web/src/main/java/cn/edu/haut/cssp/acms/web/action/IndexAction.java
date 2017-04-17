@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class IndexAction {
 
 	
-	@RequestMapping(value = "/index.do", produces = "application/json;charset=utf-8")
+	@RequestMapping(value = "/index.do")
 	public String index(HttpServletRequest request) {
-		return "/hoempage.jsp";
+		return "/homepage.jsp";
 	}
 	
 	@RequestMapping(value = "/404.do", method = RequestMethod.GET)

@@ -83,17 +83,20 @@
 				<!-- End 面包屑 -->
 				
 				<div class="clearfix">
-					<div class="panel panel-default bk-bg-white">
-						<div class="panel-heading bk-bg-white">
-							<h6>
-								<i class="fa fa-indent red"></i>查询条件
-							</h6>
-							<div class="panel-actions">
-								<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a> <a href="#" class="btn-close"><i
-									class="fa fa-times"></i></a>
+					<!-- 表单数据 -->
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="panel panel-default bk-bg-white">
+						
+							<div class="panel-heading bk-bg-white">
+								<h6>
+									<i class="fa fa-table red"></i><span class="break"></span>日志信息
+								</h6>
+								<div class="panel-actions">
+									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a> 
+									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+								</div>
 							</div>
-						</div>
-						<div class="panel-body panel-body bk-bg-white bk-padding-top-30 bk-padding-bottom-20">
+							<div class="panel-body panel-body bk-bg-white bk-padding-top-30 bk-padding-bottom-20">
 							<!-- 请求查询 -->
 							<form action="${base}/log/queryLogList.do" method="post" class="form-inline form-horizontal form-bordered">
 								<div class="form-group">
@@ -131,19 +134,6 @@
 								</div>
 							</form>
 						</div>
-					</div>
-					<!-- 表单数据 -->
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<div class="panel panel-default bk-bg-white">
-							<div class="panel-heading bk-bg-white">
-								<h6>
-									<i class="fa fa-table red"></i><span class="break"></span>日志信息
-								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a> 
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
 							<div class="panel-body">
 								<table class="table table-bordered table-striped" id="datatable-default">
 									<thead>
@@ -157,6 +147,7 @@
 									</thead>
 									<!-- 在此处加循环 -->
 									<tbody>
+							
 										<tr class="gradeX">
 											<td>1</td>
 											<td>登录退出</td>

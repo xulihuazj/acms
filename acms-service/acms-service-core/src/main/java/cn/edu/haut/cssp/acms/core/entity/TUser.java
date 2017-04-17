@@ -43,7 +43,6 @@ public class TUser implements Serializable {
 	 * 1-超级管理员；2-普通管理员
 	 */
 	private Integer type;
-	
 
 	/**
 	 * 手机号

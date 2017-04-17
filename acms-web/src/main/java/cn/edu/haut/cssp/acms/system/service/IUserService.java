@@ -1,5 +1,6 @@
 package cn.edu.haut.cssp.acms.system.service;
 
+import java.util.List;
 import java.util.Map;
 
 import cn.edu.haut.cssp.acms.core.bean.DataQueryExt;
@@ -24,6 +25,16 @@ public interface IUserService {
 	 * @return: AcmsUser
 	 */
 	public TUser getUserByUserName(String userName) throws UserBusiException; 
+	
+	/**
+	 * 获取用户信息列表
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月17日下午10:21:43
+	 * @return
+	 * @throws UserBusiException
+	 */
+	public List<TUser> ajaxUserList()throws UserBusiException;
 	
 	/**
 	 * 分页查询用户信息

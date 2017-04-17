@@ -19,7 +19,7 @@
 							</div>
 						</div>
 						<li class="active">
-							<a href="homepage.jsp"> <i class="fa fa-institution" aria-hidden="true"></i> <span>管理中心</span>
+							<a href="${path }/index.do"> <i class="fa fa-institution" aria-hidden="true"></i> <span>管理中心</span>
 							</a>
 						</li>
 
@@ -300,7 +300,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="${path }/system/role/index.do"> <span class="text">角色管理</span>
+									<a href="${path }/user/system/ajaxUserList.do"> <span class="text">角色管理</span>
 									</a>
 								</li>
 								<li>

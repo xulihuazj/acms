@@ -13,6 +13,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.alibaba.druid.stat.TableStat.Mode;
 import com.xdja.platform.log.LoggerExtData;
 import com.xdja.platform.security.utils.OperatorUtil;
 import com.xdja.platform.security.utils.PasswordUtils;
@@ -56,6 +58,13 @@ public class UserManagerAction extends BaseAction{
 		LitePaging<TUser> pagination = userService.queryAllUsers(condition, queryExt, queryBean); 
 		return tables.getDataTablesReply(pagination);
 		
+	}
+	
+	@RequestMapping("/user/system/ajaxUserList.do")
+	public Object ajaxUserList(ModelMap modelMap){
+		List<TUser> userList = userService.ajaxUserList();
+		modelMap.put("userList", userList);
+		return "/page-role.jsp";
 	}
 	
 	/**
