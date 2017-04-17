@@ -7,34 +7,34 @@
 <title>修改密码|学生门禁管理系统</title>
 <!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon" />
-<link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png" />
+<link rel="shortcut icon" href="${path }/assets/ico/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="${path }/assets/ico/apple-touch-icon.png" />
 <!-- start: CSS file-->
 
 <!-- Vendor CSS-->
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-<link href="assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
-<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-<link href="assets/vendor/css/pace.preloader.css" rel="stylesheet" />
+<link href="${path }/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="${path }/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
+<link href="${path }/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="${path }/assets/vendor/css/pace.preloader.css" rel="stylesheet" />
 
 <!-- Plugins CSS-->
-<link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
-<link href="assets/plugins/scrollbar/css/mCustomScrollbar.css" rel="stylesheet" />
-<link href="assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
-<link href="assets/plugins/magnific-popup/css/magnific-popup.css" rel="stylesheet" />
-<link href="assets/plugins/fullcalendar/css/fullcalendar.css" rel="stylesheet" />
-<link href="assets/plugins/jqvmap/jqvmap.css" rel="stylesheet" />
-<link rel="stylesheet" href="assets/css/zlight.menu.css" media="screen">
+<link href="${path }/assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
+<link href="${path }/assets/plugins/scrollbar/css/mCustomScrollbar.css" rel="stylesheet" />
+<link href="${path }/assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
+<link href="${path }/assets/plugins/magnific-popup/css/magnific-popup.css" rel="stylesheet" />
+<link href="${path }/assets/plugins/fullcalendar/css/fullcalendar.css" rel="stylesheet" />
+<link href="${path }/assets/plugins/jqvmap/jqvmap.css" rel="stylesheet" />
+<link rel="stylesheet" href="${path }/assets/css/zlight.menu.css" media="screen">
 <!-- Theme CSS -->
-<link href="assets/css/jquery.mmenu.css" rel="stylesheet" />
+<link href="${path }/assets/css/jquery.mmenu.css" rel="stylesheet" />
 
 <!-- Page CSS -->
-<link href="assets/css/style.css" rel="stylesheet" />
-<link href="assets/css/add-ons.min.css" rel="stylesheet" />
+<link href="${path }/assets/css/style.css" rel="stylesheet" />
+<link href="${path }/assets/css/add-ons.min.css" rel="stylesheet" />
 <!-- end: CSS file-->
 
 <!-- Head Libs -->
-<script src="assets/plugins/modernizr/js/modernizr.js"></script>
+<script src="${path }/assets/plugins/modernizr/js/modernizr.js"></script>
 <script>
 </script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -129,27 +129,23 @@
 		<!-- start: JavaScript-->
 
 		<!-- Vendor JS-->
-		<script src="assets/vendor/js/jquery.min.js"></script>
-		<script src="assets/vendor/js/jquery-2.1.1.min.js"></script>
-		<script src="assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
-		<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script src="assets/vendor/skycons/js/skycons.js"></script>
-		<script src="assets/vendor/js/pace.min.js"></script>
+		<script src="${path }/assets/vendor/js/jquery.min.js"></script>
+		<script src="${path }/assets/vendor/js/jquery-2.1.1.min.js"></script>
+		<script src="${path }/assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
+		<script src="${path }/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="${path }/assets/vendor/js/pace.min.js"></script>
 
 		<!-- Plugins JS-->
-		<script src="assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
-		<script src="assets/plugins/magnific-popup/js/magnific-popup.js"></script>
-		<script src="assets/plugins/moment/js/moment.min.js"></script>
-		<script src="assets/plugins/fullcalendar/js/fullcalendar.js"></script>
-		<script src="assets/plugins/jquery/js/jquery.zlight.menu.1.0.min.js"></script>
-		<script src="assets/plugins/jquery/js/respond.min.js"></script>
+		<script src="${path }/assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
+		<script src="${path }/assets/plugins/magnific-popup/js/magnific-popup.js"></script>
+		<script src="${path }/assets/plugins/moment/js/moment.min.js"></script>
+		<script src="${path }/assets/plugins/fullcalendar/js/fullcalendar.js"></script>
 
 		<!-- Theme JS -->
-		<script src="assets/js/jquery.mmenu.min.js"></script>
-		<script src="assets/js/core.min.js"></script>
+		<script src="${path }/assets/js/core.min.js"></script>
 
 		<!-- Pages JS -->
-		<script src="assets/js/editPin.js"></script>
+		<script src="${path }/assets/js/editPin.js"></script>
 		<script type="text/javascript">
 			//密码修改校验事件
 			$(function(){

@@ -59,10 +59,10 @@
 								<a href="homepage.jsp"><i class="icon fa fa-home"></i> 我的管理中心</a>
 							</li>
 							<li>
-								<a href="#"><i class="fa fa-table"></i>设备管理设置</a>
+								<a><i class="fa fa-table"></i>设备管理设置</a>
 							</li>
 							<li class="active">
-								<i class="fa fa-thumbs-o-up"></i>设备连接设置
+								<i class="fa fa-thumbs-o-up"></i>时间组设置
 							</li>
 						</ol>
 					</div>
@@ -71,46 +71,43 @@
 					</div>
 				</div>
 				<!-- End Page Header -->
-
-				<div class="row">
-
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="row">
+					<div class="col-lg-12">
 						<div class="panel panel-default bk-bg-white">
 							<div class="panel-heading bk-bg-white">
 								<h6>
-									<i class="fa fa-table red"></i><span class="break"></span>人员信息管理
+									<i class="fa fa-table"></i><span class="break"></span>时间组设置
 								</h6>
 							</div>
 							<div class="panel-body">
-								<table class="table table-bordered table-striped mb-none" id="datatable-details">
-									<thead>
-										<tr>
-											<th>序号.</th>
-											<th>设备SN</th>
-											<th>设备状态</th>
-											<th>设备品牌</th>
-											<th>设备型号</th>
-											<th>操作</th>
-										</tr>
-									</thead>
-									<tbody>
+								<div class="table-responsive">
+									<table
+										class="table table-striped table-bordered bootstrap-datatable datatable">
+										<thead>
+											<tr>
+												<th>序号.</th>
+												<th>启用时间</th>
+												<th>停用时间</th>
+												<th>当前状态</th>
+												<th>操作</th>
+											</tr>
+										</thead>
+										<tbody>
+										
 										<c:forEach items="${deviceList}" var="deviceInfo">
 											<tr>
 												<td>${deviceInfo.id}</td>
-												<td>${deviceInfo.SN}</td>
-												<td>${deviceInfo.status}</td>
-												<td>${deviceInfo.deviceBrand}</td>
-												<td>${deviceInfo.deviceModel}</td>
-												<td>
-													<span class="label label-success"><a onclick="" id="" sytle="color: white">断开连接</a></span> <span
-														class="label label-danger"><a onclick="" id="" sytle="color: white">建立连接</a></span> <span
-														class="label label-warning"><a onclick="" id="" sytle="color: white">停用设备</a></span> 
-													<!-- 	<span class="label label-default"><a onclick="" id="" sytle="color: white"></a></span> -->
-												</td>
+												<td>${deviceInfo.activateTime}</td>
+												<td>${deviceInfo.activateTime}</td>
+												<td>正常</td>
+												<td> <a class="btn btn-info" style="height: 44px" href="#"> <i
+														class="fa fa-edit "></i>
+												</a> </td>
 											</tr>
 										</c:forEach>
-									</tbody>
-								</table>
+										</tbody>
+									</table>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -144,68 +141,20 @@
 			<div id="modalForm" class="modal-block modal-block-primary mfp-hide">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h2 class="panel-title">编辑人员</h2>
+						<h2 class="panel-title">门禁时间设置</h2>
 					</div>
 					<div class="panel-body bk-noradius">
 						<form id="savePerson_form" class="form-horizontal mb-lg" novalidate="novalidate">
 							<div class="form-group">
-								<label class="col-sm-3 control-label">人员姓名：</label>
+								<label class="col-sm-3 control-label">门禁开始时间：</label>
 								<div class="col-sm-9">
-									<input type="email" name="perName" class="form-control" placeholder="请输入人员姓名..." required />
+									<input type="email" name="perName" class="form-control" placeholder="" required />
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-sm-3 control-label">所持卡号：</label>
+								<label class="col-sm-3 control-label">门禁结束时间：</label>
 								<div class="col-sm-9">
-									<input type="email" name="cardId" class="form-control" placeholder="请输入人员所持卡号..." required />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">身份证号：</label>
-								<div class="col-sm-9">
-									<input type="url" name="perIdentificate" class="form-control" placeholder="请输入身份证号..." />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">人员类型：</label>
-								<div class="col-sm-9">
-									<input type="url" name="perType" class="form-control" placeholder="请选择人员类型..." />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">人员性别：</label>
-								<div class="col-sm-9">
-									<input type="url" name="perSex" class="form-control" placeholder="请选择人员性别..." />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">人员年龄：</label>
-								<div class="col-sm-9">
-									<input type="url" name="perAge" class="form-control" placeholder="请输入年龄..." />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">联系电话：</label>
-								<div class="col-sm-9">
-									<input type="url" name="perMobile" class="form-control" placeholder="请输入联系电话..." />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">所属学院：</label>
-								<div class="col-sm-9">
-									<input type="url" name="perDepart" class="form-control" placeholder="请输入人员所属学院..." />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">所属专业：</label>
-								<div class="col-sm-9">
-									<input type="url" name="perMajor" class="form-control" placeholder="请输入人员所属专业..." />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">所属班级：</label>
-								<div class="col-sm-9">
-									<input type="url" name="url" class="form-control" placeholder="请输入人员所属班级..." />
+									<input type="email" name="cardId" class="form-control" placeholder="" required />
 								</div>
 							</div>
 						</form>
@@ -235,7 +184,7 @@
 							<i class="fa fa-question-circle"></i>
 						</div>
 						<div class="modal-text" style="font-size: 20px;">
-							<p>确定启用该人员?</p>
+							<p>确定开启门禁时间?</p>
 						</div>
 					</div>
 				</div>
@@ -250,68 +199,6 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="panel-body">
-		<div id="decideStop" class="modal-block modal-header-color modal-block-warning mfp-hide">
-			<div class="panel">
-				<div class="panel-heading">
-					<h2 class="panel-title">消息！</h2>
-				</div>
-				<div class="panel-body bk-noradius">
-					<div class="modal-wrapper">
-						<div class="modal-icon">
-							<i class="fa fa-warning"></i>
-						</div>
-						<div class="modal-text" style="font-size: 20px;">
-							<h4>警告：</h4>
-							<p>确定禁用该人员？</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel-footer">
-					<div class="row">
-						<div class="col-md-12 text-right">
-							<button class="btn btn-primary modal-confirm">确定</button>
-							<button class="btn btn-default modal-dismiss">取消</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="panel-body">
-		<div id="decideDelete" class="modal-block modal-header-color modal-block-danger mfp-hide">
-			<div class="panel">
-				<div class="panel-heading">
-					<h2 class="panel-title">消息!</h2>
-				</div>
-				<div class="panel-body bk-noradius">
-					<div class="modal-wrapper">
-						<div class="modal-icon">
-							<i class="fa fa-times-circle"></i>
-						</div>
-						<div class="modal-text" style="font-size: 20px;">
-							<h4>危险：</h4>
-							<p>确定删除该人员？</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel-footer">
-					<div class="row">
-						<div class="col-md-12 text-right">
-							<button class="btn btn-primary modal-confirm">确定</button>
-							<button class="btn btn-default modal-dismiss">取消</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-	<!-- start: JavaScript-->
 
 	<!-- Vendor JS-->
 	<script src="${path}/assets/vendor/js/jquery.min.js"></script>

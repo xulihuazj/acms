@@ -28,7 +28,7 @@
 							</a>
 							<ul class="nav nav-children">
 								<li>
-									<a href="page-college.jsp"> <span class="text">全部学院</span>
+									<a href="${path }/person/ajaxCollegeList.do"> <span class="text">全部学院</span>
 									</a>
 							<!-- 		<ul class="">
 										<li>
@@ -124,19 +124,11 @@
 							</a>
 							<ul class="nav nav-children">
 								<li>
-									<a href="${path}/device/list.do"> <span class="text">基本设置</span></a>
-								</li>
-								<li>
-									<a href="#"> <span class="text">设备操作</span>
+									<a href="${path}/device/timeGroup.do"> <span class="text">时间组设置</span>
 									</a>
 								</li>
-								<li>
-									<a href="#"> <span class="text">时间组设置</span>
-									</a>
-								</li>
-								<li>
-									<a href="page-deviceattach.jsp"> <span class="text">设备连接设置</span>
-									</a>
+									<li>
+									<a href="${path}/device/ajaxDeviceList.do"> <span class="text">设备连接设置</span></a>
 								</li>
 							</ul>
 						</li>
@@ -168,7 +160,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="page-statistics.jsp"> <span class="text">统计分析</span>
+									<a href="${path }/data/dataHandleList.do"> <span class="text">统计分析</span>
 									</a>
 								</li>
 							</ul>
@@ -316,7 +308,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="page-password.jsp"> <span class="text">修改密码</span>
+									<a href="${path }/user/system/toModifyPsd.do"> <span class="text">修改密码</span>
 									</a>
 								</li>
 							</ul>

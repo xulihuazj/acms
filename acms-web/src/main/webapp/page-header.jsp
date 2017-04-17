@@ -133,11 +133,11 @@
 								</div>
 							</li>
 							<li>
-								<a href="page-profile.jsp"> <i class="fa fa-user"></i> 个人中心
+								<a href=""> <i class="fa fa-user"></i> 个人中心
 								</a>
 							</li>
 							<li>
-								<a href="page-password.jsp"> <i class="fa fa-unlock-alt"></i> 修改密码
+								<a href="${path }/user/system/toModifyPsd.do"> <i class="fa fa-unlock-alt"></i> 修改密码
 								</a>
 							</li>
 							<li>

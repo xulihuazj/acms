@@ -8,43 +8,29 @@
 <title>人员管理 | 门禁管理系统</title>
 <!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<!-- Favicon and touch icons -->
-<link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon" />
-<link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="57x57" href="assets/ico/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76" href="assets/ico/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="assets/ico/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="assets/ico/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="assets/ico/apple-touch-icon-152x152.png" />
-
-<!-- start: CSS file-->
-
 <!-- Vendor CSS-->
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css"
+<link href="${path }/assets/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet" />
-<link href="assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
-<link href="assets/vendor/font-awesome/css/font-awesome.min.css"
+<link href="${path }/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
+<link href="${path }/assets/vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" />
-<link href="assets/vendor/css/pace.preloader.css" rel="stylesheet" />
-
+<link href="${path }/assets/vendor/css/pace.preloader.css" rel="stylesheet" />
 <!-- Plugins CSS-->
-<link href="assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
-<link href="assets/plugins/select2/select2.css" rel="stylesheet" />
-<link href="assets/plugins/jquery-datatables-bs3/css/datatables.css"
+<link href="${path }/assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
+<link href="${path }/assets/plugins/select2/select2.css" rel="stylesheet" />
+<link href="${path }/assets/plugins/jquery-datatables-bs3/css/datatables.css"
 	rel="stylesheet" />
 
 <!-- Theme CSS -->
-<link href="assets/css/jquery.mmenu.css" rel="stylesheet" />
+<link href="${path }/assets/css/jquery.mmenu.css" rel="stylesheet" />
 
 <!-- Page CSS -->
-<link href="assets/css/style.css" rel="stylesheet" />
-<link href="assets/css/add-ons.min.css" rel="stylesheet" />
+<link href="${path }/assets/css/style.css" rel="stylesheet" />
+<link href="${path }/assets/css/add-ons.min.css" rel="stylesheet" />
 <!-- end: CSS file-->
 
 <!-- Head Libs -->
-<script src="assets/plugins/modernizr/js/modernizr.js"></script>
+<script src="${path }/assets/plugins/modernizr/js/modernizr.js"></script>
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -96,28 +82,12 @@
 								<h6>
 									<i class="fa fa-table red"></i><span class="break"></span>学院信息管理
 								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-									<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-								</div>
 							</div>
 							<div class="panel-body">
 								<table class="table table-bordered table-striped mb-none"
 									id="datatable-details">
 									<thead>
 										<tr>
-									<!-- 			<th style="width: 6%;">序号.</th>
-											<th style="width: 9%;">姓名</th>
-											<th style="width: 10%;">卡号</th>
-											<th style="width: 10%;">身份证号</th>
-											<th style="width: 9%;">人员类型</th>
-											<th style="width: 5%;">性别</th>
-											<th style="width: 5%;">年龄</th>
-											<th style="width: 5%;">联系电话</th>
-											<th style="width: 18%;">学院</th>
-											<th style="width: 18%;">专业</th>
-											<th style="width: 5%;">班级</th> -->
-											
 											<th >序号.</th>
 											<th >学院名称</th>
 											<th >操作</th>
@@ -307,12 +277,6 @@
 										<tr class="gradeA">
 											<td>19</td>
 											<td>继续教育学院</td>
-											<td>
-													<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span>
-													<span class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span>
-													<span class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span>
-													<span class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
-												</td>
 										</tr>
 										<tr class="gradeA">
 											<td>20</td>
@@ -344,27 +308,27 @@
 	<!-- start: JavaScript-->
 
 	<!-- Vendor JS-->
-	<script src="assets/vendor/js/jquery.min.js"></script>
-	<script src="assets/vendor/js/jquery-2.1.1.min.js"></script>
-	<script src="assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
-	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/vendor/js/pace.min.js"></script>
+	<script src="${path }/assets/vendor/js/jquery.min.js"></script>
+	<script src="${path }/assets/vendor/js/jquery-2.1.1.min.js"></script>
+	<script src="${path }/assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="${path }/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="${path }/assets/vendor/js/pace.min.js"></script>
 
 	<!-- Plugins JS-->
-	<script src="assets/plugins/moment/js/moment.min.js"></script>
-	<script src="assets/plugins/select2/select2.js"></script>
-	<script src="assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
-	<script src="assets/plugins/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
-	<script src="assets/plugins/jquery-datatables-bs3/js/datatables.js"></script>
-	<script src="assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
+	<script src="${path }/assets/plugins/moment/js/moment.min.js"></script>
+	<script src="${path }/assets/plugins/select2/select2.js"></script>
+	<script src="${path }/assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
+	<script src="${path }/assets/plugins/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
+	<script src="${path }/assets/plugins/jquery-datatables-bs3/js/datatables.js"></script>
+	<script src="${path }/assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
 
 	<!-- Theme JS -->
-	<script src="assets/js/jquery.mmenu.min.js"></script>
-	<script src="assets/js/core.min.js"></script>
+	<script src="${path }/assets/js/jquery.mmenu.min.js"></script>
+	<script src="${path }/assets/js/core.min.js"></script>
 
 	<!-- Pages JS -->
-	<script src="assets/js/common/page-person.js"></script>
-	<script src="assets/js/pages/ui-modals.js"></script>
+	<script src="${path }/assets/js/common/page-person.js"></script>
+	<script src="${path }/assets/js/pages/ui-modals.js"></script>
 	<!-- end: JavaScript-->
 	<script type="text/javascript">
 		$(function(){
