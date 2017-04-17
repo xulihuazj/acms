@@ -19,11 +19,6 @@ public class TDeviceInfo implements Serializable{
 	private Long id;
 	
 	/**
-	 * IMEI
-	 */
-	private String IMEI;
-	
-	/**
 	 * 设备类型
 	 */
 	private String deviceModel;
@@ -54,14 +49,6 @@ public class TDeviceInfo implements Serializable{
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getIMEI() {
-		return IMEI;
-	}
-
-	public void setIMEI(String iMEI) {
-		IMEI = iMEI;
 	}
 
 	public String getDeviceModel() {
