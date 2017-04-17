@@ -296,15 +296,15 @@
 							</a>
 							<ul class="nav nav-children">
 								<li>
-									<a href="#"> <span class="text">系统参数设置</span>
+									<a > <span class="text">系统参数设置</span>
 									</a>
 								</li>
 								<li>
-									<a href="page-role.jsp"> <span class="text">角色管理</span>
+									<a href="${path }/system/role/index.do"> <span class="text">角色管理</span>
 									</a>
 								</li>
 								<li>
-									<a href="page-log.jsp"> <span class="text">系统日志</span>
+									<a href="${path }/system/syslog/toList.do"> <span class="text">系统日志</span>
 									</a>
 								</li>
 								<li>

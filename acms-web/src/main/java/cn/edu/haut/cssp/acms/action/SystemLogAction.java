@@ -25,7 +25,7 @@ public class SystemLogAction extends BaseAction{
 	 */
 	@RequestMapping("/system/syslog/toList.do")
 	public String toList(){
-		return "system/syslog";
+		return "/page-log.jsp";
 	}
 	
 	/**

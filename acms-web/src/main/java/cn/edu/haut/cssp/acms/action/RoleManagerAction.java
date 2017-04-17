@@ -1,5 +1,7 @@
 package cn.edu.haut.cssp.acms.action;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +35,6 @@ import cn.edu.haut.cssp.acms.util.WebConstants;
  * @note
  */
 @Controller
-@RequestMapping("/acms")
 public class RoleManagerAction extends BaseAction {
 	
 	@Autowired
@@ -48,7 +49,7 @@ public class RoleManagerAction extends BaseAction {
 	 */
 	@RequestMapping("/system/role/index.do")
 	public String index() {
-		return "system/role/index";
+		return "/page-role.jsp";
 	}
 
 	/**
@@ -65,6 +66,12 @@ public class RoleManagerAction extends BaseAction {
 		DataTablesParameters tables = DataTablesParameters.newInstance();
 		LitePaging<TRole> pagination = roleService.queryAllRoles(roleCondition, queryExt, queryBean);
 		return tables.getDataTablesReply(pagination);
+	}
+	
+	@RequestMapping("/system/role/ajaxRoleList.do")
+	public Object ajaxRoleList() {
+		List<TRole> roleList = roleService.ajaxRoleList();
+		return roleList;
 	}
 	
 	/**

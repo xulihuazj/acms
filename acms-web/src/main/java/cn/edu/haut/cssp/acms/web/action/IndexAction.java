@@ -21,7 +21,7 @@ public class IndexAction {
 	
 	@RequestMapping(value = "/index.do", produces = "application/json;charset=utf-8")
 	public String index(HttpServletRequest request) {
-		return "/page-login.jsp";
+		return "/hoempage.jsp";
 	}
 	
 	@RequestMapping(value = "/404.do", method = RequestMethod.GET)
