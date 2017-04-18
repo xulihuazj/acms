@@ -8,13 +8,11 @@
 <title>学生门禁管理系统</title>
 <!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
 <!-- Vendor CSS-->
 <link href="${path }/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/css/pace.preloader.css" rel="stylesheet" />
-
 <!-- Plugins CSS-->
 <link href="${path }/assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/scrollbar/css/mCustomScrollbar.css" rel="stylesheet" />
@@ -25,17 +23,12 @@
 <link rel="stylesheet" href="${path }/assets/css/zlight.menu.css" media="screen">
 <!-- Theme CSS -->
 <link href="${path }/assets/css/jquery.mmenu.css" rel="stylesheet" />
-
 <!-- Page CSS -->
 <link href="${path }/assets/css/style.css" rel="stylesheet" />
 <link href="${path }/assets/css/add-ons.min.css" rel="stylesheet" />
 <!-- end: CSS file-->
-
 <!-- Head Libs -->
 <script src="${path }/assets/plugins/modernizr/js/modernizr.js"></script>
-<script>
-	
-</script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -43,7 +36,6 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 </head>
-
 <body>
 	<!-- Start: Header -->
 	<%@ include file="/page-header.jsp" %>
@@ -51,11 +43,9 @@
 	<!-- Start: Content -->
 	<div class="container-fluid content">
 		<div class="row">
-
 			<!-- START 左侧导航栏 -->
 			<%@ include file="/page-sidebar.jsp" %>
 			<!-- END 左侧导航栏 -->
-
 			<!-- Main Page(主要内容) -->
 			<div class="main ">
 				<!-- START 面包屑-->
@@ -67,11 +57,11 @@
 								</a>
 							</li>
 							<li>
-								<a href=""> <i class="icon fa fa-home"></i> 系统用户管理
+								<a href=""> <i class="icon fa fa-cog"></i> 系统用户管理
 								</a>
 							</li>
 							<li>
-								<a href="${path }/system/syslog/toList.do"> <i class="icon fa fa-home"></i> 系统日志
+								<a href="${path }/system/syslog/toList.do"> <i class="icon fa  fa-sort-amount-asc"></i> 系统日志
 								</a>
 							</li>
 						</ol>

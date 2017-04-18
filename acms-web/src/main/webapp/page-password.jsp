@@ -10,13 +10,11 @@
 <link rel="shortcut icon" href="${path }/assets/ico/favicon.ico" type="image/x-icon" />
 <link rel="apple-touch-icon" href="${path }/assets/ico/apple-touch-icon.png" />
 <!-- start: CSS file-->
-
 <!-- Vendor CSS-->
 <link href="${path }/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/css/pace.preloader.css" rel="stylesheet" />
-
 <!-- Plugins CSS-->
 <link href="${path }/assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/scrollbar/css/mCustomScrollbar.css" rel="stylesheet" />
@@ -25,12 +23,10 @@
 <link href="${path }/assets/plugins/fullcalendar/css/fullcalendar.css" rel="stylesheet" />
 <!-- Theme CSS -->
 <link href="${path }/assets/css/jquery.mmenu.css" rel="stylesheet" />
-
 <!-- Page CSS -->
 <link href="${path }/assets/css/style.css" rel="stylesheet" />
 <link href="${path }/assets/css/add-ons.min.css" rel="stylesheet" />
 <!-- end: CSS file-->
-
 <!-- Head Libs -->
 <script src="${path }/assets/plugins/modernizr/js/modernizr.js"></script>
 <script>
@@ -46,15 +42,12 @@
 	<!-- Start: Header -->
 	<%@ include file="/page-header.jsp"%>
 	<!-- End: Header -->
-
 	<!-- Start: Content -->
 	<div class="container-fluid content">
 		<div class="row">
-
 			<!-- START 左侧导航栏 -->
 			<%@ include file="/page-sidebar.jsp"%>
 			<!-- END 左侧导航栏 -->
-
 			<!-- Main Page(主要内容) -->
 			<div class="main ">
 				<!-- START 面包屑-->
@@ -66,11 +59,11 @@
 								</a>
 							</li>
 							<li>
-								<a> <i class="icon fa fa-home"></i> 系统用户管理
+								<a> <i class="icon fa  fa-cog"></i> 系统用户管理
 								</a>
 							</li>
 							<li>
-								<a href="page-password.jsp"> <i class="icon fa fa-home"></i> 修改密码
+								<a href="page-password.jsp"> <i class="icon fa  fa-share-square-o"></i> 修改密码
 								</a>
 							</li>
 						</ol>

@@ -30,8 +30,6 @@
 <link href="${path }/assets/css/style.css" rel="stylesheet" />
 <link href="${path }/assets/css/add-ons.min.css" rel="stylesheet" />
 <!-- end: CSS file-->
-
-<!-- Head Libs -->
 <script src="${path }/assets/plugins/modernizr/js/modernizr.js"></script>
 <script src="${path }/assets/vendor/js/jquery.min.js"></script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -41,20 +39,16 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 </head>
-
 <body>
 	<!-- Start: Header -->
 	<%@include file="/page-header.jsp" %>
 	<!-- End: Header -->
-
 	<!-- Start: Content -->
 	<div class="container-fluid content">
 		<div class="row">
-
 			<!-- START 左侧导航栏 -->
 			<%@include file="/page-sidebar.jsp" %>
 			<!-- END 左侧导航栏 -->
-
 			<!-- Main Page(主要内容) -->
 			<div class="main ">
 				<!-- START 面包屑-->
@@ -62,13 +56,21 @@
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li>
-								<a href="homepage.jsp"> <i class="icon fa fa-home"></i> 我的管理中心
+								<a href="${path }/index.do"> <i class="icon fa fa-home"></i> 我的管理中心
+								</a>
+							</li>
+								<li>
+								<a> <i class="icon fa fa-retweet"></i> 数据分析管理
+								</a>
+							</li>
+								<li>
+								<a href="${path}/data/dataHandleList.do"> <i class="icon fa  fa-refresh "></i>统计分析
 								</a>
 							</li>
 						</ol>
 					</div>
 					<div class="pull-right">
-						<h2>管理中心</h2>
+						<h2>数据分析管理</h2>
 					</div>
 				</div>
 				<!-- End 面包屑 -->

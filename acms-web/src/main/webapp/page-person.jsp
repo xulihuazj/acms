@@ -50,13 +50,13 @@
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li>
-								<a href="homepage.jsp"><i class="icon fa fa-home"></i> 我的管理中心</a>
+								<a href="${path }/index.do"><i class="icon fa fa-home"></i> 我的管理中心</a>
 							</li>
 							<li>
-								<a><i class="fa fa-table"></i>人员管理</a>
+								<a><i class="fa fa-tasks"></i>人员管理</a>
 							</li>
 							<li class="active">
-								<i class="fa fa-thumbs-o-up"></i>全部学院
+								<a href="${path }/person/ajaxPersonList.do"><i class="fa fa-female "></i>全部学生</a>
 							</li>
 						</ol>
 					</div>
@@ -119,6 +119,7 @@
 												<td>${person.perMobile}</td>
 												<td>${person.perDepart}</td>
 												<td>${person.perMajor}</td>
+												<td>1304</td>
 											</tr>
 										</c:forEach>
 									</tbody>
@@ -168,6 +169,7 @@
 	<script src="${path}/assets/js/common/page-person.js"></script>
 	<script src="${path}/assets/js/pages/ui-modals.js"></script>
 	<script src="${path}/assets/js/common.js"></script>
+</body>
 	<script type="text/javascript">
 		$(function(){
 			//debugger
@@ -175,9 +177,12 @@
 			//$("#decideDelete").modal("show");
 			//$("#editPersonModal").modal("show");
 			//$("#decideStop").modal("show");
+			var s = $("#eidtPerson").html();
+			alert(s);
 		});
 		
 		$("#eidtPerson").click(function(){
+			alert();
 			$("#modalBasic").modal("show");
 		});
 		/*点击取消清空输入框，并退出弹出框*/
@@ -188,5 +193,4 @@
 		$("#confirmSave").click(function(){
 		});
 	</script>
-</body>
 </html>

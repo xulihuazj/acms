@@ -43,7 +43,6 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 </head>
-
 <body>
 	<!-- Start: Header -->
 	<%@ include file="/page-header.jsp"%>
@@ -68,10 +67,10 @@
 								</a>
 							</li>
 							<li>
-								<a><i class="fa fa-table"></i>系统用户管理</a>
+								<a><i class="fa fa-cog"></i>系统用户管理</a>
 							</li>
 							<li class="active">
-								<a href="${path }/user/system/ajaxUserList.do"><i class="fa fa-thumbs-o-up"></i>角色管理</a>
+								<a href="${path }/user/system/ajaxUserList.do"><i class="fa fa-users "></i>角色管理</a>
 							</li>
 						</ol>
 					</div>

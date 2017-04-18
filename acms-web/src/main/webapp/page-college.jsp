@@ -25,7 +25,6 @@
 <!-- end: CSS file-->
 <!-- Head Libs -->
 <script src="${path }/assets/plugins/modernizr/js/modernizr.js"></script>
-
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -54,10 +53,10 @@
 								<a href="${path }/index.do"><i class="icon fa fa-home"></i> 我的管理中心</a>
 							</li>
 							<li>
-								<a><i class="fa fa-table"></i>人员管理</a>
+								<a><i class="fa fa-tasks "></i>人员管理</a>
 							</li>
 							<li class="active">
-								<a href="${path }/person/ajaxCollegeList.do"><i class="fa fa-thumbs-o-up"></i>全部学院</a>
+								<a href="${path }/person/ajaxCollegeList.do"><i class="fa fa-arrows"></i>全部学院</a>
 							</li>
 						</ol>
 					</div>

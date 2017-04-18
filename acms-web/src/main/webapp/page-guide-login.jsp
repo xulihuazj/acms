@@ -57,10 +57,10 @@
 								<a href="${path }/index.do"><i class="icon fa fa-home"></i>我的管理中心</a>
 							</li>
 							<li>
-								<a><i class="fa fa-briefcase"></i>系统入门指南</a>
+								<a><i class="fa fa-send-o"></i>系统入门指南</a>
 							</li>
 							<li class="active">
-								<a href="${path }/help/loginRelate.do"><i class="fa fa-list">登录相关问题</i></a>
+								<a href="${path }/help/loginRelate.do"><i class="fa fa-exclamation-circle ">登录相关问题</i></a>
 							</li>
 						</ol>
 					</div>

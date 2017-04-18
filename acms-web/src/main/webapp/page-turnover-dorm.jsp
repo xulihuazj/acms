@@ -66,11 +66,11 @@
 								</a>
 							</li>
 							<li>
-								<a> <i class="icon fa fa-home"></i> 门禁出入日志
+								<a> <i class="icon fa fa-exchange"></i> 门禁出入日志
 								</a>
 							</li>
 							<li>
-								<a href="${path }/turnover/queryDormAList.do"> <i class="icon fa fa-home"></i> 学生公寓A区
+								<a href="${path }/turnover/queryDormAList.do"> <i class="icon fa fa-arrows-h"></i> 学生公寓A区
 								</a>
 							</li>
 						</ol>

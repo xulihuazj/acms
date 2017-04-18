@@ -13,7 +13,6 @@
 <link href="${path }/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/css/pace.preloader.css" rel="stylesheet" />
-
 <!-- Plugins CSS-->
 <link href="${path }/assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/scrollbar/css/mCustomScrollbar.css" rel="stylesheet" />
@@ -24,16 +23,13 @@
 <link rel="stylesheet" href="${path }/assets/css/zlight.menu.css" media="screen">
 <!-- Theme CSS -->
 <link href="${path }/assets/css/jquery.mmenu.css" rel="stylesheet" />
-
 <!-- Page CSS -->
 <link href="${path }/assets/css/style.css" rel="stylesheet" />
 <link href="${path }/assets/css/add-ons.min.css" rel="stylesheet" />
 <!-- end: CSS file-->
-
 <!-- Head Libs -->
 <script src="${path }/assets/plugins/modernizr/js/modernizr.js"></script>
 <script>
-	
 </script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -66,17 +62,17 @@
 								</a>
 							</li>
 							<li>
-								<a> <i class="icon fa fa-home"></i> 门禁出入日志
+								<a> <i class="icon fa fa-exchange"></i> 门禁出入日志
 								</a>
 							</li>
 							<li>
-								<a href="${path }/turnover/ajaxTurnoverList.do"> <i class="icon fa fa-home"></i> 电气工程学院
+								<a href="${path }/turnover/ajaxTurnoverList.do"> <i class="icon fa  fa-arrows-h "></i> 电气工程学院
 								</a>
 							</li>
 						</ol>
 					</div>
 					<div class="pull-right">
-						<h2>出入日志</h2>
+						<h2>门禁出入日志</h2>
 					</div>
 				</div>
 				<!-- End 面包屑 -->

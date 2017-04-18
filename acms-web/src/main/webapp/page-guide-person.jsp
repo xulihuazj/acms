@@ -56,10 +56,10 @@
 								<a href="${path }/index.do"><i class="icon fa fa-home"></i>我的管理中心</a>
 							</li>
 							<li>
-								<a><i class="fa fa-briefcase"></i>系统入门指南</a>
+								<a><i class="fa fa-send-o"></i>系统入门指南</a>
 							</li>
 							<li class="active">
-								<a href="${path }/help/personManageRelate.do"><i class="fa fa-list"></i>人员管理相关问题</a>
+								<a href="${path }/help/personManageRelate.do"><i class="fa fa-exclamation-circle "></i>人员管理相关问题</a>
 							</li>
 						</ol>
 					</div>

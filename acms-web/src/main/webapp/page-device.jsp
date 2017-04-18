@@ -13,15 +13,12 @@
 <link href="${path}/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
 <link href="${path}/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="${path}/assets/vendor/css/pace.preloader.css" rel="stylesheet" />
-
 <!-- Plugins CSS-->
 <link href="${path}/assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
 <link href="${path}/assets/plugins/select2/select2.css" rel="stylesheet" />
 <link href="${path}/assets/plugins/jquery-datatables-bs3/css/datatables.css" rel="stylesheet" />
-
 <!-- Theme CSS -->
 <link href="${path}/assets/css/jquery.mmenu.css" rel="stylesheet" />
-
 <!-- Page CSS -->
 <link href="${path}/assets/css/style.css" rel="stylesheet" />
 <link href="${path}/assets/css/add-ons.min.css" rel="stylesheet" />
@@ -58,10 +55,10 @@
 								<a href="homepage.jsp"><i class="icon fa fa-home"></i> 我的管理中心</a>
 							</li>
 							<li>
-								<a href="#"><i class="fa fa-table"></i>设备管理设置</a>
+								<a href="#"><i class="fa fa-list"></i>设备管理设置</a>
 							</li>
 							<li class="active">
-								<i class="fa fa-thumbs-o-up"></i>设备连接设置
+								<i class="fa fa-gavel"></i>设备连接设置
 							</li>
 						</ol>
 					</div>
@@ -81,7 +78,7 @@
 								</h6>
 							</div>
 							<div class="panel-body">
-								<table class="table table-bordered table-striped mb-none" id="datatable-details">
+								<table class="table table-bordered table-striped mb-none" id="datatable-default">
 									<thead>
 										<tr>
 											<th>序号.</th>
@@ -103,7 +100,7 @@
 												<td>
 													<span class="label label-success"><a onclick="" id="" sytle="color: white">断开连接</a></span> <span
 														class="label label-danger"><a onclick="" id="" sytle="color: white">建立连接</a></span> <span
-														class="label label-warning"><a onclick="" id="" sytle="color: white">停用设备</a></span> 
+														class="label label-warning"><a onclick="" id="" sytle="color: white">停用设备</a></span>
 													<!-- 	<span class="label label-default"><a onclick="" id="" sytle="color: white"></a></span> -->
 												</td>
 											</tr>
@@ -116,113 +113,17 @@
 				</div>
 			</div>
 			<!-- End Main Page -->
-
 			<!-- Footer -->
 			<%@ include file="/page-footer.jsp"%>
 			<!-- End Footer -->
-
 		</div>
 	</div>
-	<!--/container-->
-
-	<!-- 确定弹出框 -->
-	<div class="panel-body">
-		<div id="decideStart" class="modal-block modal-header-color modal-block-primary mfp-hide">
-			<div class="panel">
-				<div class="panel-heading">
-					<h2 class="panel-title">消息！</h2>
-				</div>
-				<div class="panel-body bk-noradius">
-					<div class="modal-wrapper">
-						<div class="modal-icon">
-							<i class="fa fa-question-circle"></i>
-						</div>
-						<div class="modal-text" style="font-size: 20px;">
-							<p>确定启用该人员?</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel-footer">
-					<div class="row">
-						<div class="col-md-12 text-right">
-							<button class="btn btn-primary modal-confirm">确定</button>
-							<button class="btn btn-default modal-dismiss">取消</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="panel-body">
-		<div id="decideStop" class="modal-block modal-header-color modal-block-warning mfp-hide">
-			<div class="panel">
-				<div class="panel-heading">
-					<h2 class="panel-title">消息！</h2>
-				</div>
-				<div class="panel-body bk-noradius">
-					<div class="modal-wrapper">
-						<div class="modal-icon">
-							<i class="fa fa-warning"></i>
-						</div>
-						<div class="modal-text" style="font-size: 20px;">
-							<h4>警告：</h4>
-							<p>确定禁用该人员？</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel-footer">
-					<div class="row">
-						<div class="col-md-12 text-right">
-							<button class="btn btn-primary modal-confirm">确定</button>
-							<button class="btn btn-default modal-dismiss">取消</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="panel-body">
-		<div id="decideDelete" class="modal-block modal-header-color modal-block-danger mfp-hide">
-			<div class="panel">
-				<div class="panel-heading">
-					<h2 class="panel-title">消息!</h2>
-				</div>
-				<div class="panel-body bk-noradius">
-					<div class="modal-wrapper">
-						<div class="modal-icon">
-							<i class="fa fa-times-circle"></i>
-						</div>
-						<div class="modal-text" style="font-size: 20px;">
-							<h4>危险：</h4>
-							<p>确定删除该人员？</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel-footer">
-					<div class="row">
-						<div class="col-md-12 text-right">
-							<button class="btn btn-primary modal-confirm">确定</button>
-							<button class="btn btn-default modal-dismiss">取消</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-	<!-- start: JavaScript-->
-
 	<!-- Vendor JS-->
 	<script src="${path}/assets/vendor/js/jquery.min.js"></script>
 	<script src="${path}/assets/vendor/js/jquery-2.1.1.min.js"></script>
 	<script src="${path}/assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
 	<script src="${path}/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="${path}/assets/vendor/js/pace.min.js"></script>
-
 	<!-- Plugins JS-->
 	<script src="${path}/assets/plugins/moment/js/moment.min.js"></script>
 	<script src="${path}/assets/plugins/select2/select2.js"></script>
@@ -230,11 +131,9 @@
 	<script src="${path}/assets/plugins/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
 	<script src="${path}/assets/plugins/jquery-datatables-bs3/js/datatables.js"></script>
 	<script src="${path}/assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
-
 	<!-- Theme JS -->
 	<script src="${path}/assets/js/jquery.mmenu.min.js"></script>
 	<script src="${path}/assets/js/core.min.js"></script>
-
 	<!-- Pages JS -->
 	<script src="${path}/assets/js/pages/ui-modals.js"></script>
 	<script src="${path}/assets/js/common/page-device.js"></script>
