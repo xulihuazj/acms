@@ -28,4 +28,9 @@ public class IndexAction {
 	public String pagenotfound(Boolean sessionTimeoutFlag, ModelMap model) {
 		return "/page-404.html";
 	}
+	
+	@RequestMapping("/loginPage.do")
+	public String loginPage() {
+		return "/page-login.jsp";
+	}
 }

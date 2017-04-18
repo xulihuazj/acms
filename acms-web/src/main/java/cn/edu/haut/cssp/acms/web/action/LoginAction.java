@@ -89,16 +89,16 @@ public class LoginAction extends BaseAction {
 				currUser = userService.getUserByUserName(loginUsername);
 				 if(null == currUser){
 					 model.put("message", "当前账号不存在");
-					 return "page-login";
+					 return "/page-login.jsp";
 				 }else{
 					 if(StringUtils.equals(PasswordUtils.encodePasswordSHA1(loginPassword), currUser.getPassword())){
 						 // 存入session
 						 session.setAttribute("currUser", currUser);
 						 model.put("userName", loginUsername);
-						 return "redirect:/homepage.jsp";
+						 return "/homepage.jsp";
 					 }else {
 						 model.put("message", "登录密码错误");
-						 return "page-login";
+						 return "/page-login.jsp";
 					}
 				 }
 				/*} catch (LockedAccountException e) {
@@ -145,7 +145,7 @@ public class LoginAction extends BaseAction {
 		logger.info("管理员：{}退出成功", currUser.getUserName());
 		session.removeAttribute("currUser");
 		//SecurityUtils.getSubject().logout();
-		return "redirect:/index.do";
+		return "redirect:/loginPage.do";
 	}
 
 	// 校验码service注入

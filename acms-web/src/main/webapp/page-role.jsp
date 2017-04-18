@@ -22,7 +22,7 @@
 <link href="${path }/assets/plugins/magnific-popup/css/magnific-popup.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/fullcalendar/css/fullcalendar.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/jqvmap/jqvmap.css" rel="stylesheet" />
-<link rel="stylesheet" href="assets/css/zlight.menu.css" media="screen">
+<link rel="stylesheet" href="${path }/assets/css/zlight.menu.css" media="screen">
 <!-- Theme CSS -->
 <link href="${path }/assets/css/jquery.mmenu.css" rel="stylesheet" />
 

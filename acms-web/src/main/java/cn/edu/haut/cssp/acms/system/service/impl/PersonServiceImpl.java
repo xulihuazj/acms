@@ -61,7 +61,6 @@ public class PersonServiceImpl extends BaseServiceImpl implements IPersonService
 		List<TPerson> personList = super.getBaseDao().getSqlSession().selectList("TPersonMapper.getUserList",1);
 		for(TPerson person:personList){
 		}
-		System.out.println(personList.get(0).getCardSN());
 		return personList;
 		}catch(Exception e){
 			e.printStackTrace();

@@ -35,7 +35,7 @@
 										name="loginUsername" placeholder="请输入您的账号">
 								</div>
 								<div class="col-lg-4 ">
-									<div class="help-block"><span value="${message}" id="loginUsernameErr" style="color: #ff3333 !important;font-size: 14px !important;"></span></div>
+									<div class="help-block"><span id="loginUsernameErr" style="color: #ff3333 !important;font-size: 14px !important;">${message}</span></div>
 								</div>
 							</div>
 							<div class="form-group field-loginform-password required">
@@ -45,7 +45,7 @@
 										name="loginPassword" placeholder="请输入您的密码">
 								</div>
 								<div class="col-lg-4 ">
-									<div class="help-block"><span value="${message}" id="loginPasswordErr" style="color: #ff3333 !important;font-size: 14px !important;"></div>
+									<div class="help-block"><span id="loginPasswordErr" style="color: #ff3333 !important;font-size: 14px !important;">${message}</span></div>
 								</div>
 							</div>
 							<!-- 	<div class="form-group field-loginform-password required">

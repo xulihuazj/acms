@@ -23,8 +23,6 @@
 <link href="${path }/assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/magnific-popup/css/magnific-popup.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/fullcalendar/css/fullcalendar.css" rel="stylesheet" />
-<link href="${path }/assets/plugins/jqvmap/jqvmap.css" rel="stylesheet" />
-<link rel="stylesheet" href="${path }/assets/css/zlight.menu.css" media="screen">
 <!-- Theme CSS -->
 <link href="${path }/assets/css/jquery.mmenu.css" rel="stylesheet" />
 
@@ -44,7 +42,6 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 </head>
-
 <body>
 	<!-- Start: Header -->
 	<%@ include file="/page-header.jsp"%>
@@ -115,6 +112,42 @@
 						</div>
 					</div>
 				</div>
+				
+				<div class="row">
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h6>
+									<i class="fa fa-check-square-o"></i>Bafdafessic
+								</h6>
+							</div>
+							<div class="panel-body">
+								<!-- Modal Basic -->
+								<a
+									class="bk-margin-top-10 bk-margin-bottom-10 modal-basic btn btn-default"
+									href="#modalBasic">Basic</a>
+								<div id="modalBasic" class="modal-block mfp-hide">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h2 class="panel-title">Are you sure?</h2>
+										</div>
+										<div class="panel-body bk-noradius">
+											<div class="modal-wrapper">
+												<div class="modal-text">
+													<p>Are you sure that you want to delete this image?</p>
+												</div>
+											</div>
+										</div>
+										<div class="panel-footer">
+											<div class="row">
+												<div class="col-md-12 text-right">
+													<button class="btn btn-info modal-confirm">Confirm</button>
+													<button class="btn btn-default modal-dismiss">Cancel</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div></div></div></div></div>
 				<!-- End Main Page -->
 
 				<!-- START 底部(隐藏的内容栏目) -->
@@ -142,15 +175,16 @@
 		<script src="${path }/assets/plugins/fullcalendar/js/fullcalendar.js"></script>
 
 		<!-- Theme JS -->
+		<script src="${path }/assets/js/jquery.mmenu.min.js"></script>
 		<script src="${path }/assets/js/core.min.js"></script>
 
 		<!-- Pages JS -->
 		<script src="${path }/assets/js/editPin.js"></script>
+			<script src="${path }/assets/js/pages/ui-modals.js"></script>
+		
 		<script type="text/javascript">
 			//密码修改校验事件
 			$(function(){
-				
-
 				$("#saveBtn").click(function(){
 					var oldPwd = $("#oldPwd").val();
 					var newPwd = $('#newPwd').val();

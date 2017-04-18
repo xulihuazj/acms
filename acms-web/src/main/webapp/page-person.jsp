@@ -7,36 +7,31 @@
 <title>人员管理 | 门禁管理系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon" />
-<!-- start: CSS file-->
 <!-- Vendor CSS-->
 <link href="${path}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="${path}/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
 <link href="${path}/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="${path}/assets/vendor/css/pace.preloader.css" rel="stylesheet" />
-
 <!-- Plugins CSS-->
 <link href="${path}/assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
+<link href="${path}/assets/plugins/pnotify/css/pnotify.custom.css" rel="stylesheet" />
+<link href="${path}/assets/plugins/magnific-popup/css/magnific-popup.css" rel="stylesheet" />
 <link href="${path}/assets/plugins/select2/select2.css" rel="stylesheet" />
 <link href="${path}/assets/plugins/jquery-datatables-bs3/css/datatables.css" rel="stylesheet" />
-
 <!-- Theme CSS -->
 <link href="${path}/assets/css/jquery.mmenu.css" rel="stylesheet" />
-
 <!-- Page CSS -->
 <link href="${path}/assets/css/style.css" rel="stylesheet" />
 <link href="${path}/assets/css/add-ons.min.css" rel="stylesheet" />
 <!-- end: CSS file-->
-
 <!-- Head Libs -->
 <script src="${path}/assets/plugins/modernizr/js/modernizr.js"></script>
-
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-
 </head>
 <body>
 	<!-- Start: Header -->
@@ -74,7 +69,7 @@
 				</div>
 				<!-- End Page Header -->
 
-				<div class="row">
+				<%-- <div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="panel panel-default bk-bg-white">
 							<div class="panel-heading bk-bg-white">
@@ -200,7 +195,42 @@
 							</div>
 						</div>
 					</div>
+				</div> --%>
+				
+				
+				
+			<div class="row">
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<a class="bk-margin-top-10 bk-margin-bottom-10 modal-basic btn btn-default" href="#modalBasic">Basic</a>
+								<div id="modalBasic" class="modal-block mfp-hide">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h2 class="panel-title">Are you sure?</h2>
+										</div>
+										<div class="panel-body bk-noradius">
+											<div class="modal-wrapper">
+												<div class="modal-text">
+													<p>Are you sure that you want to delete this image?</p>
+												</div>
+											</div>
+										</div>
+										<div class="panel-footer">
+											<div class="row">
+												<div class="col-md-12 text-right">
+													<button class="btn btn-info modal-confirm">Confirm</button>
+													<button class="btn btn-default modal-dismiss">Cancel</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
+				`
 			</div>
 			<!-- End Main Page -->
 
@@ -210,23 +240,19 @@
 
 		</div>
 	</div>
+	<div class="clearfix"></div>
 	<!--/container-->
 
 	<!-- 编辑人员弹出框 -->
-	<div class="panel panel-default" style="display: block;" id="editPersonModal">
+<!-- 	<div class="panel panel-default" style="display: block;" id="editPersonModal">
 		<div class="panel-heading">
 			<h6>
 				<i class="fa fa-check-square-o"></i>Form
 			</h6>
-			<div class="panel-actions">
-				<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a> <a href="#" class="btn-close"><i
-					class="fa fa-times"></i></a>
-			</div>
-			<p>Modal with a form and buttons.</p>
 		</div>
 		<div class="panel-body">
 			<a class="bk-margin-top-10 bk-margin-bottom-10 modal-with-form btn btn-default" href="#modalForm">Open Form</a>
-			<!-- Modal Form -->
+			Modal Form
 			<div id="modalForm" class="modal-block modal-block-primary mfp-hide">
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -307,37 +333,10 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- 确定弹出框 -->
-	<div class="panel-body">
-		<div id="decideStart" class="modal-block modal-header-color modal-block-primary mfp-hide">
-			<div class="panel">
-				<div class="panel-heading">
-					<h2 class="panel-title">消息！</h2>
-				</div>
-				<div class="panel-body bk-noradius">
-					<div class="modal-wrapper">
-						<div class="modal-icon">
-							<i class="fa fa-question-circle"></i>
-						</div>
-						<div class="modal-text" style="font-size: 20px;">
-							<p>确定启用该人员?</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel-footer">
-					<div class="row">
-						<div class="col-md-12 text-right">
-							<button class="btn btn-primary modal-confirm">确定</button>
-							<button class="btn btn-default modal-dismiss">取消</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	</div> -->
 
-	<div class="panel-body">
+
+	<!-- <div class="panel-body">
 		<div id="decideStop" class="modal-block modal-header-color modal-block-warning mfp-hide">
 			<div class="panel">
 				<div class="panel-heading">
@@ -365,8 +364,8 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="panel-body">
+ -->
+	<!-- <div class="panel-body">
 		<div id="decideDelete" class="modal-block modal-header-color modal-block-danger mfp-hide">
 			<div class="panel">
 				<div class="panel-heading">
@@ -393,10 +392,48 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 
+	<!-- 确定弹出框 -->
+<!-- 	<div class="row">
+	<div class="col-md-12">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h6>
+				<i class="fa fa-check-square-o"></i>Bafdafsesic
+			</h6>
+		</div>
+	<div class="panel-body">
+		<div id="decideStart" class="modal-block modal-header-color modal-block-primary mfp-hide">
+			<div class="panel">
+				<div class="panel-heading">
+					<h2 class="panel-title">消息！</h2>
+				</div>
+				<div class="panel-body bk-noradius">
+					<div class="modal-wrapper">
+						<div class="modal-icon">
+							<i class="fa fa-question-circle"></i>
+						</div>
+						<div class="modal-text" style="font-size: 20px;">
+							<p>确定启用该人员?</p>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-primary modal-confirm">确定</button>
+							<button class="btn btn-default modal-dismiss">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div></div></div></div> -->
 
+
+				
 	<!-- start: JavaScript-->
 
 	<!-- Vendor JS-->
@@ -404,15 +441,18 @@
 	<script src="${path}/assets/vendor/js/jquery-2.1.1.min.js"></script>
 	<script src="${path}/assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
 	<script src="${path}/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="${path}/assets/vendor/skycons/js/skycons.js"></script>
 	<script src="${path}/assets/vendor/js/pace.min.js"></script>
 
 	<!-- Plugins JS-->
 	<script src="${path}/assets/plugins/moment/js/moment.min.js"></script>
 	<script src="${path}/assets/plugins/select2/select2.js"></script>
+		<script src="${path}/assets/plugins/pnotify/js/pnotify.custom.js"></script>
+	<script src="${path}/assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
+	<script src="${path}/assets/plugins/magnific-popup/js/magnific-popup.js"></script>
 	<script src="${path}/assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
 	<script src="${path}/assets/plugins/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
 	<script src="${path}/assets/plugins/jquery-datatables-bs3/js/datatables.js"></script>
-	<script src="${path}/assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
 
 	<!-- Theme JS -->
 	<script src="${path}/assets/js/jquery.mmenu.min.js"></script>
@@ -434,9 +474,7 @@
 		});
 		/*点击确定提交人员信息*/
 		$("#confirmSave").click(function(){
-			$("")
 		});
 	</script>
 </body>
-
 </html>
