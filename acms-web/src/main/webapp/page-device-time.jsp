@@ -13,6 +13,7 @@
 <link href="${path}/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
 <link href="${path}/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="${path}/assets/vendor/css/pace.preloader.css" rel="stylesheet" />
+<link href="${path}/assets/plugins/magnific-popup/css/magnific-popup.css" rel="stylesheet" />
 
 <!-- Plugins CSS-->
 <link href="${path}/assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
@@ -61,7 +62,7 @@
 								<a><i class="fa fa-list"></i>设备管理设置</a>
 							</li>
 							<li class="active">
-								<i class="fa fa-tachometer"></i>时间组设置
+								<a href="${path}/"><i class="fa fa-tachometer"></i>时间组设置</a>
 							</li>
 						</ol>
 					</div>
@@ -99,8 +100,7 @@
 												<td>${deviceInfo.activateTime}</td>
 												<td>${deviceInfo.activateTime}</td>
 												<td>正常</td>
-												<td> <a class="btn btn-info" style="height: 44px" href="#"> <i
-														class="fa fa-edit "></i>
+												<td> <a class="btn btn-info" style="height: 35px" > <i id="editGuardTime">编辑门禁时间</i>
 												</a> </td>
 											</tr>
 										</c:forEach>
@@ -113,91 +113,14 @@
 				</div>
 			</div>
 			<!-- End Main Page -->
-
 			<!-- Footer -->
 			<%@ include file="/page-footer.jsp"%>
 			<!-- End Footer -->
-
 		</div>
 	</div>
-	<!--/container-->
-
-	<!-- 编辑人员弹出框 -->
-	<div class="panel panel-default" style="display: block;" id="editPersonModal">
-		<div class="panel-heading">
-			<h6>
-				<i class="fa fa-check-square-o"></i>Form
-			</h6>
-			<div class="panel-actions">
-				<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a> <a href="#" class="btn-close"><i
-					class="fa fa-times"></i></a>
-			</div>
-			<p>Modal with a form and buttons.</p>
-		</div>
-		<div class="panel-body">
-			<a class="bk-margin-top-10 bk-margin-bottom-10 modal-with-form btn btn-default" href="#modalForm">Open Form</a>
-			<!-- Modal Form -->
-			<div id="modalForm" class="modal-block modal-block-primary mfp-hide">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h2 class="panel-title">门禁时间设置</h2>
-					</div>
-					<div class="panel-body bk-noradius">
-						<form id="savePerson_form" class="form-horizontal mb-lg" novalidate="novalidate">
-							<div class="form-group">
-								<label class="col-sm-3 control-label">门禁开始时间：</label>
-								<div class="col-sm-9">
-									<input type="email" name="perName" class="form-control" placeholder="" required />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">门禁结束时间：</label>
-								<div class="col-sm-9">
-									<input type="email" name="cardId" class="form-control" placeholder="" required />
-								</div>
-							</div>
-						</form>
-					</div>
-					<div class="panel-footer">
-						<div class="row">
-							<div class="col-md-12 text-right">
-								<button class="btn btn-primary modal-confirm" id="confirmSave">确定</button>
-								<button class="btn btn-default modal-dismiss" id="cancelSave">取消</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- 确定弹出框 -->
-	<div class="panel-body">
-		<div id="decideStart" class="modal-block modal-header-color modal-block-primary mfp-hide">
-			<div class="panel">
-				<div class="panel-heading">
-					<h2 class="panel-title">消息！</h2>
-				</div>
-				<div class="panel-body bk-noradius">
-					<div class="modal-wrapper">
-						<div class="modal-icon">
-							<i class="fa fa-question-circle"></i>
-						</div>
-						<div class="modal-text" style="font-size: 20px;">
-							<p>确定开启门禁时间?</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel-footer">
-					<div class="row">
-						<div class="col-md-12 text-right">
-							<button class="btn btn-primary modal-confirm">确定</button>
-							<button class="btn btn-default modal-dismiss">取消</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
+	<!-- 编辑门禁时间 -->
+	<div class="editGuard"></div>
 
 	<!-- Vendor JS-->
 	<script src="${path}/assets/vendor/js/jquery.min.js"></script>
@@ -213,7 +136,7 @@
 	<script src="${path}/assets/plugins/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
 	<script src="${path}/assets/plugins/jquery-datatables-bs3/js/datatables.js"></script>
 	<script src="${path}/assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
-
+	<script src="${path}/assets/plugins/magnific-popup/js/magnific-popup.js"></script>
 	<!-- Theme JS -->
 	<script src="${path}/assets/js/jquery.mmenu.min.js"></script>
 	<script src="${path}/assets/js/core.min.js"></script>
@@ -221,7 +144,21 @@
 	<!-- Pages JS -->
 	<script src="${path}/assets/js/pages/ui-modals.js"></script>
 	<script src="${path}/assets/js/common/page-device.js"></script>
+	<script src="${path}/assets/js/common.js"></script>
 	<!-- end: JavaScript-->
 </body>
+
+<script type="text/javascript">
+	$(function(){
+		//$("#editGuard").modal("show");
+	});
+	$("#editGuardTime").click(function(){
+		$("#editGuard").modal("show");
+	});
+	$("#cancelInputBox").click(function(){
+		$("#editGuard").modal("hide");
+	});
+	
+</script>
 
 </html>
