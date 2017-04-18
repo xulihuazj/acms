@@ -73,7 +73,6 @@
 					</div>
 				</div>
 				<!-- End 面包屑 -->
-
 				<div class="section edit-password">
 					<div class="container">
 						<div style="width: 700px; margin: auto auto;">
@@ -106,41 +105,6 @@
 					</div>
 				</div>
 				
-				<div class="row">
-					<div class="col-md-6">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h6>
-									<i class="fa fa-check-square-o"></i>Bafdafessic
-								</h6>
-							</div>
-							<div class="panel-body">
-								<!-- Modal Basic -->
-								<a
-									class="bk-margin-top-10 bk-margin-bottom-10 modal-basic btn btn-default"
-									href="#modalBasic">Basic</a>
-								<div id="modalBasic" class="modal-block mfp-hide">
-									<div class="panel panel-default">
-										<div class="panel-heading">
-											<h2 class="panel-title">Are you sure?</h2>
-										</div>
-										<div class="panel-body bk-noradius">
-											<div class="modal-wrapper">
-												<div class="modal-text">
-													<p>Are you sure that you want to delete this image?</p>
-												</div>
-											</div>
-										</div>
-										<div class="panel-footer">
-											<div class="row">
-												<div class="col-md-12 text-right">
-													<button class="btn btn-info modal-confirm">Confirm</button>
-													<button class="btn btn-default modal-dismiss">Cancel</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div></div></div></div></div>
 				<!-- End Main Page -->
 
 				<!-- START 底部(隐藏的内容栏目) -->
