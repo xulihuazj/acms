@@ -324,7 +324,7 @@
 				'<table class="table mb-none">',
 				'<div>',
 					'<tr>',
-						'<td class=" label-info" id="eidtPerson" ><a href="#modalForm" style="color: white;">编辑人员</a></td>',
+						'<td class=" label-info" " ><span id="eidtPerson"><a  style="color: white;">编辑人员</a></span></td>',
 						'<td class=" label-success" id="startPerson"><a href="#decideStart" style="color: white;">启用人员</a></td>',
 						'<td class=" label-warning" id="stopPerson"><a href="#decideStop" style="color: white;">禁用人员</a></td>',
 						'<td class=" label-danger" id="deletePerson"><a href="#decideDelete" style="color: white;">删除人员</a></td>',

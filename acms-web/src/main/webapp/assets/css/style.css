@@ -15,7 +15,7 @@ body {
 	min-height: 100%;
 	position: relative;
 	direction: ltr;
-	color: #777;
+	color: #333;
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
@@ -4202,12 +4202,13 @@ body .ui-pnotify.icon-nb .notification .ui-pnotify-icon>span {
 
 .panel .panel-heading .panel-title {
 	line-height: 40px;
+	font-size: 20px;
 }
 
 .panel .panel-heading i {
 	width: 30px;
 	display: inline-block;
-	font-size: 14px;
+	font-size: 18px;
 }
 
 .panel .panel-heading h6 {
