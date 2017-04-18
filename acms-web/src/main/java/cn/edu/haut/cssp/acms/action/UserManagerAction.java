@@ -61,7 +61,9 @@ public class UserManagerAction extends BaseAction{
 	}
 	
 	@RequestMapping("/user/system/ajaxUserList.do")
-	public Object ajaxUserList(ModelMap modelMap){
+	public Object ajaxUserList(HttpSession session,ModelMap modelMap){
+		TUser currUser = (TUser) session.getAttribute("currUser");
+		modelMap.put("userName", currUser.getUserName());
 		List<TUser> userList = userService.ajaxUserList();
 		modelMap.put("userList", userList);
 		return "/page-role.jsp";
@@ -75,7 +77,9 @@ public class UserManagerAction extends BaseAction{
 	 * @param:
 	 */
 	@RequestMapping("/user/system/toModifyPsd.do")
-	public String toModifyPsd(){
+	public String toModifyPsd(HttpSession session, ModelMap modelMap){
+		TUser currUser = (TUser) session.getAttribute("currUser");
+		modelMap.put("userName", currUser.getUserName());
 		return "/page-password.jsp";
 	}
 	
@@ -107,7 +111,8 @@ public class UserManagerAction extends BaseAction{
 				try{
 				// 新密码加密
 					userService.resetPassword(currUser.getId(), PasswordUtils.encodePasswordSHA1(newPwd));
-					return SUCCESS;
+					message.put("message", SUCCESS);
+					return message;
 				}catch(Exception e){
 					e.printStackTrace();
 					logger.error("修改密码失败异常", e);

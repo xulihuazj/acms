@@ -13,6 +13,7 @@
 <link href="${path }/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/css/pace.preloader.css" rel="stylesheet" />
+
 <!-- Plugins CSS-->
 <link href="${path }/assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/scrollbar/css/mCustomScrollbar.css" rel="stylesheet" />
@@ -21,6 +22,12 @@
 <link href="${path }/assets/plugins/fullcalendar/css/fullcalendar.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/jqvmap/jqvmap.css" rel="stylesheet" />
 <link rel="stylesheet" href="${path }/assets/css/zlight.menu.css" media="screen">
+<link href="${path }/assets/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+<link href="${path }/assets/plugins/bootstrap-datepicker/css/datepicker-theme.css" rel="stylesheet" />
+<link href="${path }/assets/plugins/bootstrap-timepicker/css/bootstrap-timepicker.css" rel="stylesheet" />
+<link href="${path }/assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+<link href="${path }/assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css" rel="stylesheet" />
+
 <!-- Theme CSS -->
 <link href="${path }/assets/css/jquery.mmenu.css" rel="stylesheet" />
 <!-- Page CSS -->
@@ -72,7 +79,7 @@
 				</div>
 				<!-- End 面包屑 -->
 				
-				<div class="clearfix">
+				<div class="row">
 					<!-- 表单数据 -->
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="panel panel-default bk-bg-white">
@@ -119,7 +126,7 @@
 									</div>
 								<div class="form-group" style="padding-right: 10px;">
 									<div >
-										<button class="btn btn-info"  type="submit" >查询</button>
+										<button class="btn btn-info"  type="submit" id="querySyslogList" >查询</button>
 									</div>
 								</div>
 							</form>
@@ -198,8 +205,7 @@
 				<!-- START 底部(隐藏的内容栏目) -->
 				<%@ include file="/page-footer.jsp" %>
 				<!-- End 底部(隐藏的内容栏目)-->
-			</div>
-		</div>
+</div>		</div>
 		<!--/container-->
 	</div>
 
@@ -220,23 +226,21 @@
 		<script src="${path }/assets/plugins/fullcalendar/js/fullcalendar.js"></script>
 		<script src="${path }/assets/plugins/chart-master/js/Chart.js"></script>
 		<script src="${path }/assets/plugins/jquery/js/jquery.zlight.menu.1.0.min.js"></script>
+		
+			<script src="${path }/assets/plugins/touchpunch/js/jquery.ui.touch-punch.min.js"></script>
+			<script src="${path }/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+			<script src="${path }/assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+			<script src="${path }/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+			<script src="${path }/assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.js"></script>
+			<script src="${path }/assets/plugins/maskedinput/js/jquery.maskedinput.js"></script>
 
 		<!-- Theme JS -->
 		<script src="${path }/assets/js/jquery.mmenu.min.js"></script>
 		<script src="${path }/assets/js/core.min.js"></script>
 
 		<!-- Pages JS -->
+		<script src="${path }/assets/js/pages/form-elements.js"></script>
 		<script src="${path }/assets/js/pages/table-advanced.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$('#zlight-nav').zlightMenu();
-			});
-			$("#item").hover(function() {
-				$(this).addClass("layer");
-			}, function() {
-				$(this).removeClass("layer");
-			});
-		</script>
 		<style type="text/css">
 .subitem {
 	width: 300px;
@@ -257,7 +261,65 @@
 	display: block;
 }
 </style>
-		<!-- end: JavaScript-->
 </body>
-
+<script type="text/javascript">
+	$(function(){
+		
+			/* 
+			
+			
+			
+			TODO
+			
+			
+			
+			
+			
+			*/
+		
+	});
+	$("#querySyslogList").click(function(){
+		var oldPwd = $("#oldPwd").val();
+		var newPwd = $('#newPwd').val();
+		var comfirePwd = $('#comfirePwd').val();
+		$.ajax({
+			type: "POST",
+			url: "${path}/system/syslog/querySyslogList.do",
+			dataType: 'json',								
+			data: "oldPwd="+ oldPwd + "&newPwd=" + newPwd + "&comfirePwd=" + comfirePwd,
+			cache: true,
+            async: false,
+			success: function(data){
+				 if(data.message == 'success'){
+					// var resultData = eval('(' + data + ')');
+					//清空输入框
+					$("#oldPwd").val("");
+					$("#newPwd").val("");
+					$("#comfirePwd").val("");
+					new PNotify({
+						title: '操作成功',
+						text: '恭喜您，修改密码成功，请记住登录密码!',
+						type: 'success'
+					});
+				}else{
+					new PNotify({
+						title: '操作失败',
+						text: '请输入正确的密码后重试！',
+						type: 'error'
+					});
+					 $("#oldPwdErr").html(data.message);
+				} 
+			},
+			error: function(data){
+				new PNotify({
+					title: '操作失败',
+					text: '系统异常，请联系管理员！',
+					type: 'error'
+				});
+			}
+		});
+		
+		
+	});
+</script>
 </html>

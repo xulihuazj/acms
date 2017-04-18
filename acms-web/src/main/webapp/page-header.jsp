@@ -19,7 +19,7 @@
 				<!-- Search Form -->
 				<form class="search navbar-form" style="padding-top: 0px auto;">
 					<div class="input-group input-search">
-						<input type="text" class="form-control bk-radius" style="padding-bottom: 10px;" name="q" id="q" placeholder="请输入关键字搜索...">
+						<input type="text" class="form-control " style="padding-bottom: 10px;" name="q" id="q" placeholder="请输入关键字搜索...">
 						<span class="input-group-btn">
 							<button class="btn btn-default" type="submit">
 								<i class="fa fa-search"></i>
@@ -34,27 +34,27 @@
 				<ul class="notifications hidden-xs">
 					<li>
 						<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown"> <i class="fa fa-tasks"></i> <span
-							class="badge">10</span>
+							class="badge"></span>
 						</a>
 						<ul class="dropdown-menu update-menu" role="menu">
 							<li>
-								<a href="#"><i class="fa fa-database bk-fg-primary"></i> 数据 </a>
+								<a><i class="fa fa-database bk-fg-primary"></i> 数据 </a>
 							</li>
 							<li>
-								<a href="#"><i class="fa fa-bar-chart-o bk-fg-primary"></i> 连接 </a>
+								<a><i class="fa fa-bar-chart-o bk-fg-primary"></i> 连接 </a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown"> <i class="fa fa-envelope"></i> <span
-							class="badge">5</span>
+						<a  class="dropdown-toggle notification-icon" data-toggle="dropdown"> <i class="fa fa-envelope"></i> <span
+							class="badge">3</span>
 						</a>
 						<ul class="dropdown-menu">
 							<li class="dropdown-menu-header">
-								<strong>Messages</strong>
+								<strong>信息</strong>
 								<div class="progress progress-xs  progress-striped active">
 									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-										aria-valuemax="100" style="width: 60%;">60%</div>
+										aria-valuemax="100" style="width: 100%;">60%</div>
 								</div>
 							</li>
 							<li class="avatar">
@@ -82,20 +82,20 @@
 								</a>
 							</li>
 							<li class="dropdown-menu-footer text-center">
-								<a href="page-inbox.html">查看所有新消息</a>
+								<a>查看所有新消息</a>
 							</li>
 						</ul>
 					</li>
 					<li>
 						<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown"> <i class="fa fa-bell"></i> <span
-							class="badge">3</span>
+							class="badge"></span>
 						</a>
 						<ul class="dropdown-menu list-group">
 							<li class="dropdown-menu-header">
 								<strong>通知</strong>
 								<div class="progress progress-xs  progress-striped active">
 									<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-										aria-valuemax="100" style="width: 60%;">60%</div>
+										aria-valuemax="100" style="width: 100%;">60%</div>
 								</div>
 							</li>
 							<li class="list-item">
@@ -104,8 +104,7 @@
 										<i class="fa fa-envelope-o bk-fg-primary"></i>
 									</div>
 									<div class="media-body clearfix">
-										<div>Unread Message</div>
-										<h6>You have 10 unread message</h6>
+										<h5>您暂无新信息</h5>
 									</div>
 								</a>
 							</li>
@@ -129,11 +128,11 @@
 							<li class="dropdown-menu-header bk-bg-white bk-margin-top-15">
 								<div class="progress progress-xs  progress-striped active">
 									<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-										aria-valuemax="100" style="width: 60%;">60%</div>
+										aria-valuemax="100" style="width: 100%;">60%</div>
 								</div>
 							</li>
 							<li>
-								<a href=""> <i class="fa fa-user"></i> 个人中心
+								<a > <i class="fa fa-user"></i> 个人中心
 								</a>
 							</li>
 							<li>

@@ -1,8 +1,13 @@
 package cn.edu.haut.cssp.acms.action;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import cn.edu.haut.cssp.acms.core.entity.TUser;
 import cn.edu.haut.cssp.acms.core.utils.DateQueryBean;
 import cn.edu.haut.cssp.acms.core.utils.LitePaging;
 import cn.edu.haut.cssp.acms.log.entity.SystemLog;
@@ -24,10 +29,29 @@ public class SystemLogAction extends BaseAction{
 	 * @return: String
 	 */
 	@RequestMapping("/system/syslog/toList.do")
-	public String toList(){
+	public String toList(HttpSession session, ModelMap modelMap){
+		TUser currUser = (TUser) session.getAttribute("currUser");
+		modelMap.put("userName", currUser.getUserName());
 		return "/page-log.jsp";
 	}
 	
+	/**
+	 * 根据条件查询日志列表
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月19日上午12:02:09
+	 * @return
+	 */
+	@RequestMapping("/system/syslog/querySyslogList.do")
+	@ResponseBody 
+	public Object querySyslogList(){
+		/**
+		 * 
+		 * TODO
+		 * 
+		 */
+		return "";
+	}
 	/**
 	 * 系统日志列表
 	 * @Description:
@@ -40,7 +64,6 @@ public class SystemLogAction extends BaseAction{
 	 */
 	@RequestMapping("/system/syslog/ajaxList.do")
 	public Object ajaxList(String keyWord, DateQueryBean queryBean, LitePaging<SystemLog> pageCondition){
-		
 		
 		return "";
 	}

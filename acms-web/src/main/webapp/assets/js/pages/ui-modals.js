@@ -74,7 +74,7 @@
 		$.magnificPopup.close();
 
 		new PNotify({
-			title: 'Success!',
+			title: '操作成功!',
 			text: 'Modal Confirm Message.',
 			type: 'success'
 		});

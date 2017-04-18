@@ -60,7 +60,7 @@
 								<a><i class="fa fa-send-o"></i>系统入门指南</a>
 							</li>
 							<li class="active">
-								<a href="${path }/help/loginRelate.do"><i class="fa fa-exclamation-circle ">登录相关问题</i></a>
+								<a href="${path }/help/loginRelate.do"><i class="icon fa fa-exclamation-circle">登录相关问题</i></a>
 							</li>
 						</ol>
 					</div>

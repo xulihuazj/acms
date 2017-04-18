@@ -152,11 +152,11 @@
 							</a>
 							<ul class="nav nav-children">
 								<li>
-									<a href="#"> <span class="text">数据验证</span>
+									<a > <span class="text">数据验证</span>
 									</a>
 								</li>
 								<li>
-									<a href="#"> <span class="text">实时监控</span>
+									<a> <span class="text">实时监控</span>
 									</a>
 								</li>
 								<li>
@@ -323,21 +323,21 @@
 		<!-- Sidebar Footer-->
 		<div class="sidebar-footer">
 			<div class="small-chart-visits">
-				<div class="small-chart" id="sparklineLineVisits"></div>
-				<div class="small-chart-info">
-					<label>总访问数</label>
-					<strong>100</strong>
-				</div>
-				<script type="text/javascript">
-							var sparklineLineVisitsData = [ 15, 16, 17, 19, 15,
-									25, 23, 35, 29, 15, 30, 45 ];
-						</script>
+					<div class="" id="sparklineLineVisits"></div>
+					<div class="small-chart-info">
+						<span style="font-size:17px;width:100px;">总访问数:</span>
+						<span style="font-size:18px;width:100px;">100</span>
+					</div>
+					<script type="text/javascript">
+								var sparklineLineVisitsData = [ 15, 16, 17, 19, 15,
+										25, 23, 35, 29, 15, 30, 45 ];
+							</script>
 			</div>
 			<ul class="sidebar-terms bk-margin-top-10">
-				<li>
+				<li style="width: 50%;">
 					<a href="#">帮助中心</a>
 				</li>
-				<li>
+				<li style="width: 50%;"> 
 					<a href="#">关于我们</a>
 				</li>
 			</ul>

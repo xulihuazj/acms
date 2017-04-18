@@ -21,6 +21,7 @@
 <link href="${path }/assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/magnific-popup/css/magnific-popup.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/fullcalendar/css/fullcalendar.css" rel="stylesheet" />
+<link href="${path}/assets/plugins/pnotify/css/pnotify.custom.css" rel="stylesheet" />
 <!-- Theme CSS -->
 <link href="${path }/assets/css/jquery.mmenu.css" rel="stylesheet" />
 <!-- Page CSS -->
@@ -55,7 +56,7 @@
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li>
-								<a href="homepage.jsp"> <i class="icon fa fa-home"></i> 我的管理中心
+								<a href="${path }/index.do"> <i class="icon fa fa-home"></i> 我的管理中心
 								</a>
 							</li>
 							<li>
@@ -63,7 +64,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="page-password.jsp"> <i class="icon fa  fa-share-square-o"></i> 修改密码
+								<a href="${path }/user/system/toModifyPsd.do"> <i class="icon fa  fa-share-square-o"></i> 修改密码
 								</a>
 							</li>
 						</ol>
@@ -75,7 +76,7 @@
 				<!-- End 面包屑 -->
 				<div class="section edit-password">
 					<div class="container">
-						<div style="width: 700px; margin: auto auto;">
+						<div>
 							<div class="edit-warn">
 								<span></span>修改当前已使用的登录密码
 							</div>
@@ -112,33 +113,25 @@
 				<!-- End 底部(隐藏的内容栏目)-->
 			</div>
 		</div>
-		<!--/container-->
-
 		<%@ include file="/page-footer.jsp"%>
-
-		<!-- start: JavaScript-->
-
 		<!-- Vendor JS-->
 		<script src="${path }/assets/vendor/js/jquery.min.js"></script>
 		<script src="${path }/assets/vendor/js/jquery-2.1.1.min.js"></script>
 		<script src="${path }/assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
 		<script src="${path }/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 		<script src="${path }/assets/vendor/js/pace.min.js"></script>
-
 		<!-- Plugins JS-->
 		<script src="${path }/assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
 		<script src="${path }/assets/plugins/magnific-popup/js/magnific-popup.js"></script>
 		<script src="${path }/assets/plugins/moment/js/moment.min.js"></script>
 		<script src="${path }/assets/plugins/fullcalendar/js/fullcalendar.js"></script>
-
+		<script src="${path}/assets/plugins/pnotify/js/pnotify.custom.js"></script>
 		<!-- Theme JS -->
 		<script src="${path }/assets/js/jquery.mmenu.min.js"></script>
 		<script src="${path }/assets/js/core.min.js"></script>
-
 		<!-- Pages JS -->
 		<script src="${path }/assets/js/editPin.js"></script>
-			<script src="${path }/assets/js/pages/ui-modals.js"></script>
-		
+		<script src="${path }/assets/js/pages/ui-modals.js"></script>
 		<script type="text/javascript">
 			//密码修改校验事件
 			$(function(){
@@ -149,24 +142,41 @@
 					$.ajax({
 						type: "POST",
 						url: "${path}/user/system/modifyPsd.do",
-						dataType: 'text',								
+						dataType: 'json',								
 						data: "oldPwd="+ oldPwd + "&newPwd=" + newPwd + "&comfirePwd=" + comfirePwd,
 						cache: true,
 		                async: false,
 						success: function(data){
-							if(data.length>0){
-							 var resultData = eval('(' + data + ')');
-							 $("#oldPwdErr").html(resultData.message);
-							}
+							 if(data.message == 'success'){
+								// var resultData = eval('(' + data + ')');
+								//清空输入框
+								$("#oldPwd").val("");
+								$("#newPwd").val("");
+								$("#comfirePwd").val("");
+								new PNotify({
+									title: '操作成功',
+									text: '恭喜您，修改密码成功，请记住登录密码!',
+									type: 'success'
+								});
+							}else{
+								new PNotify({
+									title: '操作失败',
+									text: '请输入正确的密码后重试！',
+									type: 'error'
+								});
+								 $("#oldPwdErr").html(data.message);
+							} 
 						},
-						error: function(){
-							alert("系统错误!");
+						error: function(data){
+							new PNotify({
+								title: '操作失败',
+								text: '系统异常，请联系管理员！',
+								type: 'error'
+							});
 						}
 					});
 				});
 			});
-			
-			
 		</script>
 		<style type="text/css">
 .subitem {
