@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.http.protocol.HTTP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -264,15 +265,15 @@ public class UserManagerAction extends BaseAction{
 	 * @return: void
 	 * @param:
 	 */
-	@RequestMapping(value = "/user/system/saveUser.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/system/saveUser.do", method = RequestMethod.POST)
 	@ResponseBody
-	public Object saveUser(TUser user, Long[] roleId) {
-		String message = SUCCESS;
-		//TUser currUser = OperatorUtil.getOperator().getCurrUser();
-		
-			Integer integer = userService.saveUser(user, roleId);
-			userService.updateUser(user);
-			return integer;
+	public Object saveUser(TUser user, Long[] roleId,HttpSession session) {
+		Map<String, Object> message = new HashMap<>();
+		TUser currUser = (TUser) session.getAttribute("currUser");
+		//Integer integer = userService.saveUser(user, roleId);
+		userService.updateUser(user);
+		message.put("message", SUCCESS);
+		return message;
 		/*	try {
 			if(null != user.getId()) {
 				logger.info(TSystemLog.ENUM_SYSLOG_TYPE.operateLog.value, LoggerExtData.create("modelType",

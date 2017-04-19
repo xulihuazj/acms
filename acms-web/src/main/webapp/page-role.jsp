@@ -243,10 +243,11 @@
 						</div>
 						<div class="panel-body bk-noradius">
 							<form id="savePerson_form" class="form-horizontal mb-lg" novalidate="novalidate" style="font-size:16px;">
+								<span name="id" value="${userId } id="form_userId"></span>
 								<div class="form-group">
-									<label class="col-sm-3 control-label">角色名称：</label>
+									<label class="col-sm-3 control-label" >角色名称：</label>
 									<div class="col-sm-9">
-										<input type="email" name="perName" class="form-control" placeholder="请输入角色姓名..." required />
+										<input type="email" name="userName" class="form-control" placeholder="请输入角色姓名..." required />
 									</div>
 								</div>
 								<div class="form-group">
@@ -255,7 +256,7 @@
 										<div class="dropdown">
 											<!-- <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
 												aria-haspopup="true" aria-expanded="true">请选择角色类型</button> -->
-										<input type="email" name="perName" class="form-control"data-toggle="dropdown"
+										<input type="email" name="" class="form-control"data-toggle="dropdown"
 												aria-haspopup="true" aria-expanded="true"" placeholder="请选择角色类型..." required />
 											<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 												<li>
@@ -271,13 +272,13 @@
 								<div class="form-group">
 									<label class="col-sm-3 control-label">手机号：</label>
 									<div class="col-sm-9">
-										<input type="email" name="" class="form-control" placeholder="请输入手机号..." required />
+										<input type="email" name="mobile" class="form-control" placeholder="请输入手机号..." required />
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">备注信息：</label>
 									<div class="col-sm-9">
-										<textarea class="form-control" placeholder="请输入备注信息..." required rows="4"></textarea>
+										<textarea class="form-control" name="note" placeholder="请输入备注信息..." required rows="4"></textarea>
 									</div>
 								</div>
 							</form>
@@ -285,7 +286,7 @@
 						<div class="panel-footer">
 							<div class="row">
 								<div class="col-md-12 text-right">
-									<button class="btn btn-primary modal-confirm" id="confirmEdit">确定</button>
+									<button class="btn btn-primary modal-confirm" id="confirmEdit" disabled=false; >确定</button>
 									<button class="btn btn-default modal-dismiss" id="cancelEdit">取消</button>
 								</div>
 							</div>
@@ -434,6 +435,41 @@
 					    		
 					    	}else{
 					    		$("#startRoleModal").modal("hide");
+					    		new PNotify({
+									title: '操作失败',
+									text: '对不起，系统异常，无法完成此操作，请联系管理员！',
+									type: 'error'
+								});
+					    	}
+						}
+					});
+			});
+			
+			/* 确认编辑管理员 */
+			$("#confirmEdit").click(function(){
+				var userId = $("#startRole").data("userid");
+				$("#form_userId").val(userId);// 赋值于userId用于序列化
+				$.ajax({
+					url: "${path}/user/system/saveUser.do", 
+					type: 'POST',
+					data: $("#savePerson_form").serialize()+"&id="+userId,
+					async: false,//设置为同步请求
+					dataType: "json",
+					success: function(data){
+					    	if(data.message == 'success'){
+					    		$("#editRoleModal").modal("hide");
+					    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
+					    			document.forms[0].action="${path}/user/system/ajaxUserList.do";
+					    			document.forms[0].submit();
+								},1000);
+					    		new PNotify({
+									title: '操作成功',
+									text: '禁用管理员成功!',
+									type: 'success'
+								});
+					    		
+					    	}else{
+					    		$("#editRoleModal").modal("hide");
 					    		new PNotify({
 									title: '操作失败',
 									text: '对不起，系统异常，无法完成此操作，请联系管理员！',
