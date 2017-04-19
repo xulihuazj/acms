@@ -166,10 +166,11 @@ public class UserManagerAction extends BaseAction{
 	 * @param
 	 */
 	@RequestMapping("/user/system/stopUser.do")
-	public String stopUser(Long userId) {
-		String message = SUCCESS;
+	@ResponseBody
+	public Object stopUser(Long userId, HttpSession session) {
+		Map<String, Object> message = new HashMap<>();
 		// 从session中获取当前操作者
-		TUser currUser = OperatorUtil.getOperator().getCurrUser();
+		TUser currUser = (TUser) session.getAttribute("currUser");
 		TUser user = userService.findUserById(userId);
 		try{
 			user.setStatus(TUser.ENUM_USER_STATUS.deletedStatus.value);
@@ -179,10 +180,10 @@ public class UserManagerAction extends BaseAction{
 					TSystemLog.ENUM_LOG_MODEL_TYPE.systemManagerLog.value),"管理员{}停用{}用户成功",currUser.getUserName()
 					,user.getUserName());
 		} catch(IllegalArgumentException e) {
-			message = e.getMessage();
+			message.put("message", "停用管理员时参数异常");
 			logger.error("停用管理员时参数异常",e);
 		} catch (Exception e) {
-			message = "停用管理员失败";
+			message.put("message", "停用管理员失败");
 			logger.error("停用管理员失败，异常信息为",e);
 		}
 		return message;

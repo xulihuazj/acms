@@ -103,8 +103,15 @@
 													<tr>
 														<td>${user.id}</td>
 														<td>${user.userName}</td>
-														<td>${user.type}</td>
-														<td>${user.status}</td>
+														<td>
+															<c:if test="${user.type==1}">超级管理员</c:if>
+															<c:if test="${user.type==2}">普通管理员</c:if>
+														</td>
+														<td>
+																<c:if test="${user.status==1}">正常</c:if>
+																<c:if test="${user.status==2}">停用</c:if>
+																<c:if test="${user.status==-1}">删除</c:if>
+														</td>
 														<td>${user.mobile}</td>
 														<td>${user.note}</td>
 														<td>
@@ -347,11 +354,16 @@
 					success: function(data){
 					    	if(data.message == 'success'){
 					    		$("#startRoleModal").modal("hide");
+					    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
+					    			document.forms[0].action="${path}/user/system/ajaxUserList.do";
+					    			document.forms[0].submit();
+								},1000);
 					    		new PNotify({
 									title: '操作成功',
 									text: '启用管理员成功!',
 									type: 'success'
 								});
+					    		
 					    	}else{
 					    		$("#startRoleModal").modal("hide");
 					    		new PNotify({
@@ -365,7 +377,6 @@
 			});
 			/* 删除管理员 */
 			$("#confirmDelete").click(function(){
-				alert();
 				var userId = $("#deleteRole").data("userid");
 				$.ajax({
 					url: "${path}/user/system/deleteRole.do", 
@@ -376,11 +387,16 @@
 					success: function(data){
 					    	if(data.message == 'success'){
 					    		$("#deleteRoleModal").modal("hide");
+					    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
+					    			document.forms[0].action="${path}/user/system/ajaxUserList.do";
+					    			document.forms[0].submit();
+								},1000);
 					    		new PNotify({
 									title: '操作成功',
 									text: '删除此管理员成功!',
 									type: 'success'
 								});
+					    		setTimeOut("qqq",1000);
 					    	}else{
 					    		$("#deleteRoleModal").modal("hide");
 					    		new PNotify({
@@ -392,6 +408,40 @@
 						}
 					});
 				
+			});
+			
+			/* 确认禁用管理员 */
+			$("#confirmStop").click(function(){
+				var userId = $("#startRole").data("userid");
+				$.ajax({
+					url: "${path}/user/system/stopUser.do", 
+					type: 'POST',
+					data: "userId=" + userId,
+					async: false,//设置为同步请求
+					dataType: "json",
+					success: function(data){
+					    	if(data.message == 'success'){
+					    		$("#startRoleModal").modal("hide");
+					    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
+					    			document.forms[0].action="${path}/user/system/ajaxUserList.do";
+					    			document.forms[0].submit();
+								},1000);
+					    		new PNotify({
+									title: '操作成功',
+									text: '禁用管理员成功!',
+									type: 'success'
+								});
+					    		
+					    	}else{
+					    		$("#startRoleModal").modal("hide");
+					    		new PNotify({
+									title: '操作失败',
+									text: '对不起，系统异常，无法完成此操作，请联系管理员！',
+									type: 'error'
+								});
+					    	}
+						}
+					});
 			});
 		</script>
 	<style type="text/css">
