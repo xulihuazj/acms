@@ -31,26 +31,20 @@ public class TSystemLog implements Serializable{
 	 */
 	private String logContent;
 	/**
-	 * 日志级别
-	 */
-	private Integer logLevel;
-	/**
-	 * 方法信息
-	 */
-	private String methodInfo;
-	/**
 	 * 产生日志的时间
 	 */
-	private Long logTime;
+	private Long logUploadTime;
 	/**
 	 * 日志类型
 	 */
 	private Integer logType;
-	/**
-	 * 方法类型
-	 */
-	private Integer modelType;
 	
+	public Long getLogUploadTime() {
+		return logUploadTime;
+	}
+	public void setLogUploadTime(Long logUploadTime) {
+		this.logUploadTime = logUploadTime;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -75,35 +69,11 @@ public class TSystemLog implements Serializable{
 	public void setLogContent(String logContent) {
 		this.logContent = logContent;
 	}
-	public Integer getLogLevel() {
-		return logLevel;
-	}
-	public void setLogLevel(Integer logLevel) {
-		this.logLevel = logLevel;
-	}
-	public String getMethodInfo() {
-		return methodInfo;
-	}
-	public void setMethodInfo(String methodInfo) {
-		this.methodInfo = methodInfo;
-	}
-	public Long getLogTime() {
-		return logTime;
-	}
-	public void setLogTime(Long logTime) {
-		this.logTime = logTime;
-	}
 	public Integer getLogType() {
 		return logType;
 	}
 	public void setLogType(Integer logType) {
 		this.logType = logType;
-	}
-	public Integer getModelType() {
-		return modelType;
-	}
-	public void setModelType(Integer modelType) {
-		this.modelType = modelType;
 	}
 	
 	/**
@@ -148,34 +118,6 @@ public class TSystemLog implements Serializable{
 		map.put(3, "运行日志");
 		map.put(4, "安全日志");
 		return map.get(logType);
-	}
-	
-	
-	
-	/**
-	 * 日志级别
-	 * Description:
-	 * @author: xulihua
-	 * @date: 2017年3月24日下午11:44:59
-	 * @note
-	 */
-	public enum ENUM_LOG_LEVEL {
-		//1-debug，2-info，3-warn，4-error',
-		debug(1),
-		
-		info(2), 
-		
-		warn(3),
-		
-		error(4), 
-		
-		trace(5);
-		
-		public Integer value;
-		
-		private ENUM_LOG_LEVEL(Integer value) {
-			this.value = value;
-		}
 	}
 	
 	/**
