@@ -2,6 +2,9 @@ package cn.edu.haut.cssp.acms.action;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.http.protocol.HTTP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.edu.haut.cssp.acms.core.entity.TPerson;
+import cn.edu.haut.cssp.acms.core.entity.TUser;
 import cn.edu.haut.cssp.acms.system.service.IPersonService;
 
 /**
@@ -35,9 +39,11 @@ public class PersonManagerAction extends BaseAction{
 	 * @return
 	 */
 	@RequestMapping("/person/ajaxPersonList.do")
-	public Object ajaxPersonList(ModelMap modelMap){
+	public Object ajaxPersonList(ModelMap modelMap,HttpSession session){
 		List<TPerson> personList = personService.ajaxPersonList();
 		modelMap.put("personList", personList);
+		TUser currUser = (TUser) session.getAttribute("currUser");
+		modelMap.put("userName", currUser.getUserName());
 		return "/page-person.jsp";
 	}
 	
@@ -49,7 +55,9 @@ public class PersonManagerAction extends BaseAction{
 	 * @return
 	 */
 	@RequestMapping("/person/ajaxCollegeList.do")
-	public String ajaxCollegeList(){
+	public String ajaxCollegeList(ModelMap modelMap, HttpSession session){
+		TUser currUser = (TUser) session.getAttribute("currUser");
+		modelMap.put("userName", currUser.getUserName());
 		return "/page-college.jsp";
 	}
 	

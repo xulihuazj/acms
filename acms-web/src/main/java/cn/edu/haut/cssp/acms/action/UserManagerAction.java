@@ -244,10 +244,12 @@ public class UserManagerAction extends BaseAction{
 	 * @param:
 	 */
 	@RequestMapping("/user/system/addUser.do")
-	public String addUser(ModelMap modelMap) {
+	public String addUser(ModelMap modelMap, HttpSession session) {
 		
 		List<TRole> roles = roleServcie.queryListRoles();
 		modelMap.put("roles", roles);
+		TUser currUser = (TUser) session.getAttribute("currUser");
+		modelMap.put("userName", currUser.getUserName());
 		return "system/user/add";
 	}
 	

@@ -1,7 +1,12 @@
 package cn.edu.haut.cssp.acms.action;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import cn.edu.haut.cssp.acms.core.entity.TUser;
 
 /**
  * 帮助中心Action
@@ -22,7 +27,9 @@ public class HelpManageAction {
 	 * @return
 	 */
 	@RequestMapping("/help/loginRelate.do")
-	public String loginRelate(){
+	public String loginRelate(ModelMap modelMap, HttpSession session){
+		TUser currUser = (TUser) session.getAttribute("currUser");
+		modelMap.put("userName", currUser.getUserName());
 		return "/page-guide-login.jsp";
 	}
 	
@@ -34,7 +41,9 @@ public class HelpManageAction {
 	 * @return
 	 */
 	@RequestMapping("/help/applicationRelate.do")
-	public String applicationRelate(){
+	public String applicationRelate(ModelMap modelMap, HttpSession session){
+		TUser currUser = (TUser) session.getAttribute("currUser");
+		modelMap.put("userName", currUser.getUserName());
 		return "/page-guide-handle.jsp";
 	}
 	
@@ -46,7 +55,9 @@ public class HelpManageAction {
 	 * @return
 	 */
 	@RequestMapping("/help/personManageRelate.do")
-	public String personManageRelate(){
+	public String personManageRelate(ModelMap modelMap, HttpSession session){
+		TUser currUser = (TUser) session.getAttribute("currUser");
+		modelMap.put("userName", currUser.getUserName());
 		return "/page-guide-person.jsp";
 	}
 	
@@ -58,7 +69,9 @@ public class HelpManageAction {
 	 * @return
 	 */
 	@RequestMapping("/help/deviceManageRelate.do")
-	public String deviceManageRelate(){
+	public String deviceManageRelate(ModelMap modelMap, HttpSession session){
+		TUser currUser = (TUser) session.getAttribute("currUser");
+		modelMap.put("userName", currUser.getUserName());
 		return "/page-guide-device.jsp";
 	}
 }
