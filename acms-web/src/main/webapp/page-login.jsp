@@ -168,8 +168,7 @@ $("#loginBtn").submit();
 	<footer class="footer">
 		<div class="container">
 			<p class="text-center">
-				© Copyright Graduation project-2017.06 @Powered by xulihua <a
-					href="http:" rel="external"> </a>
+				© Copyright Graduation project-2017.06 @Powered by xulihua 
 			</p>
 		</div>
 	</footer>

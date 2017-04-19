@@ -174,7 +174,7 @@
 		$(function(){
 			//debugger
 			//$("#modalBasic").modal("show");
-			$("#decideDelete").modal("show");
+			//$("#decideDelete").modal("show");
 			//$("#editPersonModal").modal("show");
 			//$("#decideStop").modal("show");
 			var s = $("#eidtPerson").html();

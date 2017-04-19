@@ -133,24 +133,25 @@ public class UserManagerAction extends BaseAction{
 	 * @return: String
 	 * @param
 	 */
-	@RequestMapping(value = "/user/system/deleteUser.do", method = RequestMethod.GET)
-	public String deleteUser(Long userId) {
-		String message = SUCCESS;
-		// 从sessoino中获取
-		//TUser currUser = OperatorUtil.getOperator().getCurrUser();
-		TUser currUser = null;
+	@RequestMapping(value = "/user/system/deleteUser.do", method = RequestMethod.POST)
+	@ResponseBody
+	public Object deleteUser(Long userId, HttpSession session) {
+		Map<String, Object> message = new HashMap<>();
+		// 从session中获取当前操作者
+		TUser currUser = (TUser) session.getAttribute("currUser");
 		TUser user = userService.findUserById(userId);
 		try {
 			user.setStatus(TUser.ENUM_USER_STATUS.deletedStatus.value);
 			userService.updateUser(user);
+			message.put("message", SUCCESS);
 			logger.info(TSystemLog.ENUM_SYSLOG_TYPE.operateLog.value, LoggerExtData.create("modeType", TSystemLog.ENUM_LOG_MODEL_TYPE.systemManagerLog.value),
 					"管理员{}删除{}用户成功", currUser.getUserName(),
 					user.getUserName());
 		} catch(IllegalArgumentException e) {
-			message = e.getMessage();
+			message.put("message", "删除管理员参数异常");
 			logger.error("删除管理员参数异常", e);
 		} catch (Exception e) {
-			message = "删除管理员失败";
+			message.put("message", "删除管理员失败");
 			logger.error("删除管理员失败，异常信息为", e);
 		}
 		return message;
@@ -197,24 +198,25 @@ public class UserManagerAction extends BaseAction{
 	 */
 	@RequestMapping("/user/system/startUser.do")
 	@ResponseBody
-	public Object startUser(Long userId) {
-		String message = SUCCESS;
+	public Object startUser(Long userId, HttpSession session) {
+		Map<String, Object> message = new HashMap<>();
 		// 从session中获取当前操作者
-		TUser currUser = OperatorUtil.getOperator().getCurrUser();
+		TUser currUser = (TUser) session.getAttribute("currUser");
 		// 需要启用的用户
 		TUser user = userService.findUserById(userId);
 		try{
 			user.setStatus(TUser.ENUM_USER_STATUS.normalStatus.value);
 			userService.updateUser(user);
+			message.put("message", SUCCESS);
 			// 日志
 			logger.info(TSystemLog.ENUM_SYSLOG_TYPE.operateLog.value, LoggerExtData.create("modelType", 
 					TSystemLog.ENUM_LOG_MODEL_TYPE.systemManagerLog.value),"管理员{}启用{}用户成功",currUser.getUserName()
 					,user.getUserName());
 		} catch(IllegalArgumentException e) {
-			message = e.getMessage();
+			message.put("message", "启用管理员时参数异常");
 			logger.error("启用管理员时参数异常",e);
 		} catch (Exception e) {
-			message = "启用管理员失败";
+			message.put("message", "启用管理员失败");
 			logger.error("启用管理员失败，异常信息为",e);
 		}
 		return message;
