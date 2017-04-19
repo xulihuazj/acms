@@ -115,10 +115,10 @@
 														<td>${user.mobile}</td>
 														<td>${user.note}</td>
 														<td>
-															<span class="label label-success"><a data-userid="${user.id}" id="startRole" sytle="color: white">启用角色</a></span> <span
-															class="label label-danger"><a data-userid="${user.id}" id="deleteRole" sytle="color: white">删除角色</a></span> <span
-															class="label label-warning"><a data-userid="${user.id}" id="stopRole" sytle="color: white">禁用角色</a></span> <span
-															class="label label-info"><a data-userid="${user.id}" id="editRole" sytle="color: white">编辑角色</a></span>
+															<span class="label label-success"><a onclick="startEvent(this)" data-userid="${user.id}" sytle="color: white">启用角色</a></span> <span
+															class="label label-danger"><a onclick="deleteEvent(this)" data-userid="${user.id}" sytle="color: white">删除角色</a></span> <span
+															class="label label-warning"><a onclick="stopEvent(this)" data-userid="${user.id}" sytle="color: white">禁用角色</a></span> <span
+															class="label label-info"><a onclick="editEvent(this)" data-userid="${user.id}" sytle="color: white">编辑角色</a></span>
 														</td>
 													</tr>
 									</c:forEach>
@@ -247,7 +247,7 @@
 								<div class="form-group">
 									<label class="col-sm-3 control-label" >角色名称：</label>
 									<div class="col-sm-9">
-										<input type="email" name="userName" class="form-control" placeholder="请输入角色姓名..." required />
+										<input type="email" name="userName" id="form_userName" class="form-control" placeholder="请输入角色姓名..." required />
 									</div>
 								</div>
 								<div class="form-group">
@@ -256,7 +256,7 @@
 										<div class="dropdown">
 											<!-- <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
 												aria-haspopup="true" aria-expanded="true">请选择角色类型</button> -->
-										<input type="email" name="" class="form-control"data-toggle="dropdown"
+										<input type="email" name="type" id="form_type" class="form-control"data-toggle="dropdown"
 												aria-haspopup="true" aria-expanded="true"" placeholder="请选择角色类型..." required />
 											<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 												<li>
@@ -272,13 +272,13 @@
 								<div class="form-group">
 									<label class="col-sm-3 control-label">手机号：</label>
 									<div class="col-sm-9">
-										<input type="email" name="mobile" class="form-control" placeholder="请输入手机号..." required />
+										<input type="email" name="mobile"  id="form_mobile" class="form-control" placeholder="请输入手机号..." required />
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">备注信息：</label>
 									<div class="col-sm-9">
-										<textarea class="form-control" name="note" placeholder="请输入备注信息..." required rows="4"></textarea>
+										<textarea class="form-control" name="note" id="form_note" placeholder="请输入备注信息..." required rows="4"></textarea>
 									</div>
 								</div>
 							</form>
@@ -286,7 +286,7 @@
 						<div class="panel-footer">
 							<div class="row">
 								<div class="col-md-12 text-right">
-									<button class="btn btn-primary modal-confirm" id="confirmEdit" disabled=false; >确定</button>
+									<button class="btn btn-primary modal-confirm" id="confirmEdit">确定</button>
 									<button class="btn btn-default modal-dismiss" id="cancelEdit">取消</button>
 								</div>
 							</div>
@@ -314,20 +314,35 @@
 	<script src="${path }/assets/js/pages/table-advanced.js"></script>
 	<script type="text/javascript">
 			$(document).ready(function() {
-				
 			});
-			$("#startRole").click(function(){
+			// 
+			function startEvent(event){
+				$(event).attr("id","startRole");//给元素加上id用户处理
 				$("#startRoleModal").modal("show");
-			});
-			$("#deleteRole").click(function(){
+				
+			}
+			function deleteEvent(event){
+				$(event).attr("id","deleteRole");//给元素加上id用户处理
 				$("#deleteRoleModal").modal("show");
-			});
-			$("#stopRole").click(function(){
+				
+			}
+			function stopEvent(event){
+				$(event).attr("id","stopRole");//给元素加上id用户处理
 				$("#stopRoleModal").modal("show");
-			});
-			$("#editRole").click(function(){
+				
+			}
+			function editEvent(event){
+				$(event).attr("id","editRole");//给元素加上id用户处理
 				$("#editRoleModal").modal("show");
-			});
+				setInterval(function(){// 定时循环检测输入框
+					if($("#form_userName").val().length > 0 || $("#form_type").val().length > 0 || $("#form_mobile").val().length > 0 || $("#form_note").val().length > 0 ){
+						$("#confirmEdit").attr("disabled",false);
+					}else{
+						$("#confirmEdit").attr("disabled",true);
+					}
+				},100);
+				
+			}
 			$("#cancelStart").click(function(){
 				$("#startRoleModal").modal("hide");
 			});
@@ -380,7 +395,7 @@
 			$("#confirmDelete").click(function(){
 				var userId = $("#deleteRole").data("userid");
 				$.ajax({
-					url: "${path}/user/system/deleteRole.do", 
+					url: "${path}/user/system/deleteUser.do", 
 					type: 'POST',
 					data: "userId=" + userId,
 					async: false,//设置为同步请求
@@ -397,7 +412,6 @@
 									text: '删除此管理员成功!',
 									type: 'success'
 								});
-					    		setTimeOut("qqq",1000);
 					    	}else{
 					    		$("#deleteRoleModal").modal("hide");
 					    		new PNotify({
@@ -413,7 +427,7 @@
 			
 			/* 确认禁用管理员 */
 			$("#confirmStop").click(function(){
-				var userId = $("#startRole").data("userid");
+				var userId = $("#stopRole").data("userid");
 				$.ajax({
 					url: "${path}/user/system/stopUser.do", 
 					type: 'POST',
@@ -422,7 +436,7 @@
 					dataType: "json",
 					success: function(data){
 					    	if(data.message == 'success'){
-					    		$("#startRoleModal").modal("hide");
+					    		$("#stopRoleModal").modal("hide");
 					    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
 					    			document.forms[0].action="${path}/user/system/ajaxUserList.do";
 					    			document.forms[0].submit();
@@ -432,9 +446,8 @@
 									text: '禁用管理员成功!',
 									type: 'success'
 								});
-					    		
 					    	}else{
-					    		$("#startRoleModal").modal("hide");
+					    		$("#stopRoleModal").modal("hide");
 					    		new PNotify({
 									title: '操作失败',
 									text: '对不起，系统异常，无法完成此操作，请联系管理员！',
@@ -447,7 +460,7 @@
 			
 			/* 确认编辑管理员 */
 			$("#confirmEdit").click(function(){
-				var userId = $("#startRole").data("userid");
+				var userId = $("#editRole").data("userid");
 				$("#form_userId").val(userId);// 赋值于userId用于序列化
 				$.ajax({
 					url: "${path}/user/system/saveUser.do", 
@@ -467,7 +480,6 @@
 									text: '禁用管理员成功!',
 									type: 'success'
 								});
-					    		
 					    	}else{
 					    		$("#editRoleModal").modal("hide");
 					    		new PNotify({

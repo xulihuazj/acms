@@ -97,7 +97,7 @@
 			<if test="null != password and password != ''">c_password = #{password},</if>
 			<if test="type > 0">n_type = #{type},</if>
 			<if test="null != mobile and mobile != ''">c_mobile = #{mobile},</if>
-			<if test="status > 0">n_status = #{status},</if>
+			<if test="status ==1 or status ==-1 or status ==2">n_status = #{status},</if>
 			<if test="time > 0">n_time = #{time},</if>
 			<if test="null != note and note !=''">c_note = #{note},</if>
 			<if test="null != ecCode and ecCode != ''">c_ec_code = #{ecCode},</if>

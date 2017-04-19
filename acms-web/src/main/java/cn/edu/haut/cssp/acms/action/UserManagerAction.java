@@ -176,6 +176,7 @@ public class UserManagerAction extends BaseAction{
 		try{
 			user.setStatus(TUser.ENUM_USER_STATUS.deletedStatus.value);
 			userService.updateUser(user);
+			message.put("message", SUCCESS);
 			// 日志
 			logger.info(TSystemLog.ENUM_SYSLOG_TYPE.operateLog.value, LoggerExtData.create("modelType", 
 					TSystemLog.ENUM_LOG_MODEL_TYPE.systemManagerLog.value),"管理员{}停用{}用户成功",currUser.getUserName()
