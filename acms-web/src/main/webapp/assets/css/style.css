@@ -1341,19 +1341,19 @@ blockquote.pull-right {
 }
 
 .sidebar .sidebar-header {
-	padding: 10px 35px;
+/* 	padding: 10px 35px;
 	height: 62px;
 	line-height: 62px;
 	text-align: center;
 	position: relative;
-	background: #1a8fb4 !important;
+	background: #1a8fb4 !important; */
 }
 
 .sidebar .sidebar-header img {
-	width: 170px;
-	height: 40px;
-	text-align: center;
-	margin: 0 1px 20px 0;
+	width: 240px;
+	height: 62px;
+	/* text-align: center; 
+	margin: 0 1px 20px 0;*/
 }
 /*Navigation Sidebar Menu*/
 .sidebar .sidebar-menu {

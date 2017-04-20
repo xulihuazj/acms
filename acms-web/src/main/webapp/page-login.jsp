@@ -31,7 +31,7 @@
 							<div class="form-group field-loginform-username required">
 								<label class="col-lg-2 control-label" for="loginform-username">账号</label>
 								<div class="col-lg-6 ">
-									<input type="text" id="loginUsername" class="form-control"
+									<input type="text" id="loginUsername" class="form-control" autocomplete="off"
 										name="loginUsername" placeholder="请输入您的账号">
 								</div>
 								<div class="col-lg-4 ">
@@ -41,7 +41,7 @@
 							<div class="form-group field-loginform-password required">
 								<label class="col-lg-2 control-label" for="loginform-password">密码</label>
 								<div class="col-lg-6 ">
-									<input type="password" id="loginPassword" class="form-control" 
+									<input type="password" id="loginPassword" class="form-control"  autocomplete="off"
 										name="loginPassword" placeholder="请输入您的密码">
 								</div>
 								<div class="col-lg-4 ">
@@ -65,17 +65,19 @@
 									<div class="row">
 										<div class="col-lg-offset-1 col-lg-7"
 											style="margin-left: -3.667%; width: 64.33%;">
-											<input type="text" id="loginVerifycode" class="form-control"
+											<input type="text" id="loginVerifycode" class="form-control" autocomplete="off"
 												name="loginVerifycode" placeholder="请输入正确验证码">
 										</div>
 										<div class="col-lg-4 ">
 												<img id="validationCode" alt="验证码图片" title="验证码图片" src="${path }/validationCode.do" onclick="refreshCode(this);" />  
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="aRecode" href="javascript:void(0);" onclick="refreshCode()">点击换一张</a>  
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-8 " style="height: 25px; text-align: center;">
-									<div class="help-block"><span  value="${message}" id="loginVerifycodeErr" style="color: #ff3333 !important;font-size: 14px !important;"></div>
+									<div class="help-block"><span  value="${message}" id="loginVerifycodeErr" style="color: #ff3333 !important;font-size: 14px !important;">${message }</div>
+								</div>
+								<div class="col-lg-4 " style="height: 25px; text-align: center;">
+									<div class="help-block"><span id="loginVerifycodeErr" style="color: #ff3333 !important;font-size: 14px !important;"><a id="aRecode" href="javascript:void(0);" onclick="refreshCode()">点击换一张</a></div>
 								</div>
 							</div>
 							<div class="form-group">

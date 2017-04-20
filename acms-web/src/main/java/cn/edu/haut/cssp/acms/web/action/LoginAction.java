@@ -69,7 +69,7 @@ public class LoginAction extends BaseAction {
 		} else if (StringUtils.isBlank(loginVerifycode)) {
 			model.put("message", "验证码不能为空！");
 		}else if(!StringUtils.equals((String)request.getSession().getAttribute("reg_val_code"), loginVerifycode)) { 
-			model.put("message","验证码不正确，请重试!");
+			model.put("message","验证码不正确!");
 		}else {
 			boolean isLogined = true;
 			 TUser currUser = null;
@@ -130,8 +130,8 @@ public class LoginAction extends BaseAction {
 		}
 		model.put("userName", loginUsername);
 		model.put("error", true);
-		//return "/page-login.jsp";
-		return "redirect:loginPage.do";
+		return "/page-login.jsp";
+		//return "redirect:loginPage.do";
 	}
 
 	/**

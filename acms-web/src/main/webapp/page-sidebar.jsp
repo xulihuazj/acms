@@ -7,7 +7,7 @@
 		<div class="sidebar-collapse">
 			<!-- Sidebar Header Logo-->
 			<div class="sidebar-header">
-				<img src="${path}/assets/img/xhxm.jpg" class="img-responsive" alt="河南工业大学" />
+				<img src="${path}/assets/img/xhxm.jpg" class="" alt="河南工业大学"  />
 			</div>
 			<!-- Sidebar Menu-->
 			<div class="sidebar-menu">
