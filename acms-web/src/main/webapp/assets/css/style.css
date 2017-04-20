@@ -9,7 +9,7 @@ html {
 
 body {
 	font-family: 'Titillium Web', sans-serif;
-	font-size: 12px;
+	font-size: 13px;
 	margin: 0;
 	padding: 0;
 	min-height: 100%;
@@ -2384,6 +2384,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 .form-horizontal .control-label {
+	font-size: 17px;
 	font-weight: normal;
 }
 
@@ -5298,7 +5299,7 @@ body .ui-pnotify.icon-nb .notification .ui-pnotify-icon>span {
 /* Toggles
 =================================================================== */
 .toggle {
-	margin: 10px 0 0;
+	margin: 15px 0 0;
 	position: relative;
 	clear: both;
 }
@@ -5419,7 +5420,7 @@ body .ui-pnotify.icon-nb .notification .ui-pnotify-icon>span {
 /* Labels
 =================================================================== */
 .label {
-	font-size: 10px;
+	font-size: 12px;
 	padding: 4px 6px;
 	border: none;
 	text-align: center;
