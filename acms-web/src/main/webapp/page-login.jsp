@@ -69,8 +69,8 @@
 												name="loginVerifycode" placeholder="请输入正确验证码">
 										</div>
 										<div class="col-lg-4 ">
-											<img id="loginform-verifycode-image"
-												src="./login_files/captcha" alt="" >
+												<img id="validationCode" alt="验证码图片" title="验证码图片" src="${path }/validationCode.do" onclick="refreshCode(this);" />  
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="aRecode" href="javascript:void(0);" onclick="refreshCode()">点击换一张</a>  
 										</div>
 									</div>
 								</div>
@@ -116,6 +116,23 @@
  $(function(){
 		
  });
+ /** 
+  * 刷新验证码 
+  * @param imgObj 验证码Img元素 
+  */  
+ function refreshCode(imgObj) {  
+     if (!imgObj) {  
+         imgObj = document.getElementById("validationCode");  
+     }  
+     var index = imgObj.src.indexOf("?");  
+     if(index != -1) {  
+         var url = imgObj.src.substring(0,index + 1);  
+         imgObj.src = url + Math.random();  
+     } else {  
+         imgObj.src = imgObj.src + "?" + Math.random();  
+     }  
+ }  
+ 
    //进入页面账号输入框自动聚焦
 $("#loginUsername").focus();
 //判断保存按钮是否可以点击

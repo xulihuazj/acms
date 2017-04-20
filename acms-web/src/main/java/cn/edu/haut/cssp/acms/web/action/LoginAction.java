@@ -68,12 +68,9 @@ public class LoginAction extends BaseAction {
 			model.put("message", "密码不能为空！");
 		} else if (StringUtils.isBlank(loginVerifycode)) {
 			model.put("message", "验证码不能为空！");
-		} /*
-			 * else if(!imageCaptchaService.validateResponseForID(request.getSession(
-			 * ).getId(), loginVerifycode)) { model.put("message",
-			 * "验证码不正确，请点击刷新后重试!"); }
-			 */
-		else {
+		}else if(!StringUtils.equals((String)request.getSession().getAttribute("reg_val_code"), loginVerifycode)) { 
+			model.put("message","验证码不正确，请重试!");
+		}else {
 			boolean isLogined = true;
 			 TUser currUser = null;
 			try {
@@ -133,7 +130,8 @@ public class LoginAction extends BaseAction {
 		}
 		model.put("userName", loginUsername);
 		model.put("error", true);
-		return "/page-login.jsp";
+		//return "/page-login.jsp";
+		return "redirect:loginPage.do";
 	}
 
 	/**
