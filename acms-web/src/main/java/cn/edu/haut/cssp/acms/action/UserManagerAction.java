@@ -174,7 +174,7 @@ public class UserManagerAction extends BaseAction{
 		TUser currUser = (TUser) session.getAttribute("currUser");
 		TUser user = userService.findUserById(userId);
 		try{
-			user.setStatus(TUser.ENUM_USER_STATUS.deletedStatus.value);
+			user.setStatus(TUser.ENUM_USER_STATUS.stopStatus.value);
 			userService.updateUser(user);
 			message.put("message", SUCCESS);
 			// 日志

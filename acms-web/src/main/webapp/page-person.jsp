@@ -61,11 +61,10 @@
 						</ol>
 					</div>
 					<div class="pull-right">
-						<h2>人员管理</h2>
+						<h2>人员信息管理</h2>
 					</div>
 				</div>
 				<!-- End Page Header -->
-
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="panel panel-default bk-bg-white">
@@ -73,10 +72,6 @@
 								<h6>
 									<i class="fa fa-table red"></i><span class="break"></span>人员信息管理
 								</h6>
-								<div class="panel-actions">
-									<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a> <a href="#" class="btn-close"><i
-										class="fa fa-times"></i></a>
-								</div>
 							</div>
 							<div class="panel-body">
 								<table class="table table-bordered table-striped mb-none" id="datatable-details">
@@ -97,7 +92,7 @@
 											<th>姓名</th>
 											<th>卡号</th>
 											<th>身份证号</th>
-											<th>人员类型</th>
+											<th style="min-width: 47px;">类型</th>
 											<th>性别</th>
 											<th>年龄</th>
 											<th>联系电话</th>
@@ -113,8 +108,15 @@
 												<td>${person.perName}</td>
 												<td>${person.perId}</td>
 												<td>${person.perIdentificate}</td>
-												<td>${person.perType}</td>
-												<td>${person.perSex}</td>
+												<td>
+													<c:if test="${person.perType==1}">学生</c:if>
+													<c:if test="${person.perType==2}">教师</c:if>
+													<c:if test="${person.perType==3}">工作人员</c:if>
+												</td>
+												<td>
+													<c:if test="${person.perSex==1}">男</c:if>
+													<c:if test="${person.perSex==2}">女</c:if>
+												</td>
 												<td>${person.perAge}</td>
 												<td>${person.perMobile}</td>
 												<td>${person.perDepart}</td>
@@ -172,17 +174,14 @@
 </body>
 	<script type="text/javascript">
 		$(function(){
-			//debugger
 			//$("#modalBasic").modal("show");
 			//$("#decideDelete").modal("show");
 			//$("#editPersonModal").modal("show");
 			//$("#decideStop").modal("show");
 			var s = $("#eidtPerson").html();
-			alert(s);
 		});
 		
 		$("#eidtPerson").click(function(){
-			alert();
 			$("#modalBasic").modal("show");
 		});
 		/*点击取消清空输入框，并退出弹出框*/

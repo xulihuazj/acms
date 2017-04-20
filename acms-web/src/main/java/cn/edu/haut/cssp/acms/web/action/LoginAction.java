@@ -87,8 +87,12 @@ public class LoginAction extends BaseAction {
 				// 根据用户名和密码查询用户信息
 				 //TUser currUser = userService.selectUserByNameAndPass(map);
 				currUser = userService.getUserByUserName(loginUsername);
-				 if(null == currUser){
+				
+				 if(null == currUser || currUser.getStatus() == TUser.ENUM_USER_STATUS.deletedStatus.value){
 					 model.put("message", "当前账号不存在");
+					 return "/page-login.jsp";
+				 }else if(currUser.getStatus() == TUser.ENUM_USER_STATUS.stopStatus.value){
+					 model.put("message", "当前账号已被停用");
 					 return "/page-login.jsp";
 				 }else{
 					 if(StringUtils.equals(PasswordUtils.encodePasswordSHA1(loginPassword), currUser.getPassword())){

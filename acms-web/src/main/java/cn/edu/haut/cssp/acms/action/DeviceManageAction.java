@@ -1,10 +1,12 @@
 package cn.edu.haut.cssp.acms.action;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,6 +16,8 @@ import cn.edu.haut.cssp.acms.core.entity.TDeviceInfo;
 import cn.edu.haut.cssp.acms.core.entity.TPerson;
 import cn.edu.haut.cssp.acms.core.entity.TUser;
 import cn.edu.haut.cssp.acms.core.entity.User;
+import cn.edu.haut.cssp.acms.core.utils.DateTimeUtil;
+import cn.edu.haut.cssp.acms.core.utils.DateUtil;
 import cn.edu.haut.cssp.acms.system.service.IDeviceService;
 
 /**
@@ -57,6 +61,9 @@ public class DeviceManageAction {
 	@RequestMapping("/device/timeGroup.do")
 	public Object timeGroup(ModelMap modelMap,HttpSession session){
 		List<TDeviceInfo> deviceList = deviceService.ajaxDeviceList();
+		for(TDeviceInfo deviceInfo : deviceList){
+			String activateTime = deviceInfo.getActivateTime().toString();
+		}
 		modelMap.put("deviceList", deviceList);
 		TUser currUser = (TUser) session.getAttribute("currUser");
 		modelMap.put("userName", currUser.getUserName());

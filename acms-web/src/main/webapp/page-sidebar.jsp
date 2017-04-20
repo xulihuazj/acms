@@ -275,10 +275,10 @@
 							<a> <i class="fa fa-cog" aria-hidden="true"></i> <span>系统用户管理</span>
 							</a>
 							<ul class="nav nav-children">
-								<li>
+								<!-- <li>
 									<a > <span class="text">系统参数设置</span>
 									</a>
-								</li>
+								</li> -->
 								<li>
 									<a href="${path }/user/system/ajaxUserList.do"> <span class="text">角色管理</span>
 									</a>

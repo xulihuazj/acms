@@ -22,7 +22,6 @@
 <link href="${path }/assets/plugins/magnific-popup/css/magnific-popup.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/fullcalendar/css/fullcalendar.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/jqvmap/jqvmap.css" rel="stylesheet" />
-<link rel="stylesheet" href="assets/css/zlight.menu.css" media="screen">
 <!-- Theme CSS -->
 <link href="${path }/assets/css/jquery.mmenu.css" rel="stylesheet" />
 
@@ -133,7 +132,6 @@
 		<script src="${path }/assets/js/core.min.js"></script>
 
 		<!-- Pages JS -->
-		<script src="${path }/assets/js/pages/table-advanced.js"></script>
 			<script src="${path }/assets/js/pages/charts-flot_statistics.js"></script>
 		<style type="text/css">
 .subitem {
@@ -155,18 +153,5 @@
 	display: block;
 }
 </style>
-		<!-- end: JavaScript-->
 </body>
-	<script type="text/javascript">
-			$(function(){
-					alert();
-					$("#addUserModal").modal("show");
-			});
-			$("#item").hover(function() {
-				$(this).addClass("layer");
-			}, function() {
-				$(this).removeClass("layer");
-			});
-		</script>
-
 </html>

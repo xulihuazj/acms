@@ -22,6 +22,7 @@
 <link href="${path }/assets/plugins/fullcalendar/css/fullcalendar.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/jqvmap/jqvmap.css" rel="stylesheet" />
 <link rel="stylesheet" href="${path }/assets/css/zlight.menu.css" media="screen">
+<link href="${path}/assets/plugins/jquery-datatables-bs3/css/datatables.css" rel="stylesheet" />
 <!-- Theme CSS -->
 <link href="${path }/assets/css/jquery.mmenu.css" rel="stylesheet" />
 
@@ -192,7 +193,7 @@
 		<script src="${path }/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
 		<script src="${path }/assets/plugins/bootkit/js/bootkit.js"></script>
 		<script src="${path }/assets/plugins/jquery/js/jquery.zlight.menu.1.0.min.js"></script>
-
+	<script src="${path}/assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
 		<!-- Theme JS -->
 		<script src="${path }/assets/js/jquery.mmenu.min.js"></script>
 		<script src="${path }/assets/js/core.min.js"></script>
