@@ -34,14 +34,53 @@ public class TDeviceInfo implements Serializable{
 	private Integer status;
 	
 	/**
+	 * 设备sn
+	 */
+	private String SN;
+	
+	/**
 	 * 激活时间
 	 */
 	private Long activateTime;
 	
 	/**
-	 * 设备sn
+	 * 失效时间
 	 */
-	private String SN;
+	private Long abateTime;
+	
+	/**
+	 * 门禁开始时间
+	 */
+	private Long timeStart;
+	
+	/**
+	 * 门禁结束时间
+	 */
+	private Long endStart;
+	
+	public Long getAbateTime() {
+		return abateTime;
+	}
+
+	public void setAbateTime(Long abateTime) {
+		this.abateTime = abateTime;
+	}
+
+	public Long getTimeStart() {
+		return timeStart;
+	}
+
+	public void setTimeStart(Long timeStart) {
+		this.timeStart = timeStart;
+	}
+
+	public Long getEndStart() {
+		return endStart;
+	}
+
+	public void setEndStart(Long endStart) {
+		this.endStart = endStart;
+	}
 
 	public Long getId() {
 		return id;

@@ -54,7 +54,17 @@ public interface IDeviceService {
 	 */
 	public List<TDeviceInfo> ajaxDeviceList();
 	
-
+	/**
+	 * 设置门禁时间
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月20日下午8:37:07
+	 * @param timeGroupStart
+	 * @param timeGroupEnd
+	 * @param id
+	 * @return
+	 */
+	public boolean timeGroupInstall(Long timeGroupStart,Long timeGroupEnd, Long id) throws Exception;
 	
 
 

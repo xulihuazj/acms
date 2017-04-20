@@ -12,4 +12,9 @@
  	 <include refid="Base_Column_List" />
  	  from t_device_info 
  </select>
+ 
+	 <update id="updateTimeGroup"  parameterType="java.util.Map" >
+	 	update t_devic_info info set info.n_time_start = #{timeStart}, info.n_time_end = #{timeEnd}
+	 	where info.n_id = #{id}
+	 </update>
 </mapper>

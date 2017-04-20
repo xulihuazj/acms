@@ -1,16 +1,21 @@
 package cn.edu.haut.cssp.acms.action;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.edu.haut.cssp.acms.core.entity.TDeviceInfo;
 import cn.edu.haut.cssp.acms.core.entity.TPerson;
@@ -29,7 +34,9 @@ import cn.edu.haut.cssp.acms.system.service.IDeviceService;
  * @note:
  */
 @Controller
-public class DeviceManageAction {
+public class DeviceManageAction extends BaseAction{
+	
+	private Logger logger = LoggerFactory.getLogger(DeviceManageAction.class);
 
 	@Autowired
 	private IDeviceService deviceService;
@@ -68,6 +75,20 @@ public class DeviceManageAction {
 		TUser currUser = (TUser) session.getAttribute("currUser");
 		modelMap.put("userName", currUser.getUserName());
 		return "/page-device-time.jsp";
+	}
+	
+	@RequestMapping("/device/timeGroupInstall.do")
+	@ResponseBody
+	public Object timeGroupInstall(Long timeGroupStart,Long timeGroupEnd, Long id) {
+		Map<String, Object> message = new HashMap<>();
+		try{
+			deviceService.timeGroupInstall(timeGroupStart, timeGroupEnd,  id);
+			message.put("message", SUCCESS);
+		}catch(Exception e){
+			message.put("message", "设置门禁时间失败");
+			logger.error(e.getMessage());
+		}
+		return message;
 	}
 	
 }

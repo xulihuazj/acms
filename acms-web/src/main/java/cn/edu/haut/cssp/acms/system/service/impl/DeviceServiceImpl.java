@@ -1,6 +1,8 @@
 package cn.edu.haut.cssp.acms.system.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -26,6 +28,15 @@ public class DeviceServiceImpl extends BaseServiceImpl implements IDeviceService
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	@Override
+	public boolean timeGroupInstall(Long timeGroupStart, Long timeGroupEnd, Long id) throws Exception {
+		Map<String, Object> map = new HashMap<>();
+		map.put("timeStart", timeGroupStart);
+		map.put("timeEnd", timeGroupEnd);
+		int i = super.getBaseDao().getSqlSession().update("DeviceInfoMapper.updateTimeGroup", map);
+		return i == 1 ? true : false;
 	}
 
 }
