@@ -335,12 +335,10 @@ $(document).ready(function(){
 	/* ---------- 饼状图表  ---------- */
 		// 总300
 	var data = [
-	{ label: "学生",  data: 40},
-	{ label: "教师",  data: 40},
-	{ label: "其他人员",  data: 120},
-	{ label: "todo",  data: 90},
-	{ label: "工作人员",  data: 100},
-	{ label: "todo",  data: 100}
+	{ label: "教师",  data: 50},
+	{ label: "其他人员",  data: 30},
+	{ label: "工作人员",  data: 40},
+	{ label: "学生",  data: 180}
 	];
 	
 	if($("#piechart").length)
@@ -368,6 +366,7 @@ $(document).ready(function(){
 					return;
 			percent = parseFloat(obj.series.percent).toFixed(2);
 			$("#hover").html('<span style="font-weight: bold; color: '+obj.series.color+'">'+obj.series.label+' ('+percent+'%)</span>');
+			$(".label").attr("style","font-size:40px;");
 		}
 		$("#piechart").bind("plothover", pieHover);
 	}

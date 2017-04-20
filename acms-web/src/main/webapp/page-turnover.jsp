@@ -212,24 +212,6 @@
 			});
 		</script>
 		<style type="text/css">
-.subitem {
-	width: 300px;
-	background: #fff;
-	border: solid 1px #3299fd;
-	border-left: none;
-	font-family: "微软雅黑";
-	position: absolute;
-	left: 150px;
-	_left: 228px;
-	top: -100px;
-	z-index: 99999;
-	min-height: 60px;
-	height: auto !important;
-	height: 50px;
-	padding: 5px 10px 15px 10px;
-	position: absolute;
-	display: block;
-}
 </style>
 </body>
 </html>
