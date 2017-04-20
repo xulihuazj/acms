@@ -17,6 +17,7 @@
 <link href="${path}/assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
 <link href="${path}/assets/plugins/select2/select2.css" rel="stylesheet" />
 <link href="${path}/assets/plugins/jquery-datatables-bs3/css/datatables.css" rel="stylesheet" />
+<link href="${path}/assets/plugins/magnific-popup/css/magnific-popup.css" rel="stylesheet" />
 <!-- Theme CSS -->
 <link href="${path}/assets/css/jquery.mmenu.css" rel="stylesheet" />
 <!-- Page CSS -->
@@ -81,12 +82,12 @@
 								<table class="table table-bordered table-striped mb-none" id="datatable-default">
 									<thead>
 										<tr>
-											<th>序号.</th>
+											<th style="width: 60px;">序号.</th>
 											<th>设备SN</th>
 											<th>设备状态</th>
 											<th>设备品牌</th>
 											<th>设备型号</th>
-											<th>操作</th>
+											<th style="width: 220px;">操作</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -94,7 +95,10 @@
 											<tr>
 												<td>${deviceInfo.id}</td>
 												<td>${deviceInfo.SN}</td>
-												<td>${deviceInfo.status}</td>
+												<td>
+													<c:if test="${deviceInfo.status==1}">使用正常</c:if>
+													<c:if test="${deviceInfo.status==2}">已停用</c:if>
+												</td>
 												<td>${deviceInfo.deviceBrand}</td>
 												<td>${deviceInfo.deviceModel}</td>
 												<td>
@@ -131,6 +135,7 @@
 	<script src="${path}/assets/plugins/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
 	<script src="${path}/assets/plugins/jquery-datatables-bs3/js/datatables.js"></script>
 	<script src="${path}/assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
+		<script src="${path}/assets/plugins/magnific-popup/js/magnific-popup.js"></script>
 	<!-- Theme JS -->
 	<script src="${path}/assets/js/jquery.mmenu.min.js"></script>
 	<script src="${path}/assets/js/core.min.js"></script>
