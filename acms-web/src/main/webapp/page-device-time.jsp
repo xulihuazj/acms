@@ -97,7 +97,8 @@
 												<td>${deviceInfo.id}</td>
 												<td>${deviceInfo.activateTime}</td>
 												<td>${deviceInfo.activateTime}</td>
-												<td>正常</td>
+												<td>正常
+												</td>
 												<td> <a class="btn btn-info" style="height: 35px" > <i id="editGuardTime">编辑门禁时间</i>
 												</a> </td>
 											</tr>
@@ -125,7 +126,7 @@
 		</div>
 	</div>
 
-	<div id="editGuardd" class="modal fade " data-backdrop="static" tabindex="-1" role="dialog">
+	<div id="editGuardModal" class="modal fade " data-backdrop="static" tabindex="-1" role="dialog">
 		<div class="modal-dialog panel panel-default" role="document">
 			<div class="modal-content">
 				<div class="modal-body ">
@@ -134,12 +135,12 @@
 							<h2 class="panel-title">门禁时间设置</h2>
 						</div>
 						<div class="panel-body bk-noradius">
-							<form id="savePerson_form" class="form-horizontal mb-lg" novalidate="novalidate">
+							<form id="editTime_form" class="form-horizontal mb-lg" novalidate="novalidate">
 								<div class="form-group">
 									<label class="col-sm-4 control-label">门禁开始时间：</label>
 									<div class="col-sm-8">
 										<div class="input-append date form_datetime">
-											<input size="35" type="text" value="" readonly>
+											<input size="35" type="text" value="" readonly name="guardTimeStart">
 											<span class="add-on"><i class="icon-th"></i></span>
 										</div>
 									</div>
@@ -148,7 +149,7 @@
 									<label class="col-sm-4 control-label">门禁结束时间：</label>
 									<div class="col-sm-8">
 										<div class="input-append date form_datetime">
-											<input size="35" type="text" value="" readonly>
+											<input size="35" type="text" value="" readonly name="guardEndStart">
 											<span class="add-on"><i class="icon-th"></i></span>
 										</div>
 									</div>
@@ -158,7 +159,7 @@
 						<div class="panel-footer">
 							<div class="row">
 								<div class="col-md-12 text-right">
-									<button class="btn btn-primary modal-confirm" id="confirmSave">确定</button>
+									<button class="btn btn-primary modal-confirm" id="confirmEditTime">确定</button>
 									<button class="btn btn-default modal-dismiss" id="cancelInputBox">取消</button>
 								</div>
 							</div>
@@ -205,6 +206,33 @@
 	  $(".form_datetime").datetimepicker({
 	        format: "dd MM yyyy - hh:ii"
 	    });
+	  
+	  $("#confirmEditTime").click({
+		  $.ajax({
+			  url:"${path}/device/timeGroupInstall.do",
+			  type:'POST',
+			  data: $("#editTime_form").serialize(),
+			  dataType: 'json',
+			  success: function(data){
+				  if(data.message == 'successs'){
+					  $("#editGuardModal").modal("hide");
+			    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
+			    			document.forms[0].action="${path}/device/timeGroupInstall.do";
+			    			document.forms[0].submit();
+						},800);
+			    		new PNotify({
+							title: '操作成功',
+							text: '禁用管理员成功!',
+							type: 'success'
+						});
+				  }
+			  },
+			  error: function(){
+				  alert("异常");
+			  }
+		  });
+		  
+	  });
 	
     // 时间戳转换成日期格式
     function addZero(timeStamp){return timeStamp < 10 ? '0'+timeStamp : timeStamp}
@@ -220,10 +248,10 @@
     }
     
 	$("#editGuardTime").click(function(){
-		$("#editGuardd").modal("show");
+		$("#editGuardModal").modal("show");
 	});
 	$("#cancelInputBox").click(function(){
-		$("#editGuardd").modal("hide");
+		$("#editGuardModal").modal("hide");
 	});
 	
 </script>
