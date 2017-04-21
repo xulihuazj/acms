@@ -4,7 +4,8 @@
 
 	<!-- 通用SQL片段 -->
 	<sql id="Base_Column_List">
-		n_id id,c_model deviceModel,c_brand deviceBrand,n_status status,n_activate_time activateTime,c_sn SN 
+		n_id id,c_model deviceModel,c_brand deviceBrand,n_status status,n_activate_time activateTime,c_sn SN,n_abate_time abateTime
+		,n_time_start timeStart, n_time_end timeEnd
 	</sql>
 
   <select id="getUserList" parameterType="int" resultType="cn.edu.haut.cssp.acms.core.entity.TDeviceInfo">

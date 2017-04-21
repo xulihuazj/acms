@@ -1,6 +1,7 @@
 package cn.edu.haut.cssp.acms.action;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -65,7 +66,25 @@ public class UserManagerAction extends BaseAction{
 	public Object ajaxUserList(HttpSession session,ModelMap modelMap){
 		TUser currUser = (TUser) session.getAttribute("currUser");
 		modelMap.put("userName", currUser.getUserName());
-		List<TUser> userList = userService.ajaxUserList();
+		List<TUser> userList = null;
+		try{
+			userList = userService.ajaxUserList();
+			Iterator<TUser> iteratorList = userList.iterator();
+			while (iteratorList.hasNext()) {
+				TUser next = iteratorList.next();
+				if(-1 == next.getStatus()){
+					iteratorList.remove();
+				}
+			}
+		/*	for(TUser user:userList){
+				Integer status = -1;
+				if(status == user.getStatus()){
+					userList.remove(user);
+				}
+			}*/
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		modelMap.put("userList", userList);
 		return "/page-role.jsp";
 	}

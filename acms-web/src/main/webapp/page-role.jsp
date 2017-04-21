@@ -115,10 +115,16 @@
 														<td>${user.mobile}</td>
 														<td>${user.note}</td>
 														<td>
-															<span class="label label-success"><a onclick="startEvent(this)" data-userid="${user.id}" sytle="color: white">启用角色</a></span> <span
-															class="label label-danger"><a onclick="deleteEvent(this)" data-userid="${user.id}" sytle="color: white">删除角色</a></span> <span
-															class="label label-warning"><a onclick="stopEvent(this)" data-userid="${user.id}" sytle="color: white">禁用角色</a></span> <span
-															class="label label-info"><a onclick="editEvent(this)" data-userid="${user.id}" sytle="color: white">编辑角色</a></span>
+															<c:if test="${user.status==1}">
+																	<span class="label label-danger"><a onclick="deleteEvent(this)" data-userid="${user.id}" sytle="color: white">删除角色</a></span> <span
+																	class="label label-warning"><a onclick="stopEvent(this)" data-userid="${user.id}" sytle="color: white">禁用角色</a></span> <span
+																	class="label label-info"><a onclick="editEvent(this)" data-userid="${user.id}" sytle="color: white">编辑角色</a></span>
+															</c:if>
+															<c:if test="${user.status==2}">
+																<span class="label label-success"><a onclick="startEvent(this)" data-userid="${user.id}" sytle="color: white">启用角色</a></span>
+																	<span class="label label-danger"><a onclick="deleteEvent(this)" data-userid="${user.id}" sytle="color: white">删除角色</a></span> <span
+																	class="label label-info"><a onclick="editEvent(this)" data-userid="${user.id}" sytle="color: white">编辑角色</a></span>
+															</c:if>
 														</td>
 													</tr>
 									</c:forEach>

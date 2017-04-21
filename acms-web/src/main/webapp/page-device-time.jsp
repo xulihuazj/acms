@@ -19,6 +19,7 @@
 <link href="${path}/assets/plugins/bootkit/css/bootkit.css" rel="stylesheet" />
 <link href="${path}/assets/plugins/select2/select2.css" rel="stylesheet" />
 <link href="${path}/assets/plugins/jquery-datatables-bs3/css/datatables.css" rel="stylesheet" />
+<link href="${path}/assets/plugins/pnotify/css/pnotify.custom.css" rel="stylesheet" />
 <!-- Theme CSS -->
 <link href="${path}/assets/css/jquery.mmenu.css" rel="stylesheet" />
 <!-- Page CSS -->
@@ -84,23 +85,30 @@
 										<thead>
 											<tr>
 												<th>序号.</th>
-												<th>启用时间</th>
-												<th>停用时间</th>
-												<th>当前状态</th>
-												<th>操作</th>
+												<th style="width: 175px;text-align: center;">启用时间</th>
+												<th style="width: 175px;text-align: center;">停用时间</th>
+												<th style="width: 110px;text-align: center;">当前状态</th>
+												<th style="text-align: center;">操作</th>
+												<th style="text-align: center;">门禁开启结束时间</th>
 											</tr>
 										</thead>
 										<tbody>
 										
 										<c:forEach items="${deviceList}" var="deviceInfo">
 											<tr>
-												<td>${deviceInfo.id}</td>
-												<td>${deviceInfo.activateTime}</td>
-												<td>${deviceInfo.activateTime}</td>
-												<td>正常
+												<td style="text-align: center;padding-top: 18px;font-size:14px;">${deviceInfo.id}</td>
+												<td style="text-align: center;padding-top: 18px;font-size:14px;">${deviceInfo.activateTime}</td>
+												<td style="text-align: center;padding-top: 18px;font-size:14px;">${deviceInfo.abateTime}</td>
+												<td style="text-align: center;padding-top: 18px;font-size:14px;">
+													<c:if test="${deviceInfo.status == 1}">设备正常</c:if>
+													<c:if test="${deviceInfo.status == 2}">设备已停用</c:if>
 												</td>
-												<td> <a class="btn btn-info" style="height: 35px" > <i id="editGuardTime">编辑门禁时间</i>
+												<td> <a class="btn btn-info" style="height: 35px" > <i onclick="editGuardTime(this)">编辑门禁时间</i>
 												</a> </td>
+												<td style="text-align: center;padding-top: 18px;font-size:14px;">
+													<c:if test="${deviceInfo.abateTime > 0}">${deviceInfo.abateTime}-->${deviceInfo.abateTime }</c:if>
+													<c:if test="${deviceInfo.abateTime == null}">无</c:if>
+												</td>
 											</tr>
 										</c:forEach>
 										</tbody>
@@ -140,8 +148,8 @@
 									<label class="col-sm-4 control-label">门禁开始时间：</label>
 									<div class="col-sm-8">
 										<div class="input-append date form_datetime">
-											<input size="35" type="text" value="" readonly name="guardTimeStart">
-											<span class="add-on"><i class="icon-th"></i></span>
+											<input size="35" type="text"  name="guardTimeStart" readonly >
+											<span class="add-on" ><i class="icon-th" ></i></span>
 										</div>
 									</div>
 								</div>
@@ -149,8 +157,8 @@
 									<label class="col-sm-4 control-label">门禁结束时间：</label>
 									<div class="col-sm-8">
 										<div class="input-append date form_datetime">
-											<input size="35" type="text" value="" readonly name="guardEndStart">
-											<span class="add-on"><i class="icon-th"></i></span>
+											<input size="35" type="text" value="" readonly name="guardEndStart" data-format="dd/MM/yyyy hh:mm:ss" >
+											<span class="add-on" ><i class="icon-th"></i></span>
 										</div>
 									</div>
 								</div>
@@ -186,7 +194,7 @@
 	<script src="${path}/assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
 	<script src="${path}/assets/plugins/magnific-popup/js/magnific-popup.js"></script>
 	<script src="${path}/assets/plugins/bootstrap-datepicker/js/bootstrap-datetimepicker.js"></script>
-	
+	<script src="${path }/assets/plugins/pnotify/js/pnotify.custom.js"></script>
 	<!-- Theme JS -->
 	<script src="${path}/assets/js/jquery.mmenu.min.js"></script>
 	<script src="${path}/assets/js/core.min.js"></script>
@@ -204,10 +212,16 @@
 		
 	});
 	  $(".form_datetime").datetimepicker({
-	        format: "dd MM yyyy - hh:ii"
+	        format: "yyyy MM dd - hh:ii"
 	    });
 	  
-	  $("#confirmEditTime").click({
+		function editGuardTime(event){
+			$(event).attr("id","editGuardTime");//给元素加上id用户处理
+			 $("#editGuardModal").modal("show");
+			
+		}
+	  $("#confirmEditTime").click(function(){
+		  $("#editGuardModal").modal("hide");
 		  $.ajax({
 			  url:"${path}/device/timeGroupInstall.do",
 			  type:'POST',
@@ -230,7 +244,7 @@
 			  error: function(){
 				  alert("异常");
 			  }
-		  });
+		  }); 
 		  
 	  });
 	
