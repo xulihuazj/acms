@@ -74,6 +74,7 @@ public class DeviceManageAction extends BaseAction{
 		modelMap.put("deviceList", deviceList);
 		TUser currUser = (TUser) session.getAttribute("currUser");
 		modelMap.put("userName", currUser.getUserName());
+		System.out.println(System.currentTimeMillis());
 		return "/page-device-time.jsp";
 	}
 	
@@ -86,6 +87,72 @@ public class DeviceManageAction extends BaseAction{
 			message.put("message", SUCCESS);
 		}catch(Exception e){
 			message.put("message", "设置门禁时间失败");
+			logger.error(e.getMessage());
+		}
+		return message;
+	}
+	
+	/**
+	 * 断开设备连接
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月21日下午12:57:17
+	 * @param deviceId
+	 * @return
+	 */
+	@RequestMapping("/device/breakConnect.do")
+	@ResponseBody
+	public Object breakConnect(Long deviceId) {
+		Map<String, Object> message = new HashMap<>();
+		try{
+			deviceService.breakConnect(deviceId);
+			message.put("message", SUCCESS);
+		}catch(Exception e){
+			message.put("message", "断开设备连接失败");
+			logger.error(e.getMessage());
+		}
+		return message;
+	}
+	
+	/**
+	 * 建立连接
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月21日下午12:56:41
+	 * @param deviceId
+	 * @return
+	 */
+	@RequestMapping("/device/estConnect.do")
+	@ResponseBody
+	public Object estConnect(Long deviceId) {
+		Map<String, Object> message = new HashMap<>();
+		try{
+			deviceService.breakConnect(deviceId);
+			message.put("message", SUCCESS);
+		}catch(Exception e){
+			message.put("message", "断开设备连接失败");
+			logger.error(e.getMessage());
+		}
+		return message;
+	}
+	
+	/**
+	 * 停用设备
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月21日下午12:57:05
+	 * @param deviceId
+	 * @return
+	 */
+	@RequestMapping("/device/stopDevice.do")
+	@ResponseBody
+	public Object ecstConnect(Long deviceId) {
+		Map<String, Object> message = new HashMap<>();
+		try{
+			deviceService.breakConnect(deviceId);
+			message.put("message", SUCCESS);
+		}catch(Exception e){
+			message.put("message", "断开设备连接失败");
 			logger.error(e.getMessage());
 		}
 		return message;

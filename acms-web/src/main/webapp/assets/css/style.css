@@ -9715,99 +9715,13 @@ input[type="text"]:hover,input[type="password"]:hover{
     background: url("../images/gif/high.gif") no-repeat center center;
     left: 310px;
 }
-/*常见问题*/
-/*首页*/
-.home-page .banner{
-    height: 500px;
-    background: url("../images/banner-bg.png") no-repeat center top;
-    color: #fff;
-    text-align: center;
-}
-.home-page .banner h1{
-    padding: 190px 0 20px 0;
-    font-size: 52px;
-    letter-spacing: 5px;
-    /*font-weight: normal;*/
-    font-weight: lighter;
-}
-.home-page .banner h4{
-    /*font-weight: normal;*/
-    font-weight: lighter;
-    letter-spacing: 2px;
-}
-.home-page ul{
-    border-right: 1px solid #e5e5e5;
-    border-right: 1px solid #e5e5e5;
-    overflow: hidden;
-    margin-bottom: 80px;
-}
-.home-page ul li{
-    float: left;
-    width: 33.33%;
-}
-.home-page ul li a{
-    display: block;
-    box-sizing: border-box;
-    height: 260px;
-    padding-top: 167px;
-    text-align: center;
-    font-size: 20px;
-    color: #333;
-    border-left: 1px solid #e5e5e5;
-    border-bottom: 1px solid #e5e5e5;
-    position: relative;
-}
-.home-page ul li a:before{
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: 48px;
-    left: 106px;
-    width: 108px;
-    height: 108px;
-
-}
-.home-page ul li a:hover{
-    background: #f1f1f1;
-}
-.home-page ul li .home-forget:before{
-     background: url("../images/home_forget.png") no-repeat center 1px;
- }
-.home-page ul li .home-unlock:before{
-    background: url("../images/home_unlock.png") no-repeat center;
-}
-.home-page ul li .home-edit:before{
-    background: url("../images/home_edit.png") no-repeat center;
-}
-.home-page ul li .home-check:before{
-    background: url("../images/home_check.png") no-repeat center;
-}
-.home-page ul li .home-back_recovery:before{
-    background: url("../images/home_backrecovery.png") no-repeat center;
-}
-.home-page ul li .home-question:before{
-     background: url("../images/home_question.png") no-repeat 2px center;
-}
-
-.home-page ul li .home-forget:hover:before{
-    background: url("../images/gif/home_forget.gif") no-repeat center 3px;
-}
-.home-page ul li .home-unlock:hover:before{
-    background: url("../images/gif/home_unlock.gif") no-repeat center;
-}
-.home-page ul li .home-edit:hover:before{
-    background: url("../images/gif/home_edit.gif") no-repeat center;
-}
-.home-page ul li .home-check:hover:before{
-    background: url("../images/gif/home_check.gif") no-repeat center;
-}
-.home-page ul li .home-back_recovery:hover:before{
-    background: url("../images/gif/home_backrecovery.gif") no-repeat center;
-}
-.home-page ul li .home-question:hover:before{
-    background: url("../images/gif/home_question.gif") no-repeat 1px center;
-}
 /*-----------------------------------------------------------------------------------------------------*/
+
+.time_group_td{
+	text-align: center;
+	padding-top: 18px;
+	font-size:14px;
+}
 
 /*日志表单查询条件*/
 .crumbs {

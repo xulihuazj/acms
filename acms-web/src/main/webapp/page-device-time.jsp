@@ -96,16 +96,19 @@
 										
 										<c:forEach items="${deviceList}" var="deviceInfo">
 											<tr>
-												<td style="text-align: center;padding-top: 18px;font-size:14px;">${deviceInfo.id}</td>
-												<td style="text-align: center;padding-top: 18px;font-size:14px;">${deviceInfo.activateTime}</td>
-												<td style="text-align: center;padding-top: 18px;font-size:14px;">${deviceInfo.abateTime}</td>
-												<td style="text-align: center;padding-top: 18px;font-size:14px;">
+												<td class="time_group_td" >${deviceInfo.id}</td>
+												<td class="time_group_td" id="abateTime">${deviceInfo.activateTime}</td>
+												<td class="time_group_td" >
+													<c:if test="${deviceInfo.abateTime != null}">${deviceInfo.abateTime}</c:if>
+													<c:if test="${deviceInfo.abateTime == null}">无</c:if>
+												</td>
+												<td class="time_group_td" >
 													<c:if test="${deviceInfo.status == 1}">设备正常</c:if>
 													<c:if test="${deviceInfo.status == 2}">设备已停用</c:if>
 												</td>
 												<td> <a class="btn btn-info" style="height: 35px" > <i onclick="editGuardTime(this)">编辑门禁时间</i>
 												</a> </td>
-												<td style="text-align: center;padding-top: 18px;font-size:14px;">
+												<td class="time_group_td">
 													<c:if test="${deviceInfo.abateTime > 0}">${deviceInfo.abateTime}-->${deviceInfo.abateTime }</c:if>
 													<c:if test="${deviceInfo.abateTime == null}">无</c:if>
 												</td>
@@ -177,6 +180,8 @@
 			</div>
 		</div>
 	</div>
+	
+	
 
 	<!-- Vendor JS-->
 	<script src="${path}/assets/vendor/js/jquery.min.js"></script>
@@ -204,13 +209,29 @@
 	<script src="${path}/assets/js/common/page-device.js"></script>
 	<script src="${path}/assets/js/common.js"></script>
 	<!-- end: JavaScript-->
+	<script type="text/javascript">
+		$(function(){
+			//$("#editGuard").modal("show");
+			/* alert($("#abateTime").text());
+			var timestap = $("#abateTime").text();
+			var now = new Date(1230999938);
+			$("#abateTime").text(getDate(1492738436049)); */
+		});
+
+	</script>
 </body>
 
 <script type="text/javascript">
 	$(function(){
 		//$("#editGuard").modal("show");
-		
+		var timestap = $("#abateTime").text();
+		var date = getDate(timestap);
+		 $("#abateTime").text(date)
 	});
+	function getDate(tm){
+		var tt=new Date(parseInt(tm) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ")
+		return tt;
+		}
 	  $(".form_datetime").datetimepicker({
 	        format: "yyyy MM dd - hh:ii"
 	    });

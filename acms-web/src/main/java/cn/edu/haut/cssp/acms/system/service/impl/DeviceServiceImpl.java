@@ -38,5 +38,12 @@ public class DeviceServiceImpl extends BaseServiceImpl implements IDeviceService
 		int i = super.getBaseDao().getSqlSession().update("DeviceInfoMapper.updateTimeGroup", map);
 		return i == 1 ? true : false;
 	}
-
+	
+	@Override
+	public boolean breakConnect(Long id) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("id", id);
+		int i = super.getBaseDao().getSqlSession().update("DeviceInfoMapper.breakConnect", map);
+		return i == 1 ? true : false;
+	}
 }

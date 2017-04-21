@@ -66,7 +66,16 @@ public interface IDeviceService {
 	 */
 	public boolean timeGroupInstall(Long timeGroupStart,Long timeGroupEnd, Long id) throws Exception;
 	
-
+	/**
+	 * 断开设备连接
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月21日上午10:29:12
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public boolean breakConnect(Long id) throws Exception;
 
 
 

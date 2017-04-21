@@ -102,10 +102,9 @@
 												<td>${deviceInfo.deviceBrand}</td>
 												<td>${deviceInfo.deviceModel}</td>
 												<td>
-													<span class="label label-success"><a onclick="" id="" sytle="color: white">断开连接</a></span> <span
-														class="label label-danger"><a onclick="" id="" sytle="color: white">建立连接</a></span> <span
-														class="label label-warning"><a onclick="" id="" sytle="color: white">停用设备</a></span>
-													<!-- 	<span class="label label-default"><a onclick="" id="" sytle="color: white"></a></span> -->
+													<span class="label label-danger"><a onclick="breakConEvent(this)" data-deviceid="${deviceInfo.id}" sytle="color: white">断开连接</a></span> <span
+														class="label label-success"><a onclick="estConnectEvnent(this)" data-deviceid="${deviceInfo.id}" sytle="color: white">建立连接</a></span> <span
+														class="label label-warning"><a onclick="stopDeviceEvent(this)" data-deviceid="${deviceInfo.id}" sytle="color: white">停用设备</a></span>
 												</td>
 											</tr>
 										</c:forEach>
@@ -120,6 +119,103 @@
 			<!-- Footer -->
 			<%@ include file="/page-footer.jsp"%>
 			<!-- End Footer -->
+		</div>
+	</div>
+
+	<!-- 断开连接 -->
+<div id="breakConnectModal" class="modal fade " data-backdrop="static" tabindex="-1" role="dialog">
+		<div class="modal-dialog panel panel-default" role="document">
+			<div class="modal-content">
+				<div class="modal-body ">
+					<div class="panel">
+						<div class="panel-heading" style="background-color: #ec1e13;">
+							<h2 class="panel-title" style="color: #fff">危险!</h2>
+						</div>
+						<div class="panel-body bk-noradius">
+							<div class="modal-wrapper">
+								<div class="modal-icon">
+									<i class="fa fa-times-circle" style="color: #ec1e13"></i>
+								</div>
+								<div class="modal-text" style="font-size: 20px;">
+									<p>确定断开此连接设备，请确认！</p>
+								</div>
+							</div>
+						</div>
+						<div class="panel-footer">
+							<div class="row">
+								<div class="col-md-12 text-right">
+									<button class="btn btn-primary modal-confirm" id="confirmBreak">确定</button>
+									<button class="btn btn-default modal-dismiss" id="cancelBreak">取消</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 建立连接 -->
+	<div id="estConnectModal" class="modal fade " data-backdrop="static" tabindex="-1" role="dialog">
+		<div class="modal-dialog panel panel-default" role="document">
+			<div class="modal-content">
+				<div class="modal-body ">
+					<div class="panel-heading" style="background-color: #39bd2f;">
+						<h1 class="panel-title">消息!</h1>
+					</div>
+					<div class="panel-body bk-noradius">
+						<div class="modal-wrapper">
+								<div class="modal-icon">
+									<i class="fa fa-question-circle" style="color: #39bd2f"></i>
+								</div>
+							<div class="modal-text">
+								<p style="font-size: 18px;">确定该管理员?</p>
+							</div>
+						</div>
+					</div>
+					<div class="">
+						<div class="row">
+							<div class="col-md-12 text-right">
+								<button class="btn btn-info modal-confirm" id="confirmEst">确认</button>
+								<button class="btn btn-default modal-dismiss" id="cancelEst">取消</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+		<!-- 禁用管理员 -->
+	<div id="stopDeviceModal" class="modal fade " data-backdrop="static" tabindex="-1" role="dialog">
+		<div class="modal-dialog panel panel-default" role="document">
+			<div class="modal-content">
+				<div class="modal-body ">
+					<div class="panel">
+						<div class="panel-heading" style="background-color: #ed9c28;">
+							<h2 class="panel-title" style="color: #fff">警告!</h2>
+						</div>
+						<div class="panel-body bk-noradius">
+							<div class="modal-wrapper">
+								<div class="modal-icon">
+									<i class="fa fa-question-circle" style="color: #ed9c28"></i>
+								</div>
+								<div class="modal-text" style="font-size: 20px;">
+									<p>是否停用此设备，请确认！</p>
+								</div>
+							</div>
+						</div>
+						<div class="panel-footer">
+							<div class="row">
+								<div class="col-md-12 text-right">
+									<button class="btn btn-primary modal-confirm" id="confirmStop">确定</button>
+									<button class="btn btn-default modal-dismiss" id="cancelStop">取消</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<!-- Vendor JS-->
@@ -144,5 +240,130 @@
 	<script src="${path}/assets/js/common/page-device.js"></script>
 	<!-- end: JavaScript-->
 </body>
+<script type="text/javascript">
+	$(function(){
+		
+	});
+	function breakConEvent(event){
+		$(event).attr("id","breakCon");//给元素加上id用户处理
+		$("#breakConnectModal").modal("show");
+	}
+	$("#confirmBreak").click(function(){
+		var deviceId = $("#breakCon").data("deviceid");
+		$.ajax({
+			url: "${path}/device/breakConnect.do", 
+			type: 'POST',
+			data: "deviceId=" + deviceId,
+			async: false,//设置为同步请求
+			dataType: "json",
+			success: function(data){
+			    	if(data.message == 'success'){
+			    		$("#breakConnectModal").modal("hide");
+			    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
+			    			document.forms[0].action="${path}/device/breakConnect.do";
+			    			document.forms[0].submit();
+						},1000);
+			    		new PNotify({
+							title: '操作成功',
+							text: '断开此设备连接成功!',
+							type: 'success'
+						});
+			    		
+			    	}else{
+			    		$("#breakConnectModal").modal("hide");
+			    		new PNotify({
+							title: '操作失败',
+							text: '对不起，系统异常，无法完成此操作，请联系管理员！',
+							type: 'error'
+						});
+			    	}
+				}
+			});
+	});
+	function estConnectEvnent(event){
+		$(event).attr("id","estConnect");//给元素加上id用户处理
+		$("#estConnectModal").modal("show");
+	}
+	$("#confirmEst").click(function(){
+		var deviceId = $("#estConnect").data("deviceid");
+		$.ajax({
+			url: "${path}/device/ecstConnect.do", 
+			type: 'POST',
+			data: "deviceId=" + deviceId,
+			async: false,//设置为同步请求
+			dataType: "json",
+			success: function(data){
+			    	if(data.message == 'success'){
+			    		$("#estConnectModal").modal("hide");
+			    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
+			    			document.forms[0].action="${path}/device/ecstConnect.do";
+			    			document.forms[0].submit();
+						},1000);
+			    		new PNotify({
+							title: '操作成功',
+							text: '建立此设备连接成功!',
+							type: 'success'
+						});
+			    		
+			    	}else{
+			    		$("#estConnectModal").modal("hide");
+			    		new PNotify({
+							title: '操作失败',
+							text: '对不起，系统异常，无法完成此操作，请联系管理员！',
+							type: 'error'
+						});
+			    	}
+				}
+			});
+	});
+	
+	function stopDeviceEvent(event){
+		$(event).attr("id","stopDevice");//给元素加上id用户处理
+		$("#stopDeviceModal").modal("show");
+	}
+	
+	/* 确认停用设备 */
+	$("#confirmStop").click(function(){
+		var deviceid = $("#stopDevice").data("deviceid");
+		$.ajax({
+			url: "${path}/device/stopDevice.do", 
+			type: 'POST',
+			data: "deviceId=" + deviceid,
+			async: false,//设置为同步请求
+			dataType: "json",
+			success: function(data){
+			    	if(data.message == 'success'){
+			    		$("#stopDeviceModal").modal("hide");
+			    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
+			    			document.forms[0].action="${path}/device/stopDevice.do";
+			    			document.forms[0].submit();
+						},1000);
+			    		new PNotify({
+							title: '操作成功',
+							text: '停用此设备成功!',
+							type: 'success'
+						});
+			    	}else{
+			    		$("#stopDeviceModal").modal("hide");
+			    		new PNotify({
+							title: '操作失败',
+							text: '对不起，系统异常，无法完成此操作，请联系管理员！',
+							type: 'error'
+						});
+			    	}
+				}
+			});
+	});
+	
+	$("#cancelBreak").click(function(){
+		$("#breakConnectModal").modal("hide");
+	});
+	$("#cancelEst").click(function(){
+		$("#estConnectModal").modal("hide");
+	});
+	$("#cancelStop").click(function(){
+		$("#stopDeviceModal").modal("hide");
+	});
+</script>
 
 </html>
