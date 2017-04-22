@@ -64,7 +64,7 @@
 							<div class="toggle">
 								<label>门禁系统发展史</label>
 								<div class="toggle-content">
-									<p>&nbsp;&nbsp;&nbsp; &nbsp;
+									<p style="color: #333;">&nbsp;&nbsp;&nbsp; &nbsp;
 										&nbsp;门禁系统顾名思义就是对出入口通道进行管制的系统，它是在传统的门锁基础上发展而来的。传统的机械门锁仅仅是单纯的机械装置，无论结构设计多么合理，材料多么坚固，
 										人们总能通过各种手段把它打开。在出入人员很多的通道（像办公大楼、酒店客房）钥匙的管理很麻烦，钥匙丢失或人员更换都要把锁和钥匙一起更换。
 										为了解决这些问题，就出现了电子磁卡锁，电子密码锁，这两种锁的出现从一定程度上提高了人们对出入口通道的管理程度，使通道管理进入了电子时代，
@@ -76,37 +76,45 @@
 							<div class="toggle">
 								<label>门禁管理系统是什么？</label>
 								<div class="toggle-content">
-									<p>出入口门禁安全管理系统是新型现代化安全管理系统，它集微机自动识别技术和现代安全管理措施为一体， 它涉及电子，机械，光学，计算机技术，通讯技术，生物技术等诸多新技术。
+									<p style="color: #333;">出入口门禁安全管理系统是新型现代化安全管理系统，它集微机自动识别技术和现代安全管理措施为一体， 它涉及电子，机械，光学，计算机技术，通讯技术，生物技术等诸多新技术。
 										它是解决重要部门出入口实现安全防范管理的有效措施。适用各种机要部门， 如银行、宾馆、车场管理、机房、军械库、机要室、办公间，智能化小区，工厂等。</p>
 									</p>
 								</div>
 							</div>
 
 							<div class="toggle">
-								<label>Curabitur eget leo at imperdiet vague iaculis vitaes?</label>
+								<label>门禁管理系统有哪些功能?</label>
 								<div class="toggle-content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius.
+									<p style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius.
 										In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat</p>
 								</div>
 							</div>
 							<div class="toggle">
-								<label>Curabitur eget leo at velit imperdiet vague iaculis vitaes?</label>
+								<label>修改密码成功后原密码是否还可以使用?</label>
 								<div class="toggle-content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius.</p>
+									<p style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius.</p>
 								</div>
 							</div>
 							<div class="toggle">
-								<label>Curabitur eget leo at velit imperdiet vague iaculis vitaes?</label>
+								<label>数据分析管理可以分析哪些数据?</label>
 								<div class="toggle-content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
+									<p style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
 										porta.</p>
 									</p>
 								</div>
 							</div>
 							<div class="toggle">
-								<label>Curabitur eget leo at velit imperdiet vague iaculis vitaes?</label>
+								<label>系统用户管理中角色管理有哪几种角色?</label>
 								<div class="toggle-content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
+									<p style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
+										porta.</p>
+									</p>
+								</div>
+							</div>
+								<div class="toggle">
+								<label>角色被删除后是否可以恢复?</label>
+								<div class="toggle-content">
+									<p style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
 										porta.</p>
 									</p>
 								</div>

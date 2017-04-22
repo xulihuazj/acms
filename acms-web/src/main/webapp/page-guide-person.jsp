@@ -63,7 +63,7 @@
 					<div class="col-md-12">
 						<div class="toggle" data-plugin-toggle>
 							<div class="toggle">
-								<label>Curabitur eget leo at velit imperdiet vague iaculis vitaes?</label>
+								<label>人员管理有哪几种人员？</label>
 								<div class="toggle-content">
 									<p>
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta.
@@ -72,7 +72,7 @@
 								</div>
 							</div>
 							<div class="toggle">
-								<label>Curabitur eget leo at imperdiet vague iaculis vitaes?</label>
+								<label>已被删除的人员是否可以重新添加?</label>
 								<div class="toggle-content">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius.
 										In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat
@@ -80,27 +80,9 @@
 								</div>
 							</div>
 							<div class="toggle">
-								<label>Curabitur eget leo at velit imperdiet vague iaculis vitaes?</label>
+								<label>编辑人员时哪些信息是必须填写的？</label>
 								<div class="toggle-content">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius.
-									</p>
-								</div>
-							</div>
-								<div class="toggle">
-								<label>Curabitur eget leo at velit imperdiet vague iaculis vitaes?</label>
-								<div class="toggle-content">
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta.
-									</p>
-									</p>
-								</div>
-							</div>
-								<div class="toggle">
-								<label>Curabitur eget leo at velit imperdiet vague iaculis vitaes?</label>
-								<div class="toggle-content">
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta.
-									</p>
 									</p>
 								</div>
 							</div>

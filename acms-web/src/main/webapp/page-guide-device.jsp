@@ -62,7 +62,7 @@
 					<div class="col-md-12">
 						<div class="toggle" data-plugin-toggle>
 							<div class="toggle">
-								<label>Curabitur eget leo at velit imperdiet vague iaculis vitaes?</label>
+								<label>设备管理的作用?</label>
 								<div class="toggle-content">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
 										porta.</p>
@@ -70,20 +70,20 @@
 								</div>
 							</div>
 							<div class="toggle">
-								<label>Curabitur eget leo at imperdiet vague iaculis vitaes?</label>
+								<label>设备管理有哪些策略？</label>
 								<div class="toggle-content">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius.
 										In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat</p>
 								</div>
 							</div>
 							<div class="toggle">
-								<label>Curabitur eget leo at velit imperdiet vague iaculis vitaes?</label>
+								<label>时间组管理的作用，及如何操作?</label>
 								<div class="toggle-content">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius.</p>
 								</div>
 							</div>
 							<div class="toggle">
-								<label>Curabitur eget leo at velit imperdiet vague iaculis vitaes?</label>
+								<label>已停用的设备是否可以设置时间组?</label>
 								<div class="toggle-content">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
 										porta.</p>
@@ -91,7 +91,23 @@
 								</div>
 							</div>
 							<div class="toggle">
-								<label>Curabitur eget leo at velit imperdiet vague iaculis vitaes?</label>
+								<label>设备连接设置如何使用?</label>
+								<div class="toggle-content">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
+										porta.</p>
+									</p>
+								</div>
+							</div>
+								<div class="toggle">
+								<label>设备连接设置如何使用?</label>
+								<div class="toggle-content">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
+										porta.</p>
+									</p>
+								</div>
+							</div>
+								<div class="toggle">
+								<label>停用设备是否可以建立、断开连接?</label>
 								<div class="toggle-content">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
 										porta.</p>
