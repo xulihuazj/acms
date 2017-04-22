@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.edu.haut.cssp.acms.core.entity.TDeviceInfo;
@@ -100,7 +101,7 @@ public class DeviceManageAction extends BaseAction{
 	 * @param deviceId
 	 * @return
 	 */
-	@RequestMapping("/device/breakConnect.do")
+	@RequestMapping(value = "/device/breakConnect.do",method = RequestMethod.POST)
 	@ResponseBody
 	public Object breakConnect(Long deviceId) {
 		Map<String, Object> message = new HashMap<>();

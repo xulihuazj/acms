@@ -71,9 +71,9 @@
 	</filter-mapping>
 
 	<!-- 登录超时时间 单位minute -->
-	<!-- <session-config>
+	<session-config>
 		<session-timeout>100</session-timeout>
-	</session-config> -->
+	</session-config>
 
 	<!--发生错误需要跳转的404页面 -->
 	<error-page>

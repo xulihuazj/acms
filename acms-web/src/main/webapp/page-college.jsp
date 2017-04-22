@@ -80,6 +80,7 @@
 										<tr>
 											<th>序号.</th>
 											<th>学院名称</th>
+											<th>学院代号</th>
 											<th>操作</th>
 										</tr>
 									</thead>
@@ -87,6 +88,7 @@
 										<tr class="gradeX">
 											<td>1</td>
 											<td>电气工程学院</td>
+											<td></td>
 											<td>
 												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
 													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
@@ -137,6 +139,7 @@
 										<tr class="gradeA">
 											<td>6</td>
 											<td>材料科学与工程学院</td>
+											<td>10463</td>
 											<td>
 												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
 													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span

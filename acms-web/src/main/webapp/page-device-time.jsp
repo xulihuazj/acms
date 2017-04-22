@@ -97,8 +97,8 @@
 										<c:forEach items="${deviceList}" var="deviceInfo">
 											<tr>
 												<td class="time_group_td" >${deviceInfo.id}</td>
-												<td class="time_group_td" id="abateTime">${deviceInfo.activateTime}</td>
-												<td class="time_group_td" >
+												<td class="time_group_td" id="activateTime">${deviceInfo.activateTime}</td>
+												<td class="time_group_td" id="abateTime">
 													<c:if test="${deviceInfo.abateTime != null}">${deviceInfo.abateTime}</c:if>
 													<c:if test="${deviceInfo.abateTime == null}">无</c:if>
 												</td>
@@ -224,12 +224,13 @@
 <script type="text/javascript">
 	$(function(){
 		//$("#editGuard").modal("show");
-		var timestap = $("#abateTime").text();
-		var date = getDate(timestap);
-		 $("#abateTime").text(date)
+		var timestap = $("#activateTime").text();
+		var timestap2 = $("#abateTime").text();
+		 $("#activateTime").text(getDate(timestap));
+		 $("#abateTime").text(getDate(timestap2));
 	});
 	function getDate(tm){
-		var tt=new Date(parseInt(tm) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ")
+		var tt=new Date(parseInt(tm)).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ")
 		return tt;
 		}
 	  $(".form_datetime").datetimepicker({

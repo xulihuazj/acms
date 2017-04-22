@@ -18,6 +18,7 @@
 <link href="${path}/assets/plugins/select2/select2.css" rel="stylesheet" />
 <link href="${path}/assets/plugins/jquery-datatables-bs3/css/datatables.css" rel="stylesheet" />
 <link href="${path}/assets/plugins/magnific-popup/css/magnific-popup.css" rel="stylesheet" />
+<link href="${path}/assets/plugins/pnotify/css/pnotify.custom.css" rel="stylesheet" />
 <!-- Theme CSS -->
 <link href="${path}/assets/css/jquery.mmenu.css" rel="stylesheet" />
 <!-- Page CSS -->
@@ -169,7 +170,7 @@
 									<i class="fa fa-question-circle" style="color: #39bd2f"></i>
 								</div>
 							<div class="modal-text">
-								<p style="font-size: 18px;">确定该管理员?</p>
+								<p style="font-size: 18px;">确定此设备建立连接，请确认！</p>
 							</div>
 						</div>
 					</div>
@@ -186,7 +187,7 @@
 		</div>
 	</div>
 	
-		<!-- 禁用管理员 -->
+		<!-- 停用此设备 -->
 	<div id="stopDeviceModal" class="modal fade " data-backdrop="static" tabindex="-1" role="dialog">
 		<div class="modal-dialog panel panel-default" role="document">
 			<div class="modal-content">
@@ -232,6 +233,7 @@
 	<script src="${path}/assets/plugins/jquery-datatables-bs3/js/datatables.js"></script>
 	<script src="${path}/assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
 		<script src="${path}/assets/plugins/magnific-popup/js/magnific-popup.js"></script>
+		<script src="${path }/assets/plugins/pnotify/js/pnotify.custom.js"></script>
 	<!-- Theme JS -->
 	<script src="${path}/assets/js/jquery.mmenu.min.js"></script>
 	<script src="${path}/assets/js/core.min.js"></script>
@@ -268,7 +270,6 @@
 							text: '断开此设备连接成功!',
 							type: 'success'
 						});
-			    		
 			    	}else{
 			    		$("#breakConnectModal").modal("hide");
 			    		new PNotify({
