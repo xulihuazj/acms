@@ -78,213 +78,171 @@
 								<table class="table table-bordered table-striped" id="datatable-default">
 									<thead>
 										<tr>
-											<th>序号.</th>
-											<th>学院名称</th>
-											<th>学院代号</th>
-											<th>操作</th>
+											<th class="tablestyle">序号.</th>
+											<th class="tablestyle">学院名称</th>
+											<th class="tablestyle">学院代号</th>
+											<th class="tablestyle">操作</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr class="gradeX">
+										<tr class="tablestyle">
 											<td>1</td>
 											<td>电气工程学院</td>
-											<td></td>
+											<td>10001</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span>
 											</td>
 										</tr>
-										<tr class="gradeC">
+										<tr class="tablestyle">
 											<td>2</td>
 											<td>粮油食品学院</td>
+											<td>10002</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span> 
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>3</td>
 											<td>生物工程学院</td>
+											<td>10003</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span> 
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>4</td>
 											<td>土木建筑学院</td>
+											<td>10004</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span>
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>5</td>
 											<td>化学化工学院</td>
+											<td>10005</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span> 
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>6</td>
 											<td>材料科学与工程学院</td>
-											<td>10463</td>
+											<td>10006</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span>
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>7</td>
 											<td>管 理 学 院</td>
+											<td>10007</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span>
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>8</td>
 											<td>理 学 院</td>
+											<td>10008</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span>
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>9</td>
 											<td>法 学 院</td>
+											<td>10009</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span>
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>10</td>
 											<td>设计艺术学院</td>
+											<td>10010</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span> 
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>11</td>
 											<td>中英国际学院</td>
+											<td>10011</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span> 
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>12</td>
 											<td>机电工程学院</td>
+											<td>10012</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span>
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>13</td>
 											<td>体育学院</td>
+											<td>10013</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span>
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>14</td>
 											<td>信息科学与工程学院</td>
+											<td>10014</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span>
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>15</td>
 											<td>经济贸易学院</td>
+											<td>10015</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span> 
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>16</td>
 											<td>外 语 学 院</td>
+											<td>10016</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span>
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>17</td>
 											<td>新闻与传播学院</td>
+											<td>10017</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span>
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>18</td>
 											<td>国际教育学院</td>
+											<td>10018</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span> 
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>19</td>
 											<td>继续教育学院</td>
+											<td>10019</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span>
 											</td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 											<td>20</td>
 											<td>马克思主义学院</td>
+											<td>10020</td>
 											<td>
-												<span class="label label-success"><a onclick="" id="startover" sytle="color: white">启用</a></span> <span
-													class="label label-danger"><a onclick="" id="deleteRole" sytle="color: white">删除</a></span> <span
-													class="label label-warning"><a onclick="" id="stopRole" sytle="color: white">禁用</a></span> <span
-													class="label label-default"><a onclick="" id="editRole" sytle="color: white">编辑</a></span>
+												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span>
 											</td>
 										</tr>
 									</tbody>

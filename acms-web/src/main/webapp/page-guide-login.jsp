@@ -8,7 +8,7 @@
 <!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <!-- Vendor CSS-->
-<link href="${path }/assets/vendor/bootstrap/css/bootstrap.min.css" rel	"stylesheet" />
+<link href="${path }/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/css/pace.preloader.css" rel="stylesheet" />
@@ -28,14 +28,13 @@
 </head>
 <body>
 	<!-- Start: Header -->
-	<%@ include file="/page-header.jsp" %>
+	<%@ include file="/page-header.jsp"%>
 	<!-- End: Header -->
-
 	<!-- Start: Content -->
 	<div class="container-fluid content">
 		<div class="row">
 			<!-- Sidebar -->
-			<%@ include file="/page-sidebar.jsp" %>
+			<%@ include file="/page-sidebar.jsp"%>
 			<!-- End Sidebar -->
 			<!-- Main Page -->
 			<div class="main ">
@@ -65,9 +64,8 @@
 							<div class="toggle">
 								<label>登录系统时需要注意些什么?</label>
 								<div class="toggle-content">
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta.
-									</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
+										porta.</p>
 									</p>
 								</div>
 							</div>
@@ -75,32 +73,28 @@
 								<label>登录密码忘记时，我该如何重新获取密码?</label>
 								<div class="toggle-content">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius.
-										In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat
-										</p>
+										In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat</p>
 								</div>
 							</div>
 							<div class="toggle">
 								<label>登录系统时有时发生异常时，我该如何处理?</label>
 								<div class="toggle-content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius.
-									</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius.</p>
 								</div>
 							</div>
-								<div class="toggle">
+							<div class="toggle">
 								<label>我想记住密码，下次自动登录如何处理?</label>
 								<div class="toggle-content">
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta.
-									</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
+										porta.</p>
 									</p>
 								</div>
 							</div>
-								<div class="toggle">
+							<div class="toggle">
 								<label>Curabitur eget leo at velit imperdiet vague iaculis vitaes?</label>
 								<div class="toggle-content">
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta.
-									</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
+										porta.</p>
 									</p>
 								</div>
 							</div>
@@ -109,11 +103,9 @@
 				</div>
 			</div>
 			<!-- End Main Page -->
-
 			<!-- Footer -->
-			<%@ include file="/page-footer.jsp" %>
+			<%@ include file="/page-footer.jsp"%>
 			<!-- End Footer -->
-
 		</div>
 	</div>
 	<!-- Vendor JS-->

@@ -13,7 +13,6 @@
 <link href="${path }/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/css/pace.preloader.css" rel="stylesheet" />
-
 <!-- Plugins CSS-->
 <link href="${path }/assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/scrollbar/css/mCustomScrollbar.css" rel="stylesheet" />
@@ -90,9 +89,8 @@
 							</div>
 							<div class="panel-body panel-body bk-bg-white bk-padding-top-30 bk-padding-bottom-20">
 								<!-- 请求查询 -->
-								<form action="${base}/log/queryLogList.do" method="post" class="form-inline form-horizontal form-bordered">
+								<form action="" method="post" class="form-inline form-horizontal form-bordered">
 									<div class="form-group">
-										<!-- <label class="lable_info" for="keyWord" style="font-size: 15px;">关键字：</label> -->
 										<span class="lable_info" for="keyWord" style="font-size: 15px;">关键字：</span>
 										<input type="" id="keyWord" name="keyWord" class="form-control" placeholder="请输入关键字" style="width: 150px;" />
 									</div>
@@ -127,7 +125,7 @@
 								</form>
 							</div>
 							<div class="panel-body">
-								<table class="table table-bordered table-striped" id="datatable-default">
+								<table class="table table-bordered table-striped" id="">
 									<thead>
 										<tr>
 											<th style="width: 5%; min-width: 50px;">
@@ -199,6 +197,34 @@
 											<td class="center hidden-phone">admin</td>
 											<td class="center hidden-phone">管理员[admin]登录</td>
 										</tr>
+										<tr class="gradeA">
+											<td>8</td>
+											<td>运行日志</td>
+											<td>2017-04-15</td>
+											<td class="center hidden-phone">admin</td>
+											<td class="center hidden-phone">管理员[admin]登录</td>
+										</tr>
+										<tr class="gradeA">
+											<td>9</td>
+											<td>运行日志</td>
+											<td>2017-04-15</td>
+											<td class="center hidden-phone">admin</td>
+											<td class="center hidden-phone">管理员[admin]登录</td>
+										</tr>
+										<tr class="gradeA">
+											<td>10</td>
+											<td>运行日志</td>
+											<td>2017-04-15</td>
+											<td class="center hidden-phone">admin</td>
+											<td class="center hidden-phone">管理员[admin]登录</td>
+										</tr>
+										<tr class="gradeA">
+											<td>11</td>
+											<td>运行日志</td>
+											<td>2017-04-15</td>
+											<td class="center hidden-phone">admin</td>
+											<td class="center hidden-phone">管理员[admin]登录</td>
+										</tr>
 									</tbody>
 								</table>
 							</div>
@@ -216,7 +242,6 @@
 	<script src="${path }/assets/vendor/js/jquery-2.1.1.min.js"></script>
 	<script src="${path }/assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
 	<script src="${path }/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-
 	<!-- Plugins JS-->
 	<script src="${path }/assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
 	<script src="${path }/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -227,55 +252,30 @@
 	<script src="${path }/assets/plugins/chart-master/js/Chart.js"></script>
 	<script src="${path }/assets/plugins/jquery/js/jquery.zlight.menu.1.0.min.js"></script>
 	<script src="${path}/assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
-
 	<script src="${path }/assets/plugins/touchpunch/js/jquery.ui.touch-punch.min.js"></script>
 	<script src="${path }/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 	<script src="${path }/assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
 	<script src="${path }/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
 	<script src="${path }/assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.js"></script>
 	<script src="${path }/assets/plugins/maskedinput/js/jquery.maskedinput.js"></script>
-
 	<!-- Theme JS -->
 	<script src="${path }/assets/js/jquery.mmenu.min.js"></script>
 	<script src="${path }/assets/js/core.min.js"></script>
-
 	<!-- Pages JS -->
 	<script src="${path }/assets/js/pages/form-elements.js"></script>
 	<script src="${path }/assets/js/pages/table-advanced.js"></script>
-	<style type="text/css">
-.subitem {
-	width: 300px;
-	background: #fff;
-	border: solid 1px #3299fd;
-	border-left: none;
-	font-family: "微软雅黑";
-	position: absolute;
-	left: 150px;
-	_left: 228px;
-	top: -100px;
-	z-index: 99999;
-	min-height: 60px;
-	height: auto !important;
-	height: 50px;
-	padding: 5px 10px 15px 10px;
-	position: absolute;
-	display: block;
-}
-</style>
 </body>
 <script type="text/javascript">
 	$(function() {
 		/* 
 		
-		
 		TODO
-		
 		
 		 */
 	});
 	$("#querySyslogList").click(
 			function() {
-				var oldPwd = $("#oldPwd").val();
+		/* 		var oldPwd = $("#oldPwd").val();
 				var newPwd = $('#newPwd').val();
 				var comfirePwd = $('#comfirePwd').val();
 				$.ajax({
@@ -314,7 +314,7 @@
 							type : 'error'
 						});
 					}
-				});
+				}); */
 
 			});
 </script>
