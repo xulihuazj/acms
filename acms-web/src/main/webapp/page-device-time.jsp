@@ -55,13 +55,13 @@
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li>
-								<a href="homepage.jsp"><i class="icon fa fa-home"></i> 我的管理中心</a>
+								<a href="${path }/index.do"><i class="icon fa fa-home"></i> 我的管理中心</a>
 							</li>
 							<li>
 								<a><i class="fa fa-list"></i>设备管理设置</a>
 							</li>
 							<li class="active">
-								<a href="${path}/"><i class="fa fa-tachometer"></i>时间组设置</a>
+								<a href="${path }/device/timeGroup.do"><i class="fa fa-tachometer"></i>时间组设置</a>
 							</li>
 						</ol>
 					</div>
@@ -94,7 +94,7 @@
 										</thead>
 										<tbody>
 										
-										<c:forEach items="${deviceList}" var="deviceInfo">
+										<c:forEach items="${deviceTimeExts}" var="deviceInfo">
 											<tr>
 												<td class="time_group_td" >${deviceInfo.id}</td>
 												<td class="time_group_td" id="activateTime">${deviceInfo.activateTime}</td>
@@ -109,7 +109,7 @@
 												<td> <a class="btn btn-info" style="height: 35px" > <i onclick="editGuardTime(this)">编辑门禁时间</i>
 												</a> </td>
 												<td class="time_group_td">
-													<c:if test="${deviceInfo.abateTime > 0}">${deviceInfo.abateTime}-->${deviceInfo.abateTime }</c:if>
+													<c:if test="${deviceInfo.abateTime != null}">${deviceInfo.abateTime}-->${deviceInfo.abateTime }</c:if>
 													<c:if test="${deviceInfo.abateTime == null}">无</c:if>
 												</td>
 											</tr>
@@ -223,11 +223,6 @@
 
 <script type="text/javascript">
 	$(function(){
-		//$("#editGuard").modal("show");
-		var timestap = $("#activateTime").text();
-		var timestap2 = $("#abateTime").text();
-		 $("#activateTime").text(getDate(timestap));
-		 $("#abateTime").text(getDate(timestap2));
 	});
 	function getDate(tm){
 		var tt=new Date(parseInt(tm)).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ")

@@ -56,8 +56,16 @@ public class TDeviceInfo implements Serializable{
 	/**
 	 * 门禁结束时间
 	 */
-	private Long endStart;
+	private Long timeEnd;
 	
+	public Long getTimeEnd() {
+		return timeEnd;
+	}
+
+	public void setTimeEnd(Long timeEnd) {
+		this.timeEnd = timeEnd;
+	}
+
 	public Long getAbateTime() {
 		return abateTime;
 	}
@@ -72,14 +80,6 @@ public class TDeviceInfo implements Serializable{
 
 	public void setTimeStart(Long timeStart) {
 		this.timeStart = timeStart;
-	}
-
-	public Long getEndStart() {
-		return endStart;
-	}
-
-	public void setEndStart(Long endStart) {
-		this.endStart = endStart;
 	}
 
 	public Long getId() {

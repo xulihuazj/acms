@@ -13,7 +13,6 @@
 <link href="assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
 <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="assets/vendor/css/pace.preloader.css" rel="stylesheet" />
-
 <!-- Plugins CSS-->
 <link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
 <link href="assets/plugins/scrollbar/css/mCustomScrollbar.css" rel="stylesheet" />
@@ -23,12 +22,10 @@
 <link href="assets/plugins/jqvmap/jqvmap.css" rel="stylesheet" />
 <!-- Theme CSS -->
 <link href="assets/css/jquery.mmenu.css" rel="stylesheet" />
-
 <!-- Page CSS -->
 <link href="assets/css/style.css" rel="stylesheet" />
 <link href="assets/css/add-ons.min.css" rel="stylesheet" />
 <!-- end: CSS file-->
-
 <!-- Head Libs -->
 <script src="assets/plugins/modernizr/js/modernizr.js"></script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

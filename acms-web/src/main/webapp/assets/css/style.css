@@ -857,7 +857,7 @@ blockquote.pull-right {
 }
 
 .navbar .navbar-actions {
-	font-size: 20px;
+	font-size: 30px;
 }
 
 .navbar .navbar-actions a {
@@ -9083,6 +9083,15 @@ a.fc-event.fc-event-dark:hover {
 	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
 	box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
 }
+
+/* 表格样式 */
+.tablestyle {
+	text-align: center;
+}
+/* .tablestyle td{
+	text-align: center;
+} */
+
 /* Responsive
 =================================================================== */
 @media ( min-width : 1200px) {

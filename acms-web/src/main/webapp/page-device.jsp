@@ -54,13 +54,15 @@
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li>
-								<a href="homepage.jsp"><i class="icon fa fa-home"></i> 我的管理中心</a>
+								<a href="${path }/index.do"><i class="icon fa fa-home"></i> 我的管理中心</a>
 							</li>
 							<li>
-								<a href="#"><i class="fa fa-list"></i>设备管理设置</a>
+								<a><i class="fa fa-list"></i>设备管理设置</a>
 							</li>
 							<li class="active">
+							<a href="${path }/device/ajaxDeviceList.do">
 								<i class="fa fa-gavel"></i>设备连接设置
+								</a>
 							</li>
 						</ol>
 					</div>
