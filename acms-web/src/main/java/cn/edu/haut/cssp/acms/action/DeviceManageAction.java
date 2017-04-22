@@ -1,5 +1,6 @@
 package cn.edu.haut.cssp.acms.action;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.edu.haut.cssp.acms.core.bean.DeviceTimeExt;
 import cn.edu.haut.cssp.acms.core.entity.TDeviceInfo;
 import cn.edu.haut.cssp.acms.core.entity.TPerson;
 import cn.edu.haut.cssp.acms.core.entity.TUser;
@@ -69,13 +71,30 @@ public class DeviceManageAction extends BaseAction{
 	@RequestMapping("/device/timeGroup.do")
 	public Object timeGroup(ModelMap modelMap,HttpSession session){
 		List<TDeviceInfo> deviceList = deviceService.ajaxDeviceList();
+		List<DeviceTimeExt> deviceTimeExts = new ArrayList<>();
 		for(TDeviceInfo deviceInfo : deviceList){
-			String activateTime = deviceInfo.getActivateTime().toString();
+			DeviceTimeExt deviceExt = new DeviceTimeExt();
+			deviceExt.setId(deviceInfo.getId());
+			String activateTime = DateTimeUtil.dateToStr(new Date(deviceInfo.getActivateTime()));
+			deviceExt.setActivateTime(activateTime);
+			if(deviceInfo.getAbateTime() != null){
+			String abateTime = DateTimeUtil.dateToStr(new Date(deviceInfo.getAbateTime()));
+				deviceExt.setAbateTime(abateTime);
+			}
+			if(deviceInfo.getTimeStart() != null){
+			String timeStart = DateTimeUtil.dateToStr(new Date(deviceInfo.getTimeStart()));
+				deviceExt.setTimeStart(timeStart);
+			}
+			if(deviceInfo.getTimeEnd() != null){
+			String timeEnd = DateTimeUtil.dateToStr(new Date(deviceInfo.getTimeEnd()));
+				deviceExt.setTimeEnd(timeEnd);
+			}
+			deviceExt.setStatus(deviceInfo.getStatus());
+			deviceTimeExts.add(deviceExt);
 		}
-		modelMap.put("deviceList", deviceList);
+		modelMap.put("deviceTimeExts", deviceTimeExts);
 		TUser currUser = (TUser) session.getAttribute("currUser");
 		modelMap.put("userName", currUser.getUserName());
-		System.out.println(System.currentTimeMillis());
 		return "/page-device-time.jsp";
 	}
 	

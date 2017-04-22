@@ -18,4 +18,11 @@
 	 	update t_devic_info info set info.n_time_start = #{timeStart}, info.n_time_end = #{timeEnd}
 	 	where info.n_id = #{id}
 	 </update>
+	 
+	  <select id="getDeviceTimeList" parameterType="int" resultType="cn.edu.haut.cssp.acms.core.bean.DeviceTimeExt">
+ 	 select 
+ 	 n_id id,n_activate_time activateTime,n_abate_time abateTime
+		,n_time_start timeStart, n_time_end timeEnd 
+ 	  from t_device_info 
+ </select>
 </mapper>
