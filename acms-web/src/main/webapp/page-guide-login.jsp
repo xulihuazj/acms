@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8" />
 <title>登录相关问题 | 门禁管理系统</title>
-<!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <!-- Vendor CSS-->
 <link href="${path }/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -84,14 +83,6 @@
 							</div>
 							<div class="toggle">
 								<label>我想记住密码，下次自动登录如何处理?</label>
-								<div class="toggle-content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
-										porta.</p>
-									</p>
-								</div>
-							</div>
-							<div class="toggle">
-								<label>Curabitur eget leo at velit imperdiet vague iaculis vitaes?</label>
 								<div class="toggle-content">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
 										porta.</p>

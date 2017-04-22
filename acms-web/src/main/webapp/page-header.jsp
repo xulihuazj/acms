@@ -58,7 +58,7 @@
 								</div>
 							</li>
 							<li class="avatar">
-								<a href="page-inbox.html"> <img class="avatar" src="${path}/assets/img/avatar1.jpg" alt="" />
+								<a  <img class="avatar" src="${path}/assets/img/avatar1.jpg" alt="" />
 									<div>
 										<div class="point point-primary point-lg"></div>
 										新消息
@@ -66,7 +66,7 @@
 								</a>
 							</li>
 							<li class="avatar">
-								<a href="page-inbox.html"> <img class="avatar" src="${path}/assets/img/avatar2.jpg" alt="" />
+								<a> <img class="avatar" src="${path}/assets/img/avatar2.jpg" alt="" />
 									<div>
 										<div class="point point-primary point-lg"></div>
 										新消息
@@ -74,7 +74,7 @@
 								</a>
 							</li>
 							<li class="avatar">
-								<a href="page-inbox.html"> <img class="avatar" src="${path}/assets/img/avatar3.jpg" alt="" />
+								<a> <img class="avatar" src="${path}/assets/img/avatar3.jpg" alt="" />
 									<div>
 										<div class="point point-primary point-lg"></div>
 										新消息
@@ -99,7 +99,7 @@
 								</div>
 							</li>
 							<li class="list-item">
-								<a href="page-inbox.html">
+								<a>
 									<div class="pull-left">
 										<i class="fa fa-envelope-o bk-fg-primary"></i>
 									</div>
