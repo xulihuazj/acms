@@ -22,7 +22,6 @@
 <link href="${path }/assets/plugins/jqvmap/jqvmap.css" rel="stylesheet" />
 <link rel="stylesheet" href="${path }/assets/css/zlight.menu.css" media="screen">
 <link href="${path}/assets/plugins/jquery-datatables-bs3/css/datatables.css" rel="stylesheet" />
-
 <!-- Theme CSS -->
 <link href="${path }/assets/css/jquery.mmenu.css" rel="stylesheet" />
 <!-- Page CSS -->
@@ -44,15 +43,12 @@
 	<!-- Start: Header -->
 	<%@ include file="/page-header.jsp" %>
 	<!-- End: Header -->
-
 	<!-- Start: Content -->
 	<div class="container-fluid content">
 		<div class="row">
-
 			<!-- START 左侧导航栏 -->
 			<%@include file="/page-sidebar.jsp" %>
 			<!-- END 左侧导航栏 -->
-
 			<!-- Main Page(主要内容) -->
 			<div class="main sidebar-minified ">
 				<!-- START 面包屑-->
@@ -95,79 +91,81 @@
 								<table class="table table-bordered table-striped"
 									id="datatable-default">
 									<thead>
-										<tr>
-											<th>序号.</th>
-											<th>设备地点</th>
-											<th>人员出入</th>
-											<th>出入时间</th>
-											<th>所持卡号</th>
-											<th>操作</th>
+										<tr >
+											<th class="tablestyle">序号.</th>
+											<th class="tablestyle">设备地点</th>
+											<th class="tablestyle">人员出入</th>
+											<th class="tablestyle">出入时间</th>
+											<th class="tablestyle">所持卡号</th>
+											<th class="tablestyle">操作</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr class="gradeX">
+										<tr class="tablestyle">
 											<td>1</td>
 											<td>电气工程学院</td>
 											<td>[朱岸峰]离开学院</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">X</td>
+											<td  >75439579437598</td>
+											<td  ><span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
 										</tr>
-										<tr class="gradeC">
+										<tr class="tablestyle">
 											<td>2</td>
 											<td>电气工程学院</td>
 											<td>[朱岸峰]进入学院</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">C</td>
+											<td  >75439579437598</td>
+											<td  ><span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 										<td>3</td>
 											<td>电气工程学院</td>
 											<td>[张军]进入学院</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">A</td>
+											<td  >75439579437598</td>
+											<td  ><span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 										<td>4</td>
 											<td>电气工程学院</td>
 											<td>[张军]进入学院</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">A</td>
+											<td  >75439579437598</td>
+											<td  ><span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 										<td>5</td>
 											<td>电气工程学院</td>
 											<td>[赵一博]离开学院</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">A</td>
+											<td  >75439579437598</td>
+											<td  ><span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 										<td>6</td>
 											<td>电气工程学院</td>
 											<td>[赵一博]进入学院</td>
-											<td>Win 2k+ / OSX.3+</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">A</td>
+											<td>2017-04-16</td>
+											<td  >75439579437598</td>
+											<td > <span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 										<td>1</td>
 											<td>电气工程学院</td>
 											<td>[张军]离开学院</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">A</td>
+											<td  >75439579437598</td>
+											<td > <span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 										<td>7</td>
 											<td>电气工程学院</td>
 											<td>[张军]进入学院</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">75439579437598</td>
-											<td class="center hidden-phone">A</td>
+											<td  >75439579437598</td>
+											<td >	
+												<span class="label label-info"><a sytle="color: white">查看详情</a></span>
+											</td>
 										</tr>
 									</tbody>
 								</table>

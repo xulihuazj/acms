@@ -93,80 +93,82 @@
 							<div class="panel-body">
 								<table class="table table-bordered table-striped"
 									id="datatable-default">
-									<thead>
-										<tr>
-											<th>序号.</th>
-											<th>设备地点</th>
-											<th>人员出入</th>
-											<th>出入时间</th>
-											<th>所持卡号</th>
-											<th>操作</th>
+										<thead>
+										<tr >
+											<th class="tablestyle">序号.</th>
+											<th class="tablestyle">设备地点</th>
+											<th class="tablestyle">人员出入</th>
+											<th class="tablestyle">出入时间</th>
+											<th class="tablestyle">所持卡号</th>
+											<th class="tablestyle">操作</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr class="gradeX">
+										<tr class="tablestyle">
 											<td>1</td>
 											<td>学生公寓A区</td>
-											<td>[朱岸峰]离开学院</td>
+											<td>[朱岸峰]离开公寓A区</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">1234567890</td>
-											<td class="center hidden-phone">TODO</td>
+											<td  >75439579437598</td>
+											<td  ><span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
 										</tr>
-										<tr class="gradeC">
+										<tr class="tablestyle">
 											<td>2</td>
 											<td>学生公寓A区</td>
-											<td>[朱岸峰]进入学院</td>
+											<td>[朱岸峰]进入公寓A区</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">1234567890</td>
-											<td class="center hidden-phone">TODO</td>
+											<td  >75439579437598</td>
+											<td  ><span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 										<td>3</td>
 											<td>学生公寓A区</td>
-											<td>[张军]进入学院</td>
+											<td>[张军]进入公寓A区</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">1234567890</td>
-											<td class="center hidden-phone">TODO</td>
+											<td  >75439579437598</td>
+											<td  ><span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 										<td>4</td>
 											<td>学生公寓A区</td>
-											<td>[张军]进入学院</td>
+											<td>[张军]进入公寓A区</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">1234567890</td>
-											<td class="center hidden-phone">TODO</td>
+											<td  >75439579437598</td>
+											<td  ><span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 										<td>5</td>
 											<td>学生公寓A区</td>
-											<td>[赵一博]离开学院</td>
+											<td>[赵一博]离开公寓A区</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">1234567890</td>
-											<td class="center hidden-phone">TODO</td>
+											<td  >75439579437598</td>
+											<td  ><span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
 										<td>6</td>
 											<td>学生公寓A区</td>
-											<td>[赵一博]进入学院</td>
-											<td>Win 2k+ / OSX.3+</td>
-											<td class="center hidden-phone">1234567890</td>
-											<td class="center hidden-phone">TODO</td>
+											<td>[赵一博]进入公寓A区</td>
+											<td>2017-04-16</td>
+											<td  >75439579437598</td>
+											<td > <span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
 										</tr>
-										<tr class="gradeA">
+										<tr class="tablestyle">
+										<td>1</td>
+											<td>学生公寓A区</td>
+											<td>[张军]离开公寓A区</td>
+											<td>2017-04-14</td>
+											<td  >75439579437598</td>
+											<td > <span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
+										</tr>
+										<tr class="tablestyle">
 										<td>7</td>
 											<td>学生公寓A区</td>
-											<td>[张军]离开学院</td>
+											<td>[张军]进入公寓A区</td>
 											<td>2017-04-14</td>
-											<td class="center hidden-phone">1234567890</td>
-											<td class="center hidden-phone">TODO</td>
-										</tr>
-										<tr class="gradeA">
-										<td>8</td>
-											<td>学生公寓A区</td>
-											<td>[张军]进入学院</td>
-											<td>2017-04-14</td>
-											<td class="center hidden-phone">1234567890</td>
-											<td class="center hidden-phone">TODO</td>
+											<td  >75439579437598</td>
+											<td >	
+												<span class="label label-info"><a sytle="color: white">查看详情</a></span>
+											</td>
 										</tr>
 									</tbody>
 								</table>
@@ -179,10 +181,6 @@
 				<!-- End 底部(隐藏的内容栏目)-->
 				</div>
 		</div>
-		<!--/container-->
-
-		<!-- start: JavaScript-->
-
 		<!-- Vendor JS-->
 		<script src="${path }/assets/vendor/js/jquery.min.js"></script>
 		<script src="${path }/assets/vendor/js/jquery-2.1.1.min.js"></script>
