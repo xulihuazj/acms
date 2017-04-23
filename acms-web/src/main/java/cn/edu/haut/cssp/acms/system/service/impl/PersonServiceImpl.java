@@ -98,10 +98,16 @@ public class PersonServiceImpl extends BaseServiceImpl implements IPersonService
 		paramMap.put("perId", personId);
 		paramMap.put("perStatus", TPerson.ENUM_PERSON_STATUS.per_stop.value);
 		try{
-			super.getBaseDao().getSqlSession().update("TTPersonMapper.updatePersonStatus", paramMap);
+			super.getBaseDao().getSqlSession().update("TPersonMapper.updatePersonStatus", paramMap);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public boolean updatePerson(TPerson person) {
+		int i = super.getBaseDao().getSqlSession().update("TPersonMapper.updatePersonByPerson", person);
+		return i > 0 ? true : false;
 	}
 
 }

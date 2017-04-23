@@ -1,10 +1,11 @@
 package cn.edu.haut.cssp.acms.action;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import org.apache.http.protocol.HTTP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -118,12 +119,13 @@ public class PersonManagerAction extends BaseAction{
 	 * @param person
 	 * @return
 	 */
-	@RequestMapping(value = "/person/editPerson.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/person/editPerson.do", method = RequestMethod.POST)
 	public String editPerson(TPerson person) {
 		String message = SUCCESS;
 		if(null != person){
 			try {
 				personService.savePerson(person);
+				//personService.updatePerson(person);
 			}catch(Exception e){
 				message = "编辑人员失败";
 				logger.error(message, e);
@@ -135,7 +137,7 @@ public class PersonManagerAction extends BaseAction{
 	}
 	
 	/**
-	 * 
+	 * 更新人员状态
 	 * @Description:
 	 * @author: 徐礼华
 	 * @date: 2017年4月14日下午12:28:46
@@ -175,6 +177,32 @@ public class PersonManagerAction extends BaseAction{
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	/**
+	 * 更新人员
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月13日下午12:17:27
+	 * @param person
+	 * @return
+	 */
+	@RequestMapping(value = "/person/updatePerosn.do", method = RequestMethod.POST)
+	@ResponseBody
+	public Object updatePerson(TPerson person) {
+	Map<String, Object> message = new HashMap<>();
+		if(null != person){
+			try {
+				personService.updatePerson(person);
+				message.put("message", SUCCESS);
+			}catch(Exception e){
+				message.put("message", "更新人员信息是失败");
+				logger.error("更新人员信息是失败,异常为:", e);
+			}
+		}else{
+			message.put("message","请求参数异常");
+		}
+		return message;
 	}
 	
 	
