@@ -123,6 +123,53 @@
 		</trim>
 		where info.n_id = #{id}
 	</update>
+	
+		<!-- 更新人员信息 -->
+	<update id="updatePersonByPerson" parameterType="cn.edu.haut.cssp.acms.core.entity.TPerson">
+		update t_person_info info
+		<trim prefix="set" suffixOverrides=",">
+			<if test="null != cardSN and cardSN != ''">
+				n_card_sn = #{cardSN},
+			</if>
+			<if test="perId > 0">
+				c_per_id = #{perId},
+			</if>
+			<if test="null != cardType and cardType != ''">
+				c_card_type = #{cardType},
+			</if>
+			<if test="perType > 0 ">
+				c_per_type= #{perType},
+			</if>
+			<if test="null != perName and perName != ''">
+				c_per_name = #{perName},
+			</if>
+			<if test="perMobile > 0">
+				c_per_mobile= #{perMobile},
+			</if>
+			<if test="null != perDepart and perDepart != ''">
+				c_per_depart= #{perDepart},
+			</if>
+			<if test="null != perMajor and perMajor != ''">
+				c_per_major= #{perMajor},
+			</if>
+			<if test="perAge > 0">
+				c_per_age = #{perAge},
+			</if>
+			<if test="perSex > 0">
+				c_per_sex = #{perSex},
+			</if>
+			<if test="perGrade > 0">
+				c_per_grade = #{perGrade},
+			</if>
+			<if test="perIdentificate > 0">
+				c_per_identificate= #{perIdentificate},
+			</if>
+			<if test="perStatus > 0">
+				n_per_status= #{perStatus},
+			</if>
+		</trim>
+		where info.n_id = #{id}
+	</update>
   
   <select id="getUserList" parameterType="int" resultType="cn.edu.haut.cssp.acms.core.entity.TPerson">
  	 select 
