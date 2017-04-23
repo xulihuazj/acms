@@ -324,10 +324,10 @@
 				'<table class="table mb-none">',
 				'<div>',
 					'<tr>',
-						'<td class=" label-info" " ><a id="eidtPerson"  style="color: white;text-decoration:underline;">编辑人员</a></td>',
-						'<td class=" label-success" ><a id="startPerson" style="color: white;text-decoration:underline;">启用人员</a></td>',
-						'<td class=" label-warning" ><a id="stopPerson"  style="color: white;text-decoration:underline;">禁用人员</a></td>',
-						'<td class=" label-danger" ><a id="deletePerson"  style="color: white;text-decoration:underline;">删除人员</a></td>',
+						'<td class=" label-info" ><a onclick="editPerson(this);"  data-personid="${person.id}" style="color: white;text-decoration:underline;">编辑人员</a></td>',
+						'<td class=" label-success" ><a onclick="startPerson(this);" data-personid="${person.id}" style="color: white;text-decoration:underline;">启用人员</a></td>',
+						'<td class=" label-warning" ><a onclick="stopPerson(this);" data-personid="${person.id}"  style="color: white;text-decoration:underline;">禁用人员</a></td>',
+						'<td class=" label-danger" ><a onclick="deletePerson(this);" data-personid="${person.id}" style="color: white;text-decoration:underline;">删除人员</a></td>',
 					'</tr>',
 				'</div>',
 				'</table>',
@@ -388,7 +388,8 @@
  * @param $
  */
 // 编辑人员点击
-$("#editPerson").click(function(){
+/*$("#editPerson").click(function(){
+	alert();
 	$("#editPersonModal").modal("show");
 	
 })
@@ -408,7 +409,7 @@ $("#editPerson").click(function(){
 $("#editPerson").click(function(){
 	
 	
-});
+});*/
 /*Datatable - tabletools*/
 
 (function( $ ) {
