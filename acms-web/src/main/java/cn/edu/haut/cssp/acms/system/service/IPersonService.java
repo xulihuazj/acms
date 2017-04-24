@@ -70,13 +70,8 @@ public interface IPersonService {
 	 */
 	public void deletePerson(Integer personId);
 	
-	/**
-	 * 更新人员信息
-	 * @Description:
-	 * @author: 徐礼华
-	 * @date: 2017年4月23日上午10:14:08
-	 * @param person
-	 * @return
-	 */
 	public boolean updatePerson(TPerson person);
+	
+	public TPerson selectPersonNote(String cardSN);
+	
 }

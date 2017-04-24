@@ -110,4 +110,12 @@ public class PersonServiceImpl extends BaseServiceImpl implements IPersonService
 		return i > 0 ? true : false;
 	}
 
+	@Override
+	public TPerson selectPersonNote(String cardSN) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("cardSN", cardSN);
+		TPerson person = super.getBaseDao().getSqlSession().selectOne("TPersonMapper.selectPersonNote", map);
+		return person;
+	}
+
 }

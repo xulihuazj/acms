@@ -183,5 +183,12 @@
 		<include refid="Base_Column_List" />
 		from t_person_info info where info.n_id = #{perId}
 	</select>
-  
+	
+
+	<select id="selectPersonNote" parameterType="java.util.Map"
+		resultType="cn.edu.haut.cssp.acms.core.entity.TPerson">
+		select
+		<include refid="Base_Column_List" />
+		from t_person_info info where info.n_card_sn = #{cardSN}
+	</select>
 </mapper>

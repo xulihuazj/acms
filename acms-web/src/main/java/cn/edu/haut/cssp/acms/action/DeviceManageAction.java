@@ -27,6 +27,7 @@ import cn.edu.haut.cssp.acms.core.entity.User;
 import cn.edu.haut.cssp.acms.core.utils.DateTimeUtil;
 import cn.edu.haut.cssp.acms.core.utils.DateUtil;
 import cn.edu.haut.cssp.acms.system.service.IDeviceService;
+import cn.edu.haut.cssp.acms.system.service.IPersonService;
 
 /**
  * 设备管理
@@ -44,6 +45,8 @@ public class DeviceManageAction extends BaseAction{
 	@Autowired
 	private IDeviceService deviceService;
 	
+	@Autowired
+	private IPersonService personService;
 	/**
 	 * 获取设备信息列表
 	 * @Description:
@@ -178,4 +181,26 @@ public class DeviceManageAction extends BaseAction{
 		return message;
 	}
 	
+	@RequestMapping(value = "/device/queryPersonNote.do",method = RequestMethod.GET)
+	@ResponseBody
+	public Object queryPersonNote(String cardSN){
+		Map<String, Object> data =new HashMap<>();
+		try{
+			TPerson person = personService.selectPersonNote(cardSN);
+			data.put("success", 1);
+			//data.put("id", person.getId());
+			//data.put("perName", person.getPerName());
+		}catch(Exception e){
+			data.put("success", 0);//失败
+		}
+		return data;
+	}
+	
+	@RequestMapping("/result")
+	@ResponseBody
+	public Object result(){
+		Map<String, Object> map = new HashMap<>();
+		map.put("success", 1);
+		return map;
+	}
 }
