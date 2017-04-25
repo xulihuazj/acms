@@ -96,7 +96,7 @@ public class PersonManagerAction extends BaseAction{
 	 * @return: String
 	 * @param
 	 */
-	@RequestMapping(value = "/person/deletePerson.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/person/deletePerson.do", method = RequestMethod.POST)
 	public String deleteUser(Integer id) {
 		String message = SUCCESS;
 		try {

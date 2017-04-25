@@ -26,6 +26,28 @@
 <!-- end: CSS file-->
 <!-- Head Libs -->
 <script src="${path}/assets/plugins/modernizr/js/modernizr.js"></script>
+<script src="${path}/assets/vendor/js/jquery.min.js"></script>
+	<script src="${path}/assets/vendor/js/jquery-2.1.1.min.js"></script>
+	<script src="${path}/assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="${path}/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="${path}/assets/vendor/skycons/js/skycons.js"></script>
+	<script src="${path}/assets/vendor/js/pace.min.js"></script>
+	<!-- Plugins JS-->
+	<script src="${path}/assets/plugins/moment/js/moment.min.js"></script>
+	<script src="${path}/assets/plugins/select2/select2.js"></script>
+	<script src="${path}/assets/plugins/pnotify/js/pnotify.custom.js"></script>
+	<script src="${path}/assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
+	<script src="${path}/assets/plugins/magnific-popup/js/magnific-popup.js"></script>
+	<script src="${path}/assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
+	<script src="${path}/assets/plugins/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
+	<script src="${path}/assets/plugins/jquery-datatables-bs3/js/datatables.js"></script>
+	<!-- Theme JS -->
+	<script src="${path}/assets/js/jquery.mmenu.min.js"></script>
+	<script src="${path}/assets/js/core.min.js"></script>
+	<!-- Pages JS -->
+	<script src="${path}/assets/js/common/page-person.js"></script>
+	<script src="${path}/assets/js/pages/ui-modals.js"></script>
+	<script src="${path}/assets/js/common.js"></script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -123,6 +145,18 @@
 												<td>${person.perMajor}</td>
 												<td>1304</td>
 											</tr>
+											<%-- <tr>
+												<table class="table mb-none">
+													<div>
+														<tr>
+															<td class=" label-info" ><a onclick="editPerson(this);"  data-personid="${person.id}" style="color: white;text-decoration:underline;">编辑人员</a></td>
+															<td class=" label-success" ><a onclick="startPerson(this);" data-personid="${person.id}" style="color: white;text-decoration:underline;">启用人员</a></td>
+															<td class=" label-warning" ><a onclick="stopPerson(this);" data-personid="${person.id}"  style="color: white;text-decoration:underline;">禁用人员</a></td>
+															<td class=" label-danger" ><a onclick="deletePerson(this);" data-personid="${person.id}" style="color: white;text-decoration:underline;">删除人员</a></td>
+														</tr>
+													</div>
+												</table>
+											</tr> --%>
 										</c:forEach>
 									</tbody>
 								</table>
@@ -133,12 +167,43 @@
 			</div>
 			
 			<div class="modalBasic"></div>
-			<!-- 删除人员信息 -->
-			<div class="decideDelete"></div>
 			<!-- 禁用人员 -->
 			<div class="decideStop"></div>
 			
-				<!--编辑人员输入框 -->
+			<!-- 删除人员信息 -->
+			<div id="deletePersonModal" class="modal fade " data-backdrop="static" tabindex="-1" role="dialog">
+				<div class="modal-dialog panel panel-default" role="document">
+					<div class="modal-content">
+						<div class="modal-body ">
+							<div class="panel">
+								<div class="panel-heading" style="background-color: #d2322d;">
+									<h2 class="panel-title" style="color: #fff">危险!</h2>
+								</div>
+								<div class="panel-body bk-noradius">
+									<div class="modal-wrapper">
+										<div class="modal-icon">
+											<i class="fa fa-times-circle" style="color: #d2322d"></i>
+										</div>
+										<div class="modal-text" style="font-size: 20px;">
+											<p>确定删除该持卡人员，请确认！</p>
+										</div>
+									</div>
+								</div>
+								<div class="panel-footer">
+									<div class="row">
+										<div class="col-md-12 text-right">
+											<button class="btn btn-primary modal-confirm" id="confirmDelete">确定</button>
+											<button class="btn btn-default" data-dismiss="modal">取消</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--编辑人员输入框 -->
 			<div id="editPersonModal" class="modal fade bs-example-modal-lg" data-backdrop="static" tabindex="-1" role="dialog">
 				<div class="modal-dialog panel panel-default" role="document">
 					<div class="modal-content">
@@ -233,33 +298,64 @@
 	</div>
 	<!-- Vendor JS-->
 	
-	<script src="${path}/assets/vendor/js/jquery.min.js"></script>
-	<script src="${path}/assets/vendor/js/jquery-2.1.1.min.js"></script>
-	<script src="${path}/assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
-	<script src="${path}/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="${path}/assets/vendor/skycons/js/skycons.js"></script>
-	<script src="${path}/assets/vendor/js/pace.min.js"></script>
-	<!-- Plugins JS-->
-	<script src="${path}/assets/plugins/moment/js/moment.min.js"></script>
-	<script src="${path}/assets/plugins/select2/select2.js"></script>
-	<script src="${path}/assets/plugins/pnotify/js/pnotify.custom.js"></script>
-	<script src="${path}/assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
-	<script src="${path}/assets/plugins/magnific-popup/js/magnific-popup.js"></script>
-	<script src="${path}/assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
-	<script src="${path}/assets/plugins/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
-	<script src="${path}/assets/plugins/jquery-datatables-bs3/js/datatables.js"></script>
-	<!-- Theme JS -->
-	<script src="${path}/assets/js/jquery.mmenu.min.js"></script>
-	<script src="${path}/assets/js/core.min.js"></script>
-	<!-- Pages JS -->
-<script src="${path}/assets/js/common/page-person.js"></script>
-	<script src="${path}/assets/js/pages/ui-modals.js"></script>
-	<script src="${path}/assets/js/common.js"></script>
+	
 </body>
 	<script type="text/javascript">
 		$(function(){
 		});
 		
+		/* function startPerson(event){
+			$(event).attr("id","startPerson");//给元素加上id用户处理
+			$("#startPersonModal").modal("show");
+		}
+		
+		function stopPerson(event){
+			$(event).attr("id","stopPerson");//给元素加上id用户处理
+			$("#stopPersonModal").modal("show");
+		}*/
+		
+		//删除人员信息
+		function deletePerson(event){
+			$(event).attr("id","deletePerson");//给元素加上id用户处理
+			$("#deletePersonModal").modal("show");
+		} 
+		$("#confirmDelete").click(function(){
+			var personId = $("#deletePerson").data("personid");
+			$("#deletePersonModal").modal("hide");
+			alert(personId);
+			$.ajax({
+				url: "${path}/person/deletePerson.do", 
+				type: 'POST',
+				data: "id=" + personId,
+				async: false,//设置为同步请求
+				dataType: "json",
+				success: function(data){
+				    	if(data.message == 'success'){
+				    		$("#deletePersonModal").modal("hide");
+				    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
+				    			document.forms[0].action="${path}/person/ajaxPersonList.do";
+				    			document.forms[0].submit();
+							},800);
+				    		new PNotify({
+								title: '操作成功',
+								text: '删除此持卡人员成功!',
+								type: 'success'
+							});
+				    	}else{
+				    		$("#deletePersonModal").modal("hide");
+				    		new PNotify({
+								title: '操作失败',
+								text: '对不起，系统异常，无法完成此操作，请联系管理员！',
+								type: 'error'
+							});
+				    	}
+					}
+				}); 
+			
+		});
+		
+		
+		/* 编辑人员 */
 		function editPerson(event){
 			$(event).attr("id","editPerson");//给元素加上id用户处理
 			$("#editPersonModal").modal("show");
@@ -274,28 +370,10 @@
 				}
 			},100);
 		}
-		
-		/* function startPerson(event){
-			$(event).attr("id","startPerson");//给元素加上id用户处理
-			$("#startPersonModal").modal("show");
-		}
-		
-		function stopPerson(event){
-			$(event).attr("id","stopPerson");//给元素加上id用户处理
-			$("#stopPersonModal").modal("show");
-		}
-		
-		function deletePerson(event){
-			$(event).attr("id","deletePerson");//给元素加上id用户处理
-			$("#deletePersonModal").modal("show");
-		} */
-		
 		/* 确认编辑 */
 		 $("#confirmEdit").click(function(){ 
-			 debugger
 	 		var personId = $("#editPerson").data("personid");
-			alert(personId);
-				$("#personId").val(personId);// 赋值于userId用于序列化
+			$("#personId").val(personId);// 赋值于userId用于序列化
 			$.ajax({
 				url: "${path}/person/updatePerosn.do", 
 				type: 'POST',

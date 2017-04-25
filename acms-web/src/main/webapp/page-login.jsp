@@ -35,7 +35,7 @@
 										name="loginUsername" placeholder="请输入您的账号">
 								</div>
 								<div class="col-lg-4 ">
-									<div class="help-block"><span id="loginUsernameErr" style="color: #ff3333 !important;font-size: 14px !important;">${message}</span></div>
+									<div class="help-block"><span id="loginUsernameErr" style="color: #ff3333 !important;font-size: 14px !important;">${message1}</span></div>
 								</div>
 							</div>
 							<div class="form-group field-loginform-password required">
@@ -45,7 +45,7 @@
 										name="loginPassword" placeholder="请输入您的密码">
 								</div>
 								<div class="col-lg-4 ">
-									<div class="help-block"><span id="loginPasswordErr" style="color: #ff3333 !important;font-size: 14px !important;">${message}</span></div>
+									<div class="help-block"><span id="loginPasswordErr" style="color: #ff3333 !important;font-size: 14px !important;">${message2}</span></div>
 								</div>
 							</div>
 							<!-- 	<div class="form-group field-loginform-password required">
@@ -74,7 +74,7 @@
 									</div>
 								</div>
 								<div class="col-lg-8 " style="height: 25px; text-align: center;">
-									<div class="help-block"><span  value="${message}" id="loginVerifycodeErr" style="color: #ff3333 !important;font-size: 14px !important;">${message }</div>
+									<div class="help-block"><span  value="${message}" id="loginVerifycodeErr" style="color: #ff3333 !important;font-size: 14px !important;">${message3}</div>
 								</div>
 								<div class="col-lg-4 " style="height: 25px; text-align: center;">
 									<div class="help-block"><span id="loginVerifycodeErr" style="color: #ff3333 !important;font-size: 14px !important;"><a id="aRecode" href="javascript:void(0);" onclick="refreshCode()">点击换一张</a></div>

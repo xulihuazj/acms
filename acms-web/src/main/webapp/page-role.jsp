@@ -127,7 +127,7 @@
 															</c:if>
 														</td>
 													</tr>
-									</c:forEach>
+											</c:forEach>
 										</tbody>
 									</table>
 								</div>
@@ -135,9 +135,6 @@
 						</div>
 					</div>
 				</div>
-
-				<!-- End Main Page -->
-
 				<!-- START 底部(隐藏的内容栏目) -->
 				<div id="footer"></div>
 				<!-- End 底部(隐藏的内容栏目)-->
