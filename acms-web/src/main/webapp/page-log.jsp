@@ -89,7 +89,7 @@
 							</div>
 							<div class="panel-body panel-body bk-bg-white bk-padding-top-30 bk-padding-bottom-20">
 								<!-- 请求查询 -->
-								<form action="" method="post" class="form-inline form-horizontal form-bordered">
+								<form id="query_form" action="${path }/system/syslog/querySyslogList.do" method="post" class="form-inline form-horizontal form-bordered">
 									<div class="form-group">
 										<span class="lable_info" for="keyWord" style="font-size: 15px;">关键字：</span>
 										<input type="" id="keyWord" name="keyWord" class="form-control" placeholder="请输入关键字" style="width: 150px;" />
@@ -97,11 +97,11 @@
 									<div class="form-group" style="width: 350px;">
 										<label class="col-md-3 control-label" style="width: 80px; font-size: 15px; padding-right: 0px;">日期：</label>
 										<div class="col-md-9" style="padding-left: 0px;">
-											<div class="input-daterange input-group" data-plugin-datepicker>
+											<div class="input-daterange input-group" data-plugin-datepicker data-date-format="yyyy-mm-dd">
 												<span class="input-group-addon"> <i class="fa fa-calendar"></i></span>
-												<input type="" class="form-control" style="width: 90px" name="startTime" />
-												<span class="input-group-addon">to</span>
-												<input type="" class="form-control" style="width: 90px" name="endTime" />
+												<input type="" class="form-control" style="width: 97px" name="startTime" placeholder="请选择日期"  />
+												<span class="input-group-addon">到</span>
+												<input type="" class="form-control" style="width: 97px" name="endTime"  placeholder="请选择日期"/>
 											</div>
 										</div>
 									</div>
@@ -128,103 +128,56 @@
 								<table class="table table-bordered table-striped" id="">
 									<thead>
 										<tr>
-											<th style="width: 5%; min-width: 50px;">
-												<span>序号</span>
+											<th style="width: 5%; min-width: 50px;text-align: center;">
+												序号
 											</th>
-											<th style="width: 7%; min-width: 100px;">
-												<span>日志类型</span>
+											<th style="width: 7%; min-width: 100px;text-align: center;">
+												日志类型
 											</th>
-											<th style="width: 12%; min-width: 180px;">
-												<span>日志时间</span>
+											<th style="width: 12%; min-width: 180px;text-align: center;">
+												日志时间
 											</th>
-											<th style="width: 7%; min-width: 100px;">
-												<span>操作者</span>
+											<th style="width: 7%; min-width: 100px;text-align: center;">
+												操作者
 											</th>
-											<th width=30%>
-												<span>日志内容</span>
+											<th style="width: 30%; min-width: 100px;text-align: center;">
+												日志内容
 											</th>
 										</tr>
 									</thead>
 									<!-- 在此处加循环 -->
 									<tbody>
-
-										<tr class="gradeX">
-											<td>1</td>
-											<td>登录退出</td>
-											<td>2017-04-15</td>
-											<td class="center hidden-phone">admin</td>
-											<td class="center hidden-phone">管理员[admin]登录</td>
-										</tr>
-										<tr class="gradeC">
-											<td>2</td>
-											<td>登录退出</td>
-											<td>2017-04-15</td>
-											<td class="center hidden-phone">admin</td>
-											<td class="center hidden-phone">管理员[admin]登录</td>
-										</tr>
-										<tr class="gradeA">
-											<td>3</td>
-											<td>登录退出</td>
-											<td>2017-04-15</td>
-											<td class="center hidden-phone">admin</td>
-											<td class="center hidden-phone">管理员[admin]退出</td>
-										</tr>
-										<tr class="gradeA">
-											<td>4</td>
-											<td>登录退出</td>
-											<td>2017-04-15</td>
-											<td class="center hidden-phone">admin</td>
-											<td class="center hidden-phone">管理员[admin]登录</td>
-										</tr>
-										<tr class="gradeA">
-											<td>5</td>
-											<td>操作日志</td>
-											<td>2017-04-15</td>
-											<td class="center hidden-phone">admin</td>
-											<td class="center hidden-phone">管理员[admin]退出</td>
-										</tr>
-										<tr class="gradeA">
-											<td>6</td>
-											<td>登录退出</td>
-											<td>2017-04-15</td>
-											<td class="center hidden-phone">admin</td>
-											<td class="center hidden-phone">管理员[admin]登录</td>
-										</tr>
-										<tr class="gradeA">
-											<td>7</td>
-											<td>运行日志</td>
-											<td>2017-04-15</td>
-											<td class="center hidden-phone">admin</td>
-											<td class="center hidden-phone">管理员[admin]登录</td>
-										</tr>
-										<tr class="gradeA">
-											<td>8</td>
-											<td>运行日志</td>
-											<td>2017-04-15</td>
-											<td class="center hidden-phone">admin</td>
-											<td class="center hidden-phone">管理员[admin]登录</td>
-										</tr>
-										<tr class="gradeA">
-											<td>9</td>
-											<td>运行日志</td>
-											<td>2017-04-15</td>
-											<td class="center hidden-phone">admin</td>
-											<td class="center hidden-phone">管理员[admin]登录</td>
-										</tr>
-										<tr class="gradeA">
-											<td>10</td>
-											<td>运行日志</td>
-											<td>2017-04-15</td>
-											<td class="center hidden-phone">admin</td>
-											<td class="center hidden-phone">管理员[admin]登录</td>
-										</tr>
-										<tr class="gradeA">
-											<td>11</td>
-											<td>运行日志</td>
-											<td>2017-04-15</td>
-											<td class="center hidden-phone">admin</td>
-											<td class="center hidden-phone">管理员[admin]登录</td>
-										</tr>
+											<c:forEach items="${syslogList}" var="syslog">
+												<tr >
+													<th style="text-align: center;">${syslog.id}</th>
+													<th style="text-align: center;">
+														<c:if test="${syslog.logType==1}">登录退出</c:if>
+														<c:if test="${syslog.logType==2}">操作日志</c:if>
+														<c:if test="${syslog.logType==3}">运行日志</c:if>
+													</th>
+													<th style="text-align: center;">${syslog.logUploadTime}</th>
+													<th style="text-align: center;">${syslog.userName}</th>
+													<th style="text-align: center;">${syslog.logContent}</th>
+													<%-- <td>
+														<c:if test="${user.status==1}">
+															<span class="label label-danger"><a onclick="deleteEvent(this)" data-userid="${user.id}"
+																sytle="color: white">删除角色</a></span>
+															<span class="label label-warning"><a onclick="stopEvent(this)" data-userid="${user.id}"
+																sytle="color: white">禁用角色</a></span>
+															<span class="label label-info"><a onclick="editEvent(this)" data-userid="${user.id}"
+																sytle="color: white">编辑角色</a></span>
+														</c:if>
+														<c:if test="${user.status==2}">
+															<span class="label label-success"><a onclick="startEvent(this)" data-userid="${user.id}"
+																sytle="color: white">启用角色</a></span>
+															<span class="label label-danger"><a onclick="deleteEvent(this)" data-userid="${user.id}"
+																sytle="color: white">删除角色</a></span>
+															<span class="label label-info"><a onclick="editEvent(this)" data-userid="${user.id}"
+																sytle="color: white">编辑角色</a></span>
+														</c:if>
+													</td> --%>
+												</tr>
+											</c:forEach>
 									</tbody>
 								</table>
 							</div>

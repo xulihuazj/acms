@@ -319,7 +319,7 @@
 		// format function for row details
 		var fnFormatDetails = function( datatable, tr ) {
 			var data = datatable.fnGetData( tr );
-
+			alert();
 			return [
 				'<table class="table mb-none">',
 				'<div>',
@@ -332,6 +332,7 @@
 				'</div>',
 				'</table>',
 			].join('');
+			//$("#deletePerson").
 		};
 
 		// insert the expand/collapse column

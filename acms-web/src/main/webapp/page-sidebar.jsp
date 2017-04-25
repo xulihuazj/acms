@@ -284,7 +284,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="${path }/system/syslog/toList.do"> <span class="text">系统日志</span>
+									<a href="${path }/system/syslog/querySyslogList.do"> <span class="text">系统日志</span>
 									</a>
 								</li>
 								<li>
