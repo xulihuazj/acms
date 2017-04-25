@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="SystemLogMapper">
+	<!-- 通用SQL片段 -->
+	<sql id="Base_Column_List">
+		n_id id,c_user_name userName,n_user_id userId,c_type logType,c_content logContent,n_upload_time logUploadTime
+	</sql>
+
+	<select id="querySyslogList" parameterType="java.util.Map"
+		resultType="cn.edu.haut.cssp.acms.core.entity.TSystemLog">
+		select
+		<include refid="Base_Column_List" />
+		from t_sys_log
+		<where>
+			<if test="keyWord != null and keyWord != ''">
+				 <!-- AND c_user_name LIKE CONCAT(CONCAT('%'，#{keyWord},'%')) AND c_content LIKE CONCAT(CONCAT('%',#{keyWord},'%')) -->
+				 AND c_user_name LIKE '%${keyWord}%' AND c_content LIKE '%${keyWord}%'
+			</if>
+			<if test="logType != null and logType != ''">
+				 AND c_type = #{logType}
+			</if>
+			<if test="startTime != null and startTime != ''">
+				  AND n_upload_time &gt;= #{startTime}
+			</if>
+			<if test="endTime != null and endTime != ''">
+				  AND n_upload_time &lt;= #{endTime}
+			</if>
+		</where>
+	</select>
+</mapper>
