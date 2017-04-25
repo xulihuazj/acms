@@ -63,13 +63,13 @@ public class LoginAction extends BaseAction {
 	public String login(String loginUsername, String loginPassword, String loginVerifycode, ModelMap model,
 			HttpServletRequest request, HttpServletResponse response, HttpSession session) {
 		if (StringUtils.isBlank(loginUsername)) {
-			model.put("message", "用户名不能为空!");
+			model.put("message1", "用户名不能为空!");
 		} else if (StringUtils.isBlank(loginPassword)) {
-			model.put("message", "密码不能为空！");
+			model.put("message2", "密码不能为空！");
 		} else if (StringUtils.isBlank(loginVerifycode)) {
-			model.put("message", "验证码不能为空！");
+			model.put("message3", "验证码不能为空！");
 		}else if(!StringUtils.equals((String)request.getSession().getAttribute("reg_val_code"), loginVerifycode)) { 
-			model.put("message","验证码不正确!");
+			model.put("message3","验证码不正确!");
 		}else {
 			boolean isLogined = true;
 			 TUser currUser = null;
@@ -86,19 +86,20 @@ public class LoginAction extends BaseAction {
 				currUser = userService.getUserByUserName(loginUsername);
 				
 				 if(null == currUser || currUser.getStatus() == TUser.ENUM_USER_STATUS.deletedStatus.value){
-					 model.put("message", "当前账号不存在");
+					 model.put("message1", "当前账号不存在");
 					 return "/page-login.jsp";
 				 }else if(currUser.getStatus() == TUser.ENUM_USER_STATUS.stopStatus.value){
-					 model.put("message", "当前账号已被停用");
+					 model.put("message1", "当前账号已被停用");
 					 return "/page-login.jsp";
 				 }else{
-					 if(StringUtils.equals(PasswordUtils.encodePasswordSHA1(loginPassword), currUser.getPassword())){
+					 loginPassword = loginPassword.toLowerCase();
+					 if(StringUtils.equalsIgnoreCase(PasswordUtils.encodePasswordSHA1(loginPassword), currUser.getPassword())){
 						 // 存入session
 						 session.setAttribute("currUser", currUser);
 						 model.put("userName", loginUsername);
 						 return "/homepage.jsp";
 					 }else {
-						 model.put("message", "登录密码错误");
+						 model.put("message2", "登录密码错误");
 						 return "/page-login.jsp";
 					}
 				 }
