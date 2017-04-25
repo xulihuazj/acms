@@ -1,16 +1,27 @@
 package cn.edu.haut.cssp.acms.action;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.edu.haut.cssp.acms.core.bean.DataSyslogExt;
+import cn.edu.haut.cssp.acms.core.entity.TSystemLog;
 import cn.edu.haut.cssp.acms.core.entity.TUser;
 import cn.edu.haut.cssp.acms.core.utils.DateQueryBean;
 import cn.edu.haut.cssp.acms.core.utils.LitePaging;
 import cn.edu.haut.cssp.acms.log.entity.SystemLog;
+import cn.edu.haut.cssp.acms.log.util.DateTimeUtil;
+import cn.edu.haut.cssp.acms.system.service.ISystemLogService;
 
 
 /**
@@ -21,6 +32,9 @@ import cn.edu.haut.cssp.acms.log.entity.SystemLog;
  */
 @Controller
 public class SystemLogAction extends BaseAction{
+	
+	@Autowired
+	private ISystemLogService systemLogService;
 
 	/**
 	 * 跳转到日志页面
@@ -43,14 +57,10 @@ public class SystemLogAction extends BaseAction{
 	 * @return
 	 */
 	@RequestMapping("/system/syslog/querySyslogList.do")
-	@ResponseBody 
-	public Object querySyslogList(){
-		/**
-		 * 
-		 * TODO
-		 * 
-		 */
-		return "";
+	public String querySyslogList(DataSyslogExt dataSyslogExt,ModelMap modelMap){
+		List<TSystemLog> syslogList = systemLogService.querySyslogList(dataSyslogExt);
+		modelMap.put("syslogList", syslogList);
+		return "/page-log.jsp";
 	}
 	/**
 	 * 系统日志列表
