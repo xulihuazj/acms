@@ -12,7 +12,41 @@ import java.io.Serializable;
  */
 public class DataSyslogExt implements Serializable{
 	
+	
 	private static final long serialVersionUID = 1L;
+	
+	
+	private Long id;
+	
+	private String userName;
+	
+	private String logContent;
+	
+	private String logUploadTime;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getLogContent() {
+		return logContent;
+	}
+	public void setLogContent(String logContent) {
+		this.logContent = logContent;
+	}
+	public String getLogUploadTime() {
+		return logUploadTime;
+	}
+	public void setLogUploadTime(String logUploadTime) {
+		this.logUploadTime = logUploadTime;
+	}
 	/**
 	 * 关键字
 	 */

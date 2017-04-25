@@ -2,7 +2,9 @@ package cn.edu.haut.cssp.acms.action;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -58,7 +60,19 @@ public class SystemLogAction extends BaseAction{
 	 */
 	@RequestMapping("/system/syslog/querySyslogList.do")
 	public String querySyslogList(DataSyslogExt dataSyslogExt,ModelMap modelMap){
-		List<TSystemLog> syslogList = systemLogService.querySyslogList(dataSyslogExt);
+		List<TSystemLog> logList = systemLogService.querySyslogList(dataSyslogExt);
+		List<DataSyslogExt> syslogList = new ArrayList<>();
+		Iterator<TSystemLog> iteratorList = logList.iterator();
+		while (iteratorList.hasNext()) {
+			DataSyslogExt syslogExt = new DataSyslogExt();
+			TSystemLog next = iteratorList.next();
+			syslogExt.setLogUploadTime(DateTimeUtil.dateToStr(new Date(next.getLogUploadTime())));
+			syslogExt.setId(next.getId());
+			syslogExt.setLogType(next.getLogType());
+			syslogExt.setUserName(next.getUserName());
+			syslogExt.setLogContent(next.getLogContent());
+			syslogList.add(syslogExt);
+		}
 		modelMap.put("syslogList", syslogList);
 		return "/page-log.jsp";
 	}
