@@ -99,34 +99,40 @@
 											</tr>
 										</thead>
 										<tbody>
-												<c:forEach items="${userList}" var="user">
-													<tr>
-														<td>${user.id}</td>
-														<td>${user.userName}</td>
-														<td>
-															<c:if test="${user.type==1}">超级管理员</c:if>
-															<c:if test="${user.type==2}">普通管理员</c:if>
-														</td>
-														<td>
-																<c:if test="${user.status==1}">正常</c:if>
-																<c:if test="${user.status==2}">停用</c:if>
-																<c:if test="${user.status==-1}">删除</c:if>
-														</td>
-														<td>${user.mobile}</td>
-														<td>${user.note}</td>
-														<td>
-															<c:if test="${user.status==1}">
-																	<span class="label label-danger"><a onclick="deleteEvent(this)" data-userid="${user.id}" sytle="color: white">删除角色</a></span> <span
-																	class="label label-warning"><a onclick="stopEvent(this)" data-userid="${user.id}" sytle="color: white">禁用角色</a></span> <span
-																	class="label label-info"><a onclick="editEvent(this)" data-userid="${user.id}" sytle="color: white">编辑角色</a></span>
-															</c:if>
-															<c:if test="${user.status==2}">
-																<span class="label label-success"><a onclick="startEvent(this)" data-userid="${user.id}" sytle="color: white">启用角色</a></span>
-																	<span class="label label-danger"><a onclick="deleteEvent(this)" data-userid="${user.id}" sytle="color: white">删除角色</a></span> <span
-																	class="label label-info"><a onclick="editEvent(this)" data-userid="${user.id}" sytle="color: white">编辑角色</a></span>
-															</c:if>
-														</td>
-													</tr>
+											<c:forEach items="${userList}" var="user">
+												<tr>
+													<td>${user.id}</td>
+													<td>${user.userName}</td>
+													<td>
+														<c:if test="${user.type==1}">超级管理员</c:if>
+														<c:if test="${user.type==2}">普通管理员</c:if>
+													</td>
+													<td>
+														<c:if test="${user.status==1}">正常</c:if>
+														<c:if test="${user.status==2}">停用</c:if>
+														<c:if test="${user.status==-1}">删除</c:if>
+													</td>
+													<td>${user.mobile}</td>
+													<td>${user.note}</td>
+													<td>
+														<c:if test="${user.status==1}">
+															<span class="label label-danger"><a onclick="deleteEvent(this)" data-userid="${user.id}"
+																sytle="color: white">删除角色</a></span>
+															<span class="label label-warning"><a onclick="stopEvent(this)" data-userid="${user.id}"
+																sytle="color: white">禁用角色</a></span>
+															<span class="label label-info"><a onclick="editEvent(this)" data-userid="${user.id}"
+																sytle="color: white">编辑角色</a></span>
+														</c:if>
+														<c:if test="${user.status==2}">
+															<span class="label label-success"><a onclick="startEvent(this)" data-userid="${user.id}"
+																sytle="color: white">启用角色</a></span>
+															<span class="label label-danger"><a onclick="deleteEvent(this)" data-userid="${user.id}"
+																sytle="color: white">删除角色</a></span>
+															<span class="label label-info"><a onclick="editEvent(this)" data-userid="${user.id}"
+																sytle="color: white">编辑角色</a></span>
+														</c:if>
+													</td>
+												</tr>
 											</c:forEach>
 										</tbody>
 									</table>
@@ -245,10 +251,10 @@
 							<h2 class="panel-title">编辑管理员</h2>
 						</div>
 						<div class="panel-body bk-noradius">
-							<form id="savePerson_form" class="form-horizontal mb-lg" novalidate="novalidate" style="font-size:16px;">
+							<form id="savePerson_form" class="form-horizontal mb-lg" novalidate="novalidate" style="font-size: 16px;">
 								<span name="id" value="${userId } id="form_userId"></span>
 								<div class="form-group">
-									<label class="col-sm-3 control-label" >角色名称：</label>
+									<label class="col-sm-3 control-label">角色名称：</label>
 									<div class="col-sm-9">
 										<input type="email" name="userName" id="form_userName" class="form-control" placeholder="请输入角色姓名..." required />
 									</div>
@@ -256,26 +262,17 @@
 								<div class="form-group">
 									<label class="col-sm-3 control-label">角色类型：</label>
 									<div class="col-sm-9">
-										<div class="dropdown">
-											<!-- <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-												aria-haspopup="true" aria-expanded="true">请选择角色类型</button> -->
-										<input type="email" name="type" id="form_type" class="form-control"data-toggle="dropdown"
-												aria-haspopup="true" aria-expanded="true"" placeholder="请选择角色类型..." required />
-											<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-												<li>
-													<a href="#" >超级管理员</a>
-												</li>
-												<li>
-													<a href="#">普通管理员</a>
-												</li>
-											</ul>
-										</div>
+										<select id="form_type" name="type" class=" form-control input-md" size="1">
+											<option value="0">请选择角色类型</option>
+											<option value="1">超级管理员</option>
+											<option value="2">普通管理员</option>
+										</select>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">手机号：</label>
 									<div class="col-sm-9">
-										<input type="email" name="mobile"  id="form_mobile" class="form-control" placeholder="请输入手机号..." required />
+										<input type="email" name="mobile" id="form_mobile" class="form-control" placeholder="请输入手机号..." required />
 									</div>
 								</div>
 								<div class="form-group">
@@ -309,192 +306,229 @@
 	<script src="${path }/assets/plugins/bootkit/js/bootkit.js"></script>
 	<script src="${path }/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script src="${path }/assets/plugins/pnotify/js/pnotify.custom.js"></script>
-	
+	<script src="${path }/assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 	<!-- Theme JS -->
 	<script src="${path }/assets/js/jquery.mmenu.min.js"></script>
 	<script src="${path }/assets/js/core.min.js"></script>
 	<!-- Pages JS -->
 	<script src="${path }/assets/js/pages/table-advanced.js"></script>
 	<script type="text/javascript">
-			$(document).ready(function() {
-			});
-			// 
-			function startEvent(event){
-				$(event).attr("id","startRole");//给元素加上id用户处理
-				$("#startRoleModal").modal("show");
-				
-			}
-			function deleteEvent(event){
-				$(event).attr("id","deleteRole");//给元素加上id用户处理
-				$("#deleteRoleModal").modal("show");
-				
-			}
-			function stopEvent(event){
-				$(event).attr("id","stopRole");//给元素加上id用户处理
-				$("#stopRoleModal").modal("show");
-				
-			}
-			function editEvent(event){
-				$(event).attr("id","editRole");//给元素加上id用户处理
-				$("#editRoleModal").modal("show");
-				setInterval(function(){// 定时循环检测输入框
-					if($("#form_userName").val().length > 0 || $("#form_type").val().length > 0 || $("#form_mobile").val().length > 0 || $("#form_note").val().length > 0 ){
-						$("#confirmEdit").attr("disabled",false);
-					}else{
-						$("#confirmEdit").attr("disabled",true);
-					}
-				},100);
-				
-			}
-			$("#cancelStart").click(function(){
-				$("#startRoleModal").modal("hide");
-			});
-			$("#cancelDelete").click(function(){
-				$("#deleteRoleModal").modal("hide");
-			});
-			$("#cancelStop").click(function(){
-				$("#stopRoleModal").modal("hide");
-			});
-			$("#cancelEdit").click(function(){
-				$("#editRoleModal").modal("hide");
-			});
-			
-			/* 确认启用管理员 */
-			$("#confirmStart").click(function(){
-				//var userId = document.querySelector("#startRole").dataset.id;
-				// 取出相应的id
-				var userId = $("#startRole").data("userid");
-				$.ajax({
-					url: "${path}/user/system/startUser.do", 
-					type: 'POST',
-					data: "userId=" + userId,
-					async: false,//设置为同步请求
-					dataType: "json",
-					success: function(data){
-					    	if(data.message == 'success'){
-					    		$("#startRoleModal").modal("hide");
-					    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
-					    			document.forms[0].action="${path}/user/system/ajaxUserList.do";
-					    			document.forms[0].submit();
-								},1000);
-					    		new PNotify({
-									title: '操作成功',
-									text: '启用管理员成功!',
-									type: 'success'
-								});
-					    		
-					    	}else{
-					    		$("#startRoleModal").modal("hide");
-					    		new PNotify({
-									title: '操作失败',
-									text: '对不起，系统异常，无法完成此操作，请联系管理员！',
-									type: 'error'
-								});
-					    	}
-						}
-					});
-			});
-			/* 删除管理员 */
-			$("#confirmDelete").click(function(){
-				var userId = $("#deleteRole").data("userid");
-				$.ajax({
-					url: "${path}/user/system/deleteUser.do", 
-					type: 'POST',
-					data: "userId=" + userId,
-					async: false,//设置为同步请求
-					dataType: "json",
-					success: function(data){
-					    	if(data.message == 'success'){
-					    		$("#deleteRoleModal").modal("hide");
-					    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
-					    			document.forms[0].action="${path}/user/system/ajaxUserList.do";
-					    			document.forms[0].submit();
-								},1000);
-					    		new PNotify({
-									title: '操作成功',
-									text: '删除此管理员成功!',
-									type: 'success'
-								});
-					    	}else{
-					    		$("#deleteRoleModal").modal("hide");
-					    		new PNotify({
-									title: '操作失败',
-									text: '对不起，系统异常，无法完成此操作，请联系管理员！',
-									type: 'error'
-								});
-					    	}
-						}
-					});
-				
-			});
-			
-			/* 确认禁用管理员 */
-			$("#confirmStop").click(function(){
-				var userId = $("#stopRole").data("userid");
-				$.ajax({
-					url: "${path}/user/system/stopUser.do", 
-					type: 'POST',
-					data: "userId=" + userId,
-					async: false,//设置为同步请求
-					dataType: "json",
-					success: function(data){
-					    	if(data.message == 'success'){
-					    		$("#stopRoleModal").modal("hide");
-					    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
-					    			document.forms[0].action="${path}/user/system/ajaxUserList.do";
-					    			document.forms[0].submit();
-								},1000);
-					    		new PNotify({
-									title: '操作成功',
-									text: '禁用管理员成功!',
-									type: 'success'
-								});
-					    	}else{
-					    		$("#stopRoleModal").modal("hide");
-					    		new PNotify({
-									title: '操作失败',
-									text: '对不起，系统异常，无法完成此操作，请联系管理员！',
-									type: 'error'
-								});
-					    	}
-						}
-					});
-			});
-			
-			/* 确认编辑管理员 */
-			$("#confirmEdit").click(function(){
-				var userId = $("#editRole").data("userid");
-				$("#form_userId").val(userId);// 赋值于userId用于序列化
-				$.ajax({
-					url: "${path}/user/system/saveUser.do", 
-					type: 'POST',
-					data: $("#savePerson_form").serialize()+"&id="+userId,
-					async: false,//设置为同步请求
-					dataType: "json",
-					success: function(data){
-					    	if(data.message == 'success'){
-					    		$("#editRoleModal").modal("hide");
-					    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
-					    			document.forms[0].action="${path}/user/system/ajaxUserList.do";
-					    			document.forms[0].submit();
-								},1000);
-					    		new PNotify({
-									title: '操作成功',
-									text: '禁用管理员成功!',
-									type: 'success'
-								});
-					    	}else{
-					    		$("#editRoleModal").modal("hide");
-					    		new PNotify({
-									title: '操作失败',
-									text: '对不起，系统异常，无法完成此操作，请联系管理员！',
-									type: 'error'
-								});
-					    	}
-						}
-					});
-			});
-		</script>
+		$(document).ready(function() {
+		});
+		// 
+		function startEvent(event) {
+			$(event).attr("id", "startRole");//给元素加上id用户处理
+			$("#startRoleModal").modal("show");
+
+		}
+		function deleteEvent(event) {
+			$(event).attr("id", "deleteRole");//给元素加上id用户处理
+			$("#deleteRoleModal").modal("show");
+
+		}
+		function stopEvent(event) {
+			$(event).attr("id", "stopRole");//给元素加上id用户处理
+			$("#stopRoleModal").modal("show");
+
+		}
+		function editEvent(event) {
+			$(event).attr("id", "editRole");//给元素加上id用户处理
+			$("#editRoleModal").modal("show");
+			setInterval(function() {// 定时循环检测输入框
+				if ($("#form_userName").val().length > 0
+						|| $("#form_type").val().length > 0
+						|| $("#form_mobile").val().length > 0
+						|| $("#form_note").val().length > 0) {
+					$("#confirmEdit").attr("disabled", false);
+				} else {
+					$("#confirmEdit").attr("disabled", true);
+				}
+			}, 100);
+
+		}
+		$("#cancelStart").click(function() {
+			$("#startRoleModal").modal("hide");
+		});
+		$("#cancelDelete").click(function() {
+			$("#deleteRoleModal").modal("hide");
+		});
+		$("#cancelStop").click(function() {
+			$("#stopRoleModal").modal("hide");
+		});
+		$("#cancelEdit").click(function() {
+			$("#editRoleModal").modal("hide");
+		});
+
+		/* 确认启用管理员 */
+		$("#confirmStart")
+				.click(
+						function() {
+							//var userId = document.querySelector("#startRole").dataset.id;
+							// 取出相应的id
+							var userId = $("#startRole").data("userid");
+							$
+									.ajax({
+										url : "${path}/user/system/startUser.do",
+										type : 'POST',
+										data : "userId=" + userId,
+										async : false,//设置为同步请求
+										dataType : "json",
+										success : function(data) {
+											if (data.message == 'success') {
+												$("#startRoleModal").modal(
+														"hide");
+												setTimeout(
+														function() { // 定时器，延迟1秒后重新跳转访问
+															document.forms[0].action = "${path}/user/system/ajaxUserList.do";
+															document.forms[0]
+																	.submit();
+														}, 1000);
+												new PNotify({
+													title : '操作成功',
+													text : '启用管理员成功!',
+													type : 'success'
+												});
+
+											} else {
+												$("#startRoleModal").modal(
+														"hide");
+												new PNotify(
+														{
+															title : '操作失败',
+															text : '对不起，系统异常，无法完成此操作，请联系管理员！',
+															type : 'error'
+														});
+											}
+										}
+									});
+						});
+		/* 删除管理员 */
+		$("#confirmDelete")
+				.click(
+						function() {
+							var userId = $("#deleteRole").data("userid");
+							$
+									.ajax({
+										url : "${path}/user/system/deleteUser.do",
+										type : 'POST',
+										data : "userId=" + userId,
+										async : false,//设置为同步请求
+										dataType : "json",
+										success : function(data) {
+											if (data.message == 'success') {
+												$("#deleteRoleModal").modal(
+														"hide");
+												setTimeout(
+														function() { // 定时器，延迟1秒后重新跳转访问
+															document.forms[0].action = "${path}/user/system/ajaxUserList.do";
+															document.forms[0]
+																	.submit();
+														}, 1000);
+												new PNotify({
+													title : '操作成功',
+													text : '删除此管理员成功!',
+													type : 'success'
+												});
+											} else {
+												$("#deleteRoleModal").modal(
+														"hide");
+												new PNotify(
+														{
+															title : '操作失败',
+															text : '对不起，系统异常，无法完成此操作，请联系管理员！',
+															type : 'error'
+														});
+											}
+										}
+									});
+
+						});
+
+		/* 确认禁用管理员 */
+		$("#confirmStop")
+				.click(
+						function() {
+							var userId = $("#stopRole").data("userid");
+							$
+									.ajax({
+										url : "${path}/user/system/stopUser.do",
+										type : 'POST',
+										data : "userId=" + userId,
+										async : false,//设置为同步请求
+										dataType : "json",
+										success : function(data) {
+											if (data.message == 'success') {
+												$("#stopRoleModal").modal(
+														"hide");
+												setTimeout(
+														function() { // 定时器，延迟1秒后重新跳转访问
+															document.forms[0].action = "${path}/user/system/ajaxUserList.do";
+															document.forms[0]
+																	.submit();
+														}, 1000);
+												new PNotify({
+													title : '操作成功',
+													text : '禁用管理员成功!',
+													type : 'success'
+												});
+											} else {
+												$("#stopRoleModal").modal(
+														"hide");
+												new PNotify(
+														{
+															title : '操作失败',
+															text : '对不起，系统异常，无法完成此操作，请联系管理员！',
+															type : 'error'
+														});
+											}
+										}
+									});
+						});
+
+		/* 确认编辑管理员 */
+		$("#confirmEdit")
+				.click(
+						function() {
+							var userId = $("#editRole").data("userid");
+							$("#form_userId").val(userId);// 赋值于userId用于序列化
+							$
+									.ajax({
+										url : "${path}/user/system/saveUser.do",
+										type : 'POST',
+										data : $("#savePerson_form")
+												.serialize()
+												+ "&id=" + userId,
+										async : false,//设置为同步请求
+										dataType : "json",
+										success : function(data) {
+											if (data.message == 'success') {
+												$("#editRoleModal").modal(
+														"hide");
+												setTimeout(
+														function() { // 定时器，延迟1秒后重新跳转访问
+															document.forms[0].action = "${path}/user/system/ajaxUserList.do";
+															document.forms[0]
+																	.submit();
+														}, 1000);
+												new PNotify({
+													title : '操作成功',
+													text : '禁用管理员成功!',
+													type : 'success'
+												});
+											} else {
+												$("#editRoleModal").modal(
+														"hide");
+												new PNotify(
+														{
+															title : '操作失败',
+															text : '对不起，系统异常，无法完成此操作，请联系管理员！',
+															type : 'error'
+														});
+											}
+										}
+									});
+						});
+	</script>
 	<style type="text/css">
 </style>
 </body>

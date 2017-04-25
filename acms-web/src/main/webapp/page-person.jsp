@@ -18,6 +18,7 @@
 <link href="${path}/assets/plugins/magnific-popup/css/magnific-popup.css" rel="stylesheet" />
 <link href="${path}/assets/plugins/select2/select2.css" rel="stylesheet" />
 <link href="${path}/assets/plugins/jquery-datatables-bs3/css/datatables.css" rel="stylesheet" />
+<link href="${path}/assets/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 <!-- Theme CSS -->
 <link href="${path}/assets/css/jquery.mmenu.css" rel="stylesheet" />
 <!-- Page CSS -->
@@ -41,6 +42,7 @@
 	<script src="${path}/assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
 	<script src="${path}/assets/plugins/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
 	<script src="${path}/assets/plugins/jquery-datatables-bs3/js/datatables.js"></script>
+	<script src="${path }/assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 	<!-- Theme JS -->
 	<script src="${path}/assets/js/jquery.mmenu.min.js"></script>
 	<script src="${path}/assets/js/core.min.js"></script>
@@ -110,15 +112,15 @@
 											<th style="width: 18%;">学院</th>
 											<th style="width: 18%;">专业</th>
 											<th style="width: 5%;">班级</th> -->
-											<th>序号.</th>
+											<th style="min-width: 50px;">序号.</th>
 											<th>姓名</th>
 											<th>卡号</th>
-											<th style="width: 100px;">身份证号</th>
-											<th style="min-width: 47px;">类型</th>
-											<th>性别</th>
-											<th>年龄</th>
+											<th style="width: 170px;">身份证号</th>
+											<th style="width: 70px;">类型</th>
+											<th style="min-width: 47px;">性别</th>
+											<th style="min-width: 47px;">年龄</th>
 											<th>联系电话</th>
-											<th>学院</th>
+											<th style="min-width: 76px;">学院</th>
 											<th>专业</th>
 											<th>班级</th>
 										</tr>
@@ -165,7 +167,10 @@
 					</div>
 				</div>
 			</div>
-			
+		</div>
+	</div>
+	<%@ include file="/page-footer.jsp"%>
+	
 			<div class="modalBasic"></div>
 			<!-- 禁用人员 -->
 			<div class="decideStop"></div>
@@ -234,15 +239,24 @@
 											</div>
 										</div>
 										<div class="form-group">
-											<label class="col-sm-3 control-label">人员类型：</label>
-											<div class="col-sm-9">
-												<input type="url" id="perType" name="perType" class="form-control" placeholder="请选择人员类型..." />
+										<label class="col-md-3 control-label" for="select">人员类型：</label>
+											<div class="col-md-9">
+												<select id="perType" name="perType" class="form-control input-md" size="1">
+													<option value="0">请选择人员类型</option>
+													<option value="1">学生</option>
+													<option value="2">教师</option>
+													<option value="3">工作人员</option>
+												</select>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-3 control-label">人员性别：</label>
 											<div class="col-sm-9">
-												<input type="url" id="perSex" name="perSex" class="form-control" placeholder="请选择人员性别..." />
+												<select id="perSex" name="perSex" class=" form-control input-md"  size="1" >
+													<option value="0">请选择人员性别</option>
+													<option value="1">男</option>
+													<option value="2">女</option>
+												</select>
 											</div>
 										</div>
 										<div class="form-group">
@@ -290,14 +304,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- End Main Page -->
-			<!-- Footer -->
-			<%@ include file="/page-footer.jsp"%>
-			<!-- End Footer -->
-		</div>
-	</div>
-	<!-- Vendor JS-->
-	
 	
 </body>
 	<script type="text/javascript">
