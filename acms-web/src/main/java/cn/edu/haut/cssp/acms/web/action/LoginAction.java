@@ -34,8 +34,10 @@ import com.xdja.platform.security.bean.Operator;
 import com.xdja.platform.security.utils.OperatorUtil;
 
 import cn.edu.haut.cssp.acms.action.BaseAction;
+import cn.edu.haut.cssp.acms.core.entity.TSystemLog;
 import cn.edu.haut.cssp.acms.core.entity.TUser;
 import cn.edu.haut.cssp.acms.system.service.IFunctionService;
+import cn.edu.haut.cssp.acms.system.service.ISystemLogService;
 import cn.edu.haut.cssp.acms.system.service.IUserService;
 import cn.edu.haut.cssp.acms.util.PasswordUtils;
 
@@ -49,9 +51,11 @@ public class LoginAction extends BaseAction {
 
 	private static final Logger logger = LoggerFactory.getLogger(LoginAction.class);
 
-	// 注入service
 	  @Autowired 
 	  private IUserService userService;
+	  
+	  @Autowired
+	  private ISystemLogService syslogService;
 
 	/**
 	 * 登录
@@ -96,8 +100,14 @@ public class LoginAction extends BaseAction {
 					 if(StringUtils.equalsIgnoreCase(PasswordUtils.encodePasswordSHA1(loginPassword), currUser.getPassword())){
 						 // 存入session
 						 session.setAttribute("currUser", currUser);
-						 model.put("userName", loginUsername);
-						 return "/homepage.jsp";
+						 TSystemLog sysLog = new TSystemLog();
+						 sysLog.setUserId(currUser.getId());
+						 sysLog.setUserName(currUser.getUserName());
+						 sysLog.setLogType(TSystemLog.ENUM_SYSLOG_TYPE.loginLog.value);
+						 sysLog.setLogUploadTime(System.currentTimeMillis());
+						 sysLog.setLogContent("管理员【" + currUser.getUserName() + "】登录系统");
+						 syslogService.insertSyslog(sysLog);
+						 return "redirect:/index.do";
 					 }else {
 						 model.put("message2", "登录密码错误");
 						 return "/page-login.jsp";
@@ -117,6 +127,7 @@ public class LoginAction extends BaseAction {
 					model.put("message", e.getMessage());
 				}*/
 			}catch(Exception e){
+				e.printStackTrace();
 				model.put("message", "请求登录异常，请重试");
 			}
 			/*if (isLogined) {
@@ -145,6 +156,13 @@ public class LoginAction extends BaseAction {
 	@RequestMapping("/logout.do")
 	public String logout(HttpServletResponse response, HttpSession session) {
 		TUser currUser = (TUser) session.getAttribute("currUser");
+		TSystemLog sysLog = new TSystemLog();
+		 sysLog.setUserId(currUser.getId());
+		 sysLog.setUserName(currUser.getUserName());
+		 sysLog.setLogType(TSystemLog.ENUM_SYSLOG_TYPE.loginLog.value);
+		 sysLog.setLogUploadTime(System.currentTimeMillis());
+		 sysLog.setLogContent("管理员【" + currUser.getUserName() + "】退出系统");
+		 syslogService.insertSyslog(sysLog);
 		logger.info("管理员：{}退出成功", currUser.getUserName());
 		session.removeAttribute("currUser");
 		//SecurityUtils.getSubject().logout();

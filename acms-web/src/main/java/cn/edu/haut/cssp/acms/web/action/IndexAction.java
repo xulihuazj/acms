@@ -7,6 +7,7 @@ import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.patchca.color.SingleColorFactory;
 import org.patchca.filter.predefined.CurvesRippleFilterFactory;
@@ -19,6 +20,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import cn.edu.haut.cssp.acms.core.entity.TUser;
 
 
 /**
@@ -33,7 +36,9 @@ public class IndexAction {
 
 	
 	@RequestMapping(value = "/index.do")
-	public String index(HttpServletRequest request) {
+	public String index(HttpServletRequest request,ModelMap modelMap,HttpSession session) {
+		TUser currUser = (TUser) session.getAttribute("currUser");
+		modelMap.put("userName", currUser.getUserName());
 		return "/homepage.jsp";
 	}
 	
