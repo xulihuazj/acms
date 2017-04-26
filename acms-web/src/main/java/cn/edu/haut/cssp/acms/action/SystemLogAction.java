@@ -59,7 +59,7 @@ public class SystemLogAction extends BaseAction{
 	 * @return
 	 */
 	@RequestMapping("/system/syslog/querySyslogList.do")
-	public String querySyslogList(DataSyslogExt dataSyslogExt,ModelMap modelMap){
+	public String querySyslogList(DataSyslogExt dataSyslogExt,ModelMap modelMap, HttpSession session){
 		List<TSystemLog> logList = systemLogService.querySyslogList(dataSyslogExt);
 		List<DataSyslogExt> syslogList = new ArrayList<>();
 		Iterator<TSystemLog> iteratorList = logList.iterator();
@@ -74,6 +74,8 @@ public class SystemLogAction extends BaseAction{
 			syslogList.add(syslogExt);
 		}
 		modelMap.put("syslogList", syslogList);
+		TUser currUser = (TUser) session.getAttribute("currUser");
+		modelMap.put("userName", currUser.getUserName());
 		return "/page-log.jsp";
 	}
 	/**

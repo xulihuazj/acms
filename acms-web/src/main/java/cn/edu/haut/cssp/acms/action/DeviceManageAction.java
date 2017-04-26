@@ -208,6 +208,8 @@ public class DeviceManageAction extends BaseAction{
 		return message;
 	}
 	
+	
+	
 	@RequestMapping(value = "/device/queryPersonNote.do",method = RequestMethod.GET)
 	@ResponseBody
 	public Object queryPersonNote(String cardSN){

@@ -39,4 +39,6 @@ public interface ISystemLogService {
 	public List<TSystemLog> querySyslogList(DataSyslogExt dataSyslogExt);
 	
 	
+	public boolean insertSyslog(TSystemLog sysLog);
+	
 }

@@ -80,5 +80,11 @@ public class SystemLogServiceImpl extends BaseServiceImpl implements ISystemLogS
 		List<TSystemLog> systemLogList = super.getBaseDao().getSqlSession().selectList("SystemLogMapper.querySyslogList", map);
 		return systemLogList;
 	}
+
+	@Override
+	public boolean insertSyslog(TSystemLog sysLog) {
+		int i = super.getBaseDao().getSqlSession().insert("SystemLogMapper.insertSyslog", sysLog);
+		return true;
+	}
 	
 }
