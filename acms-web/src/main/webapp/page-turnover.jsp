@@ -101,72 +101,18 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr class="tablestyle">
-											<td>1</td>
-											<td>电气工程学院</td>
-											<td>[朱岸峰]离开学院</td>
-											<td>2017-04-14</td>
-											<td  >75439579437598</td>
-											<td  ><span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
-										</tr>
-										<tr class="tablestyle">
-											<td>2</td>
-											<td>电气工程学院</td>
-											<td>[朱岸峰]进入学院</td>
-											<td>2017-04-14</td>
-											<td  >75439579437598</td>
-											<td  ><span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
-										</tr>
-										<tr class="tablestyle">
-										<td>3</td>
-											<td>电气工程学院</td>
-											<td>[张军]进入学院</td>
-											<td>2017-04-14</td>
-											<td  >75439579437598</td>
-											<td  ><span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
-										</tr>
-										<tr class="tablestyle">
-										<td>4</td>
-											<td>电气工程学院</td>
-											<td>[张军]进入学院</td>
-											<td>2017-04-14</td>
-											<td  >75439579437598</td>
-											<td  ><span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
-										</tr>
-										<tr class="tablestyle">
-										<td>5</td>
-											<td>电气工程学院</td>
-											<td>[赵一博]离开学院</td>
-											<td>2017-04-14</td>
-											<td  >75439579437598</td>
-											<td  ><span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
-										</tr>
-										<tr class="tablestyle">
-										<td>6</td>
-											<td>电气工程学院</td>
-											<td>[赵一博]进入学院</td>
-											<td>2017-04-16</td>
-											<td  >75439579437598</td>
-											<td > <span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
-										</tr>
-										<tr class="tablestyle">
-										<td>1</td>
-											<td>电气工程学院</td>
-											<td>[张军]离开学院</td>
-											<td>2017-04-14</td>
-											<td  >75439579437598</td>
-											<td > <span class="label label-info"><a sytle="color: white">查看详情</a></span></td>
-										</tr>
-										<tr class="tablestyle">
-										<td>7</td>
-											<td>电气工程学院</td>
-											<td>[张军]进入学院</td>
-											<td>2017-04-14</td>
-											<td  >75439579437598</td>
-											<td >	
-												<span class="label label-info"><a sytle="color: white">查看详情</a></span>
-											</td>
-										</tr>
+										<c:forEach items="${deviceLogs}" var="devicelog">
+											<tr class="tablestyle">
+												<td>${devicelog.id}</td>
+											 	<td>${devicelog.deviceSite}</td>
+												<td>${devicelog.content}</td>
+												<td>${devicelog.turnTime}</td>
+												<td>${devicelog.cardSN}</td>
+												<td>	
+													<span class="label label-info"><a sytle="color: white">查看详情</a>
+												</td>
+											</tr>
+										</c:forEach>
 									</tbody>
 								</table>
 							</div>
