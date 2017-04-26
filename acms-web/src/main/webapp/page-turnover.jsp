@@ -22,6 +22,7 @@
 <link href="${path }/assets/plugins/jqvmap/jqvmap.css" rel="stylesheet" />
 <link rel="stylesheet" href="${path }/assets/css/zlight.menu.css" media="screen">
 <link href="${path}/assets/plugins/jquery-datatables-bs3/css/datatables.css" rel="stylesheet" />
+<link href="${path }/assets/plugins/select2/select2.css" rel="stylesheet" />
 <!-- Theme CSS -->
 <link href="${path }/assets/css/jquery.mmenu.css" rel="stylesheet" />
 <!-- Page CSS -->
@@ -138,13 +139,15 @@
 		<script src="${path }/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
 		<script src="${path }/assets/plugins/bootkit/js/bootkit.js"></script>
 		<script src="${path }/assets/plugins/jquery/js/jquery.zlight.menu.1.0.min.js"></script>
-	<script src="${path}/assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
+		<script src="${path }/assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
+		<script src="${path }/assets/plugins/select2/select2.js"></script>
 		<!-- Theme JS -->
 		<script src="${path }/assets/js/jquery.mmenu.min.js"></script>
 		<script src="${path }/assets/js/core.min.js"></script>
 
 		<!-- Pages JS -->
-		<script src="${path }/assets/js/pages/table-advanced.js"></script>
+		<script src="${path }/assets/js/common/page-person.js"></script>
+		<script src="${path }/assets/js/pages/ui-modals.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$('#zlight-nav').zlightMenu();

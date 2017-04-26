@@ -32,7 +32,7 @@
 
 				$search
 					.attr({
-						placeholder: typeof options.searchPlaceholder !== 'undefined' ? options.searchPlaceholder : 'Search'
+						placeholder: typeof options.searchPlaceholder !== 'undefined' ? options.searchPlaceholder : '请输入关键字搜索...'
 					})
 					.addClass('form-control');
 

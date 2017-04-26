@@ -300,7 +300,6 @@
 		});
 		/*点击确定提交人员信息*/
 		$("#confirmSave").click(function(){
-			$("")
 		});
 	</script>
 </body>
