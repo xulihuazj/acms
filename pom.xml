@@ -279,12 +279,18 @@
 			<version>1.2.0</version>
 		</dependency>
 
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>org.joda</groupId>
 			<artifactId>com.springsource.org.joda.time</artifactId>
 			<version>1.6.0</version>
+		</dependency> -->
+	
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9.7</version>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>com.xdja.platform</groupId>
 			<artifactId>platform-core</artifactId>

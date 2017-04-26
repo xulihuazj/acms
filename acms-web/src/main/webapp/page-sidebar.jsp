@@ -155,10 +155,10 @@
 									<a > <span class="text">数据验证</span>
 									</a>
 								</li>
-								<li>
+								<!-- <li>
 									<a> <span class="text">实时监控</span>
 									</a>
-								</li>
+								</li> -->
 								<li>
 									<a href="${path }/data/dataHandleList.do"> <span class="text">统计分析</span>
 									</a>
