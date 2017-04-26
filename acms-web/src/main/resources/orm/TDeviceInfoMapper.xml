@@ -15,7 +15,7 @@
  </select>
  
 	 <update id="updateTimeGroup"  parameterType="java.util.Map" >
-	 	update t_devic_info info set info.n_time_start = #{timeStart}, info.n_time_end = #{timeEnd}
+	 	update t_device_info info set info.n_time_start = #{timeStart}, info.n_time_end = #{timeEnd}
 	 	where info.n_id = #{id}
 	 </update>
 	 

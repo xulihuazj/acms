@@ -8,6 +8,7 @@ import java.util.Locale;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeUtils;
+import org.joda.time.format.DateTimeFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -107,8 +108,8 @@ public class DateTimeUtil {
 	 * @return Date 格式化后的时间
 	 */
 	public static Date dateStrToDate(String dateStr) {
-		//return DateTime.parse(dateStr).toDate();
-		return null;
+		return DateTime.parse(dateStr).toDate();
+		//return null;
 	}
 
 	/**
@@ -186,8 +187,8 @@ public class DateTimeUtil {
 	 * @return
 	 */
 	public static long dateTimeStrToLong(String dateTimeStr){
-		//return DateTime.parse(dateTimeStr, DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss")).getMillis();
-		return Long.MAX_VALUE;
+		return DateTime.parse(dateTimeStr, DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss")).getMillis();
+		//return Long.MAX_VALUE;
 	}
 	
 	/**

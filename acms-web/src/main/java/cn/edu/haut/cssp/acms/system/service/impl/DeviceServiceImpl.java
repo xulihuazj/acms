@@ -35,6 +35,7 @@ public class DeviceServiceImpl extends BaseServiceImpl implements IDeviceService
 		Map<String, Object> map = new HashMap<>();
 		map.put("timeStart", timeGroupStart);
 		map.put("timeEnd", timeGroupEnd);
+		map.put("id", id);
 		int i = super.getBaseDao().getSqlSession().update("DeviceInfoMapper.updateTimeGroup", map);
 		return i == 1 ? true : false;
 	}

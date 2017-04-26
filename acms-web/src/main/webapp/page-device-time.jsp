@@ -106,11 +106,11 @@
 													<c:if test="${deviceInfo.status == 1}">设备正常</c:if>
 													<c:if test="${deviceInfo.status == 2}">设备已停用</c:if>
 												</td>
-												<td> <a class="btn btn-info" style="height: 35px" > <i onclick="editGuardTime(this)">编辑门禁时间</i>
+												<td> <a class="btn btn-info" style="height: 35px" > <i onclick="editGuardTime(this)" data-deviceid="${deviceInfo.id}">编辑门禁时间</i>
 												</a> </td>
 												<td class="time_group_td">
-													<c:if test="${deviceInfo.abateTime != null}">${deviceInfo.abateTime}-->${deviceInfo.abateTime }</c:if>
-													<c:if test="${deviceInfo.abateTime == null}">无</c:if>
+													<c:if test="${deviceInfo.timeStart != null}">${deviceInfo.timeStart}  到   ${deviceInfo.timeEnd }</c:if>
+													<c:if test="${deviceInfo.timeStart == null}">无</c:if>
 												</td>
 											</tr>
 										</c:forEach>
@@ -146,12 +146,13 @@
 							<h2 class="panel-title">门禁时间设置</h2>
 						</div>
 						<div class="panel-body bk-noradius">
-							<form id="editTime_form" class="form-horizontal mb-lg" novalidate="novalidate">
+							<form id="editTime_form2" action="${path}/device/timeGroupInstall2.do" method="get" class="form-horizontal mb-lg" novalidate="novalidate" >
+								<input  name="id" id="deviceId" hidden/>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">门禁开始时间：</label>
 									<div class="col-sm-8">
 										<div class="input-append date form_datetime">
-											<input size="35" type="text"  name="guardTimeStart" readonly >
+											<input size="35" type="text"  name="guardTimeStart" readonly  >
 											<span class="add-on" ><i class="icon-th" ></i></span>
 										</div>
 									</div>
@@ -160,17 +161,18 @@
 									<label class="col-sm-4 control-label">门禁结束时间：</label>
 									<div class="col-sm-8">
 										<div class="input-append date form_datetime">
-											<input size="35" type="text" value="" readonly name="guardEndStart" data-format="dd/MM/yyyy hh:mm:ss" >
+											<input size="35" type="text" readonly name="guardEndStart"  >
 											<span class="add-on" ><i class="icon-th"></i></span>
 										</div>
 									</div>
 								</div>
+								
 							</form>
 						</div>
 						<div class="panel-footer">
 							<div class="row">
 								<div class="col-md-12 text-right">
-									<button class="btn btn-primary modal-confirm" id="confirmEditTime">确定</button>
+									<button class="btn btn-primary modal-confirm" id="confirmEditTime2" type="submit">确定</button>
 									<button class="btn btn-default modal-dismiss" id="cancelInputBox">取消</button>
 								</div>
 							</div>
@@ -180,9 +182,6 @@
 			</div>
 		</div>
 	</div>
-	
-	
-
 	<!-- Vendor JS-->
 	<script src="${path}/assets/vendor/js/jquery.min.js"></script>
 	<script src="${path}/assets/vendor/js/jquery-2.1.1.min.js"></script>
@@ -209,20 +208,15 @@
 	<script src="${path}/assets/js/common/page-device.js"></script>
 	<script src="${path}/assets/js/common.js"></script>
 	<!-- end: JavaScript-->
-	<script type="text/javascript">
-		$(function(){
-			//$("#editGuard").modal("show");
-			/* alert($("#abateTime").text());
-			var timestap = $("#abateTime").text();
-			var now = new Date(1230999938);
-			$("#abateTime").text(getDate(1492738436049)); */
-		});
-
-	</script>
 </body>
 
 <script type="text/javascript">
 	$(function(){
+	});
+	
+	$("#confirmEditTime2").click(function(){
+		alert($("#editTime_form2"));
+		$("#editTime_form2").submit();
 	});
 	function getDate(tm){
 		var tt=new Date(parseInt(tm)).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ")
@@ -234,7 +228,10 @@
 	  
 		function editGuardTime(event){
 			$(event).attr("id","editGuardTime");//给元素加上id用户处理
-			 $("#editGuardModal").modal("show");
+			var deviceId = $("#editGuardTime").data("deviceid");
+			$("#deviceId").val(deviceId);
+			$("#deviceId").text(deviceId);
+			$("#editGuardModal").modal("show");
 			
 		}
 	  $("#confirmEditTime").click(function(){

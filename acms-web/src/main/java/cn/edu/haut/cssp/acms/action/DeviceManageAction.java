@@ -101,6 +101,16 @@ public class DeviceManageAction extends BaseAction{
 		return "/page-device-time.jsp";
 	}
 	
+	/**
+	 * 设置门禁开启结束时间
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月25日下午11:45:05
+	 * @param timeGroupStart
+	 * @param timeGroupEnd
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping("/device/timeGroupInstall.do")
 	@ResponseBody
 	public Object timeGroupInstall(Long timeGroupStart,Long timeGroupEnd, Long id) {
@@ -113,6 +123,23 @@ public class DeviceManageAction extends BaseAction{
 			logger.error(e.getMessage());
 		}
 		return message;
+	}
+	
+	@RequestMapping(value = "/device/timeGroupInstall2.do", method=RequestMethod.GET)
+	public String timeGroupInstall2(String guardTimeStart,String guardEndStart, Long id) {
+		Map<String, Object> message = new HashMap<>();
+		try{
+			String newTimeStart = guardTimeStart.replace(" ", "-").replace("---", " ")+":00";
+			String newTimeEnd = guardEndStart.replace(" ", "-").replace("---", " ")+":00";
+			long time1 = DateTimeUtil.dateTimeStrToLong(newTimeStart);
+			long time2 = DateTimeUtil.dateTimeStrToLong(newTimeEnd);
+			boolean flag = deviceService.timeGroupInstall(time1, time2, id);
+			message.put("message", SUCCESS);
+		}catch(Exception e){
+			message.put("message", "设置门禁时间失败");
+			logger.error(e.getMessage());
+		}
+		return "redirect:/device/timeGroup.do";
 	}
 	
 	/**
