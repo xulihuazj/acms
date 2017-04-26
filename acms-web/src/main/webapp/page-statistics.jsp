@@ -90,7 +90,7 @@
 							<div class="panel-body col-sm-6">
 								<div id="donutchart" style="height: 250px;"></div>
 								<p style="text-align: center; font-size:15px;">
-								人员信息汇总
+								设备品牌汇总
 								</p>
 							</div>
 						</div>
@@ -98,9 +98,13 @@
 					<div class="col-sm-12">
 						<div class="panel panel-default bk-bg-white">
 							<div class="panel-body">
+								<div id="dotChart" class="center" style="height: 300px;"></div>
+								<p style="text-align: center; font-size:20px;">
+								各时间段人员出入峰值统计图
+								</p>
 								<div id="sincos" class="center" style="height: 300px;"></div>
 								<p id="hoverdata" style="text-align: center; font-size:20px;">
-									Mouse position at (<span id="x">0</span>, <span id="y">0</span>). <span id="clickdata"></span>
+									当前峰值：(<span id="x">0</span>, <span id="y">0</span>) <span id="clickdata"></span>
 								</p>
 							</div>
 						</div>

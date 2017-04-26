@@ -1,6 +1,6 @@
 
 function randNum(){
-	return ((Math.floor( Math.random()* (1+40-20) ) ) + 20)* 1200;
+	return ((Math.floor( Math.random()* (1+40-20) ) ) + 20)* 10;
 }
 
 function randNum2(){
@@ -20,10 +20,11 @@ $(document).ready(function(){
 	/* ---------- 基本图表 ---------- */
 	if($("#dotChart").length)
 	{	
-		var likes = [[2007, 5+randNum()], [2008, 10+randNum()], [2009, 40+randNum()], [2010, 60+randNum()],[2011, 90+randNum()],[2012, 40+randNum()],[2013, 25+randNum()],[2014, 35+randNum()]];
+		var likes = [[0, randNum()],[1, randNum()], [2, randNum()], [3,randNum()], [4,randNum()],[5, randNum()],[6, randNum()],[7, randNum()],[8, randNum()],[9, randNum()]
+		,[10, randNum()],[11, randNum()],[12, randNum()]];
 
 		var plot = $.plot($("#dotChart"),
-			   [ { data: likes, label: "Profit"} ], {
+			   [ { data: likes, label: "门禁出入峰值"} ], {
 				   series: {
 					   lines: { show: true,
 								lineWidth: 2,
@@ -371,10 +372,18 @@ $(document).ready(function(){
 		$("#piechart").bind("plothover", pieHover);
 	}
 	
-	/* ---------- 圆环图表 ---------- */
+	/* ---------- 设备品牌汇总圆环图表 ---------- */
+	var devicedata = [
+	                  { label: "中控V8(5)",  data: 71},
+	        	{ label: "中控F708(4)",  data: 57},
+	        	{ label: "蓝本NB-2020T(2)",  data: 28},
+	        	{ label: "华本ES282-P(4)",  data: 57},
+	        	{ label: "安森ASR-2610(3)",  data: 42},
+	        	{ label: "海康威视HCM-02A(3)",  data: 42}
+	        	];
 	if($("#donutchart").length)
 	{
-		$.plot($("#donutchart"), data,
+		$.plot($("#donutchart"), devicedata,
 		{
 				series: {
 						pie: {
@@ -385,7 +394,7 @@ $(document).ready(function(){
 				legend: {
 					show: false
 				},
-				colors: ["#FA5833", "#2FABE9", "#26C9FF", "#78CD51"]
+				colors: [ "#800080","#804000","#FA5833", "#2FABE9", "#26C9FF", "#78CD51"]
 		});
 	}
 

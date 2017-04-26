@@ -106,8 +106,14 @@
 													<c:if test="${deviceInfo.status == 1}">设备正常</c:if>
 													<c:if test="${deviceInfo.status == 2}">设备已停用</c:if>
 												</td>
-												<td> <a class="btn btn-info" style="height: 35px" > <i onclick="editGuardTime(this)" data-deviceid="${deviceInfo.id}">编辑门禁时间</i>
-												</a> </td>
+												<td> 
+													<c:if test="${deviceInfo.status==1 }">
+														<a class="btn btn-info" style="height: 35px" > <i onclick="editGuardTime(this)" data-deviceid="${deviceInfo.id}">编辑门禁时间</i></a> 
+													</c:if>
+													<c:if test="${deviceInfo.status==2 }">
+														<a class="btn btn-info" style="height: 35px"  > <i onclick="editGuardTime(this)" data-deviceid="${deviceInfo.id}" style="color:#ff0000;" disabled="true">编辑门禁时间</i></a> 
+													</c:if>
+												</td>
 												<td class="time_group_td">
 													<c:if test="${deviceInfo.timeStart != null}">${deviceInfo.timeStart}  到   ${deviceInfo.timeEnd }</c:if>
 													<c:if test="${deviceInfo.timeStart == null}">无</c:if>
