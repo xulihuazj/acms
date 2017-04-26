@@ -40,5 +40,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="orm/TDeviceInfoMapper.xml" />
 		<mapper resource="orm/TRoleMapper.xml"/>
 		<mapper resource="orm/TSystemLogMapper.xml"/>
+		<mapper resource="orm/TDeviceLogMapper.xml"/>
 	</mappers>
 </configuration>		

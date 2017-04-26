@@ -27,4 +27,23 @@
 			</if>
 		</where>
 	</select>
+	
+	<insert id="insertSyslog" parameterType="cn.edu.haut.cssp.acms.core.entity.TSystemLog">
+		insert into t_sys_log
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="null != userName and userName != ''">c_user_name,</if>
+			<if test="null != userId and userId > 0">n_user_id,</if>
+			<if test="logType > 0 and null != logType">c_type,</if>
+			<if test="null != logContent and logContent != ''">c_content,</if>
+			<if test="null != logUploadTime and logUploadTime > 0">n_upload_time,</if>
+		</trim>
+		<trim prefix="values(" suffix=")" suffixOverrides=",">
+			<if test="null != userName and userName != ''">#{userName},</if>
+			<if test="null != userId and userId > 0">#{userId},</if>
+			<if test="logType > 0 and null != logType">#{logType},</if>
+			<if test="null != logContent and logContent != ''">#{logContent},</if>
+			<if test="null != logUploadTime and logUploadTime > 0">#{logUploadTime},</if>
+		</trim>
+	</insert>
+		
 </mapper>

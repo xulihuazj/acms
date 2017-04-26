@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--mapper（命名空间）一般为接口名称 -->
+<mapper namespace="DeviceLogMapper">
+	<!-- 通用SQL片段 -->
+	<sql id="Base_Column_List">
+	id id,c_device_site deviceSite,c_content content,n_turn_time turnTime,c_card_sn cardSN,n_turn_type turnType
+	</sql>
+
+	  <select id="ajaxTrunLogAction" parameterType="int" resultType="cn.edu.haut.cssp.acms.core.entity.TDeviceLog">
+	 	 select 
+	 	 <include refid="Base_Column_List" />
+	 	  from t_device_log 
+	 </select>
+	 
+	  <select id="queryListByCardsn" parameterType="java.lang.String" resultType="cn.edu.haut.cssp.acms.core.entity.TDeviceLog">
+	 	 select 
+	 	 <include refid="Base_Column_List" />
+	 	  from t_device_log  where c_card_sn = #{cardsn}
+	 </select>
+	 
+	 <insert id="insertLog" parameterType="cn.edu.haut.cssp.acms.core.entity.TDeviceLog">
+		insert into t_device_log
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="null != deviceSite">c_device_site,</if>
+			<if test="null != content">c_content,</if>
+			<if test="turnTime > 0 and null != turnTime">n_turn_time,</if>
+			<if test="null != cardSN and cardSN != ''">c_card_sn,</if>
+			<if test="null != turnType">n_turn_type,</if>
+		</trim>
+		<trim prefix="values(" suffix=")" suffixOverrides=",">
+			<if test="null != deviceSite">#{deviceSite},</if>
+			<if test="null != content">#{content},</if>
+			<if test="turnTime > 0 and null != turnTime">#{turnTime},</if>
+			<if test="null != cardSN and cardSN != ''">#{cardSN},</if>
+			<if test="null != turnType">#{turnType},</if>
+		</trim>
+	</insert>
+ 
+</mapper>
