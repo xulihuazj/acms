@@ -10,6 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9">
 <meta name="renderer" content="webkit">
 <title>登录门禁系统</title>
+<link rel="shortcut icon" href="${path}/basic/imgfile/timg.ico" type="image/x-icon" sizes="157x157" />
 <link href="./login_files/bootstrap.css" rel="stylesheet">
 <link href="./login_files/login.css" rel="stylesheet">
 </head>

@@ -7,8 +7,7 @@
 <title>修改密码|学生门禁管理系统</title>
 <!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<link rel="shortcut icon" href="${path }/assets/ico/favicon.ico" type="image/x-icon" />
-<link rel="apple-touch-icon" href="${path }/assets/ico/apple-touch-icon.png" />
+<link rel="shortcut icon" href="${path}/basic/imgfile/timg.ico" type="image/x-icon" />
 <!-- start: CSS file-->
 <!-- Vendor CSS-->
 <link href="${path }/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />

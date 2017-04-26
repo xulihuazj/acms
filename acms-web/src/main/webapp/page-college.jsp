@@ -8,6 +8,7 @@
 <title>人员管理 | 门禁管理系统</title>
 <!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="shortcut icon" href="${path}/basic/imgfile/timg.ico" type="image/x-icon" sizes="157x157" />
 <!-- Vendor CSS-->
 <link href="${path }/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
