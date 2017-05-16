@@ -91,7 +91,7 @@
 											<td>电气工程学院</td>
 											<td>10001</td>
 											<td>
-												<span class="label label-info"><a onclick="" id="startover" sytle="color: white">查看学院详情</a></span>
+												<span class="label label-info" ><a onclick="queryDetail();" sytle="color: white">查看学院详情</a></span>
 											</td>
 										</tr>
 										<tr class="tablestyle">
@@ -254,17 +254,92 @@
 				</div>
 			</div>
 			<!-- End Main Page -->
-
 			<!-- Footer -->
 			<%@ include file="/page-footer.jsp"%>
 			<!-- End Footer -->
-
 		</div>
 	</div>
 	<!--/container-->
+	
+	<!-- 查看详情弹出框 -->
+<div id="queryDetailModal" class="modal fade bs-example-modal-lg" data-backdrop="static" tabindex="-1" role="dialog">
+		<div class="modal-dialog panel panel-default" role="document">
+			<div class="modal-content">
+				<div class="modal-body ">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h2 class="panel-title">学院详情</h2>
+						</div>
+						<div class="panel-body bk-noradius">
+							<form id="savePerson_form" class="form-horizontal mb-lg" novalidate="novalidate" style="font-size: 16px;">
+								<span name="id" value="${userId } id="form_userId"></span>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">英文名：</label>
+									<div class="col-sm-9">
+										<span>College of Electrical Engineering</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">承担学位：</label>
+									<div class="col-sm-9">
+										<span>承担硕士研究生、 本科生教学</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">现任领导：</label>
+									<div class="col-sm-9">
+										<span>刘楠嶓，从沛杰等</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">教育理念：</label>
+									<div class="col-sm-9 " style="font-size: 17px;">
+										<span>厚基础，宽口径，强实践，重创新</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">专业分类：</label>
+									<div class="col-sm-9" style="line-height:30px;">
+										<!-- <select id="form_type" name="type" class=" form-control input-md" size="1">
+											<option >自动化</option>
+											<option >电气工程及其自动化</option>
+											<option >测控技术与仪器</option>
+											<option >轨道交通与信号控制</option>
+										</select> -->
+											<p>自动化</p>
+											<p>电气工程及其自动化</p>
+											<p>测控技术与仪器</p>
+											<p>轨道交通与信号控制</p>
+										
+										
+									</div>
+								</div>
+								<div class="form-group" style="line-height:30px;">
+									<label class="col-sm-3 control-label">学院简介：</label>
+									<div class="col-sm-9">
+									<span>电气工程学院成立于2005年1月，前身是1980年成立的电气系和电工教研室。
+									是河南省仪器仪表学会理事长单位，河南省电工技术学会理事单位。全院现有教职工79人，其中有教授、副教授40人，高级实验师、高级工程师5人，博士25人；
+									教师中享受国务院政府特殊津贴专家、河南省优秀专家2人，博士生导师1人，硕士生导师14人。
+												</span>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="panel-footer">
+							<div class="row">
+								<div class="col-md-12 text-right">
+									<button class="btn btn-primary modal-confirm" data-dismiss="modal">确定</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 
 	<!-- start: JavaScript-->
-
 	<!-- Vendor JS-->
 	<script src="${path }/assets/vendor/js/jquery.min.js"></script>
 	<script src="${path }/assets/vendor/js/jquery-2.1.1.min.js"></script>
@@ -293,10 +368,13 @@
 			
 		});
 		
+		function queryDetail(){
+			$("#queryDetailModal").modal("show");
+		}
+		
 		/*点击取消清空输入框，并退出弹出框*/
 		$("#cancelSave").click(function(){
 			$("#editPersonModal").modal("hide");
-			alert();
 		});
 		/*点击确定提交人员信息*/
 		$("#confirmSave").click(function(){
