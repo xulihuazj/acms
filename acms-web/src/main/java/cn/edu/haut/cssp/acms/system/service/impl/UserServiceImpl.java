@@ -52,7 +52,6 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
 	@Override
 	public LitePaging<TUser> queryAllUsers(TUser condition, DataQueryExt queryExt, DateQueryBean queryBean)
 			throws UserBusiException {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

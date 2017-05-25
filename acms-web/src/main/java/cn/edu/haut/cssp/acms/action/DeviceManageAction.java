@@ -177,7 +177,7 @@ public class DeviceManageAction extends BaseAction{
 	public Object estConnect(Long deviceId) {
 		Map<String, Object> message = new HashMap<>();
 		try{
-			deviceService.breakConnect(deviceId);
+			deviceService.estConnect(deviceId);
 			message.put("message", SUCCESS);
 		}catch(Exception e){
 			message.put("message", "断开设备连接失败");
@@ -196,10 +196,10 @@ public class DeviceManageAction extends BaseAction{
 	 */
 	@RequestMapping("/device/stopDevice.do")
 	@ResponseBody
-	public Object ecstConnect(Long deviceId) {
+	public Object stopDevice(Long deviceId) {
 		Map<String, Object> message = new HashMap<>();
 		try{
-			deviceService.breakConnect(deviceId);
+			deviceService.breakConnect(deviceId);//断开
 			message.put("message", SUCCESS);
 		}catch(Exception e){
 			message.put("message", "断开设备连接失败");
@@ -211,8 +211,7 @@ public class DeviceManageAction extends BaseAction{
 	
 	
 	@RequestMapping(value = "/device/queryPersonNote.do",method = RequestMethod.GET)
-	@ResponseBody
-	public Object queryPersonNote(String cardSN){
+	public String queryPersonNote(String cardSN){
 		Map<String, Object> data =new HashMap<>();
 		try{
 			TPerson person = personService.selectPersonNote(cardSN);
@@ -222,14 +221,11 @@ public class DeviceManageAction extends BaseAction{
 		}catch(Exception e){
 			data.put("success", 0);//失败
 		}
-		return data;
+		return "ok";
 	}
 	
 	@RequestMapping("/result")
-	@ResponseBody
-	public Object result(){
-		Map<String, Object> map = new HashMap<>();
-		map.put("success", 1);
-		return map;
+	public String result(){
+		return "ok";
 	}
 }

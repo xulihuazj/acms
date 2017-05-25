@@ -77,7 +77,16 @@ public interface IDeviceService {
 	 */
 	public boolean breakConnect(Long id) throws Exception;
 
-
+	/**
+	 * 建立设备连接
+	 * @Description:
+	 * @author: 徐礼华
+	 * @date: 2017年4月27日下午2:15:52
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public boolean estConnect(Long id) throws Exception;
 
 
 	

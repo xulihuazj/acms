@@ -19,10 +19,18 @@
 	 	where info.n_id = #{id}
 	 </update>
 	 
+	 <update id="updateDeviceStatus"  parameterType="java.util.Map" >
+	 	update t_device_info info set info.n_status = #{status} where info.n_id = #{id}
+	 </update>
+	 
 	  <select id="getDeviceTimeList" parameterType="int" resultType="cn.edu.haut.cssp.acms.core.bean.DeviceTimeExt">
  	 select 
  	 n_id id,n_activate_time activateTime,n_abate_time abateTime
 		,n_time_start timeStart, n_time_end timeEnd 
  	  from t_device_info 
  </select>
+ 
+ 	<select id="selectStatusBySn" parameterType="java.lang.String" resultType="java.util.Map">
+ 		select n_status status from t_device_info where c_sn = #{devicesn}
+ 	</select>
 </mapper>
