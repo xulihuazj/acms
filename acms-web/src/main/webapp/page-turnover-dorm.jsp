@@ -13,7 +13,7 @@
 <link href="${path }/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="${path }/assets/vendor/css/pace.preloader.css" rel="stylesheet" />
-
+<link href="${path }/assets/plugins/select2/select2.css" rel="stylesheet" />
 <!-- Plugins CSS-->
 <link href="${path }/assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
 <link href="${path }/assets/plugins/scrollbar/css/mCustomScrollbar.css" rel="stylesheet" />
@@ -185,48 +185,18 @@
 		<script src="${path }/assets/vendor/js/jquery.min.js"></script>
 		<script src="${path }/assets/vendor/js/jquery-2.1.1.min.js"></script>
 		<script src="${path }/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-
+		<script src="${path }/assets/plugins/select2/select2.js"></script>
 		<!-- Plugins JS-->
 		<script src="${path }/assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
 		<script src="${path }/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
 		<script src="${path }/assets/plugins/bootkit/js/bootkit.js"></script>
 		<script src="${path }/assets/plugins/jquery/js/jquery.zlight.menu.1.0.min.js"></script>
-	<script src="${path}/assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
+		<script src="${path}/assets/plugins/jquery-datatables/media/js/jquery.dataTables.js"></script>
 		<!-- Theme JS -->
 		<script src="${path }/assets/js/jquery.mmenu.min.js"></script>
 		<script src="${path }/assets/js/core.min.js"></script>
-
 		<!-- Pages JS -->
 		<script src="${path }/assets/js/pages/table-advanced.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$('#zlight-nav').zlightMenu();
-			});
-			$("#item").hover(function() {
-				$(this).addClass("layer");
-			}, function() {
-				$(this).removeClass("layer");
-			});
-		</script>
-		<style type="text/css">
-.subitem {
-	width: 300px;
-	background: #fff;
-	border: solid 1px #3299fd;
-	border-left: none;
-	font-family: "微软雅黑";
-	position: absolute;
-	left: 150px;
-	_left: 228px;
-	top: -100px;
-	z-index: 99999;
-	min-height: 60px;
-	height: auto !important;
-	height: 50px;
-	padding: 5px 10px 15px 10px;
-	position: absolute;
-	display: block;
-}
 </style>
 </body>
 </html>

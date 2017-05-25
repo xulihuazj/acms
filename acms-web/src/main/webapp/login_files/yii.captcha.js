@@ -12,7 +12,6 @@
 (function ($) {
     $.fn.yiiCaptcha = function (method) {
         if (methods[method]) {
-        	alert();
             return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
         } else if (typeof method === 'object' || !method) {
             return methods.init.apply(this, arguments);

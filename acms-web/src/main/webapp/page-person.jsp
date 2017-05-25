@@ -99,19 +99,9 @@
 							</div>
 							<div class="panel-body">
 								<table class="table table-bordered table-striped mb-none" id="datatable-details">
+								
 									<thead>
 										<tr>
-											<!-- <th style="width: 6%;">序号.</th>
-											<th style="width: 9%;">姓名</th>
-											<th style="width: 10%;">卡号</th>
-											<th style="width: 10%;">身份证号</th>
-											<th style="width: 9%;">类型</th>
-											<th style="width: 5%;">性别</th>
-											<th style="width: 5%;">年龄</th>
-											<th style="width: 5%;">联系电话</th>
-											<th style="width: 18%;">学院</th>
-											<th style="width: 18%;">专业</th>
-											<th style="width: 5%;">班级</th> -->
 											<th style="min-width: 50px;">序号.</th>
 											<th>姓名</th>
 											<th>卡号</th>
@@ -123,6 +113,7 @@
 											<th style="min-width: 76px;">学院</th>
 											<th>专业</th>
 											<th>班级</th>
+											<th>操作</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -146,6 +137,7 @@
 												<td>${person.perDepart}</td>
 												<td>${person.perMajor}</td>
 												<td>1304</td>
+												<td style="background: #5bc0de;text-align: center;"><a onclick="addPerson();" >添加人员</a></td>
 											</tr>
 											<%-- <tr>
 												<table class="table mb-none">
@@ -304,6 +296,102 @@
 					</div>
 				</div>
 			</div>
+			
+			<!-- 添加人员 -->
+			<div id="addPersonModal" class="modal fade bs-example-modal-lg" data-backdrop="static" tabindex="-1" role="dialog">
+				<div class="modal-dialog panel panel-default" role="document">
+					<div class="modal-content">
+						<div class="modal-body ">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h2 class="panel-title">添加人员</h2>
+								</div>
+								<div class="panel-body bk-noradius">
+									<form id="savePerson_form" class="form-horizontal mb-lg" novalidate="novalidate">
+										<div class="form-group">
+											<label class="col-sm-3 control-label">人员姓名：</label>
+											<div class="col-sm-9">
+												<input type="email" id="perName" name="perName" class="form-control" placeholder="请输入人员姓名..." required />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">所持卡号：</label>
+											<div class="col-sm-9">
+												<input type="email" id="cardSN" name="cardSN" class="form-control" placeholder="请输入人员所持卡号..." required />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">身份证号：</label>
+											<div class="col-sm-9">
+												<input type="url" id="perIdentificate" name="perIdentificate" class="form-control" placeholder="请输入身份证号..." />
+											</div>
+										</div>
+										<div class="form-group">
+										<label class="col-md-3 control-label" for="select" >人员类型：</label>
+											<div class="col-md-9">
+												<select id="perType" name="perType" class="form-control input-md" size="1">
+													<option value="0">请选择人员类型<span class=""></span></option> 
+													<option value="1">学生</option>
+													<option value="2">教师</option>
+													<option value="3">工作人员</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">人员性别：</label>
+											<div class="col-sm-9">
+												<select id="perSex" name="perSex" class=" form-control input-md"  size="1" >
+													<option value="0">请选择人员性别</option>
+													<option value="1">男</option>
+													<option value="2">女</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">人员年龄：</label>
+											<div class="col-sm-9">
+												<input type="url" id="perAge" name="perAge" class="form-control" placeholder="请输入年龄..." />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">联系电话：</label>
+											<div class="col-sm-9">
+												<input type="url"  id="perMobile" name="perMobile" class="form-control" placeholder="请输入联系电话..." />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">所属学院：</label>
+											<div class="col-sm-9">
+												<input type="url" id="perDepart" name="perDepart" class="form-control" placeholder="请输入人员所属学院..." />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">所属专业：</label>
+											<div class="col-sm-9">
+												<input type="url" id="perMajor" name="perMajor" class="form-control" placeholder="请输入人员所属专业..." />
+											</div>
+										</div>
+										<!-- <div class="form-group">
+											<label class="col-sm-3 control-label">所属班级：</label>
+											<div class="col-sm-9">
+												<input type="url" name="url" class="form-control" placeholder="请输入人员所属班级..." />
+											</div>
+										</div> -->
+									</form>
+								</div>
+								<div class="panel-footer">
+									<div class="row">
+										<div class="col-md-12 text-right">
+											<button class="btn btn-primary " onclick="confirmEdit" id="confirmEdit">确定</button>
+											<button class="btn btn-default "  data-dismiss="modal" id="cancelEdit">取消</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 	
 </body>
 	<script type="text/javascript">
@@ -328,7 +416,6 @@
 		$("#confirmDelete").click(function(){
 			var personId = $("#deletePerson").data("personid");
 			$("#deletePersonModal").modal("hide");
-			alert(personId);
 			$.ajax({
 				url: "${path}/person/deletePerson.do", 
 				type: 'POST',
@@ -376,6 +463,8 @@
 				}
 			},100);
 		}
+		
+		
 		/* 确认编辑 */
 		 $("#confirmEdit").click(function(){ 
 	 		var personId = $("#editPerson").data("personid");
@@ -409,6 +498,11 @@
 					}
 				}); 
 		}); 
+		
+		/* 添加人员 */
+		function addPerson(){
+			$("#addPersonModal").modal("show");	
+		}
 		
 	</script>
 </html>

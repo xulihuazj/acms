@@ -9,11 +9,19 @@
 	<!-- <context-param> <param-name>contextClass</param-name> <param-value> 
 		com.xdja.platform.core.spring.PlatformWebApplicationContext </param-value> 
 		</context-param> -->
+		
+		
 
 	<!-- 加载本地配置文件 -->
 	<context-param>
 		<param-name>confPath</param-name>
 		<param-value>/home/acms</param-value>
+	</context-param>
+	
+	<!-- 定义socket服务端口 -->
+	<context-param>
+		<param-name>socketPort</param-name>
+		<param-value>8030</param-value>
 	</context-param>
 
 	<!-- 加载spring容器 -->
@@ -21,7 +29,13 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath*:spring/applicationContext-*_*.xml</param-value>
 	</context-param>
-
+	
+	<!-- 配置socket监听器 -->
+	<listener>
+		<description>Socket</description>
+		<listener-class>cn.edu.haut.cssp.acms.socket.ServerSocketListener</listener-class>
+	</listener>
+	
 	<!-- ContextLoaderListener监听器的作用就是启动Web容器时，自动装配ApplicationContext的配置信息 -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

@@ -1878,7 +1878,7 @@ the specific language governing permissions and limitations under the Apache Lic
             }).html([
                 "<a href='javascript:void(0)' class='select2-choice' tabindex='-1'>",
                 "   <span class='select2-chosen'>&nbsp;</span><abbr class='select2-search-choice-close'></abbr>",
-                "   <span class='select2-arrow' role='presentation'><b role='presentation'></b></span>",
+               "   <span class='select2-arrow' role='presentation'><b role='presentation'></b></span>",
                 "</a>",
                 "<label for='' class='select2-offscreen'></label>",
                 "<input class='select2-focusser select2-offscreen' type='text' aria-haspopup='true' role='button' />",
@@ -2067,8 +2067,6 @@ the specific language governing permissions and limitations under the Apache Lic
             }));
 
             this.search.on("blur", this.bind(function(e) {
-                // a workaround for chrome to keep the search field focussed when the scroll bar is used to scroll the dropdown.
-                // without this the search field loses focus which is annoying
                 if (document.activeElement === this.body().get(0)) {
                     window.setTimeout(this.bind(function() {
                         if (this.opened()) {
@@ -2128,7 +2126,6 @@ the specific language governing permissions and limitations under the Apache Lic
             }));
 
             selection.on("mousedown touchstart", this.bind(function (e) {
-                // Prevent IE from generating a click event on the body
                 reinsertElement(selection);
 
                 if (!this.container.hasClass("select2-container-active")) {

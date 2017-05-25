@@ -61,8 +61,7 @@
 								<a><i class="fa fa-list"></i>设备管理设置</a>
 							</li>
 							<li class="active">
-							<a href="${path }/device/ajaxDeviceList.do">
-								<i class="fa fa-gavel"></i>设备连接设置
+								<a href="${path }/device/ajaxDeviceList.do"> <i class="fa fa-gavel"></i>设备连接设置
 								</a>
 							</li>
 						</ol>
@@ -79,7 +78,7 @@
 						<div class="panel panel-default bk-bg-white">
 							<div class="panel-heading bk-bg-white">
 								<h6>
-									<i class="fa fa-table red"></i><span class="break"></span>人员信息管理
+									<i class="fa fa-table red"></i><span class="break"></span>设备信息管理
 								</h6>
 							</div>
 							<div class="panel-body">
@@ -106,9 +105,20 @@
 												<td>${deviceInfo.deviceBrand}</td>
 												<td>${deviceInfo.deviceModel}</td>
 												<td>
-													<span class="label label-danger"><a onclick="breakConEvent(this)" data-deviceid="${deviceInfo.id}" sytle="color: white">断开连接</a></span> <span
-														class="label label-success"><a onclick="estConnectEvnent(this)" data-deviceid="${deviceInfo.id}" sytle="color: white">建立连接</a></span> <span
-														class="label label-warning"><a onclick="stopDeviceEvent(this)" data-deviceid="${deviceInfo.id}" sytle="color: white">停用设备</a></span>
+
+													<c:if test="${deviceInfo.status==1}">
+														<span class="label label-danger"><a onclick="breakConEvent(this)" data-deviceid="${deviceInfo.id}"
+															sytle="color: white">断开连接</a></span>
+														<span class="label label-warning"><a onclick="stopDeviceEvent(this)"
+															data-deviceid="${deviceInfo.id}" sytle="color: white">停用设备</a></span>
+													</c:if>
+													<c:if test="${deviceInfo.status==2}">
+														<span class="label label-success"><a onclick="estConnectEvnent(this)"
+															data-deviceid="${deviceInfo.id}" sytle="color: white">建立连接</a></span>
+														<span class="label label-warning"><a onclick="stopDeviceEvent(this)"
+															data-deviceid="${deviceInfo.id}" sytle="color: white">停用设备</a></span>
+													</c:if>
+
 												</td>
 											</tr>
 										</c:forEach>
@@ -127,7 +137,7 @@
 	</div>
 
 	<!-- 断开连接 -->
-<div id="breakConnectModal" class="modal fade " data-backdrop="static" tabindex="-1" role="dialog">
+	<div id="breakConnectModal" class="modal fade " data-backdrop="static" tabindex="-1" role="dialog">
 		<div class="modal-dialog panel panel-default" role="document">
 			<div class="modal-content">
 				<div class="modal-body ">
@@ -158,7 +168,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- 建立连接 -->
 	<div id="estConnectModal" class="modal fade " data-backdrop="static" tabindex="-1" role="dialog">
 		<div class="modal-dialog panel panel-default" role="document">
@@ -169,9 +179,9 @@
 					</div>
 					<div class="panel-body bk-noradius">
 						<div class="modal-wrapper">
-								<div class="modal-icon">
-									<i class="fa fa-question-circle" style="color: #39bd2f"></i>
-								</div>
+							<div class="modal-icon">
+								<i class="fa fa-question-circle" style="color: #39bd2f"></i>
+							</div>
 							<div class="modal-text">
 								<p style="font-size: 18px;">确定此设备建立连接，请确认！</p>
 							</div>
@@ -189,8 +199,8 @@
 			</div>
 		</div>
 	</div>
-	
-		<!-- 停用此设备 -->
+
+	<!-- 停用此设备 -->
 	<div id="stopDeviceModal" class="modal fade " data-backdrop="static" tabindex="-1" role="dialog">
 		<div class="modal-dialog panel panel-default" role="document">
 			<div class="modal-content">
@@ -235,8 +245,8 @@
 	<script src="${path}/assets/plugins/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
 	<script src="${path}/assets/plugins/jquery-datatables-bs3/js/datatables.js"></script>
 	<script src="${path}/assets/plugins/sparkline/js/jquery.sparkline.min.js"></script>
-		<script src="${path}/assets/plugins/magnific-popup/js/magnific-popup.js"></script>
-		<script src="${path }/assets/plugins/pnotify/js/pnotify.custom.js"></script>
+	<script src="${path}/assets/plugins/magnific-popup/js/magnific-popup.js"></script>
+	<script src="${path }/assets/plugins/pnotify/js/pnotify.custom.js"></script>
 	<!-- Theme JS -->
 	<script src="${path}/assets/js/jquery.mmenu.min.js"></script>
 	<script src="${path}/assets/js/core.min.js"></script>
@@ -246,126 +256,147 @@
 	<!-- end: JavaScript-->
 </body>
 <script type="text/javascript">
-	$(function(){
-		
+	$(function() {
+
 	});
-	function breakConEvent(event){
-		$(event).attr("id","breakCon");//给元素加上id用户处理
+	function breakConEvent(event) {
+		$(event).attr("id", "breakCon");//给元素加上id用户处理
 		$("#breakConnectModal").modal("show");
 	}
-	$("#confirmBreak").click(function(){
-		var deviceId = $("#breakCon").data("deviceid");
-		$.ajax({
-			url: "${path}/device/breakConnect.do", 
-			type: 'POST',
-			data: "deviceId=" + deviceId,
-			async: false,//设置为同步请求
-			dataType: "json",
-			success: function(data){
-			    	if(data.message == 'success'){
-			    		$("#breakConnectModal").modal("hide");
-			    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
-			    			document.forms[0].action="${path}/device/breakConnect.do";
-			    			document.forms[0].submit();
-						},1000);
-			    		new PNotify({
-							title: '操作成功',
-							text: '断开此设备连接成功!',
-							type: 'success'
-						});
-			    	}else{
-			    		$("#breakConnectModal").modal("hide");
-			    		new PNotify({
-							title: '操作失败',
-							text: '对不起，系统异常，无法完成此操作，请联系管理员！',
-							type: 'error'
-						});
-			    	}
-				}
-			});
-	});
-	function estConnectEvnent(event){
-		$(event).attr("id","estConnect");//给元素加上id用户处理
+	$("#confirmBreak")
+			.click(
+					function() {
+						var deviceId = $("#breakCon").data("deviceid");
+						$
+								.ajax({
+									url : "${path}/device/breakConnect.do",
+									type : 'POST',
+									data : "deviceId=" + deviceId,
+									async : false,//设置为同步请求
+									dataType : "json",
+									success : function(data) {
+										if (data.message == 'success') {
+											$("#breakConnectModal").modal(
+													"hide");
+											setTimeout(
+													function() { // 定时器，延迟1秒后重新跳转访问
+														document.forms[0].action = "${path}/device/ajaxDeviceList.do";
+														document.forms[0]
+																.submit();
+													}, 1000);
+											new PNotify({
+												title : '操作成功',
+												text : '断开此设备连接成功!',
+												type : 'success'
+											});
+										} else {
+											$("#breakConnectModal").modal(
+													"hide");
+											new PNotify(
+													{
+														title : '操作失败',
+														text : '对不起，系统异常，无法完成此操作，请联系管理员！',
+														type : 'error'
+													});
+										}
+									}
+								});
+					});
+
+	function estConnectEvnent(event) {
+		$(event).attr("id", "estConnect");//给元素加上id用户处理
 		$("#estConnectModal").modal("show");
 	}
-	$("#confirmEst").click(function(){
-		var deviceId = $("#estConnect").data("deviceid");
-		$.ajax({
-			url: "${path}/device/ecstConnect.do", 
-			type: 'POST',
-			data: "deviceId=" + deviceId,
-			async: false,//设置为同步请求
-			dataType: "json",
-			success: function(data){
-			    	if(data.message == 'success'){
-			    		$("#estConnectModal").modal("hide");
-			    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
-			    			document.forms[0].action="${path}/device/ecstConnect.do";
-			    			document.forms[0].submit();
-						},1000);
-			    		new PNotify({
-							title: '操作成功',
-							text: '建立此设备连接成功!',
-							type: 'success'
-						});
-			    		
-			    	}else{
-			    		$("#estConnectModal").modal("hide");
-			    		new PNotify({
-							title: '操作失败',
-							text: '对不起，系统异常，无法完成此操作，请联系管理员！',
-							type: 'error'
-						});
-			    	}
-				}
-			});
-	});
-	
-	function stopDeviceEvent(event){
-		$(event).attr("id","stopDevice");//给元素加上id用户处理
+	$("#confirmEst")
+			.click(
+					function() {
+						var deviceId = $("#estConnect").data("deviceid");
+						$
+								.ajax({
+									url : "${path}/device/estConnect.do",
+									type : 'POST',
+									data : "deviceId=" + deviceId,
+									async : false,//设置为同步请求
+									dataType : "json",
+									success : function(data) {
+										if (data.message == 'success') {
+											$("#estConnectModal").modal("hide");
+											setTimeout(
+													function() { // 定时器，延迟1秒后重新跳转访问
+														document.forms[0].action = "${path}/device/ajaxDeviceList.do";
+														document.forms[0]
+																.submit();
+													}, 1000);
+											new PNotify({
+												title : '操作成功',
+												text : '建立此设备连接成功!',
+												type : 'success'
+											});
+
+										} else {
+											$("#estConnectModal").modal("hide");
+											new PNotify(
+													{
+														title : '操作失败',
+														text : '对不起，系统异常，无法完成此操作，请联系管理员！',
+														type : 'error'
+													});
+										}
+									}
+								});
+					});
+
+	function stopDeviceEvent(event) {
+		$(event).attr("id", "stopDevice");//给元素加上id用户处理
 		$("#stopDeviceModal").modal("show");
 	}
-	
+
 	/* 确认停用设备 */
-	$("#confirmStop").click(function(){
-		var deviceid = $("#stopDevice").data("deviceid");
-		$.ajax({
-			url: "${path}/device/stopDevice.do", 
-			type: 'POST',
-			data: "deviceId=" + deviceid,
-			async: false,//设置为同步请求
-			dataType: "json",
-			success: function(data){
-			    	if(data.message == 'success'){
-			    		$("#stopDeviceModal").modal("hide");
-			    		setTimeout(function() { // 定时器，延迟1秒后重新跳转访问
-			    			document.forms[0].action="${path}/device/stopDevice.do";
-			    			document.forms[0].submit();
-						},1000);
-			    		new PNotify({
-							title: '操作成功',
-							text: '停用此设备成功!',
-							type: 'success'
-						});
-			    	}else{
-			    		$("#stopDeviceModal").modal("hide");
-			    		new PNotify({
-							title: '操作失败',
-							text: '对不起，系统异常，无法完成此操作，请联系管理员！',
-							type: 'error'
-						});
-			    	}
-				}
-			});
-	});
-	
-	$("#cancelBreak").click(function(){
+	$("#confirmStop")
+			.click(
+					function() {
+						var deviceid = $("#stopDevice").data("deviceid");
+						$
+								.ajax({
+									url : "${path}/device/stopDevice.do",
+									type : 'POST',
+									data : "deviceId=" + deviceid,
+									async : false,//设置为同步请求
+									dataType : "json",
+									success : function(data) {
+										if (data.message == 'success') {
+											$("#stopDeviceModal").modal("hide");
+											setTimeout(
+													function() { // 定时器，延迟1秒后重新跳转访问
+														document.forms[0].action = "${path}/device/ajaxDeviceList.do";
+														document.forms[0]
+																.submit();
+													}, 1000);
+											new PNotify({
+												title : '操作成功',
+												text : '停用此设备成功!',
+												type : 'success'
+											});
+										} else {
+											$("#stopDeviceModal").modal("hide");
+											new PNotify(
+													{
+														title : '操作失败',
+														text : '对不起，系统异常，无法完成此操作，请联系管理员！',
+														type : 'error'
+													});
+										}
+									}
+								});
+					});
+
+	$("#cancelBreak").click(function() {
 		$("#breakConnectModal").modal("hide");
 	});
-	$("#cancelEst").click(function(){
+	$("#cancelEst").click(function() {
 		$("#estConnectModal").modal("hide");
 	});
-	$("#cancelStop").click(function(){
+	$("#cancelStop").click(function() {
 		$("#stopDeviceModal").modal("hide");
 	});
 </script>

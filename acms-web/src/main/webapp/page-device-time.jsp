@@ -222,7 +222,6 @@
 	});
 	
 	$("#confirmEditTime2").click(function(){
-		alert($("#editTime_form2"));
 		$("#editTime_form2").submit();
 	});
 	function getDate(tm){

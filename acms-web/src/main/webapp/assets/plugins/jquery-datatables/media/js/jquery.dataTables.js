@@ -22,7 +22,6 @@
  */
 
 /*jslint evil: true, undef: true, browser: true */
-/*globals $,require,jQuery,define,_selector_run,_selector_opts,_selector_first,_selector_row_indexes,_ext,_Api,_api_register,_api_registerPlural,_re_new_lines,_re_html,_re_formatted_numeric,_re_escape_regex,_empty,_intVal,_numToDecimal,_isNumber,_isHtml,_htmlNumeric,_pluck,_pluck_order,_range,_stripHtml,_unique,_fnBuildAjax,_fnAjaxUpdate,_fnAjaxParameters,_fnAjaxUpdateDraw,_fnAjaxDataSrc,_fnAddColumn,_fnColumnOptions,_fnAdjustColumnSizing,_fnVisibleToColumnIndex,_fnColumnIndexToVisible,_fnVisbleColumns,_fnGetColumns,_fnColumnTypes,_fnApplyColumnDefs,_fnHungarianMap,_fnCamelToHungarian,_fnLanguageCompat,_fnBrowserDetect,_fnAddData,_fnAddTr,_fnNodeToDataIndex,_fnNodeToColumnIndex,_fnGetCellData,_fnSetCellData,_fnSplitObjNotation,_fnGetObjectDataFn,_fnSetObjectDataFn,_fnGetDataMaster,_fnClearTable,_fnDeleteIndex,_fnInvalidateRow,_fnGetRowElements,_fnCreateTr,_fnBuildHead,_fnDrawHead,_fnDraw,_fnReDraw,_fnAddOptionsHtml,_fnDetectHeader,_fnGetUniqueThs,_fnFeatureHtmlFilter,_fnFilterComplete,_fnFilterCustom,_fnFilterColumn,_fnFilter,_fnFilterCreateSearch,_fnEscapeRegex,_fnFilterData,_fnFeatureHtmlInfo,_fnUpdateInfo,_fnInfoMacros,_fnInitialise,_fnInitComplete,_fnLengthChange,_fnFeatureHtmlLength,_fnFeatureHtmlPaginate,_fnPageChange,_fnFeatureHtmlProcessing,_fnProcessingDisplay,_fnFeatureHtmlTable,_fnScrollDraw,_fnApplyToChildren,_fnCalculateColumnWidths,_fnThrottle,_fnConvertToWidth,_fnScrollingWidthAdjust,_fnGetWidestNode,_fnGetMaxLenString,_fnStringToCss,_fnScrollBarWidth,_fnSortFlatten,_fnSort,_fnSortAria,_fnSortListener,_fnSortAttachListener,_fnSortingClasses,_fnSortData,_fnSaveState,_fnLoadState,_fnSettingsFromNode,_fnLog,_fnMap,_fnBindAction,_fnCallbackReg,_fnCallbackFire,_fnLengthOverflow,_fnRenderer,_fnDataSource,_fnRowAttributes*/
 
 (/** @lends <global> */function( window, document, undefined ) {
 
@@ -401,6 +400,7 @@
 		_fnCompatMap( init, 'order',         'aaSorting' );
 		_fnCompatMap( init, 'orderFixed',    'aaSortingFixed' );
 		_fnCompatMap( init, 'paging',        'bPaginate' );
+		_fnCompatMap( init, 'button',        'bButton' );
 		_fnCompatMap( init, 'pagingType',    'sPaginationType' );
 		_fnCompatMap( init, 'pageLength',    'iDisplayLength' );
 		_fnCompatMap( init, 'searching',     'bFilter' );
@@ -2126,6 +2126,11 @@
 				/* Pagination */
 				featureNode = _fnFeatureHtmlPaginate( oSettings );
 			}
+			else if ( cOption == 'b' && features.bButton )
+			{
+				/* button */
+				featureNode = _fnFeatureHtmlButton( oSettings );
+			}
 			else if ( DataTable.ext.feature.length !== 0 )
 			{
 				/* Plug-in features */
@@ -3353,6 +3358,57 @@
 		return node;
 	}
 	
+	/**
+	 * 自定义button
+	 */
+	function _fnFeatureHtmlButton ( settings )
+	{
+		 $('<div/>').html("<button>ddd</button>");
+		
+		
+		/*var
+			type   = settings.sPaginationType,
+			plugin = DataTable.ext.pager[ type ],
+			modern = typeof plugin === 'function',
+			redraw = function( settings ) {
+				_fnDraw( settings );
+			},
+			node = $('<div/>').addClass( settings.oClasses.sPaging + type )[0],
+			features = settings.aanFeatures;
+		if ( ! modern ) {
+			plugin.fnInit( settings, node, redraw );
+		}
+		if ( ! features.p ){
+			node.id = settings.sTableId+'_paginate';
+			settings.aoDrawCallback.push( {
+				"fn": function( settings ) {
+					if ( modern ) {
+						var
+							start      = settings._iDisplayStart,
+							len        = settings._iDisplayLength,
+							visRecords = settings.fnRecordsDisplay(),
+							all        = len === -1,
+							page = all ? 0 : Math.ceil( start / len ),
+							pages = all ? 1 : Math.ceil( visRecords / len ),
+							buttons = plugin(page, pages),
+							i, ien;
+	
+						for ( i=0, ien=features.p.length ; i<ien ; i++ ) {
+							_fnRenderer( settings, 'pageButton' )(
+								settings, features.p[i], i, buttons, page, pages
+							);
+						}
+					}
+					else {
+						plugin.fnUpdate( settings, redraw );
+					}
+				},
+				"sName": "pagination"
+			} );
+		}
+	
+		return node;*/
+	}
 	
 	/**
 	 * Alter the display settings to change the page
@@ -6033,6 +6089,7 @@
 			// Map the initialisation options onto the settings object
 			_fnMap( oSettings.oFeatures, oInit, [
 				"bPaginate",
+				"bButton",
 				"bLengthChange",
 				"bFilter",
 				"bSort",
@@ -9834,6 +9891,8 @@
 		 *    } );
 		 */
 		"bPaginate": true,
+		
+		"bButton":true,
 	
 	
 		/**
@@ -12350,6 +12409,8 @@
 			 *  @type boolean
 			 */
 			"bPaginate": null,
+			
+			"bButton":null,
 	
 			/**
 			 * Processing indicator enable flag whenever DataTables is enacting a
@@ -12509,6 +12570,7 @@
 		 *     <li>'i' - Information</li>
 		 *     <li>'p' - Pagination</li>
 		 *     <li>'r' - pRocessing</li>
+		 *     <li>'b' -button</li>
 		 *   </ul>
 		 *  @type array
 		 *  @default []
@@ -14314,6 +14376,7 @@
 		_fnLengthChange: _fnLengthChange,
 		_fnFeatureHtmlLength: _fnFeatureHtmlLength,
 		_fnFeatureHtmlPaginate: _fnFeatureHtmlPaginate,
+		_fnFeatureHtmlButton: _fnFeatureHtmlButton,
 		_fnPageChange: _fnPageChange,
 		_fnFeatureHtmlProcessing: _fnFeatureHtmlProcessing,
 		_fnProcessingDisplay: _fnProcessingDisplay,

@@ -64,16 +64,15 @@
 							<div class="toggle">
 								<label>登录系统时需要注意些什么?</label>
 								<div class="toggle-content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere
-										porta.</p>
+									<p>使用本系统前，请检查应用环境的安全性，防止非法入侵！</p>
 									</p>
 								</div>
 							</div>
 							<div class="toggle">
 								<label>登录密码忘记时，我该如何重新获取密码?</label>
 								<div class="toggle-content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius.
-										In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat</p>
+									<p>1:如果您已经登录系统，可以通过系统修改密码选项来更改密码。</p>
+									<p>2:如果您未登录系统，可以通过联系系统超级管理员获取更改的密码。</p>
 								</div>
 							</div>
 							<div class="toggle">

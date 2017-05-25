@@ -191,4 +191,15 @@
 		<include refid="Base_Column_List" />
 		from t_person_info info where info.n_card_sn = #{cardSN}
 	</select>
+	
+	<select id="findPersonBycardsn" parameterType="java.lang.String"
+		resultType="cn.edu.haut.cssp.acms.core.entity.TPerson">
+		select
+		<include refid="Base_Column_List" />
+		from t_person_info info where info.n_card_sn = #{sn}
+	<!-- 	<where>
+			<if test="null != sn and sn != ''"></if>
+		</where> -->
+		 
+	</select>
 </mapper>
