@@ -1,12 +1,8 @@
 package cn.edu.haut.cssp.acms.web.action;
 
-import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
-
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
@@ -28,15 +24,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import com.octo.captcha.service.image.ImageCaptchaService;
-import com.xdja.platform.security.bean.Operator;
-import com.xdja.platform.security.utils.OperatorUtil;
-
 import cn.edu.haut.cssp.acms.action.BaseAction;
 import cn.edu.haut.cssp.acms.core.entity.TSystemLog;
 import cn.edu.haut.cssp.acms.core.entity.TUser;
-import cn.edu.haut.cssp.acms.system.service.IFunctionService;
 import cn.edu.haut.cssp.acms.system.service.ISystemLogService;
 import cn.edu.haut.cssp.acms.system.service.IUserService;
 import cn.edu.haut.cssp.acms.util.PasswordUtils;
@@ -58,7 +49,7 @@ public class LoginAction extends BaseAction {
 	  private ISystemLogService syslogService;
 
 	/**
-	 * 登录
+	 * 登录    登录提交地址后和applicationContext-acms_shiro.xml中配置的loginurl一致
 	 * @author: xulihua
 	 * @date: 2017年1月18日下午1:31:19
 	 * @return: String
@@ -79,16 +70,30 @@ public class LoginAction extends BaseAction {
 			 TUser currUser = null;
 			try {
 				/* TODO shiro 权限管理 */
-				// UsernamePasswordToken token = new
-				// UsernamePasswordToken(loginUsername,loginPassword);
-				// SecurityUtils.getSubject().login(token);
-				//Map<String, String> map = new HashMap<String, String>();
+				 loginPassword = PasswordUtils.encodePasswordSHA1(loginPassword);
+				 UsernamePasswordToken token = new UsernamePasswordToken(loginUsername,loginPassword);
+				 SecurityUtils.getSubject().login(token);
+				// Map<String, String> map = new HashMap<String, String>();
 				//map.put("username", loginUsername);
 				//map.put("password", PasswordUtils.encodePasswordSHA1(loginPassword));
 				// 根据用户名和密码查询用户信息
 				 //TUser currUser = userService.selectUserByNameAndPass(map);
+			} catch (LockedAccountException e) {
+				isLogined = false;
+				model.put("message", "用户已经被锁定");
+			} catch (UnknownAccountException e) {
+				isLogined = false;
+				model.put("message", "用户名或密码错误");
+			} catch (IncorrectCredentialsException e) {
+				isLogined = false;
+				model.put("message", "用户名或密码错误");
+			} catch (AuthenticationException e) {
+				isLogined = false;
+				e.printStackTrace();
+				model.put("message", e.getMessage());
+			}
+			if(isLogined){
 				currUser = userService.getUserByUserName(loginUsername);
-				
 				 if(null == currUser || currUser.getStatus() == TUser.ENUM_USER_STATUS.deletedStatus.value){
 					 model.put("message1", "当前账号不存在");
 					 return "/page-login.jsp";
@@ -97,7 +102,7 @@ public class LoginAction extends BaseAction {
 					 return "/page-login.jsp";
 				 }else{
 					 loginPassword = loginPassword.toLowerCase();
-					 if(StringUtils.equalsIgnoreCase(PasswordUtils.encodePasswordSHA1(loginPassword), currUser.getPassword())){
+					 if(StringUtils.equalsIgnoreCase(loginPassword, currUser.getPassword())){
 						 // 存入session
 						 session.setAttribute("currUser", currUser);
 						 TSystemLog sysLog = new TSystemLog();
@@ -113,23 +118,11 @@ public class LoginAction extends BaseAction {
 						 return "/page-login.jsp";
 					}
 				 }
-				/*} catch (LockedAccountException e) {
-					isLogined = false;
-					model.put("message", "用户已经被锁定");
-				} catch (UnknownAccountException e) {
-					isLogined = false;
-					model.put("message", "用户名或密码错误");
-				} catch (IncorrectCredentialsException e) {
-					isLogined = false;
-					model.put("message", "用户名或密码错误");
-				} catch (AuthenticationException e) {
-					isLogined = false;
-					model.put("message", e.getMessage());
-				}*/
-			}catch(Exception e){
+			}
+			/*catch(Exception e){
 				e.printStackTrace();
 				model.put("message", "请求登录异常，请重试");
-			}
+			}*/
 			/*if (isLogined) {
 				 TUser user = userService.getUserByUserName(userName);
 				TUser user = null;
