@@ -49,17 +49,6 @@
 									<div class="help-block"><span id="loginPasswordErr" style="color: #ff3333 !important;font-size: 14px !important;">${message2}</span></div>
 								</div>
 							</div>
-							<!-- 	<div class="form-group field-loginform-password required">
-								<label class="col-lg-2 control-label" for="loginform-password">确认密码</label>
-								<div class="col-lg-6 ">
-									<input type="password" id="loginform-verifyPassword"
-										class="form-control" name="LoginForm[password]"
-										placeholder="请输入确认密码">
-								</div>
-								<div class="col-lg-4 ">
-									<div class="help-block"></div>
-								</div>
-							</div> -->
 							<div class="form-group field-loginform-verifycode required">
 								<label class="col-lg-2 control-label" for="loginform-verifycode">验证码</label>
 								<div class="col-lg-10 ">

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/mvc
+	   http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+       http://www.springframework.org/schema/task 
+	   http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+
+	<!-- web.xml中shiro的filter对应的bean -->
+	<!-- Shiro的Web过滤器 -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager"/>
+		<!-- longUrl认证提交地址，如果没有认证将会请求此地址进行认证，请求此地址将由formAuthenticationFilter进行表单认证 -->
+		<property name="loginUrl" value="/login.do"/>
+		<!--  通过unauthorizedUrl指定没有权限操作时跳转页面 -->
+		<property name="unauthorizedUrl" value="/refuse.jsp"/>
+		<!-- 过滤器定义，从上向下顺序执行，一般将/**放在最下边 -->
+		<property name="filterChainDefinitions">
+			<value>
+				<!-- 所有Url都可以访问 -->
+				<!-- /** = anon -->
+				<!-- 所有Url都必须认证才可以访问 -->
+				<!-- /** = authc -->
+				<!-- 请求logout.do地址，shiro清除session -->
+				/logout.do = logout
+				
+				/person/ajaxCollegeList.do = perms[person:ajaxCollegeList]
+				<!-- 对静态资源设置匿名访问 -->
+				/images/** = anon
+				/js/** = anon
+				/styles/** = anon
+			</value>
+		</property>
+	</bean>
+	<!-- securityManager安全管理器 -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="customRealm"/>
+	</bean>
+	<!--  realm 域/数据源 -->
+	 <bean id="customRealm" class="cn.edu.haut.cssp.acms.web.action.CustomRealm"/> 
+
+</beans>

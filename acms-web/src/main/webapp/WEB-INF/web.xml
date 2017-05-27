@@ -11,7 +11,6 @@
 		</context-param> -->
 		
 		
-
 	<!-- 加载本地配置文件 -->
 	<context-param>
 		<param-name>confPath</param-name>
@@ -83,6 +82,29 @@
 		<filter-name>encoding</filter-name><!-- 用于设置filter的注册名称 -->
 		<url-pattern>/*</url-pattern><!-- 设置 filter 所拦截的请求路径 --><!-- 全部请求 -->
 	</filter-mapping>
+	
+	
+	<!-- shiro的过滤器 -->
+	<filter>
+		<filter-name>shiroFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>
+			<param-name>targetFilterLifecycle</param-name>
+			<!--  设置为TRUE由servlet容器控制filter的生命周期 -->
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>targetBeanName</param-name>
+			<!--  设置spring容器filter的bean id，如果不设置则找与filter-name一直的bean -->
+			<param-value>shiroFilter</param-value>
+		</init-param>
+	</filter>
+	<!--  -->
+	<filter-mapping>
+		<filter-name>shiroFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
 
 	<!-- 登录超时时间 单位minute -->
 	<session-config>
